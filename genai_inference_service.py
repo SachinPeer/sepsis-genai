@@ -174,14 +174,26 @@ class BedrockClaudeProvider(BaseLLMProvider):
     
     @property
     def client(self):
-        """Lazy-load the Bedrock client."""
+        """Lazy-load the Bedrock client with adaptive retry configuration."""
         if self._client is None:
             try:
                 import boto3
+                from botocore.config import Config
+                
+                # Configure adaptive retry mode for better throttling handling
+                config = Config(
+                    retries={
+                        'max_attempts': 3,  # We handle additional retries ourselves
+                        'mode': 'adaptive'  # Adaptive mode adjusts to throttling
+                    },
+                    read_timeout=60,  # Allow time for LLM response
+                    connect_timeout=10
+                )
                 
                 self._client = boto3.client(
                     service_name="bedrock-runtime",
-                    region_name=self.region
+                    region_name=self.region,
+                    config=config
                 )
                 logger.info(f"AWS Bedrock client initialized (region: {self.region})")
             except ImportError:
@@ -193,7 +205,9 @@ class BedrockClaudeProvider(BaseLLMProvider):
         return self._client
     
     def predict(self, system_prompt: str, user_message: str, temperature: float = 0.1) -> Dict[str, Any]:
-        """Send prediction request to AWS Bedrock Claude."""
+        """Send prediction request to AWS Bedrock Claude with exponential backoff."""
+        import time
+        from botocore.exceptions import ClientError
         
         # Claude message format
         request_body = {
@@ -206,12 +220,29 @@ class BedrockClaudeProvider(BaseLLMProvider):
             ]
         }
         
-        response = self.client.invoke_model(
-            modelId=self.model_id,
-            body=json.dumps(request_body),
-            contentType="application/json",
-            accept="application/json"
-        )
+        # Exponential backoff retry logic for throttling
+        max_retries = 5
+        base_delay = 3  # seconds
+        
+        for attempt in range(max_retries):
+            try:
+                response = self.client.invoke_model(
+                    modelId=self.model_id,
+                    body=json.dumps(request_body),
+                    contentType="application/json",
+                    accept="application/json"
+                )
+                # Success - break out of retry loop
+                break
+            except ClientError as e:
+                error_code = e.response.get('Error', {}).get('Code', '')
+                if error_code == 'ThrottlingException' and attempt < max_retries - 1:
+                    delay = base_delay * (2 ** attempt)  # 3, 6, 12, 24, 48 seconds
+                    logger.warning(f"Rate limited, retrying in {delay}s (attempt {attempt + 1}/{max_retries})")
+                    time.sleep(delay)
+                else:
+                    logger.error(f"Bedrock API error: {error_code}")
+                    raise
         
         response_body = json.loads(response["body"].read())
         content = response_body["content"][0]["text"]
