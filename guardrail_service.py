@@ -505,6 +505,99 @@ class SepsisSafetyGuardrail:
 
         return prediction
     
+    def get_full_config(self) -> Dict[str, Any]:
+        """Return the complete configuration including all clinical details."""
+        return self.config.copy()
+    
+    def update_config(self, section: str, updates: Dict[str, Any], 
+                      save_to_file: bool = True) -> Dict[str, Any]:
+        """
+        Update a specific section of the configuration.
+        
+        Args:
+            section: Dot-notation path to section (e.g., "critical_thresholds.hemodynamic")
+            updates: Dictionary of updates to merge into the section
+            save_to_file: Whether to persist changes to the JSON file
+            
+        Returns:
+            Dictionary with updated values
+        """
+        # Navigate to the target section
+        keys = section.split(".")
+        target = self.config
+        
+        # Navigate to parent of target section
+        for key in keys[:-1]:
+            if key not in target:
+                raise ValueError(f"Section '{key}' not found in configuration")
+            target = target[key]
+        
+        # Get the final key
+        final_key = keys[-1] if keys else None
+        
+        if final_key:
+            if final_key not in target:
+                raise ValueError(f"Section '{final_key}' not found in configuration")
+            
+            # Deep merge updates into the target section
+            self._deep_merge(target[final_key], updates)
+            updated_section = target[final_key]
+        else:
+            # Update root level
+            self._deep_merge(target, updates)
+            updated_section = target
+        
+        # Re-parse thresholds to apply changes
+        self._parse_thresholds()
+        
+        # Save to file if requested
+        if save_to_file:
+            self._save_config()
+        
+        self.logger.info(f"Configuration section '{section}' updated")
+        
+        return {"updated_values": updates}
+    
+    def _deep_merge(self, target: Dict, source: Dict):
+        """Deep merge source dict into target dict."""
+        for key, value in source.items():
+            if key in target and isinstance(target[key], dict) and isinstance(value, dict):
+                self._deep_merge(target[key], value)
+            else:
+                target[key] = value
+    
+    def _save_config(self):
+        """Save current configuration to the JSON file."""
+        config_paths = [
+            "genai_clinical_guardrail.json",
+            os.path.join(os.path.dirname(__file__), "genai_clinical_guardrail.json"),
+            "/app/genai_clinical_guardrail.json"
+        ]
+        
+        for path in config_paths:
+            if os.path.exists(path):
+                try:
+                    with open(path, 'w') as f:
+                        json.dump(self.config, f, indent=2)
+                    self.logger.info(f"Configuration saved to: {path}")
+                    return
+                except PermissionError:
+                    self.logger.warning(f"Cannot write to {path} (read-only filesystem). Use export endpoint or update source file.")
+                    raise ValueError(
+                        f"Cannot save to {path} - filesystem is read-only. "
+                        "Changes are applied in-memory only. Use GET /guardrail/config/export "
+                        "to download the updated configuration, then update the source file."
+                    )
+                except Exception as e:
+                    self.logger.error(f"Failed to save config to {path}: {e}")
+                    raise
+        
+        raise ValueError("Could not find configuration file to save")
+    
+    def export_config(self) -> str:
+        """Export current configuration as JSON string for download."""
+        return json.dumps(self.config, indent=2)
+
     def get_current_thresholds(self) -> Dict[str, Any]:
         """Return current thresholds for API exposure."""
         return {

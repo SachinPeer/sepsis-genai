@@ -6,8 +6,10 @@ Endpoints:
 - POST /classify - Single patient classification
 - POST /classify-batch - Batch classification
 - GET /health - Health check
-- GET /guardrail/thresholds - Current guardrail configuration
-- POST /guardrail/reload - Hot-reload guardrail config
+- GET /guardrail/thresholds - Simplified threshold values
+- GET /guardrail/config - Full guardrail configuration (for SMEs)
+- PUT /guardrail/config - Update guardrail configuration (for SMEs)
+- POST /guardrail/reload - Hot-reload guardrail config from file
 """
 
 import os
@@ -337,6 +339,179 @@ async def reload_guardrail_config(x_api_key: str = Header(None)):
         }
     except Exception as e:
         logger.error(f"Error reloading config: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/guardrail/config")
+async def get_full_guardrail_config(x_api_key: str = Header(None)):
+    """
+    Get full guardrail configuration including all clinical details.
+    
+    Returns the complete configuration including:
+    - Critical thresholds with clinical rationale, SME notes, and context checks
+    - Early detection patterns
+    - History context checks
+    - Override logic
+    - Discordance rules
+    - qSOFA criteria
+    - Audit settings
+    
+    This endpoint is designed for SME review and configuration management.
+    """
+    verify_api_key(x_api_key)
+    
+    try:
+        pipeline = get_pipeline()
+        config = pipeline.guardrail.get_full_config()
+        return {
+            "status": "success",
+            "config": config,
+            "timestamp": datetime.now().isoformat()
+        }
+    except Exception as e:
+        logger.error(f"Error getting full config: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+class GuardrailConfigUpdate(BaseModel):
+    """Request model for updating guardrail configuration."""
+    section: str = Field(..., description="Config section to update (e.g., 'critical_thresholds', 'override_logic', 'discordance_rules')")
+    updates: Dict[str, Any] = Field(..., description="Updates to apply to the section")
+    save_to_file: bool = Field(True, description="Whether to persist changes to genai_clinical_guardrail.json")
+
+
+@app.put("/guardrail/config")
+async def update_guardrail_config(
+    request: GuardrailConfigUpdate,
+    x_api_key: str = Header(None)
+):
+    """
+    Update guardrail configuration.
+    
+    Allows SMEs to update specific sections of the guardrail configuration:
+    - critical_thresholds: Update threshold values and clinical details
+    - override_logic: Modify override trigger conditions and forced values
+    - discordance_rules: Update concerning phrases and escalation settings
+    - audit_settings: Configure logging behavior
+    
+    Changes can be applied in-memory only or persisted to the config file.
+    
+    Example request body:
+    ```json
+    {
+        "section": "critical_thresholds.hemodynamic",
+        "updates": {
+            "sbp_critical": {
+                "value": 85,
+                "clinical_rationale": "Updated based on new guidelines"
+            }
+        },
+        "save_to_file": true
+    }
+    ```
+    """
+    verify_api_key(x_api_key)
+    
+    try:
+        pipeline = get_pipeline()
+        result = pipeline.guardrail.update_config(
+            section=request.section,
+            updates=request.updates,
+            save_to_file=request.save_to_file
+        )
+        
+        return {
+            "status": "success",
+            "message": f"Configuration section '{request.section}' updated successfully",
+            "saved_to_file": request.save_to_file,
+            "updated_values": result.get("updated_values", {}),
+            "timestamp": datetime.now().isoformat()
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error updating config: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/guardrail/config/export")
+async def export_guardrail_config(x_api_key: str = Header(None)):
+    """
+    Export the full guardrail configuration as downloadable JSON.
+    
+    Use this endpoint to download the current configuration (including any
+    in-memory changes) for manual saving to the source file.
+    
+    This is useful when the container filesystem is read-only and 
+    save_to_file cannot be used.
+    """
+    verify_api_key(x_api_key)
+    
+    try:
+        pipeline = get_pipeline()
+        config_json = pipeline.guardrail.export_config()
+        
+        return JSONResponse(
+            content=json.loads(config_json),
+            headers={
+                "Content-Disposition": "attachment; filename=genai_clinical_guardrail.json"
+            }
+        )
+    except Exception as e:
+        logger.error(f"Error exporting config: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/guardrail/config/{section}")
+async def get_guardrail_config_section(
+    section: str,
+    x_api_key: str = Header(None)
+):
+    """
+    Get a specific section of the guardrail configuration.
+    
+    Available sections:
+    - critical_thresholds
+    - early_detection_patterns
+    - history_context_checks
+    - differential_diagnosis
+    - trending_requirements
+    - override_logic
+    - qsofa_criteria
+    - discordance_rules
+    - audit_settings
+    - expert_notes
+    
+    Use dot notation for nested sections: critical_thresholds.hemodynamic
+    """
+    verify_api_key(x_api_key)
+    
+    try:
+        pipeline = get_pipeline()
+        config = pipeline.guardrail.get_full_config()
+        
+        # Handle nested sections like "critical_thresholds.hemodynamic"
+        keys = section.split(".")
+        result = config
+        for key in keys:
+            if isinstance(result, dict) and key in result:
+                result = result[key]
+            else:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"Section '{section}' not found in configuration"
+                )
+        
+        return {
+            "status": "success",
+            "section": section,
+            "data": result,
+            "timestamp": datetime.now().isoformat()
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting config section: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
