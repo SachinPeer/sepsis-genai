@@ -1,0 +1,23 @@
+{
+  "vitals": {
+    "HR": [
+      {"val": 88, "ts": "2026-02-11T08:00"},
+      {"val": 84, "ts": "2026-02-11T06:00"}
+    ],
+    "SBP": [
+      {"val": 112, "ts": "2026-02-11T08:00"},
+      {"val": 118, "ts": "2026-02-11T06:00"}
+    ],
+    "DBP": [70],
+    "Temp": [37.6],
+    "Resp": [20],
+    "O2Sat": [95],
+    "WBC": [10.8],
+    "Lactate": [1.3],
+    "Creatinine": [1.2],
+    "Age": 71,
+    "Gender": 0
+  },
+  "notes": "0600: Patient was oriented x3 at shift start. 0730: RN noted patient asked same question 3 times, seems not herself per family at bedside. Skin warm but noticed mottling on bilateral knees - new finding. Foley output only 80mL over past 4 hours (previously averaging 50mL/hr). Patient c/o vague abdominal discomfort, non-specific. Family states she just does not look right to us. UTI diagnosed yesterday, on oral antibiotics. Discussed with charge nurse about escalating concerns.",
+  "patient_id": "NOTES_DEMO_001"
+}
