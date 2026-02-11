@@ -1,0 +1,23 @@
+# GenAI Sepsis Classification System - Dependencies
+
+# Core API Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# GenAI (Azure OpenAI)
+openai>=1.0.0
+python-dotenv>=1.0.0
+
+# HTTP Client
+requests>=2.31.0
+
+# System Metrics
+psutil>=5.9.0
+
+# File Uploads (optional)
+python-multipart>=0.0.6

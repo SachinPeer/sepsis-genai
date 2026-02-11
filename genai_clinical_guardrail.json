@@ -1,0 +1,850 @@
+{
+  "guardrail_config": {
+    "description": "Clinical Guardrail Configuration for GenAI Sepsis Prediction Pipeline",
+    "purpose": "Safety layer to override AI predictions when critical clinical thresholds are breached",
+    "version": "3.0",
+    "last_updated": "2026-02-10",
+    "maintainer": "Clinical SME Team",
+    "sme_review_date": "2026-02-10",
+    "change_log": "v3.0 - Updated thresholds based on SME feedback, added history checks, tiered HR thresholds, new hematologic markers"
+  },
+
+  "critical_thresholds": {
+    "_description": "These are HARD limits. If ANY of these are breached AND AI risk < 80, the system will override to CRITICAL (risk score = 95).",
+    
+    "hemodynamic": {
+      "sbp_critical": {
+        "value": 90,
+        "unit": "mmHg",
+        "condition": "<=",
+        "description": "Systolic Blood Pressure. Below this indicates severe hypotension requiring immediate intervention.",
+        "clinical_rationale": "SBP ≤ 90 is a Sepsis-3 criterion for septic shock",
+        "sme_notes": "Suggestive of sepsis if hypotension persists AFTER fluid resuscitation. Slightly low SBP often indicates dehydration - if normalizes after fluids, probably not septic shock. Trending is important.",
+        "context_check": "Assess for bleeding, dehydration, PE, anaphylaxis, or cardiogenic shock"
+      },
+      "map_critical": {
+        "value": 65,
+        "unit": "mmHg",
+        "condition": "<",
+        "description": "Mean Arterial Pressure. Below this indicates inadequate organ perfusion.",
+        "clinical_rationale": "MAP < 65 indicates need for vasopressor support per Surviving Sepsis Campaign",
+        "sme_notes": "If lactate > 2 plus MAP < 65, suggests likely septic shock. If history of chronic HTN, MAP < 75 suggests septic shock.",
+        "context_check": "Check lactate level and history of chronic hypertension"
+      },
+      "map_critical_htn_patient": {
+        "value": 75,
+        "unit": "mmHg",
+        "condition": "<",
+        "description": "MAP threshold for patients with chronic hypertension history.",
+        "clinical_rationale": "Patients with chronic HTN have higher baseline MAP; lower threshold may miss shock",
+        "applies_when": "Patient has documented history of chronic hypertension"
+      },
+      "dbp_critical": {
+        "value": 40,
+        "unit": "mmHg",
+        "condition": "<",
+        "description": "Diastolic Blood Pressure. Severely low indicates cardiovascular collapse.",
+        "clinical_rationale": "DBP < 40 often seen in late-stage shock"
+      }
+    },
+
+    "perfusion_markers": {
+      "lactate_elevated": {
+        "value": 2.0,
+        "unit": "mmol/L",
+        "condition": ">=",
+        "description": "Lactate indicating tissue hypoperfusion.",
+        "clinical_rationale": "Lactate ≥ 2 with hypotension = septic shock per Sepsis-3",
+        "sme_notes": "TRENDING IS VERY IMPORTANT. Lactate > 2 requires REFLEX LACTATE (repeat study) to reassess after fluids.",
+        "context_check": "Check for seizure disorder or recent seizure activity (which elevates lactate)"
+      },
+      "lactate_severe": {
+        "value": 4.0,
+        "unit": "mmol/L",
+        "condition": ">=",
+        "description": "Severely elevated lactate indicating critical hypoperfusion.",
+        "clinical_rationale": "Lactate ≥ 4 associated with >40% mortality"
+      },
+      "base_excess_critical": {
+        "value": -10,
+        "unit": "mEq/L",
+        "condition": "<=",
+        "description": "Severe base deficit indicating metabolic acidosis from hypoperfusion.",
+        "clinical_rationale": "Base excess ≤ -10 suggests severe tissue hypoxia and lactic acidosis"
+      }
+    },
+
+    "respiratory": {
+      "o2sat_critical": {
+        "value": 88,
+        "unit": "%",
+        "condition": "<",
+        "description": "Oxygen saturation below this indicates severe hypoxemia.",
+        "clinical_rationale": "SpO2 < 88% requires immediate respiratory support"
+      },
+      "resp_rate_sirs": {
+        "value": 22,
+        "unit": "/min",
+        "condition": ">=",
+        "description": "Respiratory rate suggesting early sepsis (qSOFA criterion).",
+        "clinical_rationale": "RR ≥ 22 is qSOFA criterion for sepsis screening"
+      },
+      "resp_rate_critical": {
+        "value": 30,
+        "unit": "/min",
+        "condition": ">=",
+        "description": "Respiratory rate indicating severe respiratory distress.",
+        "clinical_rationale": "RR ≥ 30 suggests high risk of rapid deterioration and impending respiratory failure",
+        "sme_notes": "Also search chart for subjective criteria of increased work of breathing (WOB)"
+      },
+      "pao2_fio2_ratio_critical": {
+        "value": 200,
+        "unit": "mmHg",
+        "condition": "<",
+        "description": "PaO2/FiO2 ratio indicating moderate-severe ARDS.",
+        "clinical_rationale": "P/F < 200 = moderate ARDS per Berlin criteria, requires mechanical ventilation consideration"
+      },
+      "paco2_critical_high": {
+        "value": 60,
+        "unit": "mmHg",
+        "condition": ">=",
+        "description": "Severe hypercapnia indicating respiratory failure.",
+        "clinical_rationale": "PaCO2 ≥ 60 suggests ventilatory failure requiring intervention"
+      }
+    },
+
+    "temperature": {
+      "temp_hypothermia": {
+        "value": 35.0,
+        "unit": "°C",
+        "condition": "<",
+        "description": "Hypothermia - often worse prognosis than fever in sepsis.",
+        "clinical_rationale": "Hypothermic sepsis has higher mortality than febrile sepsis"
+      },
+      "temp_severe_fever": {
+        "value": 40.0,
+        "unit": "°C",
+        "condition": ">=",
+        "description": "Severe hyperthermia indicating overwhelming infection.",
+        "clinical_rationale": "Temp ≥ 40°C suggests severe systemic inflammatory response",
+        "context_check": "Assess for antipyretics within past 4 hours (acetaminophen, ibuprofen, naproxen) which may mask fever"
+      }
+    },
+
+    "renal": {
+      "creatinine_critical": {
+        "value": 3.5,
+        "unit": "mg/dL",
+        "condition": ">=",
+        "description": "Creatinine indicating acute kidney injury Stage 3.",
+        "clinical_rationale": "Creatinine ≥ 3.5 = KDIGO Stage 3 AKI, often requires RRT"
+      },
+      "creatinine_elevated": {
+        "value": 2.0,
+        "unit": "mg/dL",
+        "condition": ">=",
+        "description": "Creatinine indicating kidney dysfunction.",
+        "clinical_rationale": "Any result > 2.0 indicates kidney dysfunction",
+        "sme_notes": "If NO history of renal disease, this could suggest sepsis-related AKI",
+        "context_check": "Check for history of renal disease, ESRF, or renal insufficiency. Note in alert if present."
+      },
+      "bun_critical": {
+        "value": 80,
+        "unit": "mg/dL",
+        "condition": ">=",
+        "description": "Severely elevated BUN indicating renal failure or severe dehydration.",
+        "clinical_rationale": "BUN ≥ 80 with elevated creatinine suggests severe renal dysfunction"
+      },
+      "urine_output_concerning": {
+        "value": 0.5,
+        "unit": "mL/kg/hr",
+        "condition": "<",
+        "duration": "2 hours",
+        "description": "Low urine output suggesting early AKI.",
+        "clinical_rationale": "UO < 0.5 mL/kg/hr x 2 hrs suggests sepsis-related AKI"
+      },
+      "urine_output_critical": {
+        "value": 0.3,
+        "unit": "mL/kg/hr",
+        "condition": "<",
+        "description": "Severe oliguria indicating acute kidney injury.",
+        "clinical_rationale": "UO < 0.3 mL/kg/hr for 6+ hours = KDIGO Stage 3 AKI"
+      }
+    },
+
+    "hepatic": {
+      "bilirubin_critical": {
+        "value": 4.0,
+        "unit": "mg/dL",
+        "condition": ">=",
+        "description": "Bilirubin indicating severe hepatic dysfunction.",
+        "clinical_rationale": "Bilirubin ≥ 4 = severe liver dysfunction in sepsis"
+      },
+      "bilirubin_elevated": {
+        "value": 2.0,
+        "unit": "mg/dL",
+        "condition": ">=",
+        "description": "Bilirubin indicating liver dysfunction.",
+        "clinical_rationale": "Any result > 2.0 indicates liver dysfunction",
+        "sme_notes": "If NO history of liver disease, this could suggest sepsis-related hepatic injury",
+        "context_check": "Check for history of liver disease or hepatitis. Note in alert if present."
+      },
+      "ast_critical": {
+        "value": 1000,
+        "unit": "U/L",
+        "condition": ">=",
+        "description": "AST indicating acute hepatocellular injury (shock liver).",
+        "clinical_rationale": "AST ≥ 1000 suggests ischemic hepatitis or severe hepatic damage"
+      },
+      "alt_critical": {
+        "value": 1000,
+        "unit": "U/L",
+        "condition": ">=",
+        "description": "ALT indicating acute hepatocellular injury.",
+        "clinical_rationale": "ALT ≥ 1000 indicates severe hepatic injury requiring urgent evaluation"
+      },
+      "inr_critical": {
+        "value": 2.5,
+        "unit": "",
+        "condition": ">=",
+        "description": "INR indicating severe coagulopathy or liver synthetic failure.",
+        "clinical_rationale": "INR ≥ 2.5 (non-anticoagulated) suggests DIC or hepatic failure"
+      }
+    },
+
+    "hematologic": {
+      "platelets_critical": {
+        "value": 50,
+        "unit": "thousand/µL",
+        "condition": "<",
+        "description": "Platelet count indicating severe thrombocytopenia (possible DIC).",
+        "clinical_rationale": "Platelets < 50k suggests DIC or severe bone marrow suppression",
+        "context_check": "Check for history of thrombocytopenia. Note in alert if present."
+      },
+      "platelets_concerning": {
+        "value": 100,
+        "unit": "thousand/µL",
+        "condition": "<",
+        "description": "Low platelets supporting sepsis diagnosis.",
+        "clinical_rationale": "Platelets < 100k would support a sepsis diagnosis",
+        "sme_notes": "Anything < 150 should be evaluated"
+      },
+      "wbc_critical_high": {
+        "value": 30,
+        "unit": "thousand/µL",
+        "condition": ">=",
+        "description": "Severe leukocytosis indicating overwhelming infection or leukemoid reaction.",
+        "clinical_rationale": "WBC ≥ 30k suggests severe bacterial infection or requires hematology consult"
+      },
+      "wbc_infection": {
+        "value": 12,
+        "unit": "thousand/µL",
+        "condition": ">=",
+        "description": "Leukocytosis suggesting infection.",
+        "clinical_rationale": "WBC ≥ 12k is starting threshold suggesting infection"
+      },
+      "wbc_critical_low": {
+        "value": 2,
+        "unit": "thousand/µL",
+        "condition": "<",
+        "description": "Severe leukopenia indicating immunocompromise or bone marrow suppression.",
+        "clinical_rationale": "WBC < 2k = severe neutropenia with high infection mortality risk"
+      },
+      "wbc_viral_infection": {
+        "value": 4,
+        "unit": "thousand/µL",
+        "condition": "<=",
+        "description": "Low WBC suggesting severe viral infection.",
+        "clinical_rationale": "WBC ≤ 4k significant for severe viral infection",
+        "sme_notes": "More important is the combination: low lymphocytes + high neutrophils + high bands"
+      },
+      "neutrophils_high": {
+        "value": 80,
+        "unit": "%",
+        "condition": ">",
+        "description": "High neutrophil percentage suggesting bacterial infection.",
+        "clinical_rationale": "Neutrophils > 80% suggests bacterial infection"
+      },
+      "lymphocytes_low": {
+        "value": 1.0,
+        "unit": "K/µL",
+        "condition": "<",
+        "description": "Low lymphocyte count indicating severe infection.",
+        "clinical_rationale": "Lymphocytes < 1.0 K/µL suggests severe infection"
+      },
+      "bands_high": {
+        "value": 10,
+        "unit": "%",
+        "condition": ">=",
+        "description": "High band count (immature neutrophils) suggesting serious bacterial infection.",
+        "clinical_rationale": "Bands ≥ 10% suggests serious bacterial infection (left shift)"
+      },
+      "hemoglobin_critical": {
+        "value": 7,
+        "unit": "g/dL",
+        "condition": "<",
+        "description": "Severe anemia requiring transfusion consideration.",
+        "clinical_rationale": "Hgb < 7 g/dL is transfusion threshold per TRICC trial"
+      },
+      "ptt_critical": {
+        "value": 80,
+        "unit": "seconds",
+        "condition": ">=",
+        "description": "Prolonged PTT indicating severe coagulopathy.",
+        "clinical_rationale": "PTT ≥ 80s suggests DIC or severe clotting factor deficiency"
+      },
+      "fibrinogen_critical": {
+        "value": 100,
+        "unit": "mg/dL",
+        "condition": "<",
+        "description": "Low fibrinogen indicating DIC or consumptive coagulopathy.",
+        "clinical_rationale": "Fibrinogen < 100 in sepsis strongly suggests DIC"
+      },
+      "d_dimer_critical": {
+        "value": 10,
+        "unit": "µg/mL FEU",
+        "condition": ">=",
+        "description": "Markedly elevated D-dimer suggesting DIC or massive thrombosis.",
+        "clinical_rationale": "D-dimer ≥ 10 with thrombocytopenia = high probability DIC"
+      }
+    },
+
+    "metabolic": {
+      "ph_critical_low": {
+        "value": 7.25,
+        "unit": "",
+        "condition": "<",
+        "description": "Severe metabolic acidosis.",
+        "clinical_rationale": "pH < 7.25 indicates severe acidemia requiring immediate correction"
+      },
+      "ph_critical_high": {
+        "value": 7.55,
+        "unit": "",
+        "condition": ">=",
+        "description": "Severe alkalemia.",
+        "clinical_rationale": "pH ≥ 7.55 can cause arrhythmias and neurological dysfunction"
+      },
+      "co2_early_acidosis": {
+        "value": 22,
+        "unit": "mEq/L",
+        "condition": "<",
+        "description": "Low CO2/bicarbonate indicating early metabolic acidosis.",
+        "clinical_rationale": "CO2 < 22 suggests early metabolic acidosis"
+      },
+      "glucose_critical_low": {
+        "value": 50,
+        "unit": "mg/dL",
+        "condition": "<",
+        "description": "Severe hypoglycemia requiring immediate intervention.",
+        "clinical_rationale": "Glucose < 50 mg/dL can cause seizures, coma, and death"
+      },
+      "glucose_critical_high": {
+        "value": 500,
+        "unit": "mg/dL",
+        "condition": ">=",
+        "description": "Severe hyperglycemia indicating DKA or HHS.",
+        "clinical_rationale": "Glucose ≥ 500 with infection suggests DKA/HHS requiring ICU care"
+      },
+      "glucose_elevated_diabetic": {
+        "value": 180,
+        "unit": "mg/dL",
+        "condition": ">=",
+        "description": "Elevated glucose in diabetic patient.",
+        "clinical_rationale": "In diabetic patients, glucose ≥ 180 should be noted and compared to baseline",
+        "context_check": "Check history of diabetes and compare to baseline. Also check if patient is on corticosteroids (which can elevate glucose)."
+      },
+      "potassium_critical_low": {
+        "value": 2.5,
+        "unit": "mEq/L",
+        "condition": "<",
+        "description": "Severe hypokalemia with arrhythmia risk.",
+        "clinical_rationale": "K+ < 2.5 causes life-threatening arrhythmias"
+      },
+      "potassium_critical_high": {
+        "value": 6.5,
+        "unit": "mEq/L",
+        "condition": ">=",
+        "description": "Severe hyperkalemia with cardiac arrest risk.",
+        "clinical_rationale": "K+ ≥ 6.5 requires immediate treatment to prevent cardiac arrest"
+      },
+      "sodium_critical_low": {
+        "value": 120,
+        "unit": "mEq/L",
+        "condition": "<",
+        "description": "Severe hyponatremia with seizure risk.",
+        "clinical_rationale": "Na+ < 120 can cause cerebral edema and seizures"
+      },
+      "sodium_critical_high": {
+        "value": 160,
+        "unit": "mEq/L",
+        "condition": ">=",
+        "description": "Severe hypernatremia with neurological risk.",
+        "clinical_rationale": "Na+ ≥ 160 causes severe dehydration and mental status changes"
+      },
+      "bicarbonate_critical_low": {
+        "value": 12,
+        "unit": "mEq/L",
+        "condition": "<",
+        "description": "Severely low bicarbonate indicating metabolic acidosis.",
+        "clinical_rationale": "HCO3 < 12 with elevated lactate = severe septic shock"
+      }
+    },
+
+    "cardiac": {
+      "hr_early_sepsis": {
+        "value": 90,
+        "unit": "bpm",
+        "condition": ">=",
+        "description": "Heart rate suggesting early sepsis.",
+        "clinical_rationale": "HR ≥ 90 is typically used to suggest early sepsis evaluation"
+      },
+      "hr_evaluation_threshold": {
+        "value": 100,
+        "unit": "bpm",
+        "condition": ">=",
+        "description": "Heart rate threshold commonly used for sepsis evaluation.",
+        "clinical_rationale": "HR ≥ 100 is commonly used threshold for sepsis evaluation"
+      },
+      "hr_severe_stress": {
+        "value": 120,
+        "unit": "bpm",
+        "condition": ">=",
+        "description": "Heart rate indicating severe physiologic stress.",
+        "clinical_rationale": "HR ≥ 120 signals severe physiologic stress, especially when combined with abnormal temperature or respiratory distress"
+      },
+      "hr_critical_high": {
+        "value": 140,
+        "unit": "bpm",
+        "condition": ">=",
+        "description": "Severe tachycardia indicating cardiovascular compensation.",
+        "clinical_rationale": "HR ≥ 140 suggests significant hemodynamic compensation"
+      },
+      "hr_critical_low": {
+        "value": 40,
+        "unit": "bpm",
+        "condition": "<",
+        "description": "Severe bradycardia indicating potential cardiovascular collapse.",
+        "clinical_rationale": "HR < 40 may indicate pre-terminal event"
+      },
+      "troponin_critical": {
+        "value": 1.0,
+        "unit": "ng/mL",
+        "condition": ">=",
+        "description": "Elevated troponin indicating myocardial injury.",
+        "clinical_rationale": "Troponin ≥ 1.0 in sepsis = septic cardiomyopathy or demand ischemia"
+      },
+      "bnp_critical": {
+        "value": 1000,
+        "unit": "pg/mL",
+        "condition": ">=",
+        "description": "Markedly elevated BNP indicating heart failure.",
+        "clinical_rationale": "BNP ≥ 1000 suggests significant cardiac dysfunction in sepsis"
+      }
+    },
+
+    "neurologic": {
+      "gcs_critical": {
+        "value": 8,
+        "unit": "",
+        "condition": "<=",
+        "description": "Glasgow Coma Scale indicating coma - requires airway protection.",
+        "clinical_rationale": "GCS ≤ 8 = coma, requires airway protection and ICU care"
+      },
+      "gcs_encephalopathy": {
+        "value": 12,
+        "unit": "",
+        "condition": "<=",
+        "description": "GCS indicating moderate to severe encephalopathy.",
+        "clinical_rationale": "GCS ≤ 12 suggests moderate to severe encephalopathy"
+      }
+    },
+
+    "infection_markers": {
+      "procalcitonin_suggestive": {
+        "value": 2,
+        "unit": "ng/mL",
+        "condition": ">",
+        "description": "Procalcitonin suggestive of sepsis.",
+        "clinical_rationale": "PCT > 2 is suggestive of bacterial sepsis"
+      },
+      "procalcitonin_critical": {
+        "value": 10,
+        "unit": "ng/mL",
+        "condition": ">=",
+        "description": "Markedly elevated procalcitonin indicating severe bacterial sepsis or septic shock.",
+        "clinical_rationale": "PCT ≥ 10 suggests septic shock"
+      },
+      "crp_critical": {
+        "value": 200,
+        "unit": "mg/L",
+        "condition": ">=",
+        "description": "Markedly elevated CRP indicating severe inflammation.",
+        "clinical_rationale": "CRP ≥ 200 with clinical signs suggests severe infection"
+      }
+    }
+  },
+
+  "early_detection_patterns": {
+    "_description": "Combination patterns that suggest early/impending sepsis before critical thresholds are breached",
+    
+    "earliest_reliable_lab": {
+      "description": "EARLIEST RELIABLE LAB combination for bacterial infection",
+      "requires_all": true,
+      "criteria": {
+        "lymphocytes": { "value": 1.0, "condition": "<", "unit": "K/µL" },
+        "neutrophils": { "value": 80, "condition": ">", "unit": "%" },
+        "bands": { "value": 10, "condition": ">=", "unit": "%" }
+      },
+      "action": "High suspicion for serious bacterial infection - escalate priority"
+    },
+    
+    "early_sepsis_vitals": {
+      "description": "Early vital sign pattern suggesting sepsis",
+      "requires_two_or_more": true,
+      "criteria": {
+        "hr": { "value": 90, "condition": ">=", "unit": "bpm" },
+        "rr": { "value": 22, "condition": ">=", "unit": "/min" },
+        "temp_high": { "value": 38.0, "condition": ">=", "unit": "°C" },
+        "temp_low": { "value": 36.0, "condition": "<", "unit": "°C" },
+        "wbc_high": { "value": 12, "condition": ">=", "unit": "K/µL" },
+        "wbc_low": { "value": 4, "condition": "<=", "unit": "K/µL" }
+      },
+      "action": "Evaluate for early sepsis - consider qSOFA and SIRS criteria"
+    }
+  },
+
+  "history_context_checks": {
+    "_description": "Medical history and context checks that modify interpretation of lab values and vitals. These should be noted in alert scripts.",
+    
+    "renal_history": {
+      "conditions_to_check": [
+        "renal disease",
+        "chronic kidney disease (CKD)",
+        "end stage renal failure (ESRF)",
+        "renal insufficiency",
+        "dialysis",
+        "kidney transplant"
+      ],
+      "impact": "If present, elevated creatinine may be baseline. If NO history and Cr > 2.0, suggests sepsis-related AKI.",
+      "alert_action": "Note any history of renal disease in alert script"
+    },
+    
+    "hepatic_history": {
+      "conditions_to_check": [
+        "liver disease",
+        "hepatitis",
+        "cirrhosis",
+        "liver transplant",
+        "hepatic insufficiency"
+      ],
+      "impact": "If present, elevated bilirubin/AST/ALT may be baseline. If NO history, suggests sepsis-related hepatic injury.",
+      "alert_action": "Note any history of liver disease in alert script"
+    },
+    
+    "hematologic_history": {
+      "conditions_to_check": [
+        "thrombocytopenia",
+        "ITP",
+        "leukemia",
+        "bone marrow disorder",
+        "chemotherapy"
+      ],
+      "impact": "If present, low platelets or abnormal WBC may be baseline.",
+      "alert_action": "Note any history of thrombocytopenia or hematologic disorder in alert script"
+    },
+    
+    "cardiovascular_history": {
+      "conditions_to_check": [
+        "chronic hypertension",
+        "HTN",
+        "high blood pressure"
+      ],
+      "impact": "If chronic HTN present, MAP threshold should be < 75 (not < 65) for septic shock suspicion.",
+      "alert_action": "Note chronic HTN and use adjusted MAP threshold"
+    },
+    
+    "diabetes_history": {
+      "conditions_to_check": [
+        "diabetes",
+        "DM",
+        "type 1 diabetes",
+        "type 2 diabetes",
+        "insulin dependent"
+      ],
+      "impact": "Compare glucose to patient's baseline. Note if glucose ≥ 180 in diabetic patient.",
+      "alert_action": "Note diabetes history in alert script and compare to baseline glucose"
+    },
+    
+    "medications_affecting_labs": {
+      "corticosteroids": {
+        "impact": "Can elevate glucose",
+        "alert_action": "Note if patient is on corticosteroids when reporting elevated glucose"
+      },
+      "antipyretics": {
+        "medications": ["acetaminophen", "ibuprofen", "naproxen", "aspirin"],
+        "impact": "Can mask fever if given within past 4 hours",
+        "alert_action": "Note recent antipyretic use when temperature appears normal"
+      },
+      "anticoagulants": {
+        "impact": "INR may be elevated due to medication, not DIC",
+        "alert_action": "Note anticoagulation status when interpreting INR"
+      }
+    },
+    
+    "neurologic_history": {
+      "conditions_affecting_mental_status": [
+        "Alzheimer's disease",
+        "dementia",
+        "baseline confusion",
+        "delirium",
+        "alcoholism (ETOH)",
+        "substance abuse",
+        "cognitive dysfunction",
+        "developmental delay",
+        "traumatic brain injury"
+      ],
+      "impact": "Altered mental status must be NEW ONSET to be significant for sepsis.",
+      "alert_action": "Note existing conditions affecting mental status. Only escalate for NEW ONSET AMS."
+    },
+    
+    "seizure_history": {
+      "conditions_to_check": [
+        "seizure disorder",
+        "epilepsy",
+        "recent seizure activity"
+      ],
+      "impact": "Seizure activity can elevate lactate independent of sepsis.",
+      "alert_action": "Note seizure history when interpreting elevated lactate"
+    }
+  },
+
+  "differential_diagnosis": {
+    "_description": "Alternative diagnoses to consider when hypotension or shock-like presentation is detected",
+    
+    "for_hypotension": {
+      "conditions_to_assess": [
+        "Bleeding / Hemorrhage",
+        "Dehydration / Volume depletion",
+        "Pulmonary embolism (PE)",
+        "Anaphylaxis",
+        "Cardiogenic shock",
+        "Medication effect (antihypertensives, sedatives)"
+      ],
+      "alert_action": "If any of these are present or suspected, include in alert script as differential diagnosis"
+    },
+    
+    "for_tachycardia": {
+      "conditions_to_assess": [
+        "Pain",
+        "Anxiety",
+        "Medication effect (stimulants, bronchodilators)",
+        "Dehydration",
+        "Anemia",
+        "Thyroid storm"
+      ]
+    },
+    
+    "for_altered_mental_status": {
+      "conditions_to_assess": [
+        "Hypoglycemia",
+        "Medication effect (opioids, benzodiazepines, sedatives)",
+        "Stroke / TIA",
+        "Post-ictal state",
+        "Metabolic encephalopathy (uremia, hepatic)",
+        "Alcohol/drug intoxication or withdrawal"
+      ]
+    }
+  },
+
+  "trending_requirements": {
+    "_description": "Parameters that require trending/repeat measurements for accurate interpretation",
+    
+    "lactate": {
+      "action": "Lactate > 2.0 requires REFLEX LACTATE (repeat measurement) after fluid resuscitation",
+      "timing": "Repeat 2-4 hours after initial result and/or after fluid bolus",
+      "interpretation": "If lactate decreases with fluids, less concerning. If persists or rises, suggests ongoing hypoperfusion."
+    },
+    
+    "blood_pressure": {
+      "action": "SBP < 90 requires assessment of fluid responsiveness",
+      "interpretation": "If SBP normalizes after fluid resuscitation, likely dehydration not septic shock. If persists, likely septic shock."
+    },
+    
+    "urine_output": {
+      "action": "Track hourly for at least 2-6 hours",
+      "interpretation": "UO < 0.5 mL/kg/hr for 2+ hours is concerning. UO < 0.3 mL/kg/hr for 6+ hours is critical."
+    }
+  },
+
+  "override_logic": {
+    "_description": "Rules for when to override AI predictions",
+    
+    "trigger_conditions": {
+      "description": "Override is triggered when ANY critical threshold is breached AND AI risk_score is below the minimum_risk_for_critical",
+      "minimum_risk_for_critical": 80,
+      "notes": "If AI gives risk < 80 but critical thresholds are breached, force override to 95"
+    },
+    
+    "override_values": {
+      "forced_risk_score": 95,
+      "forced_priority": "Critical",
+      "forced_probability_6h": "High",
+      "notes": "These values are applied when override is triggered"
+    },
+
+    "shock_criteria": {
+      "description": "Specific combination for septic shock detection",
+      "requires_both": true,
+      "condition_1": "SBP <= 90 OR MAP < 65 (or MAP < 75 if chronic HTN)",
+      "condition_2": "Lactate >= 2.0",
+      "action": "Immediate escalation to Septic Shock classification"
+    },
+
+    "dic_criteria": {
+      "description": "Disseminated Intravascular Coagulation detection",
+      "requires_three_or_more": true,
+      "criteria": [
+        "Platelets < 50 K/µL",
+        "INR >= 2.5",
+        "Fibrinogen < 100 mg/dL",
+        "D-Dimer >= 10 µg/mL"
+      ],
+      "action": "Flag as DIC - immediate hematology consult recommended"
+    }
+  },
+
+  "qsofa_criteria": {
+    "_description": "Quick SOFA score for bedside assessment - used for early sepsis screening",
+    "respiratory_rate": {
+      "threshold": 22,
+      "condition": ">=",
+      "unit": "/min"
+    },
+    "altered_mentation": {
+      "description": "GCS < 15 or documented AMS",
+      "notes": "Must be NEW ONSET. Detected from nursing notes via LLM."
+    },
+    "systolic_bp": {
+      "threshold": 100,
+      "condition": "<=",
+      "unit": "mmHg"
+    },
+    "score_interpretation": {
+      "0-1": "Low risk",
+      "2-3": "High risk - consider ICU level care"
+    }
+  },
+
+  "discordance_rules": {
+    "_description": "Rules for detecting 'Silent Sepsis' - stable vitals but concerning documentation",
+    "enabled": true,
+    
+    "perfusion_concerning_phrases": [
+      "mottled skin",
+      "mottling",
+      "skin cool to touch",
+      "cool extremities",
+      "delayed capillary refill",
+      "cap refill > 3 seconds",
+      "poor perfusion",
+      "cyanosis",
+      "pallor"
+    ],
+    
+    "mental_status_phrases": {
+      "phrases": [
+        "altered mental status",
+        "AMS",
+        "confused",
+        "confusion",
+        "lethargic",
+        "lethargy",
+        "drowsy",
+        "obtunded",
+        "somnolent",
+        "disoriented",
+        "agitated",
+        "combative"
+      ],
+      "qualifier": "Must be NEW ONSET",
+      "exclusions": "Check for existing conditions: Alzheimer's, dementia, delirium, alcoholism (ETOH), substance abuse, cognitive dysfunction"
+    },
+    
+    "fluid_response_phrases": [
+      "fluid bolus with minimal response",
+      "unresponsive to fluids",
+      "fluid refractory",
+      "requiring additional fluid bolus",
+      "persistent hypotension after fluids"
+    ],
+    
+    "vasopressor_phrases": [
+      "vasopressors",
+      "requiring pressors",
+      "pressor support",
+      "levophed",
+      "norepinephrine",
+      "vasopressin",
+      "dopamine drip",
+      "epinephrine drip"
+    ],
+    
+    "urine_output_phrases": [
+      "oliguria",
+      "decreased urine output",
+      "low urine output",
+      "minimal urine",
+      "no urine output",
+      "anuria"
+    ],
+    
+    "respiratory_distress_phrases": [
+      "increased work of breathing",
+      "WOB",
+      "labored breathing",
+      "respiratory distress",
+      "dyspnea",
+      "air hunger",
+      "retractions",
+      "intercostal retractions",
+      "supraclavicular retractions",
+      "substernal retractions",
+      "accessory muscle use",
+      "nasal flaring",
+      "tracheal tug",
+      "shoulder lifting with respirations",
+      "head bobbing",
+      "speaking in 2-3 word sentences",
+      "tripoding",
+      "orthopnea",
+      "unable to lie flat"
+    ],
+    
+    "action": "If concerning phrases detected but AI risk < 60, escalate to minimum 70 with 'High' priority",
+    "escalation_risk_score": 70,
+    "escalation_priority": "High"
+  },
+
+  "audit_settings": {
+    "log_all_overrides": true,
+    "log_near_misses": true,
+    "near_miss_threshold": 75,
+    "log_history_context_flags": true,
+    "log_differential_diagnoses": true,
+    "description": "Near miss = AI gave 75-80 but no override triggered. Log for review."
+  },
+
+  "expert_notes": {
+    "instructions": "Clinical SMEs can adjust thresholds in this file. Changes take effect when the container is restarted or config is reloaded via API.",
+    "caution": "Lowering critical thresholds will increase sensitivity but may cause alert fatigue. Raising them may miss critical patients.",
+    "validation": "Test any threshold changes against retrospective data before production deployment.",
+    "escalation_path": "If unsure about a threshold change, consult with ICU attending and clinical informatics team.",
+    "key_principles": [
+      "Trending is often more important than single values",
+      "Context matters - always check patient history",
+      "NEW ONSET changes are more significant than chronic abnormalities",
+      "Consider differential diagnoses before concluding sepsis",
+      "Document rationale for overrides in alert scripts"
+    ]
+  }
+}

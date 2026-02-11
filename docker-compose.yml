@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  sepsis-genai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sepsis-genai-api
+    ports:
+      - "8000:8000"
+    environment:
+      - API_KEY=${API_KEY:-sepsis_api_key_2024}
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - AZURE_OPENAI_DEPLOYMENT=${AZURE_OPENAI_DEPLOYMENT:-gpt-4o}
+      - AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION:-2024-02-15-preview}
+    volumes:
+      # Mount guardrail config for hot-reload capability
+      - ./genai_clinical_guardrail.json:/app/genai_clinical_guardrail.json:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

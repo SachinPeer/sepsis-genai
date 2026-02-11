@@ -1,0 +1,27 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.git
+.gitignore
+.venv
+venv/
+test_*.py
+demo_*.py
+train_sepsiscode.py
+Dataset.csv
+*.zip
+!sepsis_tabnet_mac_v1.zip
+
+# Keep .env out of image (pass via docker-compose)
+.env
+
+# Exclude large/unnecessary files from knowledge folder
+knowledge/Guide bank/*.pdf
+knowledge/Guide bank/*.html

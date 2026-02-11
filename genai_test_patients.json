@@ -1,0 +1,149 @@
+{
+  "_description": "Test cases for GenAI Sepsis Prediction Pipeline",
+  "_usage": "Use with POST /genai-classify endpoint",
+  "_note": "These cases include nursing notes for narrative-based analysis",
+  
+  "test_cases": [
+    {
+      "_case": "1. NORMAL - Healthy Post-Op Patient",
+      "vitals": {
+        "HR": [{"val": 72, "ts": "2026-02-10T08:00"}, {"val": 70, "ts": "2026-02-10T07:00"}],
+        "SBP": [{"val": 118, "ts": "2026-02-10T08:00"}],
+        "DBP": [80],
+        "Temp": [36.8],
+        "Resp": [14],
+        "O2Sat": [98],
+        "WBC": [7.2],
+        "Lactate": [0.9],
+        "Age": 45,
+        "Gender": 1
+      },
+      "notes": "Post-op day 2, patient ambulatory, tolerating diet well. Wound clean and dry. No complaints.",
+      "patient_id": "GENAI_TEST_001"
+    },
+    
+    {
+      "_case": "2. EARLY WARNING - Vitals Stable but Notes Concerning (Silent Sepsis)",
+      "vitals": {
+        "HR": [{"val": 88, "ts": "2026-02-10T08:00"}, {"val": 82, "ts": "2026-02-10T06:00"}],
+        "SBP": [{"val": 115, "ts": "2026-02-10T08:00"}],
+        "Temp": [37.4],
+        "Resp": [18],
+        "O2Sat": [96],
+        "WBC": [11.2],
+        "Lactate": [1.4],
+        "Creatinine": [1.1],
+        "Age": 62,
+        "Gender": 0
+      },
+      "notes": "Patient appears fatigued, c/o mild chills overnight. Skin feels slightly cool to touch. Urinary output decreased since 0300. Night nurse noted confusion at 0400 but patient oriented now.",
+      "patient_id": "GENAI_TEST_002"
+    },
+    
+    {
+      "_case": "3. SIRS - Clear Inflammatory Response",
+      "vitals": {
+        "HR": [{"val": 105, "ts": "2026-02-10T08:00"}, {"val": 98, "ts": "2026-02-10T06:00"}],
+        "SBP": [{"val": 108, "ts": "2026-02-10T08:00"}],
+        "Temp": [38.6],
+        "Resp": [24],
+        "O2Sat": [94],
+        "WBC": [14.8],
+        "Lactate": [1.8],
+        "Age": 55,
+        "Gender": 1
+      },
+      "notes": "Patient febrile, rigors noted at 0600. IV antibiotics started. Blood cultures drawn. Patient reports SOB when walking to bathroom. Foley placed due to low urine output.",
+      "patient_id": "GENAI_TEST_003"
+    },
+    
+    {
+      "_case": "4. SEPSIS - Organ Dysfunction Beginning",
+      "vitals": {
+        "HR": [{"val": 118, "ts": "2026-02-10T08:00"}, {"val": 110, "ts": "2026-02-10T06:00"}, {"val": 102, "ts": "2026-02-10T04:00"}],
+        "SBP": [{"val": 95, "ts": "2026-02-10T08:00"}, {"val": 105, "ts": "2026-02-10T06:00"}],
+        "MAP": [{"val": 68, "ts": "2026-02-10T08:00"}],
+        "Temp": [39.1],
+        "Resp": [28],
+        "O2Sat": [91],
+        "WBC": [18.5],
+        "Lactate": [2.8],
+        "Creatinine": [2.1],
+        "Bilirubin_total": [1.8],
+        "Platelets": [120],
+        "Age": 70,
+        "Gender": 0
+      },
+      "notes": "Rapid deterioration overnight. Patient received 2L fluid bolus with minimal response. AMS present - patient not following commands consistently. Skin mottled on lower extremities. ICU consult requested.",
+      "patient_id": "GENAI_TEST_004"
+    },
+    
+    {
+      "_case": "5. SEVERE SEPSIS - Multiple Organ Dysfunction",
+      "vitals": {
+        "HR": [{"val": 128, "ts": "2026-02-10T08:00"}],
+        "SBP": [{"val": 88, "ts": "2026-02-10T08:00"}, {"val": 95, "ts": "2026-02-10T07:00"}],
+        "MAP": [{"val": 62, "ts": "2026-02-10T08:00"}],
+        "Temp": [35.8],
+        "Resp": [32],
+        "O2Sat": [88],
+        "WBC": [22.0],
+        "Lactate": [4.2],
+        "Creatinine": [3.5],
+        "Bilirubin_total": [3.2],
+        "Platelets": [85],
+        "pH": [7.28],
+        "Age": 68,
+        "Gender": 1
+      },
+      "notes": "CRITICAL: Patient unresponsive to verbal stimuli. Now hypothermic. 3rd liter of fluids running. Norepinephrine drip started. Intubation being prepared. Family notified. Code status confirmed FULL CODE.",
+      "patient_id": "GENAI_TEST_005"
+    },
+    
+    {
+      "_case": "6. SEPTIC SHOCK - Refractory Hypotension",
+      "vitals": {
+        "HR": [{"val": 135, "ts": "2026-02-10T08:00"}],
+        "SBP": [{"val": 72, "ts": "2026-02-10T08:00"}, {"val": 78, "ts": "2026-02-10T07:30"}, {"val": 85, "ts": "2026-02-10T07:00"}],
+        "MAP": [{"val": 52, "ts": "2026-02-10T08:00"}],
+        "DBP": [{"val": 42, "ts": "2026-02-10T08:00"}],
+        "Temp": [35.2],
+        "Resp": [35],
+        "O2Sat": [84],
+        "WBC": [2.1],
+        "Lactate": [7.8],
+        "Creatinine": [4.8],
+        "Bilirubin_total": [5.5],
+        "Platelets": [45],
+        "pH": [7.18],
+        "BaseExcess": [-12],
+        "TroponinI": [0.8],
+        "Age": 75,
+        "Gender": 0
+      },
+      "notes": "EMERGENCY: Patient intubated, on max vasopressors (Norepi 0.5mcg/kg/min + Vasopressin). Persistent hypotension despite resuscitation. DIC suspected - bleeding from IV sites. Renal failure - CRRT being considered. Prognosis discussed with family.",
+      "patient_id": "GENAI_TEST_006"
+    }
+  ],
+  
+  "batch_test": {
+    "_description": "Use this array with POST /genai-classify-batch",
+    "patients": [
+      {
+        "vitals": {"HR": [75], "SBP": [120], "Temp": [36.9], "WBC": [7.5], "Lactate": [0.8], "Age": 50},
+        "notes": "Routine check, patient stable.",
+        "patient_id": "BATCH_001"
+      },
+      {
+        "vitals": {"HR": [110], "SBP": [100], "Temp": [38.5], "WBC": [15.0], "Lactate": [2.2], "Age": 65},
+        "notes": "Patient febrile, complains of chills and fatigue.",
+        "patient_id": "BATCH_002"
+      },
+      {
+        "vitals": {"HR": [125], "SBP": [85], "Temp": [39.2], "WBC": [20.0], "Lactate": [4.5], "Creatinine": [2.8], "Age": 72},
+        "notes": "Altered mental status, mottled skin, fluid resuscitation ongoing.",
+        "patient_id": "BATCH_003"
+      }
+    ]
+  }
+}

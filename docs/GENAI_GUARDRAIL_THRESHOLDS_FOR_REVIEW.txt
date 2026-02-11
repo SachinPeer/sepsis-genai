@@ -1,0 +1,507 @@
+================================================================================
+         GENAI SEPSIS GUARDRAIL - CLINICAL THRESHOLDS FOR SME REVIEW
+================================================================================
+
+Document Version: 3.0
+Last Updated: February 2026
+Purpose: Safety layer to override AI predictions when critical thresholds breached
+
+================================================================================
+                              HOW IT WORKS
+================================================================================
+
+These are HARD LIMITS. If ANY threshold is breached AND AI risk score < 80,
+the system will OVERRIDE to CRITICAL (risk score = 95).
+
+The guardrail acts as a safety net - ensuring no critical patient is missed
+even if the AI model underestimates the risk.
+
+================================================================================
+                         CRITICAL THRESHOLDS
+================================================================================
+
+--------------------------------------------------------------------------------
+HEMODYNAMIC
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+Systolic BP (SBP)        | 90        | ≤         | mmHg    | Sepsis-3 septic shock criterion
+
+  SME Notes: Suggestive of sepsis if hypotension persists AFTER fluid 
+  resuscitation. Slightly low SBP often indicates dehydration - if normalizes
+  after fluids, probably not septic shock. TRENDING IS IMPORTANT.
+  
+  Context Check: Assess for bleeding, dehydration, PE, anaphylaxis, or 
+  cardiogenic shock.
+
+-------------------------|-----------|-----------|---------|--------------------
+Mean Arterial Pressure   | 65        | <         | mmHg    | Vasopressor threshold (SSC)
+
+  SME Notes: If lactate > 2 plus MAP < 65, suggests likely septic shock.
+  If history of chronic HTN, MAP < 75 suggests septic shock.
+  
+  Context Check: Check lactate level and history of chronic hypertension.
+
+-------------------------|-----------|-----------|---------|--------------------
+MAP (HTN Patient)        | 75        | <         | mmHg    | Adjusted for chronic HTN
+
+  Applies When: Patient has documented history of chronic hypertension.
+  Clinical Rationale: Chronic HTN patients have higher baseline MAP.
+
+-------------------------|-----------|-----------|---------|--------------------
+Diastolic BP (DBP)       | 40        | <         | mmHg    | Late-stage shock indicator
+
+
+--------------------------------------------------------------------------------
+PERFUSION MARKERS
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+Lactate (Elevated)       | 2.0       | ≥         | mmol/L  | Septic shock (with hypotension)
+
+  SME Notes: TRENDING IS VERY IMPORTANT. Lactate > 2 requires REFLEX LACTATE
+  (repeat study) to reassess after fluids.
+  
+  Context Check: Check for seizure disorder or recent seizure activity
+  (which elevates lactate).
+
+-------------------------|-----------|-----------|---------|--------------------
+Lactate (Severe)         | 4.0       | ≥         | mmol/L  | >40% mortality
+
+-------------------------|-----------|-----------|---------|--------------------
+Base Excess              | -10       | ≤         | mEq/L   | Severe tissue hypoxia
+
+
+--------------------------------------------------------------------------------
+RESPIRATORY
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+O2 Saturation (SpO2)     | 88        | <         | %       | Requires respiratory support
+
+-------------------------|-----------|-----------|---------|--------------------
+Respiratory Rate (SIRS)  | 22        | ≥         | /min    | qSOFA criterion for sepsis screening
+
+-------------------------|-----------|-----------|---------|--------------------
+Respiratory Rate (Crit)  | 30        | ≥         | /min    | High risk of rapid deterioration
+
+  SME Notes: Also search chart for subjective criteria of increased work of
+  breathing (WOB). See "Respiratory Distress Phrases" section below.
+
+-------------------------|-----------|-----------|---------|--------------------
+PaO2/FiO2 Ratio          | 200       | <         | mmHg    | Moderate ARDS (Berlin criteria)
+
+-------------------------|-----------|-----------|---------|--------------------
+PaCO2                    | 60        | ≥         | mmHg    | Ventilatory failure
+
+
+--------------------------------------------------------------------------------
+TEMPERATURE
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+Hypothermia              | 35.0      | <         | °C      | Higher mortality than fever
+
+-------------------------|-----------|-----------|---------|--------------------
+Severe Fever             | 40.0      | ≥         | °C      | Severe inflammatory response
+
+  Context Check: Assess for antipyretics within past 4 hours (acetaminophen,
+  ibuprofen, naproxen) which may mask fever.
+
+
+--------------------------------------------------------------------------------
+RENAL
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit      | Clinical Rationale
+-------------------------|-----------|-----------|-----------|--------------------
+Creatinine (Critical)    | 3.5       | ≥         | mg/dL     | KDIGO Stage 3 AKI
+
+-------------------------|-----------|-----------|-----------|--------------------
+Creatinine (Elevated)    | 2.0       | ≥         | mg/dL     | Kidney dysfunction
+
+  SME Notes: If NO history of renal disease, this could suggest sepsis-related AKI.
+  
+  Context Check: Check for history of renal disease, ESRF, or renal
+  insufficiency. Note in alert if present.
+
+-------------------------|-----------|-----------|-----------|--------------------
+BUN                      | 80        | ≥         | mg/dL     | Severe renal dysfunction
+
+-------------------------|-----------|-----------|-----------|--------------------
+Urine Output (Concerning)| 0.5       | <         | mL/kg/hr  | Duration: 2 hours
+
+  Clinical Rationale: UO < 0.5 mL/kg/hr x 2 hrs suggests sepsis-related AKI.
+
+-------------------------|-----------|-----------|-----------|--------------------
+Urine Output (Critical)  | 0.3       | <         | mL/kg/hr  | KDIGO Stage 3 AKI
+
+
+--------------------------------------------------------------------------------
+HEPATIC
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+Bilirubin (Critical)     | 4.0       | ≥         | mg/dL   | Severe liver dysfunction
+
+-------------------------|-----------|-----------|---------|--------------------
+Bilirubin (Elevated)     | 2.0       | ≥         | mg/dL   | Liver dysfunction
+
+  SME Notes: If NO history of liver disease, this could suggest sepsis-related
+  hepatic injury.
+  
+  Context Check: Check for history of liver disease or hepatitis.
+  Note in alert if present.
+
+-------------------------|-----------|-----------|---------|--------------------
+AST                      | 1000      | ≥         | U/L     | Shock liver
+
+-------------------------|-----------|-----------|---------|--------------------
+ALT                      | 1000      | ≥         | U/L     | Severe hepatic injury
+
+-------------------------|-----------|-----------|---------|--------------------
+INR                      | 2.5       | ≥         | -       | DIC or hepatic failure
+
+
+--------------------------------------------------------------------------------
+HEMATOLOGIC
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+Platelets (Critical)     | 50        | <         | K/µL    | DIC / bone marrow suppression
+
+  Context Check: Check for history of thrombocytopenia. Note in alert if present.
+
+-------------------------|-----------|-----------|---------|--------------------
+Platelets (Concerning)   | 100       | <         | K/µL    | Supports sepsis diagnosis
+
+  SME Notes: Anything < 150 should be evaluated.
+
+-------------------------|-----------|-----------|---------|--------------------
+WBC (Severe Infection)   | 30        | ≥         | K/µL    | Severe bacterial infection
+
+-------------------------|-----------|-----------|---------|--------------------
+WBC (Infection)          | 12        | ≥         | K/µL    | Starting threshold for infection
+
+-------------------------|-----------|-----------|---------|--------------------
+WBC (Neutropenia)        | 2         | <         | K/µL    | Severe neutropenia
+
+-------------------------|-----------|-----------|---------|--------------------
+WBC (Viral Infection)    | 4         | ≤         | K/µL    | Severe viral infection
+
+  SME Notes: More important is the combination: low lymphocytes + high
+  neutrophils + high bands.
+
+-------------------------|-----------|-----------|---------|--------------------
+Neutrophils              | 80        | >         | %       | Bacterial infection marker
+
+-------------------------|-----------|-----------|---------|--------------------
+Lymphocytes              | 1.0       | <         | K/µL    | Severe infection marker
+
+-------------------------|-----------|-----------|---------|--------------------
+Bands (WBC %)            | 10        | ≥         | %       | Serious bacterial infection (left shift)
+
+-------------------------|-----------|-----------|---------|--------------------
+Hemoglobin               | 7         | <         | g/dL    | Transfusion threshold (TRICC)
+
+-------------------------|-----------|-----------|---------|--------------------
+PTT                      | 80        | ≥         | seconds | DIC / clotting factor deficiency
+
+-------------------------|-----------|-----------|---------|--------------------
+Fibrinogen               | 100       | <         | mg/dL   | Suggests DIC
+
+-------------------------|-----------|-----------|---------|--------------------
+D-Dimer                  | 10        | ≥         | µg/mL   | High probability DIC
+
+
+--------------------------------------------------------------------------------
+METABOLIC
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+pH (Acidosis)            | 7.25      | <         | -       | Severe acidemia
+
+-------------------------|-----------|-----------|---------|--------------------
+pH (Alkalosis)           | 7.55      | ≥         | -       | Arrhythmia risk
+
+-------------------------|-----------|-----------|---------|--------------------
+CO2 (Early Acidosis)     | 22        | <         | mEq/L   | Early metabolic acidosis
+
+-------------------------|-----------|-----------|---------|--------------------
+Glucose (Low)            | 50        | <         | mg/dL   | Seizures, coma risk
+
+-------------------------|-----------|-----------|---------|--------------------
+Glucose (High)           | 500       | ≥         | mg/dL   | DKA/HHS
+
+-------------------------|-----------|-----------|---------|--------------------
+Glucose (Diabetic)       | 180       | ≥         | mg/dL   | Note in diabetic patients
+
+  Context Check: Check history of diabetes and compare to baseline.
+  Also check if patient is on corticosteroids (which can elevate glucose).
+
+-------------------------|-----------|-----------|---------|--------------------
+Potassium (Low)          | 2.5       | <         | mEq/L   | Life-threatening arrhythmias
+
+-------------------------|-----------|-----------|---------|--------------------
+Potassium (High)         | 6.5       | ≥         | mEq/L   | Cardiac arrest risk
+
+-------------------------|-----------|-----------|---------|--------------------
+Sodium (Low)             | 120       | <         | mEq/L   | Cerebral edema, seizures
+
+-------------------------|-----------|-----------|---------|--------------------
+Sodium (High)            | 160       | ≥         | mEq/L   | Severe dehydration
+
+-------------------------|-----------|-----------|---------|--------------------
+Bicarbonate (HCO3)       | 12        | <         | mEq/L   | Severe septic shock
+
+
+--------------------------------------------------------------------------------
+CARDIAC
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+Heart Rate (Early Sepsis)| 90        | ≥         | bpm     | Typically used for early sepsis
+
+-------------------------|-----------|-----------|---------|--------------------
+Heart Rate (Evaluation)  | 100       | ≥         | bpm     | Commonly used evaluation threshold
+
+-------------------------|-----------|-----------|---------|--------------------
+Heart Rate (Severe)      | 120       | ≥         | bpm     | Severe physiologic stress
+
+  Clinical Rationale: Especially concerning when combined with abnormal
+  temperature or respiratory distress.
+
+-------------------------|-----------|-----------|---------|--------------------
+Heart Rate (Critical)    | 140       | ≥         | bpm     | Significant hemodynamic compensation
+
+-------------------------|-----------|-----------|---------|--------------------
+Heart Rate (Low)         | 40        | <         | bpm     | Pre-terminal event
+
+-------------------------|-----------|-----------|---------|--------------------
+Troponin                 | 1.0       | ≥         | ng/mL   | Septic cardiomyopathy
+
+-------------------------|-----------|-----------|---------|--------------------
+BNP                      | 1000      | ≥         | pg/mL   | Cardiac dysfunction
+
+
+--------------------------------------------------------------------------------
+NEUROLOGIC
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+GCS (Critical/Coma)      | 8         | ≤         | -       | Airway protection needed
+
+-------------------------|-----------|-----------|---------|--------------------
+GCS (Encephalopathy)     | 12        | ≤         | -       | Moderate to severe encephalopathy
+
+
+--------------------------------------------------------------------------------
+INFECTION MARKERS
+--------------------------------------------------------------------------------
+Parameter                | Threshold | Condition | Unit    | Clinical Rationale
+-------------------------|-----------|-----------|---------|--------------------
+Procalcitonin (Suggest)  | 2         | >         | ng/mL   | Suggestive of bacterial sepsis
+
+-------------------------|-----------|-----------|---------|--------------------
+Procalcitonin (Shock)    | 10        | ≥         | ng/mL   | Suggests septic shock
+
+-------------------------|-----------|-----------|---------|--------------------
+CRP                      | 200       | ≥         | mg/L    | Severe infection
+
+
+================================================================================
+                      EARLY DETECTION PATTERNS
+================================================================================
+
+EARLIEST RELIABLE LAB COMBINATION FOR BACTERIAL INFECTION:
+  Requires ALL of:
+    • Lymphocytes < 1.0 K/µL
+    • Neutrophils > 80%
+    • Bands ≥ 10%
+  
+  Action: High suspicion for serious bacterial infection - escalate priority
+
+
+================================================================================
+                     HISTORY/CONTEXT CHECKS
+================================================================================
+
+The system will check patient history and note relevant conditions in alerts:
+
+RENAL HISTORY
+  Check for: Renal disease, CKD, ESRF, renal insufficiency, dialysis
+  Impact: Elevated creatinine may be baseline if history exists
+
+HEPATIC HISTORY
+  Check for: Liver disease, hepatitis, cirrhosis
+  Impact: Elevated bilirubin/AST/ALT may be baseline if history exists
+
+HEMATOLOGIC HISTORY
+  Check for: Thrombocytopenia, ITP, leukemia, chemotherapy
+  Impact: Low platelets or abnormal WBC may be baseline
+
+CARDIOVASCULAR HISTORY
+  Check for: Chronic hypertension (HTN)
+  Impact: Use MAP < 75 (not < 65) for shock suspicion
+
+DIABETES HISTORY
+  Check for: Diabetes, DM, insulin dependent
+  Impact: Compare glucose to baseline, note if ≥ 180
+
+NEUROLOGIC HISTORY (for AMS assessment)
+  Check for: Alzheimer's, dementia, delirium, alcoholism (ETOH),
+             substance abuse, cognitive dysfunction
+  Impact: Altered mental status must be NEW ONSET to be significant
+
+SEIZURE HISTORY
+  Check for: Seizure disorder, epilepsy, recent seizures
+  Impact: Can elevate lactate independent of sepsis
+
+MEDICATIONS
+  Corticosteroids: Can elevate glucose
+  Antipyretics: Can mask fever (within 4 hours)
+  Anticoagulants: INR may be elevated due to medication, not DIC
+
+
+================================================================================
+                    DIFFERENTIAL DIAGNOSIS
+================================================================================
+
+FOR HYPOTENSION - Also Assess:
+  • Bleeding / Hemorrhage
+  • Dehydration / Volume depletion
+  • Pulmonary embolism (PE)
+  • Anaphylaxis
+  • Cardiogenic shock
+  • Medication effect (antihypertensives, sedatives)
+
+  Action: If any present, include in alert as differential diagnosis.
+
+
+================================================================================
+                    TRENDING REQUIREMENTS
+================================================================================
+
+LACTATE
+  Action: Lactate > 2.0 requires REFLEX LACTATE after fluid resuscitation
+  Timing: Repeat 2-4 hours after initial result and/or after fluid bolus
+  Interpretation: Decrease with fluids = less concerning
+                  Persists or rises = ongoing hypoperfusion
+
+BLOOD PRESSURE
+  Action: SBP < 90 requires assessment of fluid responsiveness
+  Interpretation: Normalizes after fluids = likely dehydration
+                  Persists = likely septic shock
+
+URINE OUTPUT
+  Action: Track hourly for at least 2-6 hours
+  Interpretation: < 0.5 mL/kg/hr for 2+ hours = concerning
+                  < 0.3 mL/kg/hr for 6+ hours = critical
+
+
+================================================================================
+                       OVERRIDE LOGIC
+================================================================================
+
+STANDARD OVERRIDE:
+  IF (Any Critical Threshold Breached) AND (AI Risk Score < 80)
+  THEN → Force Risk Score to 95, Priority to "Critical"
+
+SEPTIC SHOCK DETECTION:
+  IF (SBP ≤ 90 OR MAP < 65) AND (Lactate ≥ 2.0)
+  THEN → Immediate escalation to Septic Shock classification
+
+DIC DETECTION:
+  IF 3 or more of:
+    • Platelets < 50 K/µL
+    • INR ≥ 2.5
+    • Fibrinogen < 100 mg/dL
+    • D-Dimer ≥ 10 µg/mL
+  THEN → Flag as DIC, recommend hematology consult
+
+
+================================================================================
+               SILENT SEPSIS DETECTION (Nursing Notes)
+================================================================================
+
+The system searches nursing notes for concerning phrases that may indicate
+deterioration even when vitals appear stable.
+
+PERFUSION CONCERNS:
+  • mottled skin / mottling
+  • skin cool to touch / cool extremities
+  • delayed capillary refill / cap refill > 3 seconds
+  • poor perfusion / cyanosis / pallor
+
+MENTAL STATUS (must be NEW ONSET):
+  • altered mental status / AMS
+  • confused / confusion
+  • lethargic / lethargy / drowsy
+  • obtunded / somnolent
+  • disoriented / agitated / combative
+  
+  Exclusions: Check for existing Alzheimer's, dementia, alcoholism,
+              substance abuse, cognitive dysfunction
+
+FLUID RESPONSE:
+  • fluid bolus with minimal response
+  • unresponsive to fluids / fluid refractory
+  • persistent hypotension after fluids
+
+VASOPRESSOR USE:
+  • vasopressors / requiring pressors / pressor support
+  • levophed / norepinephrine / vasopressin
+  • dopamine drip / epinephrine drip
+
+URINE OUTPUT:
+  • oliguria / decreased urine output / low urine output
+  • minimal urine / no urine output / anuria
+
+RESPIRATORY DISTRESS:
+  • increased work of breathing / WOB
+  • labored breathing / respiratory distress
+  • dyspnea / air hunger
+  • retractions (intercostal, supraclavicular, substernal)
+  • accessory muscle use / nasal flaring
+  • tracheal tug / shoulder lifting with respirations
+  • head bobbing / speaking in 2-3 word sentences
+  • tripoding / orthopnea / unable to lie flat
+
+
+================================================================================
+                         AUDIT SETTINGS
+================================================================================
+
+  • Log all overrides: YES
+  • Log near misses: YES (AI gave 75-80 but no override triggered)
+  • Log history/context flags: YES
+  • Log differential diagnoses: YES
+
+
+================================================================================
+                        KEY PRINCIPLES
+================================================================================
+
+  1. Trending is often more important than single values
+  2. Context matters - always check patient history
+  3. NEW ONSET changes are more significant than chronic abnormalities
+  4. Consider differential diagnoses before concluding sepsis
+  5. Document rationale for overrides in alert scripts
+
+
+================================================================================
+                    FOR SME REVIEW
+================================================================================
+
+Please review the thresholds above and provide feedback on:
+
+  1. Are any thresholds too high (may miss critical patients)?
+  2. Are any thresholds too low (may cause alert fatigue)?
+  3. Are there any additional parameters that should be included?
+  4. Are the history/context checks appropriate?
+  5. Are the nursing note phrases comprehensive?
+
+Please reply with any suggested changes. Thank you!
+
+================================================================================
+                        END OF DOCUMENT
+================================================================================
