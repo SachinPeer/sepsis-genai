@@ -217,20 +217,39 @@ async def classify_patient(
         final_pred = result.get("final_prediction", {})
         dashboard = result.get("dashboard_summary", {})
         logic_gate = result.get("logic_gate", {})
+        deterministic_scores = result.get("deterministic_scores", {})
         
         return {
             "request_id": result.get("request_id"),
             "patient_id": result.get("patient_id"),
             "status": result.get("status", "success"),
+            
+            # Core prediction (matches original format + confidence)
             "risk_score": final_pred.get("risk_score_0_100", 0),
+            "confidence_level": final_pred.get("confidence_level", "Medium"),
+            "confidence_reasoning": final_pred.get("confidence_reasoning", ""),
             "priority": final_pred.get("priority", "Standard"),
             "sepsis_probability_6h": final_pred.get("sepsis_probability_6h", "Low"),
             "clinical_rationale": final_pred.get("clinical_rationale", ""),
+            
+            # Dashboard summary (original format)
             "alert_level": dashboard.get("alert_level", "STANDARD"),
             "alert_color": dashboard.get("alert_color", "green"),
             "action_required": dashboard.get("action_required", "Routine monitoring"),
+            
+            # Guardrail (original format)
             "guardrail_override": logic_gate.get("guardrail_override", False),
             "override_reasons": logic_gate.get("override_reasons", []),
+            
+            # Clinical scores (deterministic - no LLM latency cost)
+            "clinical_scores": {
+                "qSOFA": deterministic_scores.get("qsofa", {}),
+                "SIRS": deterministic_scores.get("sirs", {}),
+                "SOFA": deterministic_scores.get("sofa", {}),
+                "sepsis_criteria": deterministic_scores.get("sepsis_criteria", {})
+            },
+            
+            # Metadata
             "total_processing_time_ms": result.get("total_processing_time_ms", 0)
         }
         
@@ -297,6 +316,39 @@ async def classify_batch(
     except Exception as e:
         logger.error(f"Batch classification error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/audit/info")
+async def get_audit_info(x_api_key: str = Header(None)):
+    """
+    Get information about the audit logging system.
+    
+    In production, audit logs are written to a dedicated logger (sepsis_audit)
+    which can be configured to write to CloudWatch, file, or database.
+    """
+    verify_api_key(x_api_key)
+    
+    return {
+        "status": "success",
+        "audit_system": {
+            "version": "1.0",
+            "log_name": "sepsis_audit",
+            "log_format": "JSON",
+            "fields_logged": [
+                "request_id", "patient_id", "timestamp",
+                "model_info", "input_summary", "prediction",
+                "clinical_scores", "guardrail", "processing", "status"
+            ],
+            "compliance_features": [
+                "Structured JSON format for easy parsing",
+                "No PHI in logs (only vital sign names, not values)",
+                "Timestamp for audit trail",
+                "Model version tracking",
+                "Guardrail override documentation"
+            ]
+        },
+        "note": "Configure sepsis_audit logger in production to write to your audit storage (CloudWatch, S3, database)"
+    }
 
 
 @app.get("/guardrail/thresholds")

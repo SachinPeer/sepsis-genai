@@ -671,3 +671,267 @@ class SepsisSafetyGuardrail:
                 "forced_priority": self.forced_priority
             }
         }
+
+    def calculate_clinical_scores(self, vitals: Dict[str, Any], gcs: Optional[int] = None, 
+                                   on_vasopressors: bool = False) -> Dict[str, Any]:
+        """
+        Calculate qSOFA, SIRS, and estimated SOFA scores from vital signs.
+        
+        Args:
+            vitals: Dictionary of vital signs and lab values
+            gcs: Glasgow Coma Scale (if available)
+            on_vasopressors: Whether patient is on vasopressor support
+            
+        Returns:
+            Dictionary containing all calculated scores with components
+        """
+        qsofa = self._calculate_qsofa(vitals, gcs)
+        sirs = self._calculate_sirs(vitals)
+        sofa = self._calculate_sofa(vitals, gcs, on_vasopressors)
+        sepsis_criteria = self._evaluate_sepsis_criteria(vitals, qsofa, sofa)
+        
+        return {
+            "qsofa": qsofa,
+            "sirs": sirs,
+            "sofa": sofa,
+            "sepsis_criteria": sepsis_criteria
+        }
+    
+    def _calculate_qsofa(self, vitals: Dict[str, Any], gcs: Optional[int] = None) -> Dict[str, Any]:
+        """
+        Calculate qSOFA (Quick SOFA) score.
+        qSOFA >= 2 with suspected infection suggests high risk.
+        
+        Components:
+        - Respiratory rate >= 22/min (1 point)
+        - Altered mentation (GCS < 15) (1 point)
+        - Systolic BP <= 100 mmHg (1 point)
+        """
+        resp = self._get_vital(vitals, "Resp", "resp_rate", "RR", "respiratory_rate")
+        sbp = self._get_vital(vitals, "SBP", "sbp", "systolic_bp")
+        gcs_val = gcs or self._get_vital(vitals, "GCS", "gcs", "glasgow_coma_scale")
+        
+        components = {
+            "respiratory_rate_ge_22": resp is not None and resp >= 22,
+            "altered_mentation": gcs_val is not None and gcs_val < 15,
+            "systolic_bp_le_100": sbp is not None and sbp <= 100
+        }
+        
+        score = sum(1 for v in components.values() if v)
+        
+        return {
+            "score": score,
+            "max_score": 3,
+            "components": components,
+            "interpretation": "High risk" if score >= 2 else "Lower risk",
+            "sepsis_suspected": score >= 2
+        }
+    
+    def _calculate_sirs(self, vitals: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Calculate SIRS (Systemic Inflammatory Response Syndrome) criteria.
+        SIRS >= 2 criteria suggests systemic inflammatory response.
+        
+        Components:
+        - Temperature > 38°C or < 36°C (1 point)
+        - Heart rate > 90 bpm (1 point)
+        - Respiratory rate > 20/min OR PaCO2 < 32 mmHg (1 point)
+        - WBC > 12K or < 4K or > 10% bands (1 point)
+        """
+        temp = self._get_vital(vitals, "Temp", "temperature", "Temperature")
+        hr = self._get_vital(vitals, "HR", "heart_rate", "HeartRate", "pulse")
+        resp = self._get_vital(vitals, "Resp", "resp_rate", "RR", "respiratory_rate")
+        paco2 = self._get_vital(vitals, "PaCO2", "paco2")
+        wbc = self._get_vital(vitals, "WBC", "wbc", "white_blood_cells")
+        bands = self._get_vital(vitals, "Bands", "bands", "band_neutrophils")
+        
+        components = {
+            "temp_abnormal": temp is not None and (temp > 38.0 or temp < 36.0),
+            "hr_gt_90": hr is not None and hr > 90,
+            "rr_gt_20_or_paco2_lt_32": (resp is not None and resp > 20) or (paco2 is not None and paco2 < 32),
+            "wbc_abnormal": (wbc is not None and (wbc > 12 or wbc < 4)) or (bands is not None and bands > 10)
+        }
+        
+        score = sum(1 for v in components.values() if v)
+        
+        return {
+            "criteria_met": score,
+            "max_criteria": 4,
+            "components": components,
+            "sirs_positive": score >= 2
+        }
+    
+    def _calculate_sofa(self, vitals: Dict[str, Any], gcs: Optional[int] = None,
+                        on_vasopressors: bool = False) -> Dict[str, Any]:
+        """
+        Calculate estimated SOFA (Sequential Organ Failure Assessment) score.
+        Each organ system scored 0-4 based on dysfunction severity.
+        Total score 0-24.
+        
+        Note: This is an ESTIMATE - some components require clinical context
+        that may not be available in vitals alone.
+        """
+        components = {}
+        
+        # Respiratory: PaO2/FiO2 ratio
+        pf_ratio = self._get_vital(vitals, "PaO2_FiO2", "pf_ratio", "P_F_ratio")
+        o2sat = self._get_vital(vitals, "O2Sat", "SaO2", "SpO2", "o2_saturation")
+        if pf_ratio is not None:
+            if pf_ratio >= 400: components["respiratory"] = 0
+            elif pf_ratio >= 300: components["respiratory"] = 1
+            elif pf_ratio >= 200: components["respiratory"] = 2
+            elif pf_ratio >= 100: components["respiratory"] = 3
+            else: components["respiratory"] = 4
+        elif o2sat is not None:
+            # Rough estimate from SpO2 (less accurate)
+            if o2sat >= 96: components["respiratory"] = 0
+            elif o2sat >= 92: components["respiratory"] = 1
+            elif o2sat >= 88: components["respiratory"] = 2
+            else: components["respiratory"] = 3
+        else:
+            components["respiratory"] = None
+        
+        # Coagulation: Platelets
+        platelets = self._get_vital(vitals, "Platelets", "platelets", "PLT")
+        if platelets is not None:
+            if platelets >= 150: components["coagulation"] = 0
+            elif platelets >= 100: components["coagulation"] = 1
+            elif platelets >= 50: components["coagulation"] = 2
+            elif platelets >= 20: components["coagulation"] = 3
+            else: components["coagulation"] = 4
+        else:
+            components["coagulation"] = None
+        
+        # Liver: Bilirubin
+        bilirubin = self._get_vital(vitals, "Bilirubin_total", "Bilirubin_direct", "bilirubin", "TotalBilirubin")
+        if bilirubin is not None:
+            if bilirubin < 1.2: components["liver"] = 0
+            elif bilirubin < 2.0: components["liver"] = 1
+            elif bilirubin < 6.0: components["liver"] = 2
+            elif bilirubin < 12.0: components["liver"] = 3
+            else: components["liver"] = 4
+        else:
+            components["liver"] = None
+        
+        # Cardiovascular: MAP and vasopressors
+        map_val = self._get_vital(vitals, "MAP", "map", "mean_arterial_pressure")
+        sbp = self._get_vital(vitals, "SBP", "sbp", "systolic_bp")
+        dbp = self._get_vital(vitals, "DBP", "dbp", "diastolic_bp")
+        
+        # Calculate MAP if not provided but SBP/DBP available
+        if map_val is None and sbp is not None and dbp is not None:
+            map_val = (sbp + 2 * dbp) / 3
+        
+        if on_vasopressors:
+            components["cardiovascular"] = 3  # At least 3 if on vasopressors
+        elif map_val is not None:
+            if map_val >= 70: components["cardiovascular"] = 0
+            elif map_val >= 65: components["cardiovascular"] = 1
+            else: components["cardiovascular"] = 2
+        else:
+            components["cardiovascular"] = None
+        
+        # CNS: GCS
+        gcs_val = gcs or self._get_vital(vitals, "GCS", "gcs", "glasgow_coma_scale")
+        if gcs_val is not None:
+            if gcs_val == 15: components["cns"] = 0
+            elif gcs_val >= 13: components["cns"] = 1
+            elif gcs_val >= 10: components["cns"] = 2
+            elif gcs_val >= 6: components["cns"] = 3
+            else: components["cns"] = 4
+        else:
+            components["cns"] = None
+        
+        # Renal: Creatinine or Urine Output
+        creatinine = self._get_vital(vitals, "Creatinine", "creatinine")
+        urine_output = self._get_vital(vitals, "UrineOutput", "urine_output", "UO")
+        
+        if creatinine is not None:
+            if creatinine < 1.2: components["renal"] = 0
+            elif creatinine < 2.0: components["renal"] = 1
+            elif creatinine < 3.5: components["renal"] = 2
+            elif creatinine < 5.0: components["renal"] = 3
+            else: components["renal"] = 4
+        elif urine_output is not None:
+            if urine_output >= 0.5: components["renal"] = 0
+            elif urine_output >= 0.3: components["renal"] = 2
+            else: components["renal"] = 4
+        else:
+            components["renal"] = None
+        
+        # Calculate total score (only from available components)
+        available_scores = [v for v in components.values() if v is not None]
+        total_score = sum(available_scores) if available_scores else None
+        
+        # Estimate missing components as 0 for total estimate
+        estimated_total = sum(v if v is not None else 0 for v in components.values())
+        
+        return {
+            "score": total_score,
+            "estimated_score": estimated_total,
+            "max_score": 24,
+            "components": components,
+            "components_available": len(available_scores),
+            "interpretation": self._interpret_sofa(estimated_total)
+        }
+    
+    def _interpret_sofa(self, score: int) -> str:
+        """Interpret SOFA score severity."""
+        if score is None:
+            return "Unable to calculate"
+        elif score <= 1:
+            return "Minimal organ dysfunction"
+        elif score <= 5:
+            return "Mild organ dysfunction"
+        elif score <= 10:
+            return "Moderate organ dysfunction"
+        elif score <= 15:
+            return "Severe organ dysfunction"
+        else:
+            return "Very severe organ dysfunction"
+    
+    def _evaluate_sepsis_criteria(self, vitals: Dict[str, Any], qsofa: Dict, sofa: Dict) -> Dict[str, Any]:
+        """
+        Evaluate Sepsis-3 criteria.
+        
+        Sepsis = Suspected infection + SOFA increase >= 2 (or qSOFA >= 2 for screening)
+        Septic Shock = Sepsis + Vasopressors needed for MAP >= 65 + Lactate > 2 despite fluids
+        """
+        lactate = self._get_vital(vitals, "Lactate", "lactate")
+        map_val = self._get_vital(vitals, "MAP", "map", "mean_arterial_pressure")
+        sbp = self._get_vital(vitals, "SBP", "sbp", "systolic_bp")
+        
+        criteria_met = []
+        
+        # qSOFA screening
+        if qsofa["score"] >= 2:
+            criteria_met.append("qSOFA >= 2 (sepsis screening positive)")
+        
+        # SOFA-based sepsis (assuming baseline SOFA of 0 for acute presentation)
+        if sofa["estimated_score"] >= 2:
+            criteria_met.append(f"SOFA >= 2 (estimated score: {sofa['estimated_score']})")
+        
+        # Hypotension
+        if sbp is not None and sbp <= 90:
+            criteria_met.append(f"Hypotension (SBP {sbp} <= 90 mmHg)")
+        elif map_val is not None and map_val < 65:
+            criteria_met.append(f"Hypotension (MAP {map_val} < 65 mmHg)")
+        
+        # Hyperlactatemia
+        if lactate is not None and lactate >= 2:
+            criteria_met.append(f"Elevated lactate ({lactate} >= 2 mmol/L)")
+        
+        # Determine sepsis status
+        sepsis_3_met = qsofa["score"] >= 2 or sofa["estimated_score"] >= 2
+        
+        # Septic shock: hypotension + lactate > 2
+        hypotension = (sbp is not None and sbp <= 90) or (map_val is not None and map_val < 65)
+        hyperlactatemia = lactate is not None and lactate >= 2
+        septic_shock_criteria = sepsis_3_met and hypotension and hyperlactatemia
+        
+        return {
+            "sepsis_3_met": sepsis_3_met,
+            "septic_shock_criteria_met": septic_shock_criteria,
+            "criteria_details": criteria_met,
+            "requires_immediate_action": septic_shock_criteria or (qsofa["score"] >= 2 and hyperlactatemia)
+        }

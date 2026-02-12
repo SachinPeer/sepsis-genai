@@ -32,6 +32,9 @@ COPY genai_clinical_guardrail.json .
 # Copy knowledge directory
 COPY knowledge/ ./knowledge/
 
+# Copy docs directory (contains system prompt)
+COPY docs/ ./docs/
+
 # Create non-root user for security
 RUN adduser --disabled-password --gecos '' appuser && \
     chown -R appuser:appuser /app
