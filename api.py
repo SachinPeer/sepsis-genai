@@ -191,6 +191,61 @@ async def health_check():
         )
 
 
+@app.get("/health/deep")
+async def deep_health_check(x_api_key: str = Header(None)):
+    """
+    Deep health check that actually invokes the LLM model.
+    
+    Unlike /health (called by ALB every 15s), this endpoint tests
+    end-to-end model connectivity by making a real inference call.
+    Use this manually to verify the model is responding.
+    """
+    verify_api_key(x_api_key)
+    
+    try:
+        pipeline = get_pipeline()
+        provider = pipeline.llm_service.provider
+        
+        import time
+        start = time.time()
+        
+        if provider.provider_name == "aws_bedrock":
+            import json as _json
+            request_body = {
+                "anthropic_version": "bedrock-2023-05-31",
+                "max_tokens": 10,
+                "messages": [{"role": "user", "content": "Respond with: OK"}]
+            }
+            response = provider.client.invoke_model(
+                modelId=provider.model_id,
+                body=_json.dumps(request_body),
+                contentType="application/json",
+                accept="application/json"
+            )
+            elapsed = (time.time() - start) * 1000
+            return {
+                "status": "healthy",
+                "provider": provider.provider_name,
+                "model": provider.model_id,
+                "response_time_ms": round(elapsed, 1),
+                "message": "Model invocation successful"
+            }
+        else:
+            result = provider.health_check()
+            result["response_time_ms"] = round((time.time() - start) * 1000, 1)
+            return result
+            
+    except Exception as e:
+        return JSONResponse(
+            status_code=503,
+            content={
+                "status": "unhealthy",
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            }
+        )
+
+
 @app.post("/classify")
 async def classify_patient(
     request: ClassifyRequest,

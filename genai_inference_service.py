@@ -6,12 +6,12 @@ This service handles communication with LLM providers for
 narrative-based sepsis risk prediction.
 
 Supported Providers:
-  - Azure OpenAI (GPT-4o) - Default
-  - AWS Bedrock (Claude 3.5 Sonnet)
+  - Azure OpenAI (GPT-4o)
+  - AWS Bedrock (Claude Sonnet 4) - Default
 
 Set LLM_PROVIDER environment variable to switch:
-  - "azure" (default)
-  - "bedrock"
+  - "azure"
+  - "bedrock" (default)
 """
 
 import os
@@ -134,13 +134,16 @@ class AzureOpenAIProvider(BaseLLMProvider):
         return result
     
     def health_check(self) -> Dict[str, Any]:
-        """Check if Azure OpenAI is accessible."""
+        """
+        Check if Azure OpenAI is accessible WITHOUT invoking the model.
+        
+        Verifies the client is configured and reachable without burning
+        through rate limits on every ALB health check (every 15s).
+        """
         try:
-            response = self.client.chat.completions.create(
-                model=self.deployment_name,
-                messages=[{"role": "user", "content": "Respond with: OK"}],
-                max_tokens=10
-            )
+            _ = self.client  # Verify client can be initialized
+            if not self.api_key or not self.endpoint:
+                return {"status": "unhealthy", "provider": self.provider_name, "error": "Missing API key or endpoint"}
             return {
                 "status": "healthy",
                 "provider": self.provider_name,
@@ -156,12 +159,11 @@ class AzureOpenAIProvider(BaseLLMProvider):
 # =============================================================================
 
 class BedrockClaudeProvider(BaseLLMProvider):
-    """AWS Bedrock Claude 3.5 Sonnet provider."""
+    """AWS Bedrock Claude provider (Sonnet 4 default)."""
     
     def __init__(self):
         self.region = os.getenv("AWS_REGION", "us-east-1")
-        # Use inference profile ID for on-demand invocation (required for Claude 3.5+)
-        self.model_id = os.getenv("BEDROCK_MODEL_ID", "us.anthropic.claude-3-5-sonnet-20241022-v2:0")
+        self.model_id = os.getenv("BEDROCK_MODEL_ID", "us.anthropic.claude-sonnet-4-20250514-v1:0")
         self._client = None
     
     @property
@@ -221,8 +223,8 @@ class BedrockClaudeProvider(BaseLLMProvider):
         }
         
         # Exponential backoff retry logic for throttling
-        max_retries = 5
-        base_delay = 3  # seconds
+        max_retries = 3
+        base_delay = 2  # seconds
         
         for attempt in range(max_retries):
             try:
@@ -267,21 +269,22 @@ class BedrockClaudeProvider(BaseLLMProvider):
         return result
     
     def health_check(self) -> Dict[str, Any]:
-        """Check if Bedrock is accessible."""
+        """
+        Check if Bedrock is accessible WITHOUT invoking the model.
+        
+        Uses a lightweight API call (list one model) to verify credentials
+        and connectivity without consuming model invocation rate limits.
+        The ALB calls /health every 15s — invoking the model here would
+        exhaust Bedrock's on-demand throttle budget.
+        """
         try:
-            request_body = {
-                "anthropic_version": "bedrock-2023-05-31",
-                "max_tokens": 10,
-                "messages": [{"role": "user", "content": "Respond with: OK"}]
-            }
-            
-            response = self.client.invoke_model(
-                modelId=self.model_id,
-                body=json.dumps(request_body),
-                contentType="application/json",
-                accept="application/json"
+            import boto3
+            bedrock_client = boto3.client(
+                "bedrock", region_name=self.region
             )
-            
+            bedrock_client.get_foundation_model(
+                modelIdentifier="anthropic.claude-3-5-sonnet-20241022-v2:0"
+            )
             return {
                 "status": "healthy",
                 "provider": self.provider_name,
