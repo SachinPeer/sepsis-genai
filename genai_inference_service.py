@@ -7,7 +7,7 @@ narrative-based sepsis risk prediction.
 
 Supported Providers:
   - Azure OpenAI (GPT-4o)
-  - AWS Bedrock (Claude Sonnet 4) - Default
+  - AWS Bedrock (Claude Sonnet 4.5) - Default
 
 Set LLM_PROVIDER environment variable to switch:
   - "azure"
@@ -159,11 +159,11 @@ class AzureOpenAIProvider(BaseLLMProvider):
 # =============================================================================
 
 class BedrockClaudeProvider(BaseLLMProvider):
-    """AWS Bedrock Claude provider (Sonnet 4 default)."""
+    """AWS Bedrock Claude provider (Sonnet 4.5 default)."""
     
     def __init__(self):
         self.region = os.getenv("AWS_REGION", "us-east-1")
-        self.model_id = os.getenv("BEDROCK_MODEL_ID", "us.anthropic.claude-sonnet-4-20250514-v1:0")
+        self.model_id = os.getenv("BEDROCK_MODEL_ID", "us.anthropic.claude-sonnet-4-5-20250929-v1:0")
         self._client = None
     
     @property
@@ -283,7 +283,7 @@ class BedrockClaudeProvider(BaseLLMProvider):
                 "bedrock", region_name=self.region
             )
             bedrock_client.get_foundation_model(
-                modelIdentifier="anthropic.claude-3-5-sonnet-20241022-v2:0"
+                modelIdentifier="anthropic.claude-sonnet-4-5-20250929-v1:0"
             )
             return {
                 "status": "healthy",
