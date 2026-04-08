@@ -1,6 +1,7 @@
 """
-Compare Claude models on Bedrock for sepsis prediction.
-Runs the same patient through each model, captures output and timing.
+Full LLM Model Comparison — All test patients x All models.
+Outputs CSV to docs/ for leadership evidence.
+8 patients x 4 models = 32 API calls.
 """
 
 import boto3
@@ -8,40 +9,84 @@ import json
 import time
 import os
 import sys
+import csv
+from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from knowledge.genai_proprocess import SepsisPreprocessor
 
 REGION = "us-east-1"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-MODELS_TO_TEST = [
-    {"id": "us.anthropic.claude-sonnet-4-20250514-v1:0", "name": "Claude Sonnet 4", "input_cost": 3.0, "output_cost": 15.0},
-    {"id": "us.anthropic.claude-sonnet-4-5-20250929-v1:0", "name": "Claude Sonnet 4.5", "input_cost": 3.0, "output_cost": 15.0},
-    {"id": "us.anthropic.claude-sonnet-4-6", "name": "Claude Sonnet 4.6", "input_cost": 3.0, "output_cost": 15.0},
-    {"id": "us.anthropic.claude-opus-4-6-v1", "name": "Claude Opus 4.6", "input_cost": 5.0, "output_cost": 25.0},
+MODELS = [
+    {"id": "us.anthropic.claude-sonnet-4-20250514-v1:0", "name": "Sonnet 4", "input_cost": 3.0, "output_cost": 15.0},
+    {"id": "us.anthropic.claude-sonnet-4-5-20250929-v1:0", "name": "Sonnet 4.5", "input_cost": 3.0, "output_cost": 15.0},
+    {"id": "us.anthropic.claude-sonnet-4-6", "name": "Sonnet 4.6", "input_cost": 3.0, "output_cost": 15.0},
+    {"id": "us.anthropic.claude-opus-4-6-v1", "name": "Opus 4.6", "input_cost": 5.0, "output_cost": 25.0},
 ]
 
+
 def load_prompt():
-    prompt_path = os.path.join(os.path.dirname(__file__), "docs", "prompt.md")
-    with open(prompt_path, "r") as f:
+    with open(os.path.join(BASE_DIR, "docs", "prompt.md"), "r") as f:
         return f.read()
 
-def preprocess_patient(patient_file):
-    with open(patient_file, "r") as f:
-        data = json.load(f)
-    preprocessor = SepsisPreprocessor()
-    vitals = data.get("vitals", data)
-    notes = data.get("notes", "")
-    narrative = preprocessor.process(vitals, notes)
-    return narrative, data.get("patient_id", "unknown")
 
-def invoke_model(client, model_id, system_prompt, patient_narrative):
+def load_all_patients():
+    patients = []
+    preprocessor = SepsisPreprocessor()
+
+    # test_trend.json
+    with open(os.path.join(BASE_DIR, "test_trend.json"), "r") as f:
+        data = json.load(f)
+    patients.append({
+        "patient_id": data["patient_id"],
+        "case_desc": "Post-op Day 3, trending vitals",
+        "expected_severity": "High",
+        "narrative": preprocessor.process(data.get("vitals", data), data.get("notes", "")),
+    })
+
+    # test_notes.json
+    with open(os.path.join(BASE_DIR, "test_notes.json"), "r") as f:
+        data = json.load(f)
+    patients.append({
+        "patient_id": data["patient_id"],
+        "case_desc": "UTI + confusion + mottling (Silent Sepsis)",
+        "expected_severity": "High",
+        "narrative": preprocessor.process(data.get("vitals", data), data.get("notes", "")),
+    })
+
+    # genai_test_patients.json
+    with open(os.path.join(BASE_DIR, "genai_test_patients.json"), "r") as f:
+        data = json.load(f)
+
+    case_meta = [
+        ("Normal healthy post-op", "Standard"),
+        ("Silent Sepsis — notes concerning", "High"),
+        ("SIRS — inflammatory response", "High"),
+        ("Sepsis — organ dysfunction", "Critical"),
+        ("Severe Sepsis — multi-organ", "Critical"),
+        ("Septic Shock — refractory", "Critical"),
+    ]
+
+    for i, tc in enumerate(data["test_cases"]):
+        desc, expected = case_meta[i]
+        patients.append({
+            "patient_id": tc["patient_id"],
+            "case_desc": desc,
+            "expected_severity": expected,
+            "narrative": preprocessor.process(tc.get("vitals", tc), tc.get("notes", "")),
+        })
+
+    return patients
+
+
+def invoke_model(client, model_id, system_prompt, narrative):
     request_body = {
         "anthropic_version": "bedrock-2023-05-31",
         "max_tokens": 2048,
         "system": system_prompt,
         "messages": [
-            {"role": "user", "content": f"Analyze this patient for sepsis risk:\n\n{patient_narrative}"}
+            {"role": "user", "content": f"Analyze this patient for sepsis risk:\n\n{narrative}"}
         ]
     }
 
@@ -59,25 +104,62 @@ def invoke_model(client, model_id, system_prompt, patient_narrative):
     input_tokens = result.get("usage", {}).get("input_tokens", 0)
     output_tokens = result.get("usage", {}).get("output_tokens", 0)
 
-    return {
-        "output": output_text,
-        "elapsed_ms": round(elapsed_ms, 1),
-        "input_tokens": input_tokens,
-        "output_tokens": output_tokens,
-    }
+    return output_text, elapsed_ms, input_tokens, output_tokens
 
 
-def run_comparison():
+def parse_output(raw_text):
+    text = raw_text.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[1] if "\n" in text else text
+    if text.endswith("```"):
+        text = text[:text.rfind("```")]
+    text = text.strip()
+
+    try:
+        parsed = json.loads(text)
+        pred = parsed.get("prediction", {})
+        metrics = parsed.get("clinical_metrics", {})
+        logic = parsed.get("logic_gate", {})
+        return {
+            "json_valid": True,
+            "risk_score": pred.get("risk_score_0_100", ""),
+            "priority": pred.get("priority", ""),
+            "probability_6h": pred.get("sepsis_probability_6h", ""),
+            "confidence": pred.get("confidence_level", ""),
+            "confidence_reasoning": pred.get("confidence_reasoning", ""),
+            "rationale": pred.get("clinical_rationale", ""),
+            "qsofa": metrics.get("qSOFA_score", ""),
+            "sirs_met": metrics.get("SIRS_met", ""),
+            "trend_velocity": metrics.get("trend_velocity", ""),
+            "organ_stress": "; ".join(metrics.get("organ_stress_indicators", [])),
+            "discordance": logic.get("discordance_detected", ""),
+            "primary_driver": logic.get("primary_driver", ""),
+            "missing_params": "; ".join(logic.get("missing_parameters", [])),
+        }
+    except json.JSONDecodeError:
+        return {
+            "json_valid": False,
+            "risk_score": "PARSE_ERROR",
+            "priority": "", "probability_6h": "", "confidence": "",
+            "confidence_reasoning": "", "rationale": raw_text[:200],
+            "qsofa": "", "sirs_met": "", "trend_velocity": "",
+            "organ_stress": "", "discordance": "", "primary_driver": "",
+            "missing_params": "",
+        }
+
+
+def run_full_comparison():
     print("=" * 70)
-    print("SEPSIS GenAI — LLM MODEL COMPARISON")
+    print("SEPSIS GenAI — FULL MODEL COMPARISON")
+    print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 70)
 
     system_prompt = load_prompt()
-    test_file = os.path.join(os.path.dirname(__file__), "test_trend.json")
-    narrative, patient_id = preprocess_patient(test_file)
-    print(f"\nPatient: {patient_id}")
-    print(f"Prompt length: {len(system_prompt)} chars")
-    print(f"Narrative length: {len(narrative)} chars\n")
+    patients = load_all_patients()
+    print(f"\nPatients loaded: {len(patients)}")
+    print(f"Models to test: {len(MODELS)}")
+    print(f"Total API calls: {len(patients) * len(MODELS)}")
+    print()
 
     client = boto3.client(
         "bedrock-runtime",
@@ -89,104 +171,109 @@ def run_comparison():
         )
     )
 
-    results = []
+    all_results = []
+    call_num = 0
+    total_calls = len(patients) * len(MODELS)
 
-    for model in MODELS_TO_TEST:
-        print(f"\n{'─' * 50}")
-        print(f"Testing: {model['name']} ({model['id']})")
-        print(f"{'─' * 50}")
-
-        try:
-            result = invoke_model(client, model["id"], system_prompt, narrative)
-
-            input_cost = (result["input_tokens"] / 1_000_000) * model["input_cost"]
-            output_cost = (result["output_tokens"] / 1_000_000) * model["output_cost"]
-            total_cost = input_cost + output_cost
-            cost_per_1k = total_cost * 1000
+    for patient in patients:
+        for model in MODELS:
+            call_num += 1
+            print(f"[{call_num}/{total_calls}] {patient['patient_id']} → {model['name']}...", end=" ", flush=True)
 
             try:
-                raw_text = result["output"].strip()
-                if raw_text.startswith("```"):
-                    raw_text = raw_text.split("\n", 1)[1] if "\n" in raw_text else raw_text
-                if raw_text.endswith("```"):
-                    raw_text = raw_text[:raw_text.rfind("```")]
-                raw_text = raw_text.strip()
-                parsed = json.loads(raw_text)
-                prediction = parsed.get("prediction", {})
-                risk_score = prediction.get("risk_score_0_100", "N/A")
-                priority = prediction.get("priority", "N/A")
-                probability = prediction.get("sepsis_probability_6h", "N/A")
-                confidence = prediction.get("confidence_level", "N/A")
-                confidence_reasoning = prediction.get("confidence_reasoning", "N/A")
-                rationale = prediction.get("clinical_rationale", "N/A")
-                metrics = parsed.get("clinical_metrics", {})
-                logic_gate = parsed.get("logic_gate", {})
-                json_valid = True
-            except json.JSONDecodeError:
-                risk_score = "PARSE ERROR"
-                priority = "N/A"
-                probability = "N/A"
-                confidence = "N/A"
-                confidence_reasoning = "N/A"
-                rationale = result["output"][:200]
-                metrics = {}
-                logic_gate = {}
-                json_valid = False
+                raw_text, elapsed_ms, in_tokens, out_tokens = invoke_model(
+                    client, model["id"], system_prompt, patient["narrative"]
+                )
 
-            model_result = {
-                "model_name": model["name"],
-                "model_id": model["id"],
-                "response_time_ms": result["elapsed_ms"],
-                "input_tokens": result["input_tokens"],
-                "output_tokens": result["output_tokens"],
-                "input_cost_per_call": round(input_cost, 6),
-                "output_cost_per_call": round(output_cost, 6),
-                "total_cost_per_call": round(total_cost, 6),
-                "cost_per_1k_patients": round(cost_per_1k, 2),
-                "risk_score": risk_score,
-                "priority": priority,
-                "probability_6h": probability,
-                "confidence": confidence,
-                "confidence_reasoning": confidence_reasoning,
-                "rationale": rationale,
-                "qsofa": metrics.get("qSOFA_score", "N/A"),
-                "sirs_met": metrics.get("SIRS_met", "N/A"),
-                "trend_velocity": metrics.get("trend_velocity", "N/A"),
-                "organ_stress": metrics.get("organ_stress_indicators", []),
-                "discordance": logic_gate.get("discordance_detected", "N/A"),
-                "primary_driver": logic_gate.get("primary_driver", "N/A"),
-                "missing_params": logic_gate.get("missing_parameters", []),
-                "json_valid": json_valid,
-                "raw_output": result["output"],
-                "pricing": {"input": model["input_cost"], "output": model["output_cost"]},
-                "status": "SUCCESS"
-            }
+                input_cost = (in_tokens / 1_000_000) * model["input_cost"]
+                output_cost = (out_tokens / 1_000_000) * model["output_cost"]
+                total_cost = input_cost + output_cost
 
-            print(f"  Response time: {result['elapsed_ms']}ms")
-            print(f"  Tokens: {result['input_tokens']} in / {result['output_tokens']} out")
-            print(f"  Cost per call: ${total_cost:.6f} | Per 1K patients: ${cost_per_1k:.2f}")
-            print(f"  Risk Score: {risk_score} | Priority: {priority} | Confidence: {confidence}")
-            print(f"  JSON Valid: {json_valid}")
+                parsed = parse_output(raw_text)
 
-        except Exception as e:
-            print(f"  ERROR: {e}")
-            model_result = {
-                "model_name": model["name"],
-                "model_id": model["id"],
-                "status": "FAILED",
-                "error": str(e),
-            }
+                row = {
+                    "test_date": datetime.now().strftime("%Y-%m-%d"),
+                    "patient_id": patient["patient_id"],
+                    "case_description": patient["case_desc"],
+                    "expected_severity": patient["expected_severity"],
+                    "model_name": model["name"],
+                    "model_id": model["id"],
+                    "response_time_ms": round(elapsed_ms, 1),
+                    "input_tokens": in_tokens,
+                    "output_tokens": out_tokens,
+                    "cost_per_call_usd": round(total_cost, 6),
+                    "cost_per_1k_patients_usd": round(total_cost * 1000, 2),
+                    **parsed,
+                }
 
-        results.append(model_result)
-        time.sleep(2)
+                print(f"✓ {elapsed_ms:.0f}ms | Risk:{parsed['risk_score']} | {parsed['priority']}")
 
-    output_file = os.path.join(os.path.dirname(__file__), "model_comparison_results.json")
-    with open(output_file, "w") as f:
-        json.dump(results, f, indent=2)
-    print(f"\n\nResults saved to: {output_file}")
+            except Exception as e:
+                print(f"✗ ERROR: {e}")
+                row = {
+                    "test_date": datetime.now().strftime("%Y-%m-%d"),
+                    "patient_id": patient["patient_id"],
+                    "case_description": patient["case_desc"],
+                    "expected_severity": patient["expected_severity"],
+                    "model_name": model["name"],
+                    "model_id": model["id"],
+                    "response_time_ms": 0,
+                    "input_tokens": 0, "output_tokens": 0,
+                    "cost_per_call_usd": 0, "cost_per_1k_patients_usd": 0,
+                    "json_valid": False, "risk_score": "ERROR",
+                    "priority": "", "probability_6h": "", "confidence": "",
+                    "confidence_reasoning": "", "rationale": str(e)[:200],
+                    "qsofa": "", "sirs_met": "", "trend_velocity": "",
+                    "organ_stress": "", "discordance": "", "primary_driver": "",
+                    "missing_params": "",
+                }
 
-    return results
+            all_results.append(row)
+            time.sleep(1)
+
+    # Write CSV
+    csv_path = os.path.join(BASE_DIR, "docs", "LLM_Model_Comparison_Results.csv")
+    fieldnames = [
+        "test_date", "patient_id", "case_description", "expected_severity",
+        "model_name", "model_id", "response_time_ms",
+        "input_tokens", "output_tokens", "cost_per_call_usd", "cost_per_1k_patients_usd",
+        "json_valid", "risk_score", "priority", "probability_6h", "confidence",
+        "confidence_reasoning", "rationale",
+        "qsofa", "sirs_met", "trend_velocity", "organ_stress",
+        "discordance", "primary_driver", "missing_params",
+    ]
+
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(all_results)
+
+    print(f"\n{'=' * 70}")
+    print(f"CSV saved: {csv_path}")
+    print(f"Total calls: {len(all_results)}")
+    print(f"{'=' * 70}")
+
+    # Print summary table
+    print(f"\n{'MODEL SUMMARY':=^70}")
+    for model in MODELS:
+        model_rows = [r for r in all_results if r["model_name"] == model["name"]]
+        valid = [r for r in model_rows if r["json_valid"]]
+        avg_time = sum(r["response_time_ms"] for r in valid) / len(valid) if valid else 0
+        avg_cost = sum(r["cost_per_call_usd"] for r in valid) / len(valid) if valid else 0
+        scores = [r["risk_score"] for r in valid if isinstance(r["risk_score"], int)]
+        print(f"\n  {model['name']}:")
+        print(f"    Avg response time: {avg_time:.0f}ms")
+        print(f"    Avg cost/call: ${avg_cost:.6f} (${avg_cost * 1000:.2f}/1K patients)")
+        print(f"    JSON valid: {len(valid)}/{len(model_rows)}")
+        print(f"    Risk scores: {scores}")
+
+    # Write raw JSON too
+    json_path = os.path.join(BASE_DIR, "model_comparison_results.json")
+    with open(json_path, "w") as f:
+        json.dump(all_results, f, indent=2)
+
+    return all_results
 
 
 if __name__ == "__main__":
-    run_comparison()
+    run_full_comparison()
