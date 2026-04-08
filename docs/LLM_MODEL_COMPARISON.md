@@ -141,11 +141,11 @@
 
 ## 6. Recommendation
 
-### Current Production: Claude Sonnet 4 ✓
-**Rationale:** Fastest response (5s), lowest cost ($10.34/1K), sufficient clinical output for alerting. Already deployed and tested on EKS.
+### ✅ Production (Deployed Apr 8, 2026): Claude Sonnet 4.5
+**Rationale:** Best balance of clinical depth and speed. 85% improvement in reasoning quality over Sonnet 4 (surgical context, MAP calculation, specific complications) with only 23% cost increase and ~4s additional latency. The clinical depth difference is meaningful — identifying "bile leak" and "anastomotic leak" as specific post-cholecystectomy risks adds genuine value for bedside decision-making. Deployed to EKS by Narendra on Apr 8, 2026.
 
-### Recommended Upgrade: Claude Sonnet 4.5
-**Rationale:** Best balance of clinical depth and speed. 85% improvement in reasoning quality (surgical context, MAP calculation, specific complications) with only 23% cost increase and ~4s additional latency. The clinical depth difference is meaningful — identifying "bile leak" and "anastomotic leak" as specific post-cholecystectomy risks adds genuine value for bedside decision-making.
+### Previous Production: Claude Sonnet 4
+**Note:** Replaced by Sonnet 4.5. Fastest response (5s), lowest cost ($10.34/1K), but shallower clinical reasoning.
 
 ### For Formal Validation Study: Claude Opus 4.6
 **Rationale:** Use Opus 4.6 for the retrospective clinical validation study where response time doesn't matter but reasoning quality is paramount. Its explicit time-to-decompensation estimate ("4-6 hours from decompensation") and organ-system-organized reasoning make it ideal for measuring accuracy against known outcomes.
@@ -157,14 +157,14 @@
 The system is designed for easy model swapping — change one environment variable (`BEDROCK_MODEL_ID`), no code changes needed:
 
 ```bash
-# Current
-BEDROCK_MODEL_ID=us.anthropic.claude-sonnet-4-20250514-v1:0
-
-# Recommended upgrade
+# Current (deployed Apr 8, 2026)
 BEDROCK_MODEL_ID=us.anthropic.claude-sonnet-4-5-20250929-v1:0
 
 # For validation study
 BEDROCK_MODEL_ID=us.anthropic.claude-opus-4-6-v1
+
+# Previous (replaced)
+# BEDROCK_MODEL_ID=us.anthropic.claude-sonnet-4-20250514-v1:0
 ```
 
 ---
