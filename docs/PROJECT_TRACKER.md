@@ -55,7 +55,7 @@
 
 | # | Task | Owner | Status | Due | Blocker | Notes |
 |---|------|-------|--------|-----|---------|-------|
-| A1 | Sonnet 4.5 on EKS | NAR | ⏳ | Feb 12 | — | Message sent to Narendra: `kubectl set env` |
+| A1 | Sonnet 4.5 on EKS | NAR | ✅ | Apr 8 | — | Narendra updated env var on EKS |
 | A2 | HTTPS/TLS on ALB | NAR | ⏳ | Feb 14 | — | ACM cert + port 443 listener + HTTP redirect |
 | A3 | Red Rover SJSA sandbox | RR/SHA | ⏳ | TBD | Red Rover response | Meeting held Feb 11. Email sent to Shawn |
 | A4 | Red Rover: confirm API endpoint | RR | ⏳ | TBD | Red Rover response | `/patients/orders` or `/encounters/{id}/events`? |

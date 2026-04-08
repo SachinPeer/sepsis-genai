@@ -18,14 +18,13 @@
 
 ## Phase 1: Immediate (This Week)
 
-### 1.1 🔴 EXT — Upgrade EKS to Sonnet 4.5
+### 1.1 ✅ DONE — Upgrade EKS to Sonnet 4.5
 | Item | Detail |
 |------|--------|
 | **What** | Change `BEDROCK_MODEL_ID` env var in Kubernetes deployment |
-| **Depends on** | **Narendra** (CI/CD) |
-| **Message sent** | Yes — asking him to run `kubectl set env deployment/sepsis-genai BEDROCK_MODEL_ID=us.anthropic.claude-sonnet-4-5-20250929-v1:0` |
+| **Completed by** | **Narendra** (CI/CD) — Apr 8, 2026 |
 | **Our status** | ✅ Code updated, git pushed, local `.env` updated |
-| **Verification** | Hit `/health` endpoint after Narendra confirms — model field should show `sonnet-4-5` |
+| **EKS status** | ✅ Narendra updated env var, pods restarted |
 
 ### 1.2 🔴 EXT — HTTPS/TLS on ALB
 | Item | Detail |
@@ -253,7 +252,7 @@
 | Area | Status |
 |------|--------|
 | Core AI Pipeline | ✅ Production-ready on EKS |
-| LLM Model Selection | ✅ Sonnet 4.5 selected, comparison documented |
+| LLM Model Selection | ✅ Sonnet 4.5 deployed on EKS (Apr 8), comparison documented |
 | Clinical Guardrails | ✅ 850+ parameters, API-managed |
 | Deterministic Scores | ✅ qSOFA, SIRS, SOFA implemented |
 | Audit Logging | ✅ Structured JSON, no PHI |
