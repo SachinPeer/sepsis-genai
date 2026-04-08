@@ -1,7 +1,7 @@
 # Sepsis GenAI — Execution Plan
 
 **Created:** February 11, 2026
-**Last Updated:** February 11, 2026
+**Last Updated:** April 8, 2026
 **Owner:** Sachin Jadhav
 
 ---
@@ -261,10 +261,10 @@
 | Feedback Guide | ✅ Documented (`docs/FEEDBACK_LOOP_GUIDE.md`) |
 | HTTPS/TLS | ⏳ Waiting on Narendra |
 | SJSA Integration | ⏳ Waiting on Red Rover sandbox |
-| Frontend Display | ❌ Not started — needs team allocation |
-| Doctor Feedback UI | ❌ Not started — needs team allocation |
-| Clinical Validation | ❌ Not started — needs historical data |
-| Multi-Hospital Config | ❌ Not started — needs hospital partnerships |
+| Frontend Display | ❌ Not started — need to start |
+| Doctor Feedback UI | ❌ Not started — need to start |
+| Clinical Validation | ❌ Not started — need to start |
+| Multi-Hospital Config | ❌ Not started — need to start  |
 
 ---
 

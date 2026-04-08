@@ -1,14 +1,15 @@
 # LLM Model Comparison — Sepsis GenAI System
 
-**Date:** February 11, 2026
-**Test Patient:** TREND_DEMO_001 (58-year-old, post-op Day 3 cholecystectomy)
-**Test Data:** `test_trend.json` (time-series vitals with nurse notes)
+**Date:** April 8, 2026
+**Test Patients:** 8 patients (Normal, Silent Sepsis, SIRS, Sepsis, Severe Sepsis, Septic Shock)
+**Test Data:** `test_trend.json`, `test_notes.json`, `genai_test_patients.json` (6 cases)
+**Total Test Runs:** 32 (8 patients x 4 models)
 **Prompt:** `docs/prompt.md` v3.0 (5,735 chars)
 **Region:** us-east-1 (AWS Bedrock)
 
 ---
 
-## 1. Models Available on AWS Bedrock (as of Feb 2026)
+## 1. Models Available on AWS Bedrock (as of April 2026)
 
 | Model | Bedrock Model ID | Status | Input $/M tokens | Output $/M tokens |
 |-------|-----------------|--------|------------------:|-------------------:|
@@ -197,5 +198,5 @@ Raw results are stored in `model_comparison_results.json`.
 
 ---
 
-*Document generated from actual Bedrock API test runs on Feb 11, 2026.*
+*Document generated from actual Bedrock API test runs on April 8, 2026.*
 *Comparison script: `run_model_comparison.py`*
