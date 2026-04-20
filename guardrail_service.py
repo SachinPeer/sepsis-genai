@@ -836,76 +836,198 @@ class SepsisSafetyGuardrail:
         return json.dumps(self.config, indent=2)
 
     def get_current_thresholds(self) -> Dict[str, Any]:
-        """Return current thresholds for API exposure."""
+        """Return all active configurable settings used by the guardrail."""
+        
+        # Read early detection patterns from config
+        patterns = self.config.get("early_detection_patterns", {})
+        lab_pattern = patterns.get("earliest_reliable_lab", {})
+        lab_criteria = lab_pattern.get("criteria", {})
+        vitals_pattern = patterns.get("early_sepsis_vitals", {})
+        vitals_criteria = vitals_pattern.get("criteria", {})
+        
+        # Read combined criteria from config
+        override_logic = self.config.get("override_logic", {})
+        shock = override_logic.get("shock_criteria", {})
+        dic = override_logic.get("dic_criteria", {})
+        
+        # Read discordance from config
+        discordance = self.config.get("discordance_rules", {})
+        
+        # Read qSOFA from config
+        qsofa_config = self.config.get("qsofa_criteria", {})
+        
+        # Read history-aware HTN threshold
+        htn_map = self.config.get("critical_thresholds", {}).get(
+            "hemodynamic", {}).get("map_critical_htn_patient", {})
+        
         return {
-            "hemodynamic": {
-                "sbp_threshold": self.sbp_threshold,
-                "map_threshold": self.map_threshold,
-                "dbp_threshold": self.dbp_threshold
+            "critical_thresholds": {
+                "hemodynamic": {
+                    "sbp_threshold": self.sbp_threshold,
+                    "map_threshold": self.map_threshold,
+                    "map_threshold_htn_patient": htn_map.get("value", 75),
+                    "dbp_threshold": self.dbp_threshold
+                },
+                "perfusion": {
+                    "lactate_threshold": self.lactate_threshold,
+                    "lactate_severe_threshold": self.lactate_severe_threshold,
+                    "base_excess_threshold": self.base_excess_threshold
+                },
+                "respiratory": {
+                    "o2sat_threshold": self.o2sat_threshold,
+                    "resp_rate_threshold": self.resp_rate_threshold,
+                    "pf_ratio_threshold": self.pf_ratio_threshold,
+                    "paco2_threshold": self.paco2_threshold
+                },
+                "temperature": {
+                    "hypothermia_threshold": self.temp_hypothermia,
+                    "hyperthermia_threshold": self.temp_severe_fever
+                },
+                "renal": {
+                    "creatinine_threshold": self.creatinine_threshold,
+                    "bun_threshold": self.bun_threshold,
+                    "urine_output_threshold": self.urine_output_threshold
+                },
+                "hepatic": {
+                    "bilirubin_threshold": self.bilirubin_threshold,
+                    "ast_threshold": self.ast_threshold,
+                    "alt_threshold": self.alt_threshold,
+                    "inr_threshold": self.inr_threshold
+                },
+                "hematologic": {
+                    "platelets_threshold": self.platelets_threshold,
+                    "wbc_high_threshold": self.wbc_high_threshold,
+                    "wbc_low_threshold": self.wbc_low_threshold,
+                    "hemoglobin_threshold": self.hemoglobin_threshold,
+                    "ptt_threshold": self.ptt_threshold,
+                    "fibrinogen_threshold": self.fibrinogen_threshold,
+                    "d_dimer_threshold": self.d_dimer_threshold
+                },
+                "metabolic": {
+                    "ph_low_threshold": self.ph_low_threshold,
+                    "ph_high_threshold": self.ph_high_threshold,
+                    "glucose_low_threshold": self.glucose_low_threshold,
+                    "glucose_high_threshold": self.glucose_high_threshold,
+                    "potassium_low_threshold": self.potassium_low_threshold,
+                    "potassium_high_threshold": self.potassium_high_threshold,
+                    "sodium_low_threshold": self.sodium_low_threshold,
+                    "sodium_high_threshold": self.sodium_high_threshold,
+                    "bicarbonate_threshold": self.bicarbonate_threshold
+                },
+                "cardiac": {
+                    "hr_high_threshold": self.hr_high_threshold,
+                    "hr_low_threshold": self.hr_low_threshold,
+                    "troponin_threshold": self.troponin_threshold,
+                    "bnp_threshold": self.bnp_threshold
+                },
+                "neurologic": {
+                    "gcs_threshold": self.gcs_threshold
+                },
+                "infection_markers": {
+                    "procalcitonin_threshold": self.procalcitonin_threshold,
+                    "crp_threshold": self.crp_threshold
+                }
             },
-            "perfusion": {
-                "lactate_threshold": self.lactate_threshold,
-                "lactate_severe_threshold": self.lactate_severe_threshold,
-                "base_excess_threshold": self.base_excess_threshold
+            "combined_criteria": {
+                "septic_shock": {
+                    "description": shock.get("description", "Hypotension + Hyperlactatemia"),
+                    "requires_both": shock.get("requires_both", True),
+                    "condition_1": f"SBP <= {self.sbp_threshold} OR MAP < {self.map_threshold}",
+                    "condition_2": f"Lactate >= {self.lactate_threshold}"
+                },
+                "dic_detection": {
+                    "description": dic.get("description", "Disseminated Intravascular Coagulation"),
+                    "requires_n_of_4": 3,
+                    "criteria": [
+                        f"Platelets < {self.platelets_threshold}",
+                        f"INR >= {self.inr_threshold}",
+                        f"Fibrinogen < {self.fibrinogen_threshold}",
+                        f"D-Dimer >= {self.d_dimer_threshold}"
+                    ]
+                }
             },
-            "respiratory": {
-                "o2sat_threshold": self.o2sat_threshold,
-                "resp_rate_threshold": self.resp_rate_threshold,
-                "pf_ratio_threshold": self.pf_ratio_threshold,
-                "paco2_threshold": self.paco2_threshold
+            "early_detection_patterns": {
+                "bacterial_infection_combo": {
+                    "description": lab_pattern.get("description", "Earliest reliable lab combination"),
+                    "requires_all": lab_pattern.get("requires_all", True),
+                    "lymphocytes_lt": lab_criteria.get("lymphocytes", {}).get("value", 1.0),
+                    "neutrophils_gt": lab_criteria.get("neutrophils", {}).get("value", 80),
+                    "bands_gte": lab_criteria.get("bands", {}).get("value", 10)
+                },
+                "early_sepsis_vitals": {
+                    "description": vitals_pattern.get("description", "Early vital sign pattern"),
+                    "requires_n_or_more": 2,
+                    "hr_gte": vitals_criteria.get("hr", {}).get("value", 90),
+                    "rr_gte": vitals_criteria.get("rr", {}).get("value", 22),
+                    "temp_high_gte": vitals_criteria.get("temp_high", {}).get("value", 38.0),
+                    "temp_low_lt": vitals_criteria.get("temp_low", {}).get("value", 36.0),
+                    "wbc_high_gte": vitals_criteria.get("wbc_high", {}).get("value", 12),
+                    "wbc_low_lte": vitals_criteria.get("wbc_low", {}).get("value", 4)
+                }
             },
-            "temperature": {
-                "hypothermia_threshold": self.temp_hypothermia,
-                "hyperthermia_threshold": self.temp_severe_fever
+            "scoring_thresholds": {
+                "qSOFA": {
+                    "rr_gte": qsofa_config.get("respiratory_rate", {}).get("threshold", 22),
+                    "sbp_lte": qsofa_config.get("systolic_bp", {}).get("threshold", 100),
+                    "altered_mentation": "GCS < 15 or documented new-onset AMS",
+                    "positive_score": ">=2 of 3"
+                },
+                "SIRS": {
+                    "temp_gt": 38.0,
+                    "temp_lt": 36.0,
+                    "hr_gt": 90,
+                    "rr_gt": 20,
+                    "paco2_lt": 32,
+                    "wbc_gt": 12,
+                    "wbc_lt": 4,
+                    "bands_gt": 10,
+                    "positive_criteria": ">=2 of 4"
+                },
+                "SOFA": {
+                    "respiratory_pf_bands": ">=400:0, >=300:1, >=200:2, >=100:3, <100:4",
+                    "coagulation_platelets_bands": ">=150:0, >=100:1, >=50:2, >=20:3, <20:4",
+                    "liver_bilirubin_bands": "<1.2:0, <2.0:1, <6.0:2, <12.0:3, >=12.0:4",
+                    "cardiovascular": "MAP>=70:0, MAP>=65:1, MAP<65:2, vasopressors:3-4",
+                    "cns_gcs_bands": "15:0, 13-14:1, 10-12:2, 6-9:3, <6:4",
+                    "renal_creatinine_bands": "<1.2:0, <2.0:1, <3.5:2, <5.0:3, >=5.0:4",
+                    "max_score": 24
+                }
             },
-            "renal": {
-                "creatinine_threshold": self.creatinine_threshold,
-                "bun_threshold": self.bun_threshold,
-                "urine_output_threshold": self.urine_output_threshold
-            },
-            "hepatic": {
-                "bilirubin_threshold": self.bilirubin_threshold,
-                "ast_threshold": self.ast_threshold,
-                "alt_threshold": self.alt_threshold,
-                "inr_threshold": self.inr_threshold
-            },
-            "hematologic": {
-                "platelets_threshold": self.platelets_threshold,
-                "wbc_high_threshold": self.wbc_high_threshold,
-                "wbc_low_threshold": self.wbc_low_threshold,
-                "hemoglobin_threshold": self.hemoglobin_threshold,
-                "ptt_threshold": self.ptt_threshold,
-                "fibrinogen_threshold": self.fibrinogen_threshold,
-                "d_dimer_threshold": self.d_dimer_threshold
-            },
-            "metabolic": {
-                "ph_low_threshold": self.ph_low_threshold,
-                "ph_high_threshold": self.ph_high_threshold,
-                "glucose_low_threshold": self.glucose_low_threshold,
-                "glucose_high_threshold": self.glucose_high_threshold,
-                "potassium_low_threshold": self.potassium_low_threshold,
-                "potassium_high_threshold": self.potassium_high_threshold,
-                "sodium_low_threshold": self.sodium_low_threshold,
-                "sodium_high_threshold": self.sodium_high_threshold,
-                "bicarbonate_threshold": self.bicarbonate_threshold
-            },
-            "cardiac": {
-                "hr_high_threshold": self.hr_high_threshold,
-                "hr_low_threshold": self.hr_low_threshold,
-                "troponin_threshold": self.troponin_threshold,
-                "bnp_threshold": self.bnp_threshold
-            },
-            "neurologic": {
-                "gcs_threshold": self.gcs_threshold
-            },
-            "infection_markers": {
-                "procalcitonin_threshold": self.procalcitonin_threshold,
-                "crp_threshold": self.crp_threshold
+            "discordance_detection": {
+                "enabled": self.discordance_enabled,
+                "escalation_risk_score": self.escalation_risk_score,
+                "escalation_priority": self.escalation_priority,
+                "concerning_phrase_categories": {
+                    "perfusion": len(discordance.get("perfusion_concerning_phrases", [])),
+                    "mental_status": len(discordance.get("mental_status_phrases", {}).get("phrases", [])),
+                    "fluid_response": len(discordance.get("fluid_response_phrases", [])),
+                    "vasopressor": len(discordance.get("vasopressor_phrases", [])),
+                    "urine_output": len(discordance.get("urine_output_phrases", [])),
+                    "respiratory_distress": len(discordance.get("respiratory_distress_phrases", []))
+                },
+                "total_phrases_monitored": len(self.concerning_phrases)
             },
             "override_settings": {
                 "min_risk_for_critical": self.min_risk_for_critical,
                 "forced_risk_score": self.forced_risk_score,
-                "forced_priority": self.forced_priority
+                "forced_priority": self.forced_priority,
+                "forced_probability_6h": self.forced_probability
+            },
+            "history_aware_checks": {
+                "cardiovascular_htn_map_threshold": htn_map.get("value", 75),
+                "monitored_conditions": [
+                    "chronic hypertension", "renal disease", "liver disease",
+                    "hematologic disorders", "diabetes", "seizure disorder",
+                    "neurologic conditions"
+                ],
+                "monitored_medications": [
+                    "corticosteroids", "antipyretics", "anticoagulants"
+                ]
+            },
+            "audit_settings": {
+                "log_all_overrides": self.config.get("audit_settings", {}).get("log_all_overrides", True),
+                "log_near_misses": self.config.get("audit_settings", {}).get("log_near_misses", True),
+                "near_miss_threshold": self.config.get("audit_settings", {}).get("near_miss_threshold", 75)
             }
         }
 
