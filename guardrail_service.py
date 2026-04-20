@@ -217,7 +217,8 @@ class SepsisSafetyGuardrail:
         return None
 
     def validate_prediction(self, llm_output_json, raw_vitals: Dict[str, Any], 
-                           nursing_notes: str = "") -> Dict[str, Any]:
+                           nursing_notes: str = "",
+                           patient_history: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
         Cross-references LLM risk scores with deterministic medical rules.
         
@@ -225,6 +226,7 @@ class SepsisSafetyGuardrail:
             llm_output_json: LLM prediction output (dict or JSON string)
             raw_vitals: Dictionary of vital signs
             nursing_notes: Optional nursing notes for discordance detection
+            patient_history: Optional dict with 'conditions' (list of str) and 'medications' (list of str)
             
         Returns:
             Validated prediction with override flags if triggered
@@ -436,6 +438,20 @@ class SepsisSafetyGuardrail:
             overrides.append(f"Severe Inflammation (CRP {crp} >= {self.crp_threshold} mg/L)")
 
         # =====================================================
+        # EARLY DETECTION PATTERNS (Combination Checks)
+        # =====================================================
+        early_warnings = self._check_early_detection_patterns(raw_vitals)
+        
+        # =====================================================
+        # HISTORY-AWARE CONTEXT CHECKS
+        # =====================================================
+        context_flags = []
+        if patient_history:
+            overrides, context_flags = self._check_history_context(
+                raw_vitals, patient_history, overrides
+            )
+
+        # =====================================================
         # SEPTIC SHOCK DETECTION (Combined Criteria)
         # =====================================================
         hypotension = (sbp is not None and sbp <= self.sbp_threshold) or \
@@ -475,6 +491,14 @@ class SepsisSafetyGuardrail:
                     self.logger.warning(f"Discordance escalation: {detected_concerns}")
 
         # =====================================================
+        # EARLY DETECTION ESCALATION
+        # =====================================================
+        if early_warnings and not overrides and risk_score < self.escalation_risk_score:
+            pred_data["risk_score_0_100"] = max(risk_score, self.escalation_risk_score)
+            pred_data["priority"] = self.escalation_priority
+            self.logger.warning(f"Early detection escalation: {early_warnings}")
+
+        # =====================================================
         # APPLY OVERRIDE LOGIC
         # =====================================================
         if overrides and risk_score < self.min_risk_for_critical:
@@ -503,8 +527,221 @@ class SepsisSafetyGuardrail:
             if audit.get("log_near_misses", True) and self.min_risk_for_critical - 5 <= risk_score < self.min_risk_for_critical:
                 self.logger.info(f"Near-miss detected: risk_score={risk_score}, potential_overrides={overrides}")
 
+        # Add early warnings and history context to output
+        prediction["logic_gate"]["early_warnings"] = early_warnings
+        prediction["logic_gate"]["history_context"] = context_flags
+
         return prediction
     
+    def _check_early_detection_patterns(self, vitals: Dict[str, Any]) -> List[str]:
+        """
+        Check combination patterns from early_detection_patterns config.
+        These catch early/impending sepsis before individual critical thresholds are breached.
+        """
+        warnings = []
+        patterns = self.config.get("early_detection_patterns", {})
+        
+        # Pattern 1: Earliest reliable lab combo (low lymph + high neutrophils + high bands)
+        lab_pattern = patterns.get("earliest_reliable_lab", {})
+        if lab_pattern:
+            criteria = lab_pattern.get("criteria", {})
+            lymph = self._get_vital(vitals, "Lymphocytes", "lymphocytes", "ALC")
+            neut = self._get_vital(vitals, "Neutrophils", "neutrophils", "ANC_pct", "Neut_pct")
+            bands = self._get_vital(vitals, "Bands", "bands", "band_neutrophils")
+            
+            matches = []
+            if lymph is not None and lymph < criteria.get("lymphocytes", {}).get("value", 1.0):
+                matches.append(f"Lymphocytes {lymph} < {criteria['lymphocytes']['value']} K/µL")
+            if neut is not None and neut > criteria.get("neutrophils", {}).get("value", 80):
+                matches.append(f"Neutrophils {neut}% > {criteria['neutrophils']['value']}%")
+            if bands is not None and bands >= criteria.get("bands", {}).get("value", 10):
+                matches.append(f"Bands {bands}% >= {criteria['bands']['value']}%")
+            
+            requires_all = lab_pattern.get("requires_all", True)
+            if requires_all and len(matches) == 3:
+                warnings.append(f"Early Detection — Bacterial infection pattern: {', '.join(matches)}")
+            elif not requires_all and len(matches) >= 2:
+                warnings.append(f"Early Detection — Bacterial infection pattern: {', '.join(matches)}")
+        
+        # Pattern 2: Early sepsis vitals combo (2+ of: HR>=90, RR>=22, temp abnormal, WBC abnormal)
+        vitals_pattern = patterns.get("early_sepsis_vitals", {})
+        if vitals_pattern:
+            criteria = vitals_pattern.get("criteria", {})
+            hr = self._get_vital(vitals, "HR", "heart_rate", "HeartRate", "pulse")
+            rr = self._get_vital(vitals, "Resp", "resp_rate", "RR", "respiratory_rate")
+            temp = self._get_vital(vitals, "Temp", "temperature", "Temperature")
+            wbc = self._get_vital(vitals, "WBC", "wbc", "white_blood_cells")
+            
+            matches = []
+            if hr is not None and hr >= criteria.get("hr", {}).get("value", 90):
+                matches.append(f"HR {hr} >= 90")
+            if rr is not None and rr >= criteria.get("rr", {}).get("value", 22):
+                matches.append(f"RR {rr} >= 22")
+            if temp is not None and temp >= criteria.get("temp_high", {}).get("value", 38.0):
+                matches.append(f"Temp {temp} >= 38.0°C")
+            if temp is not None and temp < criteria.get("temp_low", {}).get("value", 36.0):
+                matches.append(f"Temp {temp} < 36.0°C")
+            if wbc is not None and wbc >= criteria.get("wbc_high", {}).get("value", 12):
+                matches.append(f"WBC {wbc} >= 12")
+            if wbc is not None and wbc <= criteria.get("wbc_low", {}).get("value", 4):
+                matches.append(f"WBC {wbc} <= 4")
+            
+            if len(matches) >= 2:
+                warnings.append(f"Early Detection — Early sepsis vitals: {', '.join(matches)}")
+        
+        return warnings
+
+    def _check_history_context(self, vitals: Dict[str, Any], 
+                                patient_history: Dict[str, Any],
+                                overrides: List[str]) -> tuple:
+        """
+        Evaluate patient history and medications to modify guardrail interpretation.
+        
+        - Chronic HTN → use stricter MAP threshold (75 instead of 65)
+        - Renal/hepatic/hematologic history → flag that elevated values may be baseline
+        - Seizure history → lactate may be from seizure, not sepsis
+        - Antipyretics → normal temp may be masked fever
+        - Anticoagulants → elevated INR may be medication, not DIC
+        
+        Returns (modified_overrides, context_flags)
+        """
+        context_flags = []
+        conditions = [c.lower() for c in patient_history.get("conditions", [])]
+        medications = [m.lower() for m in patient_history.get("medications", [])]
+        conditions_text = " ".join(conditions)
+        medications_text = " ".join(medications)
+        
+        history_config = self.config.get("history_context_checks", {})
+        
+        # --- Cardiovascular: Chronic HTN → stricter MAP threshold ---
+        cv_config = history_config.get("cardiovascular_history", {})
+        htn_terms = [c.lower() for c in cv_config.get("conditions_to_check", 
+                     ["chronic hypertension", "htn", "high blood pressure"])]
+        has_htn = any(term in conditions_text for term in htn_terms)
+        
+        if has_htn:
+            map_val = self._get_vital(vitals, "MAP", "map", "mean_arterial_pressure")
+            sbp = self._get_vital(vitals, "SBP", "sbp", "systolic_bp")
+            dbp = self._get_vital(vitals, "DBP", "dbp", "diastolic_bp")
+            if map_val is None and sbp is not None and dbp is not None:
+                map_val = (sbp + 2 * dbp) / 3
+            
+            htn_threshold = self.config.get("critical_thresholds", {}).get(
+                "hemodynamic", {}).get("map_critical_htn_patient", {}).get("value", 75)
+            
+            if map_val is not None and self.map_threshold <= map_val < htn_threshold:
+                overrides.append(
+                    f"Critical MAP for HTN patient (MAP {map_val:.0f} < {htn_threshold} mmHg — "
+                    f"standard threshold {self.map_threshold} would miss this)"
+                )
+            context_flags.append(f"Chronic HTN detected: using stricter MAP threshold (< {htn_threshold} mmHg)")
+        
+        # --- Renal history ---
+        renal_config = history_config.get("renal_history", {})
+        renal_terms = [c.lower() for c in renal_config.get("conditions_to_check",
+                       ["renal disease", "chronic kidney disease", "ckd", "esrf", "dialysis"])]
+        has_renal = any(term in conditions_text for term in renal_terms)
+        
+        creatinine = self._get_vital(vitals, "Creatinine", "creatinine")
+        if creatinine is not None and creatinine >= 2.0:
+            if has_renal:
+                context_flags.append(
+                    f"Renal history present: Creatinine {creatinine} may be patient's baseline")
+            else:
+                context_flags.append(
+                    f"NO renal history: Creatinine {creatinine} — possible sepsis-related AKI")
+        
+        # --- Hepatic history ---
+        hepatic_config = history_config.get("hepatic_history", {})
+        hepatic_terms = [c.lower() for c in hepatic_config.get("conditions_to_check",
+                         ["liver disease", "hepatitis", "cirrhosis"])]
+        has_hepatic = any(term in conditions_text for term in hepatic_terms)
+        
+        bilirubin = self._get_vital(vitals, "Bilirubin_total", "Bilirubin_direct", "bilirubin", "TotalBilirubin")
+        if bilirubin is not None and bilirubin >= 2.0:
+            if has_hepatic:
+                context_flags.append(
+                    f"Hepatic history present: Bilirubin {bilirubin} may be patient's baseline")
+            else:
+                context_flags.append(
+                    f"NO hepatic history: Bilirubin {bilirubin} — possible sepsis-related hepatic injury")
+        
+        # --- Hematologic history ---
+        hema_config = history_config.get("hematologic_history", {})
+        hema_terms = [c.lower() for c in hema_config.get("conditions_to_check",
+                      ["thrombocytopenia", "itp", "leukemia", "chemotherapy"])]
+        has_hema = any(term in conditions_text for term in hema_terms)
+        
+        platelets = self._get_vital(vitals, "Platelets", "platelets", "PLT")
+        if platelets is not None and platelets < 150:
+            if has_hema:
+                context_flags.append(
+                    f"Hematologic history present: Platelets {platelets} may be patient's baseline")
+            else:
+                context_flags.append(
+                    f"NO hematologic history: Platelets {platelets} — possible sepsis-related thrombocytopenia")
+        
+        # --- Diabetes history ---
+        diabetes_config = history_config.get("diabetes_history", {})
+        diabetes_terms = [c.lower() for c in diabetes_config.get("conditions_to_check",
+                          ["diabetes", "dm", "type 1 diabetes", "type 2 diabetes", "insulin dependent"])]
+        has_diabetes = any(term in conditions_text for term in diabetes_terms)
+        
+        glucose = self._get_vital(vitals, "Glucose", "glucose", "blood_glucose")
+        if glucose is not None and glucose >= 180 and has_diabetes:
+            context_flags.append(
+                f"Diabetic patient: Glucose {glucose} — compare to patient's baseline")
+        
+        # --- Seizure history → lactate may not indicate sepsis ---
+        seizure_config = history_config.get("seizure_history", {})
+        seizure_terms = [c.lower() for c in seizure_config.get("conditions_to_check",
+                         ["seizure disorder", "epilepsy", "recent seizure"])]
+        has_seizure = any(term in conditions_text for term in seizure_terms)
+        
+        lactate = self._get_vital(vitals, "Lactate", "lactate")
+        if lactate is not None and lactate >= 2.0 and has_seizure:
+            context_flags.append(
+                f"Seizure history: Lactate {lactate} may be from seizure activity, not sepsis")
+        
+        # --- Neurologic history → AMS must be NEW ONSET ---
+        neuro_config = history_config.get("neurologic_history", {})
+        neuro_terms = [c.lower() for c in neuro_config.get("conditions_affecting_mental_status",
+                       ["alzheimer", "dementia", "baseline confusion", "cognitive dysfunction"])]
+        has_neuro = any(term in conditions_text for term in neuro_terms)
+        
+        if has_neuro:
+            context_flags.append(
+                "Neurologic history: Altered mental status must be NEW ONSET to count for sepsis scoring")
+        
+        # --- Medication checks ---
+        med_config = history_config.get("medications_affecting_labs", {})
+        
+        # Corticosteroids → can elevate glucose
+        steroid_terms = ["corticosteroid", "prednisone", "dexamethasone", "methylprednisolone", "hydrocortisone"]
+        if any(term in medications_text for term in steroid_terms):
+            if glucose is not None and glucose >= 180:
+                context_flags.append(
+                    f"On corticosteroids: Glucose {glucose} may be medication-related, not infection")
+        
+        # Antipyretics → can mask fever
+        antipyretic_meds = [m.lower() for m in med_config.get("antipyretics", {}).get(
+            "medications", ["acetaminophen", "ibuprofen", "naproxen", "aspirin"])]
+        if any(med in medications_text for med in antipyretic_meds):
+            temp = self._get_vital(vitals, "Temp", "temperature", "Temperature")
+            if temp is not None and 36.0 <= temp <= 38.0:
+                context_flags.append(
+                    f"On antipyretics: Temp {temp}°C appears normal but fever may be masked")
+        
+        # Anticoagulants → INR may be medication-related
+        anticoag_terms = ["warfarin", "coumadin", "heparin", "eliquis", "xarelto", "anticoagulant", "enoxaparin", "lovenox"]
+        if any(term in medications_text for term in anticoag_terms):
+            inr = self._get_vital(vitals, "INR", "inr")
+            if inr is not None and inr >= 2.5:
+                context_flags.append(
+                    f"On anticoagulants: INR {inr} may be medication-related, not DIC")
+        
+        return overrides, context_flags
+
     def get_full_config(self) -> Dict[str, Any]:
         """Return the complete configuration including all clinical details."""
         return self.config.copy()

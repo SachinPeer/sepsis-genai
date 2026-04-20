@@ -81,11 +81,18 @@ class PatientVitals(BaseModel):
         extra = "allow"  # Allow additional fields
 
 
+class PatientHistory(BaseModel):
+    """Patient medical history for context-aware guardrail evaluation."""
+    conditions: Optional[List[str]] = Field(default_factory=list, description="Medical conditions (e.g., 'chronic hypertension', 'diabetes', 'chronic kidney disease')")
+    medications: Optional[List[str]] = Field(default_factory=list, description="Current medications (e.g., 'acetaminophen', 'warfarin', 'prednisone')")
+
+
 class ClassifyRequest(BaseModel):
     """Request model for single patient classification."""
     patient_id: Optional[str] = Field(None, description="Patient identifier")
     vitals: Dict[str, Any] = Field(..., description="Patient vital signs and lab values")
     notes: Optional[str] = Field(None, description="Clinician/nursing notes")
+    patient_history: Optional[PatientHistory] = Field(None, description="Patient medical history and medications for context-aware analysis")
 
 
 class BatchClassifyRequest(BaseModel):
@@ -261,11 +268,18 @@ async def classify_patient(
     try:
         pipeline = get_pipeline()
         
-        # Run prediction
+        history_dict = None
+        if request.patient_history:
+            history_dict = {
+                "conditions": request.patient_history.conditions or [],
+                "medications": request.patient_history.medications or []
+            }
+        
         result = pipeline.predict(
             patient_vitals=request.vitals,
             clinician_notes=request.notes,
-            patient_id=request.patient_id
+            patient_id=request.patient_id,
+            patient_history=history_dict
         )
         
         # Extract key fields for response
@@ -295,6 +309,8 @@ async def classify_patient(
             # Guardrail (original format)
             "guardrail_override": logic_gate.get("guardrail_override", False),
             "override_reasons": logic_gate.get("override_reasons", []),
+            "early_warnings": logic_gate.get("early_warnings", []),
+            "history_context": logic_gate.get("history_context", []),
             
             # Clinical scores (deterministic - no LLM latency cost)
             "clinical_scores": {

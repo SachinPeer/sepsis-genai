@@ -74,7 +74,8 @@ class GenAISepsisPipeline:
         self, 
         patient_vitals: Dict[str, Any], 
         clinician_notes: str = None,
-        patient_id: str = None
+        patient_id: str = None,
+        patient_history: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """
         Run the full 3-stage prediction pipeline.
@@ -84,6 +85,7 @@ class GenAISepsisPipeline:
                            (supports Red Rover nested format or flat dict)
             clinician_notes: Optional unstructured nursing/physician notes
             patient_id: Optional patient identifier for logging
+            patient_history: Optional dict with 'conditions' (list) and 'medications' (list)
             
         Returns:
             Complete prediction result with all stage outputs
@@ -141,18 +143,20 @@ class GenAISepsisPipeline:
             # Flatten vitals for guardrail (handles nested Red Rover format)
             flat_vitals = self._flatten_vitals(patient_vitals)
             
-            # Pass nursing notes to guardrail for discordance detection (silent sepsis)
             validated_output = self.guardrail.validate_prediction(
                 llm_response, 
                 flat_vitals,
-                nursing_notes=clinician_notes or ""
+                nursing_notes=clinician_notes or "",
+                patient_history=patient_history
             )
             
             result["stages"]["stage3_guardrail"] = {
                 "status": "success",
                 "processing_time_ms": (time.time() - stage3_start) * 1000,
                 "override_applied": validated_output.get("logic_gate", {}).get("guardrail_override", False),
-                "override_reasons": validated_output.get("logic_gate", {}).get("override_reasons", [])
+                "override_reasons": validated_output.get("logic_gate", {}).get("override_reasons", []),
+                "early_warnings": validated_output.get("logic_gate", {}).get("early_warnings", []),
+                "history_context": validated_output.get("logic_gate", {}).get("history_context", [])
             }
             
             logger.info(f"[{request_id}] Stage 3 complete: Override={validated_output.get('logic_gate', {}).get('guardrail_override', False)}")
@@ -230,7 +234,8 @@ class GenAISepsisPipeline:
             result = self.predict(
                 patient_vitals=patient.get("vitals", patient),
                 clinician_notes=patient.get("notes"),
-                patient_id=patient.get("patient_id", f"batch_{i}")
+                patient_id=patient.get("patient_id", f"batch_{i}"),
+                patient_history=patient.get("patient_history")
             )
             result["batch_index"] = i
             results.append(result)
