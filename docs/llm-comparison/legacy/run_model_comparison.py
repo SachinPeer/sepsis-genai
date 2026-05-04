@@ -13,7 +13,7 @@ import csv
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from knowledge.genai_proprocess import SepsisPreprocessor
+from preprocessing.genai_preprocess import SepsisPreprocessor
 
 REGION = "us-east-1"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

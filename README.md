@@ -117,8 +117,8 @@ sepsis-genai/
 ├── genai_clinical_guardrail.json   # Configurable thresholds (SME-editable, Docker-bundled)
 ├── Dockerfile, docker-compose.yml, requirements.txt
 │
-├── knowledge/
-│   └── genai_proprocess.py         # Data preprocessing / narrative builder
+├── preprocessing/
+│   └── genai_preprocess.py         # Data preprocessing / narrative builder
 │
 ├── samples/                        # Example JSON payloads for manual testing
 │   ├── genai_test_patients.json

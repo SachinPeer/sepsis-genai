@@ -132,7 +132,7 @@ def run_single_prediction(provider: str, vitals: Dict, notes: str, patient_id: s
         service = GenAIInferenceService(provider=provider)
         
         # Process through preprocessor manually for direct comparison
-        from knowledge.genai_proprocess import SepsisPreprocessor
+        from preprocessing.genai_preprocess import SepsisPreprocessor
         preprocessor = SepsisPreprocessor()
         narrative = preprocessor.process(vitals, notes)
         

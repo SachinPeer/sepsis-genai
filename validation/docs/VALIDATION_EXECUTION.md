@@ -408,7 +408,7 @@ This shows the LLM responds well to both data richness AND clinical context. Wit
 While analyzing Round 2's 152 false positives, we discovered that the cohort builder was emitting trend arrays in **chronological (oldest-first) order**, but the system's preprocessor and guardrail expect **reverse-chronological (newest-first)**.
 
 ```python
-# In genai_proprocess.py:
+# In preprocessing/genai_preprocess.py:
 flattened[key] = value[0].get('val')  # treats array[0] as LATEST reading
 # Store the previous value to check the trend  ← array[1] treated as previous
 ```
@@ -703,7 +703,7 @@ Without nurse notes, we have hit a ceiling at roughly **65% sensitivity / 51% sp
 
 ### What We Found
 
-The cohort builders (v4, v5) correctly construct 6-hour trend arrays in newest-first format. Timestamps are correct. **But the preprocessor `knowledge/genai_proprocess.py::normalize_red_rover` was discarding 4 of the 6 trend points before the data ever reached the LLM.**
+The cohort builders (v4, v5) correctly construct 6-hour trend arrays in newest-first format. Timestamps are correct. **But the preprocessor `preprocessing/genai_preprocess.py::normalize_red_rover` was discarding 4 of the 6 trend points before the data ever reached the LLM.**
 
 The original implementation:
 
@@ -722,7 +722,7 @@ For the entire validation history (Rounds 1-6), the LLM was effectively reading 
 
 ### The Fix
 
-`knowledge/genai_proprocess.py` was rewritten to:
+`preprocessing/genai_preprocess.py` was rewritten to:
 
 1. Preserve the full ordered series for trend-relevant vitals (HR, SBP, DBP, MAP, Temp, Resp, O2Sat) as `<key>_series`.
 2. Serialize trend lines like `MAP mmHg: 102 -> 90 -> 89 -> 64.5 -> 84 -> 75 (current)` so the LLM sees the full 6-hour trajectory in numeric form.
@@ -833,7 +833,7 @@ After 7 validation rounds and several out-of-band experiments, the following con
 | Component | Setting | Rationale |
 |---|---|---|
 | **Data window** | **6 hours of trend** (snapshot at onset_idx + 4 = 6h before clinical sepsis) | R6's 4h-prior shift produced no meaningful improvement; the 6h window is proven and aligned to SJSA's lookback |
-| **Preprocessor** | Full-trend serialization (`knowledge/genai_proprocess.py` rewrite) | R7 fix — all 6 hourly readings now reach the LLM for HR, SBP, DBP, MAP, Temp, Resp, O2Sat. Also surfaces `CRITICAL FLAGS:` summary line |
+| **Preprocessor** | Full-trend serialization (`preprocessing/genai_preprocess.py` rewrite) | R7 fix — all 6 hourly readings now reach the LLM for HR, SBP, DBP, MAP, Temp, Resp, O2Sat. Also surfaces `CRITICAL FLAGS:` summary line |
 | **Prompt** | **v3.2** (`docs/architecture/prompt.md`) — guardrail-aware, decoupled priority from risk score | R5 — prevents LLM over-escalation, trusts guardrail for objective safety net |
 | **Guardrails** | **Unchanged** (2-of-4 early-detection rule, all override rules) | R4/R7 deep-dives proved 7/12 "guardrail-only FPs" were actually hidden TPs; softening trades 1:1 with sensitivity |
 | **Classification** | `predicted_sepsis = risk_score ≥ 50 OR priority ∈ {High, Critical}` | Standard convention; threshold-tuning experiments confirmed this is near-optimal given priority/risk coupling |
@@ -863,9 +863,9 @@ These numbers are the system's **worst-case floor**: the LLM is forced to work w
 
 ### Locked Artifacts (files are the source of truth)
 
-- `knowledge/genai_proprocess.py` — full-trend preprocessor
+- `preprocessing/genai_preprocess.py` — full-trend preprocessor
 - `docs/architecture/prompt.md` — prompt v3.2
-- `services/guardrail_service.py` + `knowledge/clinical_knowledge_structured.json` — guardrail config
+- `guardrail_service.py` + `genai_clinical_guardrail.json` — guardrail config
 - `validation/select_cohort_v4.py` — validation cohort builder (v4, correct ordering)
 - `validation/run_validation.py` — validation harness
 

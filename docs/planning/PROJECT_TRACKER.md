@@ -52,7 +52,7 @@
 | C14 | PhysioNet interim validation (R1–R7 + 8 experiments) | US | May 1, 2026 | 340 patients, 7 rounds, 8 out-of-band experiments; final: 62.86% sens / 52.50% spec (synthetic-notes floor); **system configuration LOCKED-IN**; see `validation/VALIDATION_EXECUTION.md` §19-§20 |
 | C15 | Trend-ordering bug fix (newest-first) | US | Apr 30, 2026 | Cohort builder + preprocessor — pre-fix every round was interpreted through garbled data |
 | C16 | Prompt v3.2 (decoupled priority + guardrail-aware) | US | Apr 30, 2026 | docs/prompt.md — biggest single specificity gain (+17.8 pts) |
-| C17 | Full-trend preprocessor (knowledge/genai_proprocess.py rewrite) | US | Apr 30, 2026 | All 6 hourly readings now reach the LLM; CRITICAL FLAGS summary line added |
+| C17 | Full-trend preprocessor (preprocessing/genai_preprocess.py rewrite) | US | Apr 30, 2026 | All 6 hourly readings now reach the LLM; CRITICAL FLAGS summary line added |
 | C18 | Guardrail softening simulation (confirmed lock-in) | US | May 1, 2026 | Proved every early-detection relaxation trades sensitivity 1:1 — guardrails stay at 2-of-4 |
 | C19 | Hidden TPs clinical evidence dossier | US | Apr 30, 2026 | validation/HIDDEN_TPS.md — 18 STRONG cases where AI caught what ground-truth label missed |
 | C20 | eICU-CRD Demo Phase 1A baseline (real nurse notes) | US | May 1, 2026 | n=29 reproducible cohort; **Sens 81.82% / Spec 72.22%** (vs PhysioNet 62.86%/52.50% — +19 pts on both axes); GCS-extraction + DuckDB determinism bugs found and fixed; see `validation/EICU_VALIDATION_EXECUTION.md` |
@@ -65,9 +65,9 @@
 | Component | Setting | File |
 |---|---|---|
 | Data window | 6h trend, snapshot 6h before clinical sepsis | `validation/select_cohort_v4.py` |
-| Preprocessor | Full-trend serialization, CRITICAL FLAGS summary | `knowledge/genai_proprocess.py` |
+| Preprocessor | Full-trend serialization, CRITICAL FLAGS summary | `preprocessing/genai_preprocess.py` |
 | Prompt | v3.2 — decoupled priority, guardrail-aware | `docs/prompt.md` |
-| Guardrails | Unchanged — 2-of-4 early-detection rule retained | `services/guardrail_service.py` + `knowledge/clinical_knowledge_structured.json` |
+| Guardrails | Unchanged — 2-of-4 early-detection rule retained | `guardrail_service.py` + `genai_clinical_guardrail.json` |
 | Classifier | `risk_score ≥ 50 OR priority ∈ {High, Critical}` | `validation/run_validation.py` |
 | LLM | Claude Sonnet 4.5 via Bedrock | `.env`, `services/genai_inference_service.py` |
 | Floor performance (no notes) | Sens 62.86% / Spec 52.50% | `validation/VALIDATION_EXECUTION.md` §19 |

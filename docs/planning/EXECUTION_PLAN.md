@@ -61,7 +61,7 @@
 | **Blocked by** | Phase 1.3 (Red Rover sandbox) |
 | **Work involved** | |
 | | a. Parse SJSA alert orders from Red Rover `/api/v2/patients/orders` response |
-| | b. Update `knowledge/genai_proprocess.py` to serialize alert data into the patient narrative |
+| | b. Update `preprocessing/genai_preprocess.py` to serialize alert data into the patient narrative |
 | | c. Update `docs/prompt.md` to instruct the LLM on interpreting prior SJSA alerts |
 | | d. Update `guardrail_service.py` to factor SJSA alerts into override logic |
 | | e. Create test JSON with SJSA alert data for local testing |

@@ -29,8 +29,8 @@ COPY genai_inference_service.py .
 COPY guardrail_service.py .
 COPY genai_clinical_guardrail.json .
 
-# Copy knowledge directory
-COPY knowledge/ ./knowledge/
+# Copy preprocessing module
+COPY preprocessing/ ./preprocessing/
 
 # Copy docs directory (contains system prompt)
 COPY docs/ ./docs/

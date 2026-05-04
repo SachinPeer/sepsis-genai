@@ -16,17 +16,17 @@ import logging
 from typing import Dict, Any, Optional, List
 from datetime import datetime
 
-# Add knowledge folder to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'knowledge'))
+# Add preprocessing folder to path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'preprocessing'))
 
 from genai_inference_service import get_genai_service, GenAIInferenceService
 from guardrail_service import SepsisSafetyGuardrail
 
-# Import preprocessor from knowledge folder
+# Import preprocessor from preprocessing folder
 try:
-    from knowledge.genai_proprocess import SepsisPreprocessor
+    from preprocessing.genai_preprocess import SepsisPreprocessor
 except ImportError:
-    from genai_proprocess import SepsisPreprocessor
+    from genai_preprocess import SepsisPreprocessor
 
 logger = logging.getLogger(__name__)
 
