@@ -112,20 +112,45 @@ curl -X POST "http://localhost:8000/classify" \
 sepsis-genai/
 ├── api.py                          # FastAPI application
 ├── genai_pipeline.py               # 3-stage prediction pipeline
-├── genai_inference_service.py      # Azure OpenAI integration
+├── genai_inference_service.py      # Amazon Bedrock (Claude) integration
 ├── guardrail_service.py            # Clinical safety guardrail
-├── genai_clinical_guardrail.json   # Configurable thresholds (SME-editable)
+├── genai_clinical_guardrail.json   # Configurable thresholds (SME-editable, Docker-bundled)
+├── Dockerfile, docker-compose.yml, requirements.txt
+│
 ├── knowledge/
-│   └── genai_proprocess.py         # Data preprocessing
-├── docs/
-│   ├── GENAI_OUTPUT_EXPLAINED.md   # Output documentation
-│   ├── AWS_DEPLOYMENT_GUIDE.md     # AWS deployment guide
-│   └── prompt.md                   # AI system prompt
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
+│   └── genai_proprocess.py         # Data preprocessing / narrative builder
+│
+├── samples/                        # Example JSON payloads for manual testing
+│   ├── genai_test_patients.json
+│   ├── test_notes.json
+│   └── test_trend.json
+│
+├── docs/                           # All project documentation
+│   ├── architecture/               # How the system works (prompts, PHI, scaling, Mongo design)
+│   ├── planning/                   # PROJECT_TRACKER, execution plan, study plan, competitive
+│   ├── guides/                     # How-to material (feedback loop, etc.)
+│   ├── llm-comparison/             # Multi-LLM bake-off results (+ legacy scripts)
+│   ├── generate_pptx.py            # Builds executive overview deck
+│   └── generate_storyboard.py      # Builds clinical storyboard deck
+│
+├── presentations/
+│   ├── current/                    # Live decks (DeepDive v6, DayInLife, HospitalConfig, etc.)
+│   └── archive/                    # Superseded versions (v1–v5, older leadership decks)
+│
+├── validation/                     # Validation studies (PhysioNet, eICU-CRD, MIMIC-IV-planned)
+│   ├── docs/                       # Reports & plans — start here
+│   ├── eicu_cohort_builder.py      # Current pipeline (eICU)
+│   ├── run_eicu_validation.py      #
+│   ├── select_cohort_v5.py         # PhysioNet locked baseline (R7)
+│   ├── results/                    # CSV / JSON run outputs + ROC plots
+│   ├── experiments/                # Sensitivity / what-if simulations
+│   └── archive/                    # Superseded PhysioNet rounds (R1–R4)
+│
+├── scripts/                        # Utility scripts (feedback analyzer, etc.)
+└── README.md                       # You are here
 ```
+
+Each top-level folder has its own `README.md` with a deeper map.
 
 ## Configuration
 
@@ -149,15 +174,15 @@ curl -X POST "http://localhost:8000/guardrail/reload" \
   -H "x-api-key: your_api_key"
 ```
 
-## AWS Deployment
-
-See [docs/AWS_DEPLOYMENT_GUIDE.md](docs/AWS_DEPLOYMENT_GUIDE.md) for ECR + App Runner deployment instructions.
-
 ## Documentation
 
-- [GenAI Output Explained](docs/GENAI_OUTPUT_EXPLAINED.md) - Detailed output documentation
-- [AWS Deployment Guide](docs/AWS_DEPLOYMENT_GUIDE.md) - Production deployment
-- [System Prompt](docs/prompt.md) - AI reasoning framework
+- [`docs/README.md`](docs/README.md) — documentation index
+- [GenAI Output Explained](docs/architecture/GENAI_OUTPUT_EXPLAINED.md) — what `/classify` returns, field-by-field
+- [System Prompt](docs/architecture/prompt.md) — AI reasoning framework (v3.2)
+- [PHI & Compliance](docs/architecture/PHI_COMPLIANCE_AND_DATA_HANDLING.md) — HIPAA stance, BAAs, retention
+- [Guardrail → Mongo Design](docs/architecture/GUARDRAIL_CONFIG_MONGO_DESIGN.md) — hospital-specific config plan
+- [Project Tracker](docs/planning/PROJECT_TRACKER.md) — live task status
+- [Validation](validation/README.md) — validation study index (PhysioNet + eICU-CRD + MIMIC-IV plan)
 
 ## Security
 

@@ -176,7 +176,7 @@ Once Phase 1 clears, we have a choice depending on results:
 |---|---|---|
 | **Phase 2a** | Phase 1 sensitivity < 60% | MIMIC-III with full hourly nursing notes (older data but validates nurse-note value hypothesis) |
 | **Phase 2b** | Phase 1 sensitivity acceptable | Scale to 500-1000 MIMIC-IV patients for statistical power |
-| **Phase 3** | Red Rover sandbox ready (depends on A3/A4/A5 in `docs/PROJECT_TRACKER.md`) | Real SJSA patient data — the production validation |
+| **Phase 3** | Red Rover sandbox ready (depends on A3/A4/A5 in `docs/planning/PROJECT_TRACKER.md`) | Real SJSA patient data — the production validation |
 
 ---
 

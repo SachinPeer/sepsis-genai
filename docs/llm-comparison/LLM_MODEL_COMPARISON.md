@@ -4,7 +4,7 @@
 **Test Patients:** 8 patients (Normal, Silent Sepsis, SIRS, Sepsis, Severe Sepsis, Septic Shock)
 **Test Data:** `test_trend.json`, `test_notes.json`, `genai_test_patients.json` (6 cases)
 **Total Test Runs:** 32 (8 patients x 4 models)
-**Prompt:** `docs/prompt.md` v3.0 (5,735 chars)
+**Prompt:** `docs/architecture/prompt.md` v3.0 (5,735 chars)
 **Region:** us-east-1 (AWS Bedrock)
 
 ---

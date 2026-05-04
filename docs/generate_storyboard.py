@@ -161,8 +161,8 @@ def create_rich_storyboard():
     p.font.color.rgb = RGBColor(255, 255, 255)
     p.alignment = PP_ALIGN.CENTER
 
-    prs.save("docs/Medbeacon_Clinical_Storyboard.pptx")
-    print("PowerPoint created: docs/Medbeacon_Clinical_Storyboard.pptx")
+    prs.save("presentations/current/Medbeacon_Clinical_Storyboard.pptx")
+    print("PowerPoint created: presentations/current/Medbeacon_Clinical_Storyboard.pptx")
 
 if __name__ == "__main__":
     create_rich_storyboard()

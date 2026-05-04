@@ -397,7 +397,7 @@ def create_medbeacon_slide():
              font_size=8, color=SLATE_400, align=PP_ALIGN.CENTER)
 
     # Save
-    file_name = "docs/Medbeacon_Executive_Overview.pptx"
+    file_name = "presentations/current/Medbeacon_Executive_Overview.pptx"
     prs.save(file_name)
     print(f"PowerPoint created: {file_name}")
 

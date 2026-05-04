@@ -834,7 +834,7 @@ After 7 validation rounds and several out-of-band experiments, the following con
 |---|---|---|
 | **Data window** | **6 hours of trend** (snapshot at onset_idx + 4 = 6h before clinical sepsis) | R6's 4h-prior shift produced no meaningful improvement; the 6h window is proven and aligned to SJSA's lookback |
 | **Preprocessor** | Full-trend serialization (`knowledge/genai_proprocess.py` rewrite) | R7 fix — all 6 hourly readings now reach the LLM for HR, SBP, DBP, MAP, Temp, Resp, O2Sat. Also surfaces `CRITICAL FLAGS:` summary line |
-| **Prompt** | **v3.2** (`docs/prompt.md`) — guardrail-aware, decoupled priority from risk score | R5 — prevents LLM over-escalation, trusts guardrail for objective safety net |
+| **Prompt** | **v3.2** (`docs/architecture/prompt.md`) — guardrail-aware, decoupled priority from risk score | R5 — prevents LLM over-escalation, trusts guardrail for objective safety net |
 | **Guardrails** | **Unchanged** (2-of-4 early-detection rule, all override rules) | R4/R7 deep-dives proved 7/12 "guardrail-only FPs" were actually hidden TPs; softening trades 1:1 with sensitivity |
 | **Classification** | `predicted_sepsis = risk_score ≥ 50 OR priority ∈ {High, Critical}` | Standard convention; threshold-tuning experiments confirmed this is near-optimal given priority/risk coupling |
 | **LLM** | Claude Sonnet 4.5 (`us.anthropic.claude-sonnet-4-5-20250929-v1:0`) on AWS Bedrock | — |
@@ -864,7 +864,7 @@ These numbers are the system's **worst-case floor**: the LLM is forced to work w
 ### Locked Artifacts (files are the source of truth)
 
 - `knowledge/genai_proprocess.py` — full-trend preprocessor
-- `docs/prompt.md` — prompt v3.2
+- `docs/architecture/prompt.md` — prompt v3.2
 - `services/guardrail_service.py` + `knowledge/clinical_knowledge_structured.json` — guardrail config
 - `validation/select_cohort_v4.py` — validation cohort builder (v4, correct ordering)
 - `validation/run_validation.py` — validation harness
@@ -910,7 +910,7 @@ Compact record of all validation rounds and out-of-band experiments, with decisi
 
 ### What's Next (Out of Scope for This Study)
 
-- **Real Red Rover nurse notes** — expected to lift sensitivity to 85–90%. (A3/A4/A5 in `docs/PROJECT_TRACKER.md`.)
+- **Real Red Rover nurse notes** — expected to lift sensitivity to 85–90%. (A3/A4/A5 in `docs/planning/PROJECT_TRACKER.md`.)
 - **Smarter guardrail gate** — infection-cue requirement or rising-trend confirmation, to shed 20–30 FPs without sensitivity loss. Hold until real data is available.
 - **Repeat validation with real patients** — PhysioNet is a stress test; real ICU populations have different prevalence and note quality.
 
