@@ -1,0 +1,44 @@
+{
+  "api_input": {
+    "patient_id": "p001765",
+    "vitals": {
+      "WBC": [
+        14.7
+      ],
+      "Creatinine": [
+        0.6
+      ],
+      "Platelets": [
+        190.0
+      ],
+      "BUN": [
+        16.0
+      ],
+      "Glucose": [
+        186.0
+      ],
+      "HCO3": [
+        28.0
+      ],
+      "Potassium": [
+        3.8
+      ],
+      "Hgb": [
+        14.9
+      ],
+      "Age": 66.0,
+      "Gender": "Male"
+    },
+    "notes": "Leukocytosis, WBC 14.7."
+  },
+  "ground_truth": {
+    "patient_id": "p001765",
+    "actual_sepsis": true,
+    "onset_hour": 35,
+    "snapshot_hour": 37,
+    "snapshot_offset_from_onset": 2,
+    "total_hours": 45,
+    "age": 66.0,
+    "gender": "Male"
+  }
+}

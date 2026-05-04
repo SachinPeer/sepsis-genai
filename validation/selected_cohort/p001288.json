@@ -1,0 +1,29 @@
+{
+  "api_input": {
+    "patient_id": "p001288",
+    "vitals": {
+      "heart_rate": 106.0,
+      "o2_saturation": 94.0,
+      "temperature": 37.17,
+      "map": 94.0,
+      "respiratory_rate": 23.0,
+      "bicarbonate": 26.0,
+      "fio2": 0.5,
+      "bun": 11.0,
+      "creatinine": 0.6,
+      "glucose": 103.0,
+      "potassium": 3.2,
+      "age": 60.68,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (91 -> 106). Temp 37.2C within normal range. Tachypneic at RR 23"
+  },
+  "ground_truth": {
+    "patient_id": "p001288",
+    "actual_sepsis": true,
+    "onset_hour": 11,
+    "total_hours": 20,
+    "age": 60.68,
+    "gender": "Male"
+  }
+}

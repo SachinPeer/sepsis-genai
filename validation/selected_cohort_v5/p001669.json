@@ -1,0 +1,185 @@
+{
+  "api_input": {
+    "patient_id": "p001669",
+    "vitals": {
+      "HR": [
+        {
+          "val": 101.0,
+          "ts": "2026-04-29T08:00"
+        },
+        {
+          "val": 103.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 107.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 105.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 116.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 126.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 35.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 37.94,
+          "ts": "2026-04-29T08:00"
+        },
+        {
+          "val": 38.44,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 32.0,
+          "ts": "2026-04-29T08:00"
+        },
+        {
+          "val": 29.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 30.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 26.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 32.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 19.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T08:00"
+        },
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 98.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 96.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 93.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 54.5,
+          "ts": "2026-04-29T08:00"
+        },
+        {
+          "val": 51.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 52.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 54.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 52.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 94.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "WBC": [
+        8.7
+      ],
+      "Lactate": [
+        0.9
+      ],
+      "Creatinine": [
+        1.2
+      ],
+      "Platelets": [
+        190.0
+      ],
+      "BUN": [
+        14.0
+      ],
+      "Glucose": [
+        108.0
+      ],
+      "pH": [
+        7.51
+      ],
+      "BaseExcess": [
+        6.0
+      ],
+      "HCO3": [
+        26.0
+      ],
+      "PaCO2": [
+        36.0
+      ],
+      "Potassium": [
+        3.9
+      ],
+      "Hgb": [
+        10.2
+      ],
+      "FiO2": [
+        0.8
+      ],
+      "Age": 74.91,
+      "Gender": "Female"
+    },
+    "notes": "Heart rate falling over past hours (126 -> 101 bpm). MAP 54 below target of 65, vasopressor may be needed. Tachypneic, RR 32 (was 19). Respiratory rate increasing, work of breathing noted. Tachycardia with hypotension \u2014 possible compensated shock pattern."
+  },
+  "ground_truth": {
+    "patient_id": "p001669",
+    "actual_sepsis": true,
+    "onset_hour": 5,
+    "snapshot_hour": 7,
+    "snapshot_offset_from_onset": 2,
+    "total_hours": 15,
+    "age": 74.91,
+    "gender": "Female"
+  }
+}

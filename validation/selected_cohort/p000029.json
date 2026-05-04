@@ -1,0 +1,30 @@
+{
+  "api_input": {
+    "patient_id": "p000029",
+    "vitals": {
+      "heart_rate": 88.0,
+      "o2_saturation": 98.0,
+      "temperature": 37.06,
+      "sbp": 131.0,
+      "map": 90.0,
+      "dbp": 76.0,
+      "respiratory_rate": 21.0,
+      "bicarbonate": 22.0,
+      "bun": 7.0,
+      "creatinine": 0.6,
+      "glucose": 120.0,
+      "potassium": 4.4,
+      "age": 47.01,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (95 -> 88)"
+  },
+  "ground_truth": {
+    "patient_id": "p000029",
+    "actual_sepsis": false,
+    "snapshot_hour": 24,
+    "total_hours": 48,
+    "age": 47.01,
+    "gender": "Female"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "api_input": {
+    "patient_id": "p000204",
+    "vitals": {
+      "heart_rate": 107.0,
+      "o2_saturation": 98.0,
+      "sbp": 112.0,
+      "map": 97.0,
+      "respiratory_rate": 19.0,
+      "age": 28.25,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (116 -> 107). SBP trend dropping (121 -> 112)"
+  },
+  "ground_truth": {
+    "patient_id": "p000204",
+    "actual_sepsis": false,
+    "snapshot_hour": 10,
+    "total_hours": 20,
+    "age": 28.25,
+    "gender": "Female"
+  }
+}

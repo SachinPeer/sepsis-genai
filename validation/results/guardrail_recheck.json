@@ -1,0 +1,581 @@
+[
+  {
+    "patient_id": "p001764",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (64.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001136",
+    "original_llm_risk": 75,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical AKI (Creatinine 15.7 >= 3.5 mg/dL)",
+      "Critical BUN (169.0 >= 80 mg/dL)",
+      "Critical Anemia (Hgb 6.2 < 7 g/dL)",
+      "Severe Bicarbonate Deficit (HCO3 9.0 < 12 mEq/L)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000430",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypotension (SBP 87.5 <= 90 mmHg)",
+      "Critical MAP (64.0 < 65 mmHg)",
+      "Severe Hypercapnia (PaCO2 60.0 >= 60 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001623",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (63.0 < 65 mmHg)",
+      "Critical DBP (39.0 < 40 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001936",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypotension (SBP 89.0 <= 90 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p001109",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (61.0 < 65 mmHg)",
+      "Critical DBP (33.0 < 40 mmHg)",
+      "Elevated Lactate (2.8 >= 2.0 mmol/L)",
+      "Septic Shock Criteria Met (Hypotension + Hyperlactatemia)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000221",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (61.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p000828",
+    "original_llm_risk": 68,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 31.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000193",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 34.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000725",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical AKI (Creatinine 3.7 >= 3.5 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001581",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypoglycemia (Glucose 48.0 < 50 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000084",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (60.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000390",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Elevated Lactate (3.1 >= 2.0 mmol/L)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000386",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Anemia (Hgb 6.6 < 7 g/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000149",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (63.0 < 65 mmHg)",
+      "Critical AKI (Creatinine 6.6 >= 3.5 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p000877",
+    "original_llm_risk": 68,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (64.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001353",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypotension (SBP 77.0 <= 90 mmHg)",
+      "Critical MAP (50.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001732",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (64.0 < 65 mmHg)",
+      "Critical Tachypnea (RR 32.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000473",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (59.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001585",
+    "original_llm_risk": 75,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (57.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000523",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (64.33 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p001255",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (58.0 < 65 mmHg)",
+      "Critical DBP (37.0 < 40 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000631",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (55.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001089",
+    "original_llm_risk": 68,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (63.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000258",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (58.0 < 65 mmHg)",
+      "Critical DBP (38.0 < 40 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000174",
+    "original_llm_risk": 78,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Elevated Lactate (2.1 >= 2.0 mmol/L)",
+      "Critical Tachypnea (RR 31.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001858",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (59.67 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000751",
+    "original_llm_risk": 68,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypothermia (34.1 < 35.0\u00b0C)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000508",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (58.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000617",
+    "original_llm_risk": 42,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Liver Dysfunction (Bilirubin 7.7 >= 4.0 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p001916",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (58.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000741",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Severe PTT Prolongation (88.1 >= 80 sec)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001897",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Thrombocytopenia (Platelets 44.0 < 50 K)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001328",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Myocardial Injury (Troponin 13.1 >= 1.0 ng/mL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000724",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypotension (SBP 86.0 <= 90 mmHg)",
+      "Critical MAP (63.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p000807",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (55.0 < 65 mmHg)",
+      "Critical DBP (33.0 < 40 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p000829",
+    "original_llm_risk": 68,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 32.25 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001027",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (58.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000768",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Elevated Lactate (2.0 >= 2.0 mmol/L)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000281",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 31.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000023",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical AKI (Creatinine 7.0 >= 3.5 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000906",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Elevated Lactate (2.6 >= 2.0 mmol/L)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001312",
+    "original_llm_risk": 42,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 35.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p000055",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Myocardial Injury (Troponin 3.5 >= 1.0 ng/mL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001431",
+    "original_llm_risk": 35,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 34.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p001374",
+    "original_llm_risk": 68,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical BUN (105.0 >= 80 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001132",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (62.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p001725",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Anemia (Hgb 6.5 < 7 g/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001187",
+    "original_llm_risk": 75,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Elevated Lactate (3.0 >= 2.0 mmol/L)",
+      "Severe Leukocytosis (WBC 30.4 >= 30 K)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001264",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Severe Bicarbonate Deficit (HCO3 11.0 < 12 mEq/L)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000960",
+    "original_llm_risk": 68,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 35.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001971",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (62.33 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000328",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical AKI (Creatinine 5.4 >= 3.5 mg/dL)",
+      "Myocardial Injury (Troponin 4.9 >= 1.0 ng/mL)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p001647",
+    "original_llm_risk": 35,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 38.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  },
+  {
+    "patient_id": "p001462",
+    "original_llm_risk": 72,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (63.5 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": true
+  },
+  {
+    "patient_id": "p000035",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Severe Hypercapnia (PaCO2 60.0 >= 60 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false
+  }
+]

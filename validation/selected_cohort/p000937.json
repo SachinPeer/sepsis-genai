@@ -1,0 +1,24 @@
+{
+  "api_input": {
+    "patient_id": "p000937",
+    "vitals": {
+      "heart_rate": 70.0,
+      "o2_saturation": 100.0,
+      "temperature": 35.89,
+      "sbp": 157.0,
+      "map": 113.0,
+      "respiratory_rate": 22.0,
+      "age": 59.56,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (61 -> 70). SBP trend rising (134 -> 157). Hypothermic at 35.9C"
+  },
+  "ground_truth": {
+    "patient_id": "p000937",
+    "actual_sepsis": false,
+    "snapshot_hour": 15,
+    "total_hours": 31,
+    "age": 59.56,
+    "gender": "Male"
+  }
+}

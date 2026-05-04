@@ -1,0 +1,25 @@
+{
+  "api_input": {
+    "patient_id": "p000021",
+    "vitals": {
+      "heart_rate": 95.0,
+      "o2_saturation": 98.0,
+      "temperature": 38.44,
+      "sbp": 123.0,
+      "map": 84.0,
+      "dbp": 58.0,
+      "respiratory_rate": 17.0,
+      "age": 87.8,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (89 -> 95). SBP trend rising (117 -> 123). Febrile at 38.4C"
+  },
+  "ground_truth": {
+    "patient_id": "p000021",
+    "actual_sepsis": false,
+    "snapshot_hour": 28,
+    "total_hours": 57,
+    "age": 87.8,
+    "gender": "Female"
+  }
+}

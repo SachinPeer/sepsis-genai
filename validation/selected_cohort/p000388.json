@@ -1,0 +1,23 @@
+{
+  "api_input": {
+    "patient_id": "p000388",
+    "vitals": {
+      "heart_rate": 80.0,
+      "o2_saturation": 94.0,
+      "sbp": 97.0,
+      "map": 63.0,
+      "respiratory_rate": 22.0,
+      "age": 71.46,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (74 -> 80). SBP trend stable (96 -> 97)"
+  },
+  "ground_truth": {
+    "patient_id": "p000388",
+    "actual_sepsis": false,
+    "snapshot_hour": 8,
+    "total_hours": 16,
+    "age": 71.46,
+    "gender": "Female"
+  }
+}

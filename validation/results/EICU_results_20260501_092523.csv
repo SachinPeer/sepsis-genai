@@ -1,0 +1,4 @@
+patient_id,actual_sepsis,predicted_sepsis,risk_score,priority,confidence_level,alert_level,guardrail_override,original_risk_score,early_warnings,sepsis_probability_6h,qsofa,sirs_met,sofa,patientunitstayid,icd9_codes,processing_time_ms,status,error,reasoning
+eicu_p00002,True,ERROR,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,N/A,N/A,N/A,1363755,,13.0,error,"HTTP 404: {""detail"":""Not Found""}",
+eicu_p00003,True,ERROR,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,N/A,N/A,N/A,3136458,,2.9,error,"HTTP 404: {""detail"":""Not Found""}",
+eicu_p00004,True,ERROR,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,N/A,N/A,N/A,587426,,3.2,error,"HTTP 404: {""detail"":""Not Found""}",

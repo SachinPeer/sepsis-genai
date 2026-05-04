@@ -1,0 +1,39 @@
+{
+  "api_input": {
+    "patient_id": "p000268",
+    "vitals": {
+      "Lactate": [
+        1.5
+      ],
+      "Glucose": [
+        153.0
+      ],
+      "pH": [
+        7.36
+      ],
+      "BaseExcess": [
+        -2.0
+      ],
+      "PaCO2": [
+        40.0
+      ],
+      "Potassium": [
+        3.9
+      ],
+      "Hgb": [
+        13.2
+      ],
+      "Age": 69.06,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Routine monitoring. Vitals within expected range for ICU baseline. No acute changes noted."
+  },
+  "ground_truth": {
+    "patient_id": "p000268",
+    "actual_sepsis": false,
+    "snapshot_hour": 21,
+    "total_hours": 43,
+    "age": 69.06,
+    "gender": "Male"
+  }
+}

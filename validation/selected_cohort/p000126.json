@@ -1,0 +1,26 @@
+{
+  "api_input": {
+    "patient_id": "p000126",
+    "vitals": {
+      "heart_rate": 90.5,
+      "sbp": 94.0,
+      "map": 69.0,
+      "dbp": 54.0,
+      "respiratory_rate": 14.0,
+      "base_excess": -17.0,
+      "ph": 6.87,
+      "lactate": 13.6,
+      "age": 45.54,
+      "gender": "Female"
+    },
+    "notes": "Routine monitoring, no acute changes noted."
+  },
+  "ground_truth": {
+    "patient_id": "p000126",
+    "actual_sepsis": false,
+    "snapshot_hour": 5,
+    "total_hours": 10,
+    "age": 45.54,
+    "gender": "Female"
+  }
+}

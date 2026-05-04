@@ -1,0 +1,26 @@
+{
+  "api_input": {
+    "patient_id": "p001131",
+    "vitals": {
+      "heart_rate": 75.0,
+      "o2_saturation": 100.0,
+      "temperature": 37.22,
+      "sbp": 114.0,
+      "map": 71.0,
+      "dbp": 45.0,
+      "respiratory_rate": 26.0,
+      "fio2": 0.4,
+      "age": 86.6,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (93 -> 75). SBP trend rising (104 -> 114). Temp 37.2C within normal range. Respiratory rate increasing (17 -> 26)"
+  },
+  "ground_truth": {
+    "patient_id": "p001131",
+    "actual_sepsis": false,
+    "snapshot_hour": 21,
+    "total_hours": 43,
+    "age": 86.6,
+    "gender": "Female"
+  }
+}

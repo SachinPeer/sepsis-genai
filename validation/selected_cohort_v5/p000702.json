@@ -1,0 +1,104 @@
+{
+  "api_input": {
+    "patient_id": "p000702",
+    "vitals": {
+      "HR": [
+        {
+          "val": 92.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 75.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 76.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 35.89,
+          "ts": "2026-04-29T05:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 21.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 24.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 22.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T05:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 74.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 65.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 67.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "WBC": [
+        18.2
+      ],
+      "Lactate": [
+        1.9
+      ],
+      "Platelets": [
+        257.0
+      ],
+      "Glucose": [
+        119.0
+      ],
+      "pH": [
+        7.36
+      ],
+      "BaseExcess": [
+        0.0
+      ],
+      "PaCO2": [
+        45.0
+      ],
+      "Hgb": [
+        10.0
+      ],
+      "PTT": [
+        43.4
+      ],
+      "Fibrinogen": [
+        299.0
+      ],
+      "Age": 35.11,
+      "Gender": "Male"
+    },
+    "notes": "Heart rate rising significantly over past 6 hours (76 -> 92 bpm). Hypothermic at 35.9C, concerning in setting of possible infection. Leukocytosis, WBC 18.2."
+  },
+  "ground_truth": {
+    "patient_id": "p000702",
+    "actual_sepsis": true,
+    "onset_hour": 61,
+    "snapshot_hour": 63,
+    "snapshot_offset_from_onset": 2,
+    "total_hours": 71,
+    "age": 35.11,
+    "gender": "Male"
+  }
+}

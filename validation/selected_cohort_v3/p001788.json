@@ -1,0 +1,194 @@
+{
+  "api_input": {
+    "patient_id": "p001788",
+    "vitals": {
+      "HR": [
+        {
+          "val": 77.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 78.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 75.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 80.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 84.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 84.5,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 111.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 142.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 111.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 117.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 80.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 45.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 63.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 42.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 49.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 50.5,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 40.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 37.3,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 37.1,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 37.05,
+          "ts": "2026-04-29T05:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 12.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 15.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 13.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 16.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 15.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 15.5,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 98.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 98.5,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 98.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 64.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 89.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 59.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 68.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 70.5,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 52.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "pH": [
+        7.33
+      ],
+      "Hgb": [
+        11.6
+      ],
+      "Age": 78.96,
+      "Gender": "Female"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Blood pressure dropping (111 -> 80 mmHg systolic), concerning for hemodynamic instability. MAP 52 below target of 65, vasopressor may be needed."
+  },
+  "ground_truth": {
+    "patient_id": "p001788",
+    "actual_sepsis": false,
+    "snapshot_hour": 23,
+    "total_hours": 46,
+    "age": 78.96,
+    "gender": "Female"
+  }
+}

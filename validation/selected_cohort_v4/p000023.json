@@ -1,0 +1,97 @@
+{
+  "api_input": {
+    "patient_id": "p000023",
+    "vitals": {
+      "HR": [
+        {
+          "val": 88.0,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 124.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 144.0,
+          "ts": "2026-04-29T04:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 37.06,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 22.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 20.0,
+          "ts": "2026-04-29T04:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T04:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 84.67,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 112.0,
+          "ts": "2026-04-29T04:00"
+        }
+      ],
+      "WBC": [
+        12.5
+      ],
+      "Creatinine": [
+        7.0
+      ],
+      "Platelets": [
+        561.0
+      ],
+      "BUN": [
+        65.0
+      ],
+      "Glucose": [
+        238.0
+      ],
+      "HCO3": [
+        24.0
+      ],
+      "Potassium": [
+        6.1
+      ],
+      "Hgb": [
+        11.1
+      ],
+      "PTT": [
+        30.3
+      ],
+      "Age": 35.89,
+      "Gender": "Female"
+    },
+    "notes": "Blood pressure dropping (144 -> 124 mmHg systolic), concerning for hemodynamic instability. Leukocytosis, WBC 12.5. Creatinine elevated at 7.0, monitoring renal function."
+  },
+  "ground_truth": {
+    "patient_id": "p000023",
+    "actual_sepsis": false,
+    "snapshot_hour": 10,
+    "total_hours": 21,
+    "age": 35.89,
+    "gender": "Female"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "api_input": {
+    "patient_id": "p000483",
+    "vitals": {
+      "HR": [
+        {
+          "val": 126.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 136.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 135.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 135.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 88.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 86.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 116.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 109.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 103.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 113.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 122.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 123.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 80.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 71.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 68.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 77.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 79.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 74.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 36.11,
+          "ts": "2026-04-29T05:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 17.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 14.5,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 18.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 7.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 25.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 6.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 93.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 92.5,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 96.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 92.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 83.5,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 85.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 89.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 93.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 89.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "WBC": [
+        5.7
+      ],
+      "Lactate": [
+        3.0
+      ],
+      "Creatinine": [
+        2.8
+      ],
+      "Platelets": [
+        117.0
+      ],
+      "BUN": [
+        46.0
+      ],
+      "Glucose": [
+        134.0
+      ],
+      "pH": [
+        7.28
+      ],
+      "BaseExcess": [
+        -6.0
+      ],
+      "HCO3": [
+        18.0
+      ],
+      "PaCO2": [
+        42.0
+      ],
+      "AST": [
+        832.0
+      ],
+      "Potassium": [
+        4.5
+      ],
+      "Hgb": [
+        13.5
+      ],
+      "FiO2": [
+        0.5
+      ],
+      "Age": 37.31,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate falling over past hours (126 -> 86 bpm). Lactate mildly elevated at 3.0 mmol/L. Creatinine elevated at 2.8, monitoring renal function."
+  },
+  "ground_truth": {
+    "patient_id": "p000483",
+    "actual_sepsis": true,
+    "onset_hour": 19,
+    "total_hours": 29,
+    "age": 37.31,
+    "gender": "Male"
+  }
+}

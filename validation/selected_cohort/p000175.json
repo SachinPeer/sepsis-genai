@@ -1,0 +1,32 @@
+{
+  "api_input": {
+    "patient_id": "p000175",
+    "vitals": {
+      "heart_rate": 93.0,
+      "o2_saturation": 94.0,
+      "temperature": 37.61,
+      "sbp": 103.0,
+      "map": 68.0,
+      "respiratory_rate": 16.0,
+      "bicarbonate": 27.0,
+      "bun": 12.0,
+      "creatinine": 1.1,
+      "glucose": 111.0,
+      "potassium": 4.2,
+      "hemoglobin": 11.5,
+      "wbc": 13.1,
+      "platelets": 310.0,
+      "age": 43.71,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (92 -> 93). SBP trend falling (111 -> 103)"
+  },
+  "ground_truth": {
+    "patient_id": "p000175",
+    "actual_sepsis": false,
+    "snapshot_hour": 10,
+    "total_hours": 20,
+    "age": 43.71,
+    "gender": "Male"
+  }
+}

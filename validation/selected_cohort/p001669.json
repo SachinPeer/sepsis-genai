@@ -1,0 +1,24 @@
+{
+  "api_input": {
+    "patient_id": "p001669",
+    "vitals": {
+      "heart_rate": 107.0,
+      "o2_saturation": 98.0,
+      "temperature": 38.44,
+      "map": 52.0,
+      "respiratory_rate": 30.0,
+      "fio2": 0.8,
+      "age": 74.91,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (121 -> 107). Febrile at 38.4C. Respiratory rate increasing (24 -> 30)"
+  },
+  "ground_truth": {
+    "patient_id": "p001669",
+    "actual_sepsis": true,
+    "onset_hour": 5,
+    "total_hours": 15,
+    "age": 74.91,
+    "gender": "Female"
+  }
+}

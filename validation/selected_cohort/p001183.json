@@ -1,0 +1,28 @@
+{
+  "api_input": {
+    "patient_id": "p001183",
+    "vitals": {
+      "heart_rate": 81.0,
+      "o2_saturation": 93.0,
+      "temperature": 36.89,
+      "map": 56.0,
+      "respiratory_rate": 11.0,
+      "base_excess": -2.0,
+      "fio2": 0.4,
+      "ph": 7.22,
+      "paco2": 65.0,
+      "lactate": 0.8,
+      "age": 60.48,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (79 -> 81). Temp 36.9C within normal range. O2 sat concerning at 93%"
+  },
+  "ground_truth": {
+    "patient_id": "p001183",
+    "actual_sepsis": true,
+    "onset_hour": 8,
+    "total_hours": 18,
+    "age": 60.48,
+    "gender": "Male"
+  }
+}

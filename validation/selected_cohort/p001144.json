@@ -1,0 +1,30 @@
+{
+  "api_input": {
+    "patient_id": "p001144",
+    "vitals": {
+      "heart_rate": 93.0,
+      "o2_saturation": 92.0,
+      "temperature": 36.83,
+      "sbp": 136.0,
+      "map": 100.0,
+      "dbp": 83.0,
+      "respiratory_rate": 22.0,
+      "base_excess": 0.0,
+      "fio2": 0.4,
+      "ph": 7.41,
+      "paco2": 39.0,
+      "lactate": 2.6,
+      "age": 27.01,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (81 -> 93). SBP trend rising (124 -> 136). Temp 36.8C within normal range. Respiratory rate increasing (11 -> 22). O2 sat concerning at 92%"
+  },
+  "ground_truth": {
+    "patient_id": "p001144",
+    "actual_sepsis": true,
+    "onset_hour": 35,
+    "total_hours": 45,
+    "age": 27.01,
+    "gender": "Female"
+  }
+}

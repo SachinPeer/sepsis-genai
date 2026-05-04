@@ -1,0 +1,3327 @@
+{
+  "round": "Round 2 (Trend-enriched data)",
+  "total_false_positives": 152,
+  "primary_cause_breakdown": {
+    "LLM_VERY_HIGH_RISK": 13,
+    "LLM_HIGH_RISK": 68,
+    "LLM_MODERATE_RISK": 8,
+    "GUARDRAIL_OVERRIDE": 56,
+    "UNKNOWN": 6,
+    "HIGH_QSOFA": 1
+  },
+  "guardrail_vs_llm": {
+    "guardrail_override_fps": 56,
+    "llm_only_fps": 96,
+    "guardrail_llm_low_risk": 0,
+    "guardrail_llm_high_risk": 56
+  },
+  "risk_distribution": {
+    "70-89 (High)": 64,
+    "50-69 (Moderate)": 24,
+    "90-100 (Critical)": 58,
+    "<50 (Should not be FP)": 6
+  },
+  "priority_distribution": {
+    "Critical": 70,
+    "High": 82
+  },
+  "vital_trigger_frequency": {
+    "Tachypnea": 33,
+    "BP Falling Trend": 31,
+    "Low MAP": 26,
+    "Tachycardia": 21,
+    "Leukocytosis": 19,
+    "Hypotension": 17,
+    "Elevated Creatinine": 11,
+    "Hypothermia": 10,
+    "HR Rising Trend": 8,
+    "Elevated Lactate": 6,
+    "Thrombocytopenia": 6,
+    "Severe Hypotension": 5,
+    "Desaturation": 5,
+    "Severe Tachycardia": 4,
+    "Fever": 3,
+    "Critical Lactate": 2,
+    "Leukopenia": 2
+  },
+  "common_combinations": {
+    "Tachypnea": 11,
+    "BP Falling Trend": 9,
+    "Tachycardia": 9,
+    "Leukocytosis": 7,
+    "Hypothermia": 5,
+    "Hypotension + Low MAP": 4,
+    "Low MAP": 4,
+    "BP Falling Trend + Low MAP + Severe Hypotension": 3,
+    "BP Falling Trend + Hypotension + Low MAP": 2,
+    "Hypotension + Low MAP + Tachypnea": 2
+  },
+  "clinical_scores": {
+    "qsofa": {
+      "1": 68,
+      "0": 77,
+      "2": 7
+    },
+    "sirs": {
+      "0": 46,
+      "1": 55,
+      "2": 41,
+      "3": 9,
+      "4": 1
+    },
+    "sofa": {
+      "5": 1,
+      "1": 42,
+      "0": 56,
+      "2": 32,
+      "4": 7,
+      "3": 11,
+      "9": 1,
+      "6": 1,
+      "7": 1
+    }
+  },
+  "patient_details": [
+    {
+      "patient_id": "p001087",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 5,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Low MAP (49)",
+        "Elevated Creatinine (4.0)",
+        "HR Rising Trend (39\u219260)"
+      ],
+      "clinical_rationale": "Patient demonstrates distributive shock pattern with severe hypotension (MAP 47, target 65) and paradoxical bradycardia (39 bpm) now trending upward, suggesting transition from compensated to decompen",
+      "age": 76.01,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001419",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "BP Falling Trend (146\u2192109)"
+      ],
+      "clinical_rationale": "Significant hemodynamic deterioration: HR dropped 80\u219266 bpm, SBP fell 146\u2192109 mmHg. Falling HR with falling BP suggests inadequate compensation or bradycardic shock pattern. MAP dropped from 98\u219274 mmH",
+      "age": 66.2,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001972",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=25)"
+      ],
+      "clinical_rationale": "Significant discordance detected: persistent tachypnea (RR 25-33) with excellent O2 saturation (99%) suggests compensatory hyperventilation, possibly for metabolic acidosis. Stable hemodynamics may ma",
+      "age": 52.98,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000168",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Rising HR trend (84\u219295 per notes) with borderline O2Sat (94%) and elevated WBC (12.0) suggests early compensatory response. Discordance between current HR (84) and noted peak (95) indicates recent det",
+      "age": 54.75,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001764",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=98)",
+        "Low MAP (64)"
+      ],
+      "clinical_rationale": "MAP trending downward (66\u219264) and now below target of 65 mmHg despite normal HR (80 bpm). Clinician recognition of need for vasopressor support indicates inadequate perfusion pressure. Normal O2Sat (1",
+      "age": 36.78,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001136",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 4,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=98)",
+        "Elevated Creatinine (15.7)",
+        "BP Falling Trend (132\u219298)"
+      ],
+      "clinical_rationale": "Concerning hemodynamic trajectory with BP dropping from 132\u219298 mmHg and paradoxical bradycardia (85\u219272 bpm). This pattern suggests either cardiogenic shock or late septic shock with myocardial depress",
+      "age": 68.1,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001740",
+      "risk_score": 78,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=93)",
+        "Low MAP (64)",
+        "BP Falling Trend (123\u219293)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Current vitals appear stable (HR 86, BP 123/95) but clinician notes document rapid deterioration with falling HR (86\u219265), dropping BP (123\u219293), and MAP now 64 (<65 thres",
+      "age": 39.46,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001992",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Persistent tachycardia (101 bpm) with improving hemodynamics (MAP 75\u219279, DBP 53\u219259) and normal lactate (1.4). No discordance between vitals and clinical notes. Trend velocity stable-to-improving.",
+      "age": 64.62,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p002066",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=30)"
+      ],
+      "clinical_rationale": "Critical discordance detected: documented RR 12.75 vs observed RR 30 indicates acute respiratory compensation. Hypotension (SBP 93.5, MAP 70.5) with tachycardia (HR 99.5) and dropping DBP (66\u219257) sugg",
+      "age": 28.33,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000430",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 3,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=94)",
+        "Low MAP (61)"
+      ],
+      "clinical_rationale": "Patient demonstrates compensated shock with MAP 61-64 (below target 65) requiring vasopressor consideration per clinical team. SBP dropping to 87.5 with relative bradycardia (HR 69) suggests inadequat",
+      "age": 53.35,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001623",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "79yo with deteriorating MAP (73\u219263, -14% decline) despite 'stable' SBP, requiring FiO2 0.7 with borderline SpO2 94%. Widening pulse pressure (SBP 126/DBP 39 = 87mmHg) suggests distributive shock physi",
+      "age": 79.22,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001936",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=103)"
+      ],
+      "clinical_rationale": "Discordance detected: Numeric data shows hypotension (SBP 89, MAP 65\u219274) while notes claim BP rising. HR trending upward (89\u2192103) suggests compensatory tachycardia. MAP at septic shock threshold (65 m",
+      "age": 65.82,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000699",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=107)",
+        "Fever (Temp=38.3)",
+        "Leukocytosis (WBC=14.5)"
+      ],
+      "clinical_rationale": "Rising tachycardia (114 bpm) with fever (38.3\u00b0C) and leukocytosis (14.5) suggests early SIRS/infection. However, normal lactate (0.7), stable MAP (74), and adequate perfusion markers indicate no curre",
+      "age": 38.6,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000210",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "BP Falling Trend (126\u2192104)"
+      ],
+      "clinical_rationale": "Significant MAP drop (95\u219285 mmHg) with SBP declining trend (126\u2192104 mmHg per notes) indicates early hemodynamic compensation. Concurrent O2Sat decline (96.5\u219292%) suggests evolving organ stress. DBP al",
+      "age": 73.14,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001196",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=101)"
+      ],
+      "clinical_rationale": "Rising HR trend (87\u2192101 bpm over 6h) with borderline hypoxemia (SpO2 94%) suggests early physiologic stress. MAP improved from 70.67\u219289 mmHg, which is reassuring, but tachycardia acceleration indicate",
+      "age": 61.81,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000896",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.5)"
+      ],
+      "clinical_rationale": "Hypothermia (35.5\u00b0C) with persistent tachycardia (111 bpm) suggests distributive shock with impaired thermoregulation. Falling MAP (83\u219275) and widening pulse pressure (DBP 67\u219258) indicate early vasodi",
+      "age": 61.87,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000170",
+      "risk_score": 78,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Severe Hypotension (SBP=86)",
+        "Low MAP (53)",
+        "BP Falling Trend (116\u219286)"
+      ],
+      "clinical_rationale": "Critical discordance between current stable BP (116/51) and documented recent drop from 116\u219286 mmHg. MAP 53 is significantly below target of 65, indicating inadequate tissue perfusion. Clinician notes",
+      "age": 71.83,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000604",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.7)"
+      ],
+      "clinical_rationale": "Rising HR trend (74\u219286 bpm over 6h) combined with hypothermia (35.7\u00b0C) suggests early septic physiology. Hypothermia in sepsis indicates poor prognosis. Normal WBC (4.9) may represent immunosuppressio",
+      "age": 63.41,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001109",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=94)",
+        "Low MAP (62)",
+        "Elevated Lactate (2.8)",
+        "BP Falling Trend (115\u219294)"
+      ],
+      "clinical_rationale": "Patient demonstrates early septic shock: lactate 2.8 with MAP trending down (66\u219261), now below target of 65. Notes document BP drop (115\u219294 systolic). Despite currently 'stable' BP of 115, the velocit",
+      "age": 66.47,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000204",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=107)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (107-116 bpm, rising trend) with deteriorating respiratory status (RR 22, O2Sat declining 93\u219291%) and significant MAP drop (99\u219282 mmHg) suggests early compensatory shock. Despit",
+      "age": 28.25,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000874",
+      "risk_score": 78,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=90)",
+        "Low MAP (60)",
+        "Tachypnea (RR=28)"
+      ],
+      "clinical_rationale": "Classic compensated shock pattern: Rising HR with falling MAP (76\u219266) despite current 'acceptable' values. Tachypnea (RR 28) with increased work of breathing indicates respiratory compensation. Clinic",
+      "age": 76.4,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001987",
+      "risk_score": 45,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "UNKNOWN",
+      "all_causes": [],
+      "vital_triggers": [],
+      "clinical_rationale": "Conflicting data creates diagnostic uncertainty. If HR truly rising to 122 with MAP increase from 77\u219295, suggests compensatory response possibly to hypovolemia or early sepsis. However, clinician note",
+      "age": 54.84,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000966",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=104)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (104-112 bpm) with stable hemodynamics suggests compensatory state. However, lack of infection documentation, laboratory values, and detailed clinical assessment limits risk str",
+      "age": 45.24,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000837",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=25)"
+      ],
+      "clinical_rationale": "Rising respiratory rate (20\u219225) with tachycardia (HR 93) suggests early compensatory response. Hemodynamically stable but respiratory trend is concerning for evolving sepsis vs. other acute process.",
+      "age": 44.65,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001356",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=111)"
+      ],
+      "clinical_rationale": "Persistent and worsening tachycardia (106\u2192111 bpm) in young patient (age 29) without clear physiologic explanation warrants concern. MAP declining from 83\u219280 mmHg suggests early compensation. However,",
+      "age": 28.87,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000221",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "BP improving from 95\u2192122 mmHg contradicts 'persistent hypotension' narrative. HR 59 is bradycardic (not tachycardic sepsis pattern). O2Sat 100% and stable MAP 61 suggest adequate perfusion. However, e",
+      "age": 74.58,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001188",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "BP Falling Trend (163\u2192111)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Current BP appears stable at 163 mmHg, but clinician notes document recent drop to 111 mmHg systolic, indicating acute hemodynamic deterioration. Elevated respiratory ra",
+      "age": 54.91,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000828",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Severe Tachycardia (HR=126)",
+        "Tachypnea (RR=28)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (117-126 bpm) with tachypnea (RR 28-31) despite normal BP and O2 saturation suggests early compensatory response. The combination of sustained elevated HR and respiratory rate i",
+      "age": 59.56,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000193",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.4)",
+        "Tachypnea (RR=31)"
+      ],
+      "clinical_rationale": "Hypothermia (35.4\u00b0C) with tachypnea (RR 31-36) and borderline hypoxia represents atypical sepsis presentation in elderly patient. Falling MAP (84\u219277) despite stable SBP suggests early distributive sho",
+      "age": 79.1,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000573",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 2,
+      "sirs_met": 2,
+      "sofa": 9,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_QSOFA",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=25)",
+        "Desaturation (SpO2=45%)",
+        "Leukocytosis (WBC=12.5)",
+        "Critical Lactate (8.8)",
+        "Elevated Creatinine (6.6)"
+      ],
+      "clinical_rationale": "Patient is in established septic shock with multi-organ failure. MAP 56\u219264.5 (dropping despite likely intervention), lactate 8.8 indicates severe tissue hypoperfusion, pH 7.23 shows metabolic acidosis",
+      "age": 80.37,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000725",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 4,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Elevated Creatinine (3.7)",
+        "BP Falling Trend (162\u2192121)"
+      ],
+      "clinical_rationale": "Hemodynamic deterioration pattern (SBP 162\u2192121, HR 96\u219285) with severe metabolic acidosis (HCO3 12) and acute kidney injury (Cr 3.7, BUN 73). Bradycardia with hypotension suggests late shock physiology",
+      "age": 42.44,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000280",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Elderly patient showing early compensatory shock pattern: MAP dropped 14 points (80\u219266), DBP fell 17 points (64\u219247), widening pulse pressure (65 mmHg) suggests distributive physiology. Increasing resp",
+      "age": 75.98,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001581",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=16.8)"
+      ],
+      "clinical_rationale": "79yo with leukocytosis (WBC 16.8) and borderline MAP (69 mmHg). Critically low glucose (48 mg/dL) requires immediate intervention. Insufficient data to assess sepsis trajectory but concerning pattern ",
+      "age": 79.33,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000685",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=13.1)"
+      ],
+      "clinical_rationale": "Hemodynamics show improvement (MAP 68\u219275, DBP 53\u219258) with normal lactate (1.4). Mild leukocytosis (13.1) noted but without fever, tachycardia, or organ dysfunction. No discordance between vitals and c",
+      "age": 60.49,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001179",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=110)"
+      ],
+      "clinical_rationale": "Heart rate trending upward (99\u2192110 bpm) with stable temperature (37.67\u00b0C) and adequate oxygenation (96%). However, without BP values, lactate, or infection indicators, cannot determine if tachycardia ",
+      "age": 69.56,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000084",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 2,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_QSOFA",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Patient demonstrates compensated shock pattern: fever (38.06\u00b0C), tachypnea (RR 22), tachycardia (HR 94), and critically low MAP dropping from 71\u219260 mmHg despite note claiming BP improvement. The disco",
+      "age": 62.52,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001244",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.4)",
+        "Leukopenia (WBC=3.5)"
+      ],
+      "clinical_rationale": "Concerning triad of rising HR (77\u219288 bpm), hypothermia (35.4\u00b0C), and leukopenia (WBC 3.5) suggests early sepsis with possible immunocompromise. Despite stable MAP (76 mmHg), the combination of hypothe",
+      "age": 52.59,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000390",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=117)",
+        "Hypotension (SBP=94)",
+        "Elevated Lactate (3.1)"
+      ],
+      "clinical_rationale": "Patient demonstrates classic compensated shock: tachycardia (128 bpm) with borderline MAP (81 mmHg) and critically elevated lactate (3.1). Despite HR improvement trend (128\u2192117), persistent tachycardi",
+      "age": 61.5,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001213",
+      "risk_score": 92,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=24.3)",
+        "Critical Lactate (5.7)"
+      ],
+      "clinical_rationale": "Critically elevated lactate (5.7) with leukocytosis (24.3) and metabolic acidosis (pH 7.36, BE -5) indicates established tissue hypoperfusion despite currently stable hemodynamics (BP 119/70, HR 74). ",
+      "age": 70.31,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000386",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.9)"
+      ],
+      "clinical_rationale": "Hypothermia (35.9\u00b0C) with paradoxical bradycardia (94\u219277 bpm) represents atypical sepsis presentation suggesting decompensation rather than compensation. This pattern indicates possible severe sepsis ",
+      "age": 54.9,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000149",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 6,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Elevated Creatinine (6.6)"
+      ],
+      "clinical_rationale": "Significant renal dysfunction (Cr 6.6) with borderline MAP (63 mmHg) and metabolic acidosis (pH 7.35). Notes describe rising HR/RR trends suggesting early compensation, but current snapshot shows HR 6",
+      "age": 69.14,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001674",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Elderly patient with deteriorating hemodynamics (DBP dropped 80\u219263, MAP falling 103.5\u219297.5) and respiratory distress (increasing RR, work of breathing). Prior fever (38.2\u00b0C) with widening pulse pressu",
+      "age": 86.25,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000877",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 4,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Thrombocytopenia (Plt=95)",
+        "HR Rising Trend (69\u219287)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Narrative shows HR 69 but notes indicate rising trend to 87 bpm. BP improving from 92\u2192123 is reassuring, but persistent thrombocytopenia (95K), borderline acidosis (pH 7",
+      "age": 62.25,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001735",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Desaturation (SpO2=88%)"
+      ],
+      "clinical_rationale": "Significant MAP drop (85\u219268 mmHg, 20% decrease) indicates deteriorating perfusion despite stable SBP. Desaturation to 88% requiring O2 adjustment suggests respiratory compensation or early ARDS. Disco",
+      "age": 67.74,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001353",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Severe hypotension (MAP 48-50) with bradycardia (HR 71) in elderly patient suggests distributive shock pattern. While notes indicate BP rising (77\u2192101 SBP), the MAP remains critically low. Bradycardia",
+      "age": 79.42,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000138",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=112)",
+        "Fever (Temp=38.5)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (121 bpm, rising trend) with fever (38.5\u00b0C) meets SIRS criteria and clinician concern for infection. MAP trending upward (71\u219275) suggests adequate compensation currently, but su",
+      "age": 62.96,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001434",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Severe Hypotension (SBP=89)",
+        "Low MAP (60)",
+        "BP Falling Trend (129\u219289)"
+      ],
+      "clinical_rationale": "Critical discordance between current 'stable' BP reading (129 mmHg) and documented rapid drop (129\u219289 mmHg). MAP 60 is below septic shock threshold of 65. Metabolic acidosis (pH 7.32, BE -5.0) indicat",
+      "age": 75.95,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001463",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=23)",
+        "BP Falling Trend (133\u2192111)"
+      ],
+      "clinical_rationale": "Primary concern is discordant BP reporting (133 vs 111 mmHg documented drop) combined with persistent tachypnea (RR 22-26) and declining oxygenation (94\u219293%). This triad suggests early compensated sho",
+      "age": 45.48,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000805",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=108)"
+      ],
+      "clinical_rationale": "Concerning divergence pattern: Rising HR (97\u2192108) with widening pulse pressure (SBP 143/DBP 60 = PP 83mmHg) suggests early distributive shock physiology. Respiratory alkalosis (pH 7.5, PaCO2 22) indic",
+      "age": 73.6,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000465",
+      "risk_score": 65,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "BP Falling Trend (149\u2192120)"
+      ],
+      "clinical_rationale": "Concerning hemodynamic deterioration pattern: HR declining 88\u219277 bpm with concurrent BP drop 149\u2192120 mmHg suggests loss of compensatory mechanisms. However, current vitals remain within acceptable ran",
+      "age": 85.57,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001447",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Severe Tachycardia (HR=124)",
+        "Tachypnea (RR=23)"
+      ],
+      "clinical_rationale": "Patient demonstrates compensatory tachycardia (HR 120-124 bpm, rising trend) with tachypnea (RR 23, rising from 21) and borderline hypoxemia (O2Sat 91%). Rising MAP (78\u219285 mmHg) with stable-to-rising ",
+      "age": 51.43,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001593",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Tachycardia present (102 bpm) but improving per notes. BP stable-to-improving (115\u2192131 mmHg). MAP dropped from 95\u219282 mmHg which is concerning, but improving BP trend suggests compensation. No clear in",
+      "age": 54.81,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001390",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=109)",
+        "Leukocytosis (WBC=15.9)"
+      ],
+      "clinical_rationale": "Rising HR trend (96\u2192109 bpm) with leukocytosis (WBC 15.9) suggests early inflammatory response. Rising BP (128\u2192144) may indicate compensatory sympathetic activation. Normal creatinine and pH argue aga",
+      "age": 67.79,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001732",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (62)",
+        "Tachypnea (RR=36)"
+      ],
+      "clinical_rationale": "Critical discordance detected: MAP 64 (below target 65) with clinician noting vasopressor consideration indicates inadequate perfusion despite 'stable' BP. Respiratory rate accelerating (32\u219236) sugges",
+      "age": 71.54,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p002005",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.9)",
+        "Desaturation (SpO2=91%)"
+      ],
+      "clinical_rationale": "Hypothermia (35.9\u00b0C) with desaturation (SpO2 91-92%) in elderly patient suggests distributive shock physiology. Paradoxical HR drop from 95\u219278 despite infection concern indicates possible exhaustion p",
+      "age": 84.06,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001894",
+      "risk_score": 45,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "UNKNOWN",
+      "all_causes": [],
+      "vital_triggers": [
+        "Leukocytosis (WBC=22.5)"
+      ],
+      "clinical_rationale": "Significant leukocytosis (WBC 22.5) with elevated AST (244) suggests inflammatory process with possible hepatic involvement. However, inability to assess vital sign trends, qSOFA criteria, or hemodyna",
+      "age": 72.92,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000473",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Critical discordance detected: Numeric data shows hypotension (SBP 98.5 dropping, MAP 59\u219268) but notes claim 'BP rising 98\u2192132'. The MAP of 59 mmHg is below septic shock threshold (<65). Rising respir",
+      "age": 55.01,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001585",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 2,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_QSOFA",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Critical discordance detected: MAP 57 mmHg (critically low, <65 threshold) with SBP 98 mmHg indicates hypotensive state, yet notes describe 'routine monitoring' and 'no acute changes.' MAP improved fr",
+      "age": 53.08,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000523",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "MAP decline from 80 to 64 mmHg represents significant deterioration approaching septic shock threshold (MAP <65). However, bradycardia (HR 58) is atypical for sepsis compensation. Notes describe 'rout",
+      "age": 84.86,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001255",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (52)"
+      ],
+      "clinical_rationale": "Patient demonstrates compensated distributive shock: persistent hypotension (MAP 52-58, target 65) with tachycardia (113 bpm) and metabolic acidosis (pH 7.33, BE -4.0). Clinical note confirms inadequa",
+      "age": 75.84,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000965",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=98)",
+        "Low MAP (60)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Numeric data shows MAP 75 (adequate), but clinical note documents MAP 60 (below target 65) with vasopressor consideration. This suggests either rapid deterioration betwe",
+      "age": 53.3,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001942",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=24)",
+        "HR Rising Trend (57\u219279)"
+      ],
+      "clinical_rationale": "Concerning compensatory pattern: HR accelerating 57\u219279 bpm with rising BP 124\u2192140 mmHg suggests early sympathetic compensation. Tachypnea progression (18\u219222\u219224) with borderline hypoxemia (SpO2 94%) in",
+      "age": 60.49,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000631",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 4,
+      "sofa": 3,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=94)",
+        "Low MAP (62)",
+        "Leukocytosis (WBC=14.8)"
+      ],
+      "clinical_rationale": "Critical discordance: MAP dropping from 64\u219255 mmHg (below sepsis threshold of 65) with leukocytosis (WBC 14.8) and clinician already considering vasopressors. Despite relatively preserved HR (94 bpm),",
+      "age": 19.42,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001673",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=103)",
+        "BP Falling Trend (122\u2192106)"
+      ],
+      "clinical_rationale": "Tachycardia (119 bpm) with falling BP trend (122\u2192106 mmHg) and borderline hypoxemia (SpO2 93%) suggests early compensated shock. Young age (30) may mask severity through physiologic reserve. Hemodynam",
+      "age": 30.79,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001445",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=96)",
+        "BP Falling Trend (117\u219296)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Current BP appears stable (117/57), but clinician notes document recent drop to 96 mmHg systolic with concern for hemodynamic instability. This 21-point SBP drop suggest",
+      "age": 71.0,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001080",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=25)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Telemetry shows RR 17 but clinical notes document RR 25 with increased work of breathing\u2014a 67% increase from baseline of 15. This rapid respiratory compensation with nor",
+      "age": 36.3,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p002011",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Significant bradycardia trend (79\u219248 bpm) is atypical and concerning in sepsis context\u2014may indicate vagal response to hypotension, medication effect, or late-stage distributive shock. Current vitals s",
+      "age": 41.97,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001081",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 2,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "HIGH_QSOFA",
+      "all_causes": [
+        "HIGH_QSOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=23)"
+      ],
+      "clinical_rationale": "Significant discordance detected: numeric data shows hypotension (SBP 95) while notes report BP rising to 139. Patient demonstrates compensatory tachypnea (RR 23-26) with declining O2Sat (96\u219292) despi",
+      "age": 56.22,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001840",
+      "risk_score": 62,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukopenia (WBC=3.7)"
+      ],
+      "clinical_rationale": "Immunocompromised patient with leukopenia (WBC 3.7) showing significant MAP increase from 65\u219297 mmHg, suggesting recent fluid resuscitation or vasopressor response. Stable current vitals mask potentia",
+      "age": 67.87,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001089",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Tachycardia (103 bpm, rising) with borderline MAP (63 mmHg, up from 61) and wide pulse pressure (57 mmHg) suggests early distributive shock physiology. Despite clinician notes indicating 'routine moni",
+      "age": 60.24,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000258",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "HR Rising Trend (60\u219280)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Notes report rising BP (106\u2192180) but numeric shows stable 105.5 mmHg. Rising HR (60\u219280 per notes vs 60.5 current) with borderline SpO2 92% and metabolic acidosis (pH 7.3",
+      "age": 74.0,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000174",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 3,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Low MAP (59)",
+        "Elevated Lactate (2.1)",
+        "Thrombocytopenia (Plt=73)",
+        "BP Falling Trend (131\u2192107)"
+      ],
+      "clinical_rationale": "Patient shows early septic shock pattern: lactate 2.1 with MAP dropping from 65\u219259 (below target 65), BP trending down 131\u2192107, and thrombocytopenia (73). Notes confirm hemodynamic instability requiri",
+      "age": 65.59,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001858",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Young patient with MAP 59.67 (borderline hypoperfusion), metabolic acidosis (HCO3 15), and hyperglycemia (257) suggesting stress response. Discordance between 'routine monitoring' note and concerning ",
+      "age": 20.39,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000751",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=26)",
+        "Leukocytosis (WBC=15.5)",
+        "HR Rising Trend (50\u219269)"
+      ],
+      "clinical_rationale": "Patient shows classic sepsis pattern: rising temperature (34.1->38.0\u00b0C), leukocytosis (WBC 15.5), tachypnea (RR 26), and metabolic acidosis (pH 7.29). MAP improved from 59->82 suggesting recent fluid ",
+      "age": 56.28,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000508",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 3,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Patient demonstrates concerning MAP of 58 mmHg (below septic shock threshold of 65) with initial hypotension that improved (95\u2192111 SBP). However, increasing respiratory rate with work of breathing sug",
+      "age": 61.77,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000576",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (58)",
+        "Tachypnea (RR=28)"
+      ],
+      "clinical_rationale": "Severe discordance detected: Structured data shows MAP 69 (borderline), but clinician notes document MAP 58 (below septic shock threshold of 65). Patient is tachypneic (RR 28, improving from 30 but st",
+      "age": 78.99,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001050",
+      "risk_score": 45,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "UNKNOWN",
+      "all_causes": [],
+      "vital_triggers": [],
+      "clinical_rationale": "MAP decline from 76 to 65 mmHg crosses septic shock threshold despite stable SBP. This discordance suggests early distributive shock physiology. However, HR 70 is inappropriately normal for MAP 65 in ",
+      "age": 86.0,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000736",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "HR Rising Trend (53\u219283)",
+        "BP Falling Trend (149\u2192116)"
+      ],
+      "clinical_rationale": "Significant discordance detected: Notes describe rising HR (53\u219283) and falling SBP (149\u2192116) over 6 hours, classic early shock compensation pattern. However, current vitals show HR 53 (bradycardic) wi",
+      "age": 56.57,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000617",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 3,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Persistent hypotension (SBP 99, MAP 75) with elevated bilirubin (7.7) suggests possible hepatic dysfunction. However, lack of lactate, temperature, and detailed trend history limits assessment. Discor",
+      "age": 55.45,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001916",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=13.4)"
+      ],
+      "clinical_rationale": "86yo with hypotension (SBP 97, MAP 58) and paradoxical bradycardia (HR 62->50). This HR-BP dissociation in elderly suggests impaired compensatory response or medication effect masking septic response.",
+      "age": 86.49,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000329",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Deteriorating MAP (75\u219266 mmHg) with relative bradycardia (HR 55) and borderline hypoxia (SpO2 92% per notes vs 96% per monitor) suggests compensated shock. Discordance between documented SpO2 values r",
+      "age": 38.3,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000443",
+      "risk_score": 78,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Patient demonstrates compensated shock with falling MAP (83\u219272), dropping O2Sat (100\u219292), and rising work of breathing despite relatively preserved BP. Acidosis (pH 7.32) with hyperkalemia (5.3) sugge",
+      "age": 75.7,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000509",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=91)",
+        "Low MAP (60)",
+        "Fever (Temp=38.3)"
+      ],
+      "clinical_rationale": "Patient demonstrates hypotensive septic shock with MAP 60 (below target 65) requiring vasopressor consideration, fever 38.3\u00b0C, and persistently low MAP trend (59\u219260). This represents decompensated sho",
+      "age": 40.5,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001540",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "BP Falling Trend (132\u2192105)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Current BP 132/72 appears stable, but clinician notes document recent drop from 132\u2192105 mmHg systolic, indicating active hemodynamic deterioration. MAP improved from 80\u2192",
+      "age": 51.02,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000958",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.7)",
+        "BP Falling Trend (133\u2192101)"
+      ],
+      "clinical_rationale": "Concerning triad: Hypothermia (35.7\u00b0C), bradycardia (HR 53), and documented BP drop (133\u2192101 mmHg) with MAP decline (89\u219269). This atypical presentation suggests distributive shock with paradoxical bra",
+      "age": 80.44,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000806",
+      "risk_score": 62,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "MAP decline of 19 mmHg (87\u219268) crosses hypoperfusion threshold despite stable SBP. Respiratory rate elevated at 23. However, generic ICU note lacks specificity about mental status, fluid requirements,",
+      "age": 83.19,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000232",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Deteriorating hemodynamics with MAP dropping from 81\u219268 mmHg (13-point decline) and DBP falling from 67\u219256 mmHg despite stable HR suggests early distributive shock. O2Sat declining from 99%\u219295% (note ",
+      "age": 60.41,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001788",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Severe Hypotension (SBP=80)",
+        "Low MAP (52)",
+        "BP Falling Trend (111\u219280)"
+      ],
+      "clinical_rationale": "Patient showing rapid hemodynamic decompensation: MAP dropped 37 points (89\u219252), below critical threshold of 65. Metabolic acidosis (pH 7.33) indicates tissue hypoperfusion despite current HR 77. DBP ",
+      "age": 78.96,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000741",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=102)",
+        "BP Falling Trend (133\u2192112)"
+      ],
+      "clinical_rationale": "Deteriorating hemodynamics with HR 118\u2192102, SBP 133\u2192112, and MAP falling from 109\u2192100 indicate decompensation. Metabolic acidosis (HCO3 18) with borderline hypoxia (SpO2 93-95%) suggests tissue hypope",
+      "age": 52.29,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000148",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=24)",
+        "BP Falling Trend (156\u2192139)"
+      ],
+      "clinical_rationale": "Discordance detected: BP appears 'stable' at 156 mmHg but notes document dropping trend (156\u2192139 mmHg). Rising respiratory rate (21\u219223\u219224) with tachypnea indicates compensatory response. MAP drop from",
+      "age": 39.24,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000106",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Thrombocytopenia (Plt=72)"
+      ],
+      "clinical_rationale": "Rising HR (77\u219290) with rising temperature (35.5\u219236.8\u00b0C) and thrombocytopenia (72K) suggest early sepsis compensation. Widening pulse pressure (SBP 130\u2192152, DBP 41) indicates distributive shock pattern",
+      "age": 83.09,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001897",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 4,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=112)",
+        "Tachypnea (RR=26)",
+        "Leukocytosis (WBC=12.5)",
+        "Elevated Creatinine (1.7)",
+        "Thrombocytopenia (Plt=44)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (113 bpm) with tachypnea (RR 26, trending up from 24) and leukocytosis (WBC 12.5) meet SIRS criteria. Critical concern: severe thrombocytopenia (44) suggests consumptive coagulo",
+      "age": 75.72,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001790",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 2,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_QSOFA",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=92)",
+        "Low MAP (64)",
+        "Tachypnea (RR=27)"
+      ],
+      "clinical_rationale": "Patient demonstrates compensated distributive shock: MAP declining 73\u219261 (now 64 per notes), widening pulse pressure (SBP 90/DBP 47), and tachypnea worsening (RR 35\u219227 documented, still elevated). Cli",
+      "age": 75.59,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001323",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "MAP dropped 16 points (107\u219291) with DBP falling 10 points despite stable HR, suggesting early vasodilation. Increased work of breathing with O2Sat improvement (91\u2192100) on FiO2 0.4 indicates compensato",
+      "age": 61.84,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001328",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 3,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=16.1)"
+      ],
+      "clinical_rationale": "79-year-old with hypotension (SBP 92, MAP 69 trending down from 71), leukocytosis (WBC 16.1), and elevated BUN/Creatinine ratio (41/1.5=27) suggesting prerenal azotemia. Compensatory tachycardia absen",
+      "age": 79.68,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000724",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 2,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_QSOFA",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Discordance detected: Numeric data shows hypotension (SBP 86\u2192105 per notes) with falling MAP (74\u219263), but improving HR trend (88\u219277). MAP <65 mmHg is concerning for inadequate perfusion despite rising",
+      "age": 77.57,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000941",
+      "risk_score": 68,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=24)"
+      ],
+      "clinical_rationale": "85yo patient with significant respiratory deterioration (RR 19\u219224, documented as tachypneic) despite normal O2Sat on supplemental oxygen (FiO2 0.5). Discordance between structured vitals (RR 18) and c",
+      "age": 85.37,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000137",
+      "risk_score": 62,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Deteriorating hemodynamics (MAP 74\u219270, DBP 56\u219253) with tachycardia (HR 98) and high oxygen requirement (FiO2 70%, O2Sat declining 96\u219294%) suggest early compensation. Notes describe 'routine monitoring",
+      "age": 39.76,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001283",
+      "risk_score": 78,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (58)",
+        "Desaturation (SpO2=91%)"
+      ],
+      "clinical_rationale": "Critical discordance detected: MAP 58 (below target 65) with falling HR (82\u219267) suggests distributive shock with inadequate compensation. Desaturation (SpO2 91%) indicates evolving organ dysfunction. ",
+      "age": 82.39,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000690",
+      "risk_score": 62,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=21.3)"
+      ],
+      "clinical_rationale": "Significant leukocytosis (WBC 21.3) with stable hemodynamics suggests early inflammatory response. Discordance between notes stating 'HR falling' vs current HR 82 (no baseline provided for comparison)",
+      "age": 59.37,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000457",
+      "risk_score": 45,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "UNKNOWN",
+      "all_causes": [],
+      "vital_triggers": [
+        "BP Falling Trend (160\u2192143)"
+      ],
+      "clinical_rationale": "Bradycardia (46-56 bpm) with hypertension (SBP 160\u2192143, MAP 109) is atypical for sepsis but concerning for alternative pathology (increased ICP, cardiac conduction block, medication effect). The disco",
+      "age": 46.42,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000342",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=102)",
+        "HR Rising Trend (83\u2192102)"
+      ],
+      "clinical_rationale": "Rising HR trend (83\u2192102 over 6h) with widened pulse pressure (SBP 130/DBP 51 = PP 79) suggests early distributive shock physiology. WBC 11.1 borderline elevated. Despite currently stable BP/MAP, the v",
+      "age": 71.6,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000113",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=113)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (112-113 bpm) with stable BP suggests early compensatory response. Hyperglycemia (205) may indicate stress response. Lack of hypotension does not exclude early sepsis\u2014tachycardi",
+      "age": 58.57,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000807",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 7,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Thrombocytopenia (Plt=77)"
+      ],
+      "clinical_rationale": "BP improving (109\u2192126 mmHg) with stable hemodynamics (HR 76, lactate 0.7). However, thrombocytopenia (platelets 77) warrants monitoring for potential organ stress despite otherwise reassuring vitals a",
+      "age": 85.36,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001094",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "BP Falling Trend (117\u2192102)"
+      ],
+      "clinical_rationale": "Concerning hemodynamic trajectory with falling HR (94\u219277) and dropping SBP (117\u2192102) combined with rising temperature (36.3\u219237.3\u00b0C) suggests early compensatory shock. The paradoxical bradycardia with ",
+      "age": 45.7,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000411",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 3,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=110)",
+        "Elevated Lactate (3.2)",
+        "Thrombocytopenia (Plt=47)"
+      ],
+      "clinical_rationale": "Patient demonstrates compensated septic shock: rising tachycardia (106\u2192110 bpm), critically elevated lactate (3.2), severe metabolic acidosis (pH 7.24, BE -11), and thrombocytopenia (47). Despite stab",
+      "age": 47.69,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000829",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=24)"
+      ],
+      "clinical_rationale": "28-year-old with persistent tachycardia (104 bpm) and tachypnea (RR 24, improved from 32) suggests ongoing physiologic stress. Normal pH (7.35) at lower limit with normal base excess indicates compens",
+      "age": 28.66,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001003",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "28-year-old with mild tachycardia (101 bpm) but conflicting trend data. Structured data shows rising HR while notes indicate falling HR. Hemodynamically stable (MAP 87.67, BP 117 mmHg). No fever, norm",
+      "age": 28.14,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000848",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=29)",
+        "Desaturation (SpO2=90%)",
+        "Leukocytosis (WBC=14.6)"
+      ],
+      "clinical_rationale": "Acute respiratory decompensation with RR 13\u219229, desaturation to 90%, and leukocytosis (14.6) in elderly patient. Rising BP (153\u2192169) suggests compensatory response to respiratory distress. Trend veloc",
+      "age": 87.3,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001027",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (64)"
+      ],
+      "clinical_rationale": "Critical discordance detected: MAP trending downward (67\u219258 in structured data, clinician reports 64) with explicit vasopressor consideration despite 'stable' SBP of 124. This represents compensated s",
+      "age": 62.46,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001059",
+      "risk_score": 45,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "UNKNOWN",
+      "all_causes": [],
+      "vital_triggers": [
+        "BP Falling Trend (136\u2192118)"
+      ],
+      "clinical_rationale": "BP drop from 136\u2192118 mmHg noted in clinician assessment warrants monitoring, but current vitals show stable hemodynamics (SBP 136, MAP 89, HR 77). No fever, tachycardia, or organ dysfunction evident. ",
+      "age": 43.92,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001231",
+      "risk_score": 42,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "UNKNOWN",
+      "all_causes": [],
+      "vital_triggers": [
+        "Hypotension (SBP=99)"
+      ],
+      "clinical_rationale": "Elderly patient (72y) with stable hemodynamics (MAP 78, HR 77) but concerning SpO2 discordance. Telemetry shows 97% while clinician documents 93% - suggests either measurement timing difference or cli",
+      "age": 72.46,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001994",
+      "risk_score": 75,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=103)",
+        "Hypotension (SBP=94)",
+        "BP Falling Trend (150\u219294)"
+      ],
+      "clinical_rationale": "Patient demonstrates classic compensated shock pattern: persistent tachycardia (104 bpm, rising trend) with documented BP drop from 150\u219294 mmHg systolic despite current reading of 150/58. Clinician no",
+      "age": 77.29,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000768",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Patient shows compensated shock with lactate 2.0, metabolic acidosis (pH 7.31, BE -8.0), tachycardia 130 bpm, and borderline hypotension (MAP 77). Despite note indicating HR improvement, numeric data ",
+      "age": 75.85,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001935",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=98)",
+        "BP Falling Trend (120\u219298)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Current BP appears stable (120/71), but clinician notes document recent drop from 120\u219298 mmHg systolic, indicating acute hemodynamic deterioration. HR 93 is elevated for",
+      "age": 73.66,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000281",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=28)",
+        "Leukocytosis (WBC=15.2)",
+        "BP Falling Trend (134\u2192115)"
+      ],
+      "clinical_rationale": "Deteriorating hemodynamics with SBP dropping 19 mmHg (134\u2192115), persistent tachypnea (RR 28-31), borderline hypoxemia (SpO2 94%), and leukocytosis (WBC 15.2). Pattern suggests early compensated shock ",
+      "age": 88.33,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000023",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 4,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=12.5)",
+        "Elevated Creatinine (7.0)",
+        "BP Falling Trend (144\u2192124)"
+      ],
+      "clinical_rationale": "Significant discordance detected: BP appears stable (144 mmHg) but clinician notes document dropping trend (144\u2192124 mmHg). Combined with severe renal dysfunction (Cr 7.0, BUN 65), hyperkalemia (K 6.1)",
+      "age": 35.89,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001371",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.9)"
+      ],
+      "clinical_rationale": "Hypothermia (35.9\u00b0C) in 72yo with suspected infection is a red flag for sepsis\u2014often indicates poor compensatory response. Borderline SpO2 94% suggests early respiratory stress. MAP improved 79\u219291 but",
+      "age": 72.37,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000906",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Elevated Lactate (2.6)"
+      ],
+      "clinical_rationale": "Lactate 2.6 mmol/L indicates tissue hypoperfusion despite adequate MAP (77.5). Borderline SBP (105) with thrombocytopenia (106) suggests early organ stress. Age 82 increases vulnerability to decompens",
+      "age": 82.12,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001590",
+      "risk_score": 78,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Severe Hypotension (SBP=89)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Clinician documented hypotension (SBP 89) while structured data shows borderline SBP 101.5. MAP 71 is at shock threshold. Thrombocytopenia (110) suggests consumptive coa",
+      "age": 74.3,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000353",
+      "risk_score": 78,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=92)",
+        "Low MAP (60)",
+        "BP Falling Trend (107\u219292)"
+      ],
+      "clinical_rationale": "Patient showing early distributive shock pattern: MAP 60 (below target 65), documented BP drop from 107\u219292 mmHg, tachycardia (HR 99), and wide pulse pressure (107/57 = 50mmHg differential). Clinician ",
+      "age": 55.61,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001120",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Severe Tachycardia (HR=123)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (124 bpm) with borderline hypoxemia (SpO2 93% on FiO2 60%) suggests compensatory response. MAP 75 mmHg is adequate but trending down (76\u219275). Combination of high oxygen requirem",
+      "age": 44.04,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001312",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Elderly patient with tachycardia (103 bpm) and tachypnea (40/min) but stable hemodynamics (BP 146/?, MAP 102). Conflicting trend data undermines assessment reliability. No fever, infection markers, or",
+      "age": 81.07,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001929",
+      "risk_score": 62,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Significant discordance detected: Current snapshot shows HR 71 and BP 119/50, but clinician notes document rising HR (71\u219282) and rising BP (119\u2192144) with increased work of breathing. The widening puls",
+      "age": 69.45,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000396",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "BP Falling Trend (135\u2192111)"
+      ],
+      "clinical_rationale": "Significant BP drop (135\u2192111 mmHg) in elderly patient represents concerning hemodynamic deterioration. Current HR 78 may indicate inadequate compensatory response for age/BP drop. Requires immediate l",
+      "age": 87.35,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000055",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=27)",
+        "Leukocytosis (WBC=13.8)"
+      ],
+      "clinical_rationale": "Patient demonstrates compensated shock physiology: persistent tachycardia (102.5 bpm) with tachypnea (RR 27) despite normal MAP (70.83). Metabolic acidosis (HCO3 18) with elevated BUN:Cr ratio (44:1.4",
+      "age": 53.95,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001431",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "MAP dropped 23 points (103\u219280 mmHg) despite elevated SBP (169), suggesting widening pulse pressure pattern. DBP also fell (76\u219267). This discordance with 'stable' clinical note warrants concern for ear",
+      "age": 44.63,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001374",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.9)",
+        "Elevated Creatinine (1.6)"
+      ],
+      "clinical_rationale": "Hypothermia (35.9\u00b0C) in 72yo with elevated creatinine (1.6) and BUN (105) suggests possible sepsis with renal stress. Rising BP (118\u2192136) may indicate compensatory response. Hyperglycemia (228) and le",
+      "age": 72.56,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001578",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=26)",
+        "HR Rising Trend (82\u219298)"
+      ],
+      "clinical_rationale": "Diverging hemodynamic pattern with rising HR (82\u219298) and tachypnea (RR 26) despite stable BP suggests early compensated shock. Clinician notes confirm deterioration velocity. Elevated WBC (12.0) and b",
+      "age": 69.12,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000655",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (62)"
+      ],
+      "clinical_rationale": "Patient shows early hemodynamic instability with MAP 62 (below target 65) requiring vasopressor consideration, combined with borderline hypoxemia (SpO2 92%). Discordance exists between 'stable' BP rea",
+      "age": 53.42,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001132",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "MAP dropped from 70.67 to 62.0 mmHg (borderline hypoperfusion threshold) with elevated BUN:Cr ratio (47:1.1 = 42.7, suggesting prerenal azotemia). However, HR is reassuringly low at 66 bpm, temp norma",
+      "age": 74.78,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001160",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 3,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypotension (SBP=95)",
+        "Low MAP (55)"
+      ],
+      "clinical_rationale": "Patient demonstrates hypotensive shock (MAP 55, target 65) requiring vasopressor consideration per notes. Despite BP improvement (72\u219295), MAP remains critically low. Concerning bradycardia (HR 61) wit",
+      "age": 66.19,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000427",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=24)"
+      ],
+      "clinical_rationale": "Tachypnea (RR 24) with rising trend and tachycardia (HR 98) suggest early compensatory response. MAP improved 68\u219278 but wide pulse pressure (77 mmHg) indicates possible distributive physiology. Requir",
+      "age": 70.4,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000074",
+      "risk_score": 58,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "LLM_MODERATE_RISK",
+      "all_causes": [
+        "LLM_MODERATE_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=106)"
+      ],
+      "clinical_rationale": "Rising HR trend (94\u2192106 bpm) with declining MAP (85\u219277 mmHg) suggests early compensatory response. Normal creatinine and adequate oxygenation are reassuring, but trend velocity is concerning for evolv",
+      "age": 43.62,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000775",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 2,
+      "sofa": 4,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=102)",
+        "Low MAP (46)",
+        "Tachypnea (RR=25)",
+        "Elevated Creatinine (6.2)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Structured data shows SBP 141 mmHg, but notes report MAP 46 mmHg requiring vasopressor consideration. Rising respiratory rate (13\u219225) with increased work of breathing in",
+      "age": 69.2,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p002054",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=24)"
+      ],
+      "clinical_rationale": "Tachypnea (RR 24) with tachycardia (HR 100) and falling MAP (81\u219272 mmHg) suggests early compensatory response. Despite stable SBP, the 9-point MAP drop indicates reduced perfusion pressure. Normal pH/",
+      "age": 66.43,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001725",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachycardia (HR=116)",
+        "Tachypnea (RR=28)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (116 bpm) with tachypnea (RR 28) suggests compensatory response. Severe anemia (Hgb 6.5) is a confounding factor but combined with respiratory alkalosis (pH 7.47, PaCO2 34) indi",
+      "age": 75.26,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p000385",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=23)"
+      ],
+      "clinical_rationale": "Persistent tachycardia (108 bpm) with tachypnea (RR 23, improving from 26) and falling O2Sat (97\u219293%) indicates respiratory compensation. Falling MAP (86\u219277 mmHg) despite 'stable' BP suggests early he",
+      "age": 67.34,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001187",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Severe Tachycardia (HR=124)",
+        "Tachypnea (RR=24)",
+        "Leukocytosis (WBC=30.4)",
+        "Elevated Lactate (3.0)",
+        "BP Falling Trend (160\u2192114)"
+      ],
+      "clinical_rationale": "Patient demonstrates compensated septic shock with lactate 3.0 mmol/L (tissue hypoperfusion), leukocytosis (WBC 30.4), and deteriorating hemodynamics (SBP dropping 160\u2192114 mmHg over hours). Despite ad",
+      "age": 67.18,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001264",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Severe metabolic acidosis (HCO3 11) with hyperglycemia (163) and hypokalemia (3.3) in young patient suggests significant metabolic stress. Despite 'stable' vitals per notes, the biochemical picture in",
+      "age": 26.85,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p002015",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 1,
+      "sofa": 3,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (62)",
+        "Elevated Creatinine (1.8)"
+      ],
+      "clinical_rationale": "Critical discordance detected: Displayed MAP 67 contradicts clinician note stating MAP 62 (below target 65). Patient requires vasopressor consideration per notes despite 'stable' automated vitals. Ele",
+      "age": 74.95,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000960",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=30)"
+      ],
+      "clinical_rationale": "Persistent tachypnea (RR 30, down from 35) with compensatory respiratory alkalosis (pH 7.46, normal PaCO2) indicates ongoing respiratory stress. Stable hemodynamics (BP 129/75, HR 93) but elevated FiO",
+      "age": 52.1,
+      "gender": "Female"
+    },
+    {
+      "patient_id": "p001971",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 2,
+      "sirs_met": 2,
+      "sofa": 2,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_QSOFA",
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Persistent hypotension (MAP 62.33, SBP 97.5) meets septic shock threshold (MAP <65) despite clinician notes describing 'routine monitoring.' This discordance suggests possible normalization bias in IC",
+      "age": 73.89,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000782",
+      "risk_score": 78,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK",
+        "MULTIPLE_ABNORMAL_VITALS"
+      ],
+      "vital_triggers": [
+        "Severe Hypotension (SBP=76)",
+        "Low MAP (59)",
+        "Tachypnea (RR=27)",
+        "BP Falling Trend (92\u219276)"
+      ],
+      "clinical_rationale": "Patient demonstrates acute hemodynamic decompensation with SBP dropping from 92\u219276 mmHg and MAP 59 (below target 65). Critical discordance: numeric summary reports 'persistently low' BP as static find",
+      "age": 59.19,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000328",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 4,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Tachypnea (RR=24)",
+        "Elevated Creatinine (5.4)"
+      ],
+      "clinical_rationale": "Patient shows compensatory stress pattern: HR variability (115\u219277 bpm), rising RR (16\u219224), falling MAP (92\u219279), and severe renal dysfunction (Cr 5.4). Increased work of breathing with tachypnea sugges",
+      "age": 39.17,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001647",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SIRS",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Hemodynamically stable with MAP 95 and improving trend (92\u219295). However, respiratory rate of 32 is elevated and concerning. Alkalosis (pH 7.5, BaseExcess +8) suggests compensation but etiology unclear",
+      "age": 63.95,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000820",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 0,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "MAP dropping from 70\u219266 mmHg with borderline hypotension (SBP 100) indicates early hemodynamic instability. Respiratory distress with increasing work of breathing suggests compensatory response. Norma",
+      "age": 70.43,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001816",
+      "risk_score": 72,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 1,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Hypothermia (Temp=35.6)"
+      ],
+      "clinical_rationale": "Hypothermia (35.6\u00b0C) in suspected infection context is a red flag for septic shock or severe sepsis. However, MAP improved from 58\u219267 mmHg suggesting recent resuscitation response. HR 64 is relatively",
+      "age": 61.19,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000723",
+      "risk_score": 70,
+      "priority": "High",
+      "alert_level": "HIGH",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 3,
+      "sofa": 2,
+      "primary_cause": "LLM_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Leukocytosis (WBC=12.3)"
+      ],
+      "clinical_rationale": "76yo with leukocytosis (WBC 12.3) and borderline MAP (66.67, previously 63.17) showing minimal improvement despite HR normalization (100\u219286). The combination of persistent leukocytosis with marginal h",
+      "age": 76.2,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000421",
+      "risk_score": 85,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": false,
+      "qsofa": 1,
+      "sirs_met": 2,
+      "sofa": 3,
+      "primary_cause": "LLM_VERY_HIGH_RISK",
+      "all_causes": [
+        "HIGH_SIRS",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [
+        "Low MAP (59)"
+      ],
+      "clinical_rationale": "Patient in early septic shock: MAP dropped from 81\u219264 (narrative) to 59 (notes), requiring vasopressor consideration. Severe metabolic acidosis (pH 7.21, BE -13) with compensatory tachypnea (RR 30) in",
+      "age": 69.7,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p001462",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 1,
+      "sofa": 3,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "HIGH_SOFA",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Critical discordance detected: Notes describe 'routine monitoring' and 'vitals within expected range,' but objective data shows MAP dropped from 82\u219263.5 mmHg (23% decline), DBP fell from 58\u219244 mmHg, c",
+      "age": 87.74,
+      "gender": "Male"
+    },
+    {
+      "patient_id": "p000035",
+      "risk_score": 95,
+      "priority": "Critical",
+      "alert_level": "CRITICAL",
+      "guardrail_override": true,
+      "qsofa": 0,
+      "sirs_met": 0,
+      "sofa": 0,
+      "primary_cause": "GUARDRAIL_OVERRIDE",
+      "all_causes": [
+        "GUARDRAIL_OVERRIDE",
+        "LLM_VERY_HIGH_RISK"
+      ],
+      "vital_triggers": [],
+      "clinical_rationale": "Vitals stable with improving MAP (69\u219278). However, respiratory acidosis (pH 7.36, PaCO2 60) and hyperglycemia (317) require context. No discordance between notes and vitals. Insufficient data for high",
+      "age": 65.04,
+      "gender": "Male"
+    }
+  ]
+}

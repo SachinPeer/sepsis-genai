@@ -1,0 +1,196 @@
+{
+  "api_input": {
+    "patient_id": "p000357",
+    "vitals": {
+      "HR": [
+        {
+          "val": 94.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 95.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 101.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 112.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 112.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 135.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 118.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 121.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 111.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 114.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 115.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 54.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 46.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 50.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 39.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 55.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 50.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 37.5,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 95.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 93.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 93.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 94.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 95.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 96.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 76.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 67.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 70.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 61.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 74.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 70.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "WBC": [
+        8.9
+      ],
+      "Lactate": [
+        2.4
+      ],
+      "Creatinine": [
+        1.3
+      ],
+      "Platelets": [
+        48.0
+      ],
+      "BUN": [
+        25.0
+      ],
+      "Glucose": [
+        139.0
+      ],
+      "pH": [
+        7.44
+      ],
+      "BaseExcess": [
+        0.0
+      ],
+      "HCO3": [
+        20.0
+      ],
+      "PaCO2": [
+        32.0
+      ],
+      "Potassium": [
+        3.0
+      ],
+      "Hgb": [
+        10.9
+      ],
+      "PTT": [
+        34.9
+      ],
+      "Fibrinogen": [
+        250.0
+      ],
+      "Age": 40.13,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate rising significantly over past 6 hours (94 -> 112 bpm). Blood pressure dropping (135 -> 115 mmHg systolic), concerning for hemodynamic instability. Lactate mildly elevated at 2.4 mmol/L. Thrombocytopenia, platelets 48. Diverging HR/BP trends \u2014 hemodynamic deterioration pattern."
+  },
+  "ground_truth": {
+    "patient_id": "p000357",
+    "actual_sepsis": true,
+    "onset_hour": 137,
+    "total_hours": 147,
+    "age": 40.13,
+    "gender": "Male"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "api_input": {
+    "patient_id": "p001942",
+    "vitals": {
+      "HR": [
+        {
+          "val": 57.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 81.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 79.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 124.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 148.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 140.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 36.89,
+          "ts": "2026-04-29T07:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 22.5,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 18.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 24.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 96.5,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 95.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 94.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 86.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 108.67,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 96.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Age": 60.49,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate rising significantly over past 6 hours (57 -> 79 bpm). BP rising (124 -> 140 systolic). Tachypneic, RR 24 (was 22). SpO2 borderline at 94%."
+  },
+  "ground_truth": {
+    "patient_id": "p001942",
+    "actual_sepsis": false,
+    "snapshot_hour": 21,
+    "total_hours": 43,
+    "age": 60.49,
+    "gender": "Male"
+  }
+}

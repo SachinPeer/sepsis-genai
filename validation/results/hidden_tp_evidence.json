@@ -1,0 +1,4488 @@
+{
+  "total_candidates": 43,
+  "tier_counts": {
+    "STRONG": 19,
+    "MODERATE": 11,
+    "WEAK": 13
+  },
+  "strong_count": 19,
+  "moderate_count": 11,
+  "cases": [
+    {
+      "patient_id": "p000896",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 14 after snapshot; Sustained hypoperfusion (7h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 96.0,
+        "SBP": 109.0,
+        "DBP": 59.0,
+        "Temp": 35.5,
+        "Resp": 13.0,
+        "O2Sat": 100.0,
+        "MAP": 76.0,
+        "Age": 61.87,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 2,
+        "sofa": 0,
+        "rationale": "Hypothermia (35.5\u00b0C) with falling HR (111\u219296) represents paradoxical bradycardia in sepsis\u2014a high-risk pattern indicating severe vasodilation and impaired compensatory response. MAP trending down (78\u2192"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 23,
+        "total_hours_in_icu": 47,
+        "hours_after_snapshot": 24,
+        "timeline": [
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "Cr 5.1"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "SBP 84",
+              "MAP 63",
+              "Cr 5.9"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "SBP 89",
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "SBP 89"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "SBP 87",
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "SBP 84",
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "Cr 6.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 23,
+            "flags": [
+              "SBP 83",
+              "MAP 60"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 6,
+          "hypoperfusion_hrs": 7,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 14,
+        "total_abnormal_hours": 10
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 61.87,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000170",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 24 after snapshot; Sustained hypoperfusion (16h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 80.0,
+        "SBP": 86.0,
+        "DBP": 40.0,
+        "Temp": 37.44,
+        "Resp": 15.0,
+        "O2Sat": 96.0,
+        "MAP": 53.0,
+        "Glucose": 222.0,
+        "pH": 7.43,
+        "BaseExcess": 2.0,
+        "PaCO2": 41.0,
+        "Potassium": 4.1,
+        "Age": 71.83,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 0,
+        "sofa": 2,
+        "rationale": "Patient demonstrates acute hemodynamic deterioration with SBP dropping from 116\u219286 mmHg and MAP falling from 60\u219253 mmHg (below critical threshold of 65). Clinician notes confirm vasopressor considerat"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 26,
+        "total_hours_in_icu": 52,
+        "hours_after_snapshot": 26,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "SBP 86",
+              "MAP 53"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "MAP 63"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "Plt 85"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "MAP 50"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "MAP 53"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 53"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 24,
+            "flags": [
+              "MAP 60",
+              "Plt 68"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 1,
+          "hypoperfusion_hrs": 16,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 24,
+        "total_abnormal_hours": 17
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 71.83,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001109",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 0 after snapshot; Sustained hypoperfusion (9h with SBP<90 or MAP<65); Hyperlactatemia (6h with Lactate>=2)",
+      "snapshot_vitals": {
+        "HR": 73.0,
+        "SBP": 94.0,
+        "DBP": 32.0,
+        "Temp": 37.7,
+        "Resp": 20.5,
+        "O2Sat": 98.0,
+        "MAP": 62.0,
+        "Lactate": 2.8,
+        "Glucose": 107.0,
+        "pH": 7.43,
+        "BaseExcess": -2.0,
+        "PaCO2": 30.0,
+        "Potassium": 4.3,
+        "Hgb": 10.8,
+        "FiO2": 0.4,
+        "Age": 66.47,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 1,
+        "sofa": 2,
+        "rationale": "Patient demonstrates textbook early septic shock: MAP dropped from 76\u219262 (below 65 threshold), SBP declining 115\u219294, lactate elevated at 2.8 indicating tissue hypoperfusion. Despite compensatory tachy"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 20,
+        "total_hours_in_icu": 40,
+        "hours_after_snapshot": 20,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 62",
+              "Lactate 2.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "Lactate 2.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 62",
+              "Lactate 2.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "MAP 50",
+              "Lactate 2.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "MAP 44",
+              "Lactate 2.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "MAP 52",
+              "Lactate 2.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "SBP 86",
+              "MAP 45"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "SBP 90",
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 64",
+              "Plt 94"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "MAP 64"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 9,
+          "high_lactate_hrs": 6,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 0,
+        "total_abnormal_hours": 10
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 66.47,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000193",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 9 after snapshot; Sustained hypoperfusion (3h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 88.0,
+        "SBP": 125.0,
+        "Temp": 35.44,
+        "Resp": 31.0,
+        "O2Sat": 94.0,
+        "MAP": 80.33,
+        "Age": 79.1,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 1,
+        "rationale": "Hypothermia (35.4\u00b0C) with tachypnea (RR 31-34) and borderline hypoxemia represents atypical sepsis presentation in elderly patient. MAP improving (74\u219280) suggests early compensation, but persistent re"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 20,
+        "total_hours_in_icu": 40,
+        "hours_after_snapshot": 20,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "Hypothermia 35.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "Cr 3.2",
+              "WBC 25.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "MAP 63"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "SBP 85",
+              "MAP 53",
+              "Hypothermia 35.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "SBP 82"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 3,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 1
+        },
+        "first_multisystem_hour_after_snapshot": 9,
+        "total_abnormal_hours": 7
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 79.1,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000573",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 0 after snapshot; Sustained hypoperfusion (10h with SBP<90 or MAP<65); Hyperlactatemia (6h with Lactate>=2)",
+      "snapshot_vitals": {
+        "HR": 80.0,
+        "SBP": 104.0,
+        "DBP": 48.0,
+        "Temp": 36.44,
+        "Resp": 25.0,
+        "O2Sat": 45.0,
+        "MAP": 67.0,
+        "WBC": 12.5,
+        "Lactate": 8.8,
+        "Creatinine": 6.6,
+        "Platelets": 203.0,
+        "BUN": 48.0,
+        "Glucose": 233.0,
+        "pH": 7.23,
+        "BaseExcess": -13.0,
+        "PaCO2": 31.0,
+        "Potassium": 4.8,
+        "Hgb": 11.3,
+        "PTT": 44.1,
+        "Fibrinogen": 419.0,
+        "FiO2": 1.0,
+        "Age": 80.37,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 8,
+        "rationale": "Patient presents with established septic shock: critically elevated lactate (8.8), severe metabolic acidosis (pH 7.23, BE -13), profound hypoxemia (SpO2 45%), and acute kidney injury (Cr 6.6). MAP 67 "
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 25,
+        "total_hours_in_icu": 51,
+        "hours_after_snapshot": 26,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "Lactate 8.8",
+              "Cr 6.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "Lactate 7.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "Cr 6.5"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "Lactate 4.0"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "Hypothermia 34.1",
+              "Cr 4.9"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "Lactate 2.9",
+              "Hypothermia 35.0"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "MAP 58",
+              "Hypothermia 35.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "MAP 63",
+              "Lactate 3.1"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 57",
+              "Hypothermia 35.9"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "SBP 84",
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "MAP 64",
+              "Cr 4.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 22,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 23,
+            "flags": [
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 24,
+            "flags": [
+              "MAP 60",
+              "Lactate 6.8",
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 25,
+            "flags": [
+              "SBP 89",
+              "MAP 59"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 10,
+          "high_lactate_hrs": 6,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 2
+        },
+        "first_multisystem_hour_after_snapshot": 0,
+        "total_abnormal_hours": 17
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 80.37,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000725",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 4 after snapshot; Sustained hypoperfusion (3h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 85.0,
+        "SBP": 121.0,
+        "DBP": 65.0,
+        "Resp": 20.0,
+        "O2Sat": 95.0,
+        "MAP": 84.0,
+        "Creatinine": 3.7,
+        "Bilirubin_total": 0.1,
+        "BUN": 73.0,
+        "Glucose": 68.0,
+        "HCO3": 12.0,
+        "Potassium": 4.0,
+        "Age": 42.44,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 4,
+        "rationale": "Falling HR (96\u219285) with dropping BP (162\u2192121) suggests loss of compensatory tachycardia\u2014concerning for decompensation. Severe metabolic acidosis (HCO3 12) with AKI (Cr 3.7, BUN 73) and hypoglycemia (6"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 26,
+        "total_hours_in_icu": 53,
+        "hours_after_snapshot": 27,
+        "timeline": [
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 49"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "SBP 80",
+              "MAP 53",
+              "Cr 3.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "SBP 80",
+              "MAP 52"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "Cr 3.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "Cr 3.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 24,
+            "flags": [
+              "Cr 3.8"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 3,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 4,
+        "total_abnormal_hours": 6
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 42.44,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000390",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 3 after snapshot; Sustained hypoperfusion (6h with SBP<90 or MAP<65); Hyperlactatemia (6h with Lactate>=2)",
+      "snapshot_vitals": {
+        "HR": 117.0,
+        "SBP": 94.0,
+        "DBP": 58.0,
+        "Temp": 37.39,
+        "Resp": 18.0,
+        "O2Sat": 100.0,
+        "MAP": 68.0,
+        "Lactate": 3.1,
+        "Glucose": 94.0,
+        "pH": 7.43,
+        "BaseExcess": 0.0,
+        "PaCO2": 34.0,
+        "Hgb": 9.4,
+        "FiO2": 0.5,
+        "Age": 61.5,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 1,
+        "sofa": 1,
+        "rationale": "Patient demonstrates textbook compensated septic shock: MAP dropping from 79\u219268 mmHg, DBP falling 67\u219258 mmHg, tachycardia (117 bpm), and critically elevated lactate (3.1 mmol/L) indicating tissue hypo"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 27,
+        "total_hours_in_icu": 55,
+        "hours_after_snapshot": 28,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "Hypothermia 35.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "Hypothermia 35.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "SBP 88",
+              "Lactate 3.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "Lactate 3.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "SBP 89"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "SBP 88",
+              "Lactate 3.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "Lactate 3.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "SBP 81"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "SBP 81",
+              "HR 132"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "Lactate 2.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "Lactate 2.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "SBP 89"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 6,
+          "hypoperfusion_hrs": 2,
+          "high_lactate_hrs": 6,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 1,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 3,
+        "total_abnormal_hours": 14
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 61.5,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001732",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 0 after snapshot; Sustained hypoperfusion (13h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 86.0,
+        "SBP": 108.0,
+        "DBP": 44.0,
+        "Temp": 36.83,
+        "Resp": 36.0,
+        "O2Sat": 96.0,
+        "MAP": 62.0,
+        "Glucose": 135.0,
+        "pH": 7.39,
+        "BaseExcess": 0.0,
+        "PaCO2": 40.0,
+        "Potassium": 4.7,
+        "Age": 71.54,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 1,
+        "sofa": 2,
+        "rationale": "Critical discordance: MAP 62 (below target 65) with clinician noting vasopressor consideration indicates early distributive shock. Respiratory rate accelerating 32\u219236 suggests metabolic compensation f"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 19,
+        "total_hours_in_icu": 39,
+        "hours_after_snapshot": 20,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 62",
+              "RR 36"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 58",
+              "RR 33"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "MAP 61",
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "MAP 60",
+              "RR 30"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 56"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "SBP 87",
+              "MAP 53"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "MAP 63",
+              "Hypothermia 35.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "MAP 59",
+              "RR 39"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "RR 31"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 1,
+          "hypoperfusion_hrs": 13,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 8
+        },
+        "first_multisystem_hour_after_snapshot": 0,
+        "total_abnormal_hours": 16
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 71.54,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001894",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 13 after snapshot; Hyperlactatemia (2h with Lactate>=2)",
+      "snapshot_vitals": {
+        "WBC": 22.5,
+        "Creatinine": 0.9,
+        "Platelets": 164.0,
+        "Bilirubin_total": 0.5,
+        "BUN": 28.0,
+        "Glucose": 194.0,
+        "pH": 7.43,
+        "HCO3": 21.0,
+        "AST": 244.0,
+        "Potassium": 3.5,
+        "Hgb": 11.2,
+        "Age": 72.92,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 45,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 1,
+        "sofa": 0,
+        "rationale": "Significant leukocytosis (WBC 22.5) with elevated AST (244) suggests inflammatory process with possible hepatic involvement. However, inability to assess vital sign trends, qSOFA criteria, or hemodyna"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 24,
+        "total_hours_in_icu": 49,
+        "hours_after_snapshot": 25,
+        "timeline": [
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "WBC 19.1"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "Lactate 2.3",
+              "Plt 82"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "Lactate 2.5"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 0,
+          "high_lactate_hrs": 2,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 13,
+        "total_abnormal_hours": 3
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 72.92,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000258",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 12 after snapshot; Hyperlactatemia (2h with Lactate>=2)",
+      "snapshot_vitals": {
+        "HR": 80.0,
+        "SBP": 180.0,
+        "DBP": 73.0,
+        "Temp": 36.5,
+        "Resp": 14.0,
+        "O2Sat": 92.0,
+        "MAP": 122.5,
+        "pH": 7.34,
+        "BaseExcess": -8.0,
+        "PaCO2": 29.0,
+        "FiO2": 0.7,
+        "Age": 74.0,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 1,
+        "sofa": 1,
+        "rationale": "Compensatory tachycardia (HR 60\u219280) with hypertensive response (SBP 106\u2192180) suggests sympathetic surge. Metabolic acidosis (pH 7.34, BE -8.0) with respiratory compensation (PaCO2 29) indicates tissue"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 23,
+        "total_hours_in_icu": 46,
+        "hours_after_snapshot": 23,
+        "timeline": [
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "WBC 18.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "WBC 18.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "Hypothermia 35.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "Lactate 2.0",
+              "WBC 18.3"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "Lactate 2.0",
+              "WBC 18.3"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "Hypothermia 35.8"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 2,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 12,
+        "total_abnormal_hours": 7
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 74.0,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001790",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 3 after snapshot; Sustained hypoperfusion (11h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 90.0,
+        "SBP": 92.0,
+        "DBP": 49.0,
+        "Temp": 37.65,
+        "Resp": 27.0,
+        "O2Sat": 98.5,
+        "MAP": 64.0,
+        "Age": 75.59,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 2,
+        "sirs_met": 1,
+        "sofa": 2,
+        "rationale": "Patient demonstrates compensated distributive shock pattern: MAP borderline at 64 (target 65), wide pulse pressure (SBP 92/DBP 49 = 43mmHg), and escalating respiratory compensation (RR 25\u219227). Clinici"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 24,
+        "total_hours_in_icu": 49,
+        "hours_after_snapshot": 25,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "SBP 83",
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "RR 32"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 62",
+              "RR 30"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "RR 32"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "RR 36"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "RR 32"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "RR 35"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "MAP 59",
+              "WBC 21.8",
+              "Plt 75"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "SBP 87",
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "RR 38"
+            ]
+          },
+          {
+            "hours_after_snapshot": 22,
+            "flags": [
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 23,
+            "flags": [
+              "MAP 63"
+            ]
+          },
+          {
+            "hours_after_snapshot": 24,
+            "flags": [
+              "MAP 58"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 11,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 8
+        },
+        "first_multisystem_hour_after_snapshot": 3,
+        "total_abnormal_hours": 18
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 75.59,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001328",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 14 after snapshot; Hyperlactatemia (3h with Lactate>=2)",
+      "snapshot_vitals": {
+        "HR": 94.0,
+        "SBP": 102.0,
+        "DBP": 63.0,
+        "Temp": 37.89,
+        "Resp": 15.0,
+        "O2Sat": 100.0,
+        "MAP": 78.0,
+        "WBC": 16.1,
+        "Creatinine": 1.5,
+        "Platelets": 260.0,
+        "Bilirubin_total": 1.9,
+        "BUN": 41.0,
+        "Glucose": 170.0,
+        "pH": 7.4,
+        "BaseExcess": 2.0,
+        "HCO3": 27.0,
+        "PaCO2": 46.0,
+        "AST": 37.0,
+        "Potassium": 4.9,
+        "Hgb": 11.5,
+        "TroponinI": 13.1,
+        "FiO2": 0.4,
+        "Age": 79.68,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 2,
+        "sofa": 2,
+        "rationale": "79yo with leukocytosis (16.1) and elevated BUN/Cr ratio (41/1.5=27) suggesting prerenal azotemia. MAP improved from 54\u219278 indicating recent fluid resuscitation. Tachycardia (94) with borderline SBP (1"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 20,
+        "total_hours_in_icu": 41,
+        "hours_after_snapshot": 21,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "RR 39"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "Lactate 6.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "Lactate 3.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "SBP 79",
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "SBP 89",
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "Lactate 2.5",
+              "WBC 16.6"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 2,
+          "high_lactate_hrs": 3,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 1
+        },
+        "first_multisystem_hour_after_snapshot": 14,
+        "total_abnormal_hours": 6
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 79.68,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000411",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 10 after snapshot; Sustained hypoperfusion (5h with SBP<90 or MAP<65); Hyperlactatemia (2h with Lactate>=2)",
+      "snapshot_vitals": {
+        "HR": 109.5,
+        "SBP": 121.5,
+        "DBP": 74.0,
+        "Temp": 36.45,
+        "Resp": 15.5,
+        "O2Sat": 99.0,
+        "MAP": 91.0,
+        "WBC": 4.6,
+        "Lactate": 3.2,
+        "Platelets": 47.0,
+        "pH": 7.24,
+        "BaseExcess": -11.0,
+        "PaCO2": 35.0,
+        "Hgb": 8.6,
+        "Age": 47.69,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 1,
+        "sofa": 3,
+        "rationale": "Patient demonstrates compensated septic shock with persistent tachycardia (109.5 bpm, rising trend), critically elevated lactate (3.2 mmol/L), severe metabolic acidosis (pH 7.24, BE -11), and thromboc"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 14,
+        "total_hours_in_icu": 29,
+        "hours_after_snapshot": 15,
+        "timeline": [
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "Hypothermia 35.9"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "Hypothermia 36.0"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "SBP 83"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "SBP 85"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "SBP 78",
+              "Lactate 6.1",
+              "Cr 2.4",
+              "HR 134"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "SBP 84",
+              "MAP 64",
+              "HR 133"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "SBP 75",
+              "MAP 57",
+              "Lactate 11.9",
+              "HR 139"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 5,
+          "hypoperfusion_hrs": 2,
+          "high_lactate_hrs": 2,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 3,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 10,
+        "total_abnormal_hours": 7
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 47.69,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001027",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 7 after snapshot; Sustained hypoperfusion (11h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 60.0,
+        "SBP": 132.0,
+        "Temp": 37.28,
+        "Resp": 16.0,
+        "O2Sat": 95.0,
+        "MAP": 64.0,
+        "Glucose": 187.0,
+        "Age": 62.46,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 3,
+        "rationale": "MAP of 64 is at septic shock threshold (<65) with clinician already considering vasopressor support. Despite normal HR (60) and stable SBP (132), the low MAP suggests distributive shock physiology. Gl"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 26,
+        "total_hours_in_icu": 53,
+        "hours_after_snapshot": 27,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 53"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "MAP 61",
+              "Cr 2.3"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 56"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "Cr 2.5"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "MAP 63"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 11,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 7,
+        "total_abnormal_hours": 12
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 62.46,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000768",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 10 after snapshot; Sustained hypoperfusion (4h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 90.5,
+        "SBP": 102.5,
+        "DBP": 43.5,
+        "Temp": 37.2,
+        "Resp": 18.5,
+        "O2Sat": 98.0,
+        "MAP": 68.0,
+        "Lactate": 2.0,
+        "Glucose": 115.0,
+        "pH": 7.31,
+        "BaseExcess": -8.0,
+        "PaCO2": 34.0,
+        "Potassium": 3.4,
+        "PTT": 33.2,
+        "Age": 75.85,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 1,
+        "sofa": 1,
+        "rationale": "Critical discordance detected: HR falling from 130\u219290 bpm indicates loss of compensatory tachycardia (ominous sign). Lactate 2.0 with metabolic acidosis (pH 7.31, BE -8.0) confirms tissue hypoperfusio"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 18,
+        "total_hours_in_icu": 36,
+        "hours_after_snapshot": 18,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "RR 30"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 60",
+              "WBC 24.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "MAP 63"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 4,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 1
+        },
+        "first_multisystem_hour_after_snapshot": 10,
+        "total_abnormal_hours": 5
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 75.85,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001120",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 15 after snapshot; Sustained hypoperfusion (11h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 123.0,
+        "SBP": 102.0,
+        "DBP": 58.0,
+        "Temp": 36.89,
+        "Resp": 22.0,
+        "O2Sat": 93.0,
+        "MAP": 72.0,
+        "FiO2": 0.6,
+        "Age": 44.04,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 1,
+        "rationale": "Persistent tachycardia (123 bpm) with borderline hypoxemia (SpO2 93% on FiO2 0.6) and borderline MAP (72 mmHg) suggests early compensatory response. Rising HR trend indicates physiological stress. Hig"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 28,
+        "total_hours_in_icu": 57,
+        "hours_after_snapshot": 29,
+        "timeline": [
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "SBP 76",
+              "MAP 56"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "SBP 77",
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "SBP 84",
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "RR 30"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "RR 32"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "RR 33"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "SBP 84",
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "SBP 88"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "RR 35"
+            ]
+          },
+          {
+            "hours_after_snapshot": 22,
+            "flags": [
+              "SBP 89"
+            ]
+          },
+          {
+            "hours_after_snapshot": 23,
+            "flags": [
+              "SBP 80",
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 24,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 25,
+            "flags": [
+              "SBP 86"
+            ]
+          },
+          {
+            "hours_after_snapshot": 26,
+            "flags": [
+              "SBP 79"
+            ]
+          },
+          {
+            "hours_after_snapshot": 27,
+            "flags": [
+              "SBP 86"
+            ]
+          },
+          {
+            "hours_after_snapshot": 28,
+            "flags": [
+              "SBP 85"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 11,
+          "hypoperfusion_hrs": 5,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 7
+        },
+        "first_multisystem_hour_after_snapshot": 15,
+        "total_abnormal_hours": 18
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 44.04,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000775",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 2 after snapshot; Sustained hypoperfusion (12h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 102.0,
+        "SBP": 141.0,
+        "DBP": 55.0,
+        "Temp": 36.22,
+        "Resp": 25.0,
+        "O2Sat": 99.0,
+        "MAP": 46.0,
+        "WBC": 7.3,
+        "Creatinine": 6.2,
+        "Platelets": 185.0,
+        "BUN": 93.0,
+        "Glucose": 118.0,
+        "pH": 7.33,
+        "BaseExcess": -3.0,
+        "HCO3": 20.0,
+        "PaCO2": 42.0,
+        "Potassium": 4.1,
+        "Hgb": 7.6,
+        "FiO2": 0.5,
+        "Age": 69.2,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 6,
+        "rationale": "Patient demonstrates textbook compensated distributive shock: MAP 46 (critically low, dropped from 58) despite SBP 141 indicating wide pulse pressure. Tachycardia (102), rising RR (12\u219225), metabolic a"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 19,
+        "total_hours_in_icu": 39,
+        "hours_after_snapshot": 20,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 46"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "Cr 6.4"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 64",
+              "Hypothermia 36.0"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "Cr 6.9"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 57",
+              "Hypothermia 35.9"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "SBP 86",
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "SBP 87",
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 57"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 12,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 2,
+        "total_abnormal_hours": 14
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 69.2,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p002015",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 5 after snapshot; Sustained hypoperfusion (5h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 69.0,
+        "SBP": 103.0,
+        "DBP": 46.0,
+        "Temp": 37.06,
+        "Resp": 19.0,
+        "O2Sat": 100.0,
+        "MAP": 62.0,
+        "WBC": 11.8,
+        "Creatinine": 1.8,
+        "Platelets": 103.0,
+        "BUN": 34.0,
+        "Glucose": 131.0,
+        "pH": 7.33,
+        "BaseExcess": 0.0,
+        "HCO3": 26.0,
+        "PaCO2": 52.0,
+        "Potassium": 4.3,
+        "Hgb": 11.1,
+        "PTT": 30.3,
+        "FiO2": 0.4,
+        "Age": 74.95,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 4,
+        "rationale": "Patient shows early septic shock pattern: MAP 62 (below target 65) with vasopressor consideration, elevated creatinine 1.8 indicating renal stress, metabolic acidosis (pH 7.33), thrombocytopenia (plat"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 26,
+        "total_hours_in_icu": 52,
+        "hours_after_snapshot": 26,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 56"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "MAP 61",
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "RR 30"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "RR 32"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "Plt 92"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "RR 39"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "RR 31"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "Plt 97"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 5,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 5
+        },
+        "first_multisystem_hour_after_snapshot": 5,
+        "total_abnormal_hours": 11
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 74.95,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001816",
+      "evidence_grade": "STRONG",
+      "evidence_reasons": "Multi-system deterioration at hr 6 after snapshot; Sustained hypoperfusion (9h with SBP<90 or MAP<65)",
+      "snapshot_vitals": {
+        "HR": 63.0,
+        "SBP": 119.0,
+        "Temp": 35.61,
+        "Resp": 10.0,
+        "O2Sat": 98.0,
+        "MAP": 66.0,
+        "Age": 61.19,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 1,
+        "sofa": 1,
+        "rationale": "Hypothermia (35.6\u00b0C) with clinician concern for infection is a high-risk sepsis presentation. Despite stable hemodynamics (BP 119/66), hypothermia in suspected infection indicates potential immunocomp"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 24,
+        "total_hours_in_icu": 48,
+        "hours_after_snapshot": 24,
+        "timeline": [
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "Hypothermia 35.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "MAP 57",
+              "Cr 4.8",
+              "Plt 83"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "Hypothermia 35.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "Hypothermia 35.4"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "MAP 64",
+              "Hypothermia 35.4"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "MAP 57",
+              "Hypothermia 35.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "MAP 51"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 22,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 23,
+            "flags": [
+              "Hypothermia 35.8"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 9,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 6,
+        "total_abnormal_hours": 13
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 61.19,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000699",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Sustained hypoperfusion (6h)",
+      "snapshot_vitals": {
+        "HR": 107.0,
+        "SBP": 111.0,
+        "DBP": 58.0,
+        "Temp": 38.33,
+        "Resp": 18.0,
+        "O2Sat": 100.0,
+        "MAP": 78.0,
+        "WBC": 14.5,
+        "Lactate": 0.7,
+        "Creatinine": 0.4,
+        "Platelets": 126.0,
+        "Bilirubin_total": 1.4,
+        "BUN": 5.0,
+        "Glucose": 101.0,
+        "pH": 7.35,
+        "BaseExcess": -2.0,
+        "HCO3": 21.0,
+        "PaCO2": 41.0,
+        "AST": 19.0,
+        "Potassium": 3.8,
+        "Hgb": 9.6,
+        "PTT": 30.8,
+        "Fibrinogen": 253.0,
+        "Age": 38.6,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 70,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 3,
+        "sofa": 2,
+        "rationale": "Patient meets 3/4 SIRS criteria (fever 38.3\u00b0C, tachycardia 107, leukocytosis 14.5) with improving hemodynamics (MAP 68\u219278, DBP 50\u219258). Normal lactate (0.7) suggests adequate tissue perfusion currently"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 16,
+        "total_hours_in_icu": 33,
+        "hours_after_snapshot": 17,
+        "timeline": [
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "SBP 86",
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "SBP 88",
+              "MAP 56"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 63"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "MAP 59"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 6,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 6
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 38.6,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001987",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Multi-system deterioration at hr 5",
+      "snapshot_vitals": {
+        "HR": 85.0,
+        "SBP": 123.5,
+        "DBP": 59.0,
+        "Temp": 37.56,
+        "Resp": 9.0,
+        "O2Sat": 100.0,
+        "MAP": 67.0,
+        "FiO2": 0.5,
+        "Age": 54.84,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 1,
+        "rationale": "Concerning MAP drop (73\u219267 mmHg) with falling HR (122\u219285 bpm) suggests possible early distributive shock with paradoxical bradycardia or beta-blockade masking compensation. Low DBP (59 mmHg) indicates"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 26,
+        "total_hours_in_icu": 52,
+        "hours_after_snapshot": 26,
+        "timeline": [
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "Temp 38.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "MAP 64",
+              "Temp 38.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "SBP 83",
+              "MAP 60"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 1,
+          "hypoperfusion_hrs": 2,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 2,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 5,
+        "total_abnormal_hours": 3
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 54.84,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000138",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Multi-system deterioration at hr 4",
+      "snapshot_vitals": {
+        "HR": 111.5,
+        "Temp": 38.5,
+        "Resp": 18.5,
+        "O2Sat": 95.0,
+        "MAP": 85.0,
+        "Age": 62.96,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 70,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 2,
+        "sofa": 1,
+        "rationale": "Persistent tachycardia (111-112 bpm) with fever (38.08-38.5\u00b0C) meets 2/4 SIRS criteria. Rising MAP (81\u219285) suggests early compensation. Clinician explicitly concerned about infection. Trend velocity s"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 19,
+        "total_hours_in_icu": 38,
+        "hours_after_snapshot": 19,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "Temp 38.5"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "Temp 39.3"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "Temp 39.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 50",
+              "HR 131"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "Temp 39.1",
+              "HR 134"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "Temp 38.5"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "Temp 39.0"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "Temp 38.5"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "Temp 38.6"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 8,
+          "tachycardia_hrs": 2,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": 4,
+        "total_abnormal_hours": 9
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 62.96,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000805",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Sustained hypoperfusion (9h)",
+      "snapshot_vitals": {
+        "HR": 108.0,
+        "SBP": 130.5,
+        "DBP": 52.0,
+        "Temp": 37.55,
+        "Resp": 11.0,
+        "O2Sat": 96.0,
+        "MAP": 83.0,
+        "pH": 7.5,
+        "BaseExcess": -3.0,
+        "PaCO2": 22.0,
+        "FiO2": 0.5,
+        "Age": 73.6,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 2,
+        "sofa": 0,
+        "rationale": "Compensatory tachycardia (97\u2192108 bpm) with widening pulse pressure (SBP 130/DBP 52, PP=78) suggests early distributive shock physiology. Respiratory alkalosis (pH 7.5, PaCO2 22) with base deficit (-3)"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 22,
+        "total_hours_in_icu": 45,
+        "hours_after_snapshot": 23,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 56"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "MAP 63"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "WBC 15.5"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "MAP 53"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "MAP 50"
+            ]
+          },
+          {
+            "hours_after_snapshot": 22,
+            "flags": [
+              "MAP 61"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 9,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 10
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 73.6,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000106",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Sustained hypoperfusion (6h)",
+      "snapshot_vitals": {
+        "HR": 90.0,
+        "SBP": 152.5,
+        "DBP": 67.0,
+        "Temp": 36.8,
+        "Resp": 10.0,
+        "O2Sat": 100.0,
+        "MAP": 100.0,
+        "WBC": 9.0,
+        "Platelets": 72.0,
+        "Glucose": 187.5,
+        "pH": 7.41,
+        "BaseExcess": 0.0,
+        "PaCO2": 44.0,
+        "Potassium": 4.7,
+        "Hgb": 9.6,
+        "PTT": 34.9,
+        "FiO2": 0.6,
+        "Age": 83.09,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 68,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 2,
+        "rationale": "Concerning trend velocity with rising HR (77\u219290), rising temperature (35.5\u219236.8\u00b0C), and significant thrombocytopenia (72k). The combination of tachycardia, fever trajectory, and platelet consumption s"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 29,
+        "total_hours_in_icu": 59,
+        "hours_after_snapshot": 30,
+        "timeline": [
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "Cr 2.1"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 21,
+            "flags": [
+              "MAP 60"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 6,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 7
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 83.09,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001283",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Sustained hypoperfusion (14h)",
+      "snapshot_vitals": {
+        "HR": 67.0,
+        "SBP": 103.0,
+        "Resp": 16.0,
+        "O2Sat": 91.0,
+        "MAP": 57.67,
+        "Age": 82.39,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 4,
+        "rationale": "Elderly patient with MAP 58 (below target 65) requiring vasopressor consideration, combined with falling HR (82\u219267) and desaturation (92\u219291%) indicates distributive shock pattern. Bradycardia with hyp"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 23,
+        "total_hours_in_icu": 46,
+        "hours_after_snapshot": 23,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 5,
+            "flags": [
+              "Cr 2.8"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "MAP 51"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "MAP 58"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "MAP 56"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 22,
+            "flags": [
+              "Cr 3.1"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 14,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 16
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 82.39,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000829",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Multi-system deterioration at hr 13",
+      "snapshot_vitals": {
+        "HR": 95.0,
+        "SBP": 149.0,
+        "DBP": 84.0,
+        "Temp": 37.28,
+        "Resp": 24.0,
+        "O2Sat": 100.0,
+        "MAP": 106.0,
+        "Glucose": 113.0,
+        "pH": 7.35,
+        "BaseExcess": 0.0,
+        "PaCO2": 45.0,
+        "FiO2": 0.5,
+        "Age": 28.66,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 70,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 0,
+        "rationale": "Improving tachypnea (32\u219224) suggests response to intervention, but persistent RR>22 meets qSOFA criteria. High FiO2 requirement (50%) with SpO2 100% indicates significant respiratory support. Borderli"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 20,
+        "total_hours_in_icu": 41,
+        "hours_after_snapshot": 21,
+        "timeline": [
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "Temp 38.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "RR 32"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "RR 30"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "RR 38"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "RR 33"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "HR 131",
+              "RR 37"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "HR 136",
+              "RR 35"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "HR 145",
+              "RR 38"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "HR 131",
+              "RR 33"
+            ]
+          },
+          {
+            "hours_after_snapshot": 19,
+            "flags": [
+              "HR 132",
+              "RR 30"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 0,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 1,
+          "tachycardia_hrs": 5,
+          "tachypnea_hrs": 12
+        },
+        "first_multisystem_hour_after_snapshot": 13,
+        "total_abnormal_hours": 13
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 28.66,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001994",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Sustained hypoperfusion (6h)",
+      "snapshot_vitals": {
+        "HR": 103.0,
+        "SBP": 94.0,
+        "DBP": 52.0,
+        "Temp": 38.11,
+        "Resp": 19.0,
+        "O2Sat": 98.0,
+        "MAP": 68.0,
+        "WBC": 7.9,
+        "Creatinine": 1.0,
+        "Platelets": 307.0,
+        "BUN": 15.0,
+        "Glucose": 309.0,
+        "HCO3": 22.0,
+        "Potassium": 4.1,
+        "Hgb": 9.3,
+        "PTT": 29.9,
+        "Age": 77.29,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 78,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 1,
+        "rationale": "Patient demonstrates classic compensated shock: persistent tachycardia (103 bpm) with significant MAP drop (96\u219268 mmHg) and falling SBP (150\u219294 mmHg). Clinician notes confirm hemodynamic instability w"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 10,
+        "total_hours_in_icu": 21,
+        "hours_after_snapshot": 11,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "SBP 84",
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "SBP 79",
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "MAP 64"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 6,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 6
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 77.29,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000906",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Hyperlactatemia (3h)",
+      "snapshot_vitals": {
+        "HR": 90.0,
+        "SBP": 111.0,
+        "DBP": 57.0,
+        "Resp": 18.0,
+        "O2Sat": 100.0,
+        "MAP": 77.0,
+        "WBC": 7.2,
+        "Lactate": 2.6,
+        "Platelets": 106.0,
+        "Glucose": 87.0,
+        "pH": 7.39,
+        "BaseExcess": -1.0,
+        "PaCO2": 37.0,
+        "Hgb": 11.4,
+        "FiO2": 0.4,
+        "Age": 82.12,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 1,
+        "rationale": "Lactate 2.6 mmol/L indicates tissue hypoperfusion despite adequate MAP (77). Trending MAP improvement (73\u219277) and DBP rise (53\u219257) suggest recent fluid resuscitation, but persistent lactate elevation "
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 10,
+        "total_hours_in_icu": 20,
+        "hours_after_snapshot": 10,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "Lactate 2.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "Lactate 2.2"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "Lactate 2.3"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 59"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 3,
+          "high_lactate_hrs": 3,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 6
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 82.12,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001160",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Sustained hypoperfusion (8h)",
+      "snapshot_vitals": {
+        "HR": 64.0,
+        "SBP": 95.0,
+        "Temp": 36.83,
+        "Resp": 20.0,
+        "O2Sat": 99.0,
+        "MAP": 55.0,
+        "WBC": 6.5,
+        "Creatinine": 1.0,
+        "Platelets": 291.0,
+        "BUN": 22.0,
+        "Glucose": 112.0,
+        "pH": 7.43,
+        "BaseExcess": 5.0,
+        "HCO3": 32.0,
+        "PaCO2": 47.0,
+        "Potassium": 3.3,
+        "Hgb": 9.6,
+        "PTT": 30.5,
+        "FiO2": 0.8,
+        "Age": 66.19,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 0,
+        "sofa": 2,
+        "rationale": "Patient demonstrates persistent hypotension (MAP 55, target 65) despite rising SBP trend (72\u219295), indicating inadequate perfusion pressure. Clinician note confirms vasopressor consideration. However, "
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 12,
+        "total_hours_in_icu": 24,
+        "hours_after_snapshot": 12,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "SBP 88",
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "MAP 50"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 49"
+            ]
+          },
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "SBP 85",
+              "MAP 55"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "SBP 86",
+              "MAP 52"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 58"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 3,
+          "hypoperfusion_hrs": 8,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 8
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 66.19,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000385",
+      "evidence_grade": "MODERATE",
+      "evidence_reasons": "Multi-system deterioration at hr 4",
+      "snapshot_vitals": {
+        "HR": 94.0,
+        "SBP": 130.0,
+        "Temp": 37.61,
+        "Resp": 23.0,
+        "O2Sat": 98.0,
+        "MAP": 80.67,
+        "Bilirubin_total": 0.2,
+        "Age": 67.34,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 70,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 0,
+        "rationale": "Patient shows mixed signals: HR improving (108\u219294) and RR improving (26\u219223) suggest response to treatment, but persistent tachypnea (RR 23, threshold \u226522) meets qSOFA criteria. Significant MAP improve"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 21,
+        "total_hours_in_icu": 43,
+        "hours_after_snapshot": 22,
+        "timeline": [
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "HR 133",
+              "RR 34"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "WBC 24.5"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 1,
+          "tachypnea_hrs": 1
+        },
+        "first_multisystem_hour_after_snapshot": 4,
+        "total_abnormal_hours": 3
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 67.34,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001419",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (4)",
+      "snapshot_vitals": {
+        "HR": 66.0,
+        "SBP": 109.0,
+        "Temp": 36.28,
+        "Resp": 18.0,
+        "O2Sat": 96.0,
+        "MAP": 73.67,
+        "Age": 66.2,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 0,
+        "rationale": "Concerning hemodynamic trajectory: SBP dropped 37 mmHg (146\u2192109) and MAP dropped 24 mmHg (98\u219274) with paradoxical bradycardia (80\u219266). This pattern suggests either distributive shock with vagal respon"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 21,
+        "total_hours_in_icu": 43,
+        "hours_after_snapshot": 22,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 54"
+            ]
+          },
+          {
+            "hours_after_snapshot": 6,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "Hypothermia 35.3"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "Cr 2.5"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 2,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 4
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 66.2,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001136",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (3)",
+      "snapshot_vitals": {
+        "HR": 72.0,
+        "SBP": 98.0,
+        "Temp": 36.78,
+        "Resp": 11.0,
+        "O2Sat": 97.0,
+        "WBC": 9.4,
+        "Creatinine": 15.7,
+        "Platelets": 163.0,
+        "Bilirubin_total": 0.3,
+        "BUN": 169.0,
+        "Glucose": 98.0,
+        "HCO3": 9.0,
+        "AST": 22.0,
+        "Potassium": 3.9,
+        "Hgb": 6.2,
+        "PTT": 34.2,
+        "Age": 68.1,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 0,
+        "sofa": 4,
+        "rationale": "Patient demonstrates compensated shock with falling BP (132\u219298) and paradoxical bradycardia (85\u219272), concerning for late-stage decompensation. Severe metabolic acidosis (HCO3 9.0) with profound renal "
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 11,
+        "total_hours_in_icu": 23,
+        "hours_after_snapshot": 12,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "Cr 15.7"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "MAP 60"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 2,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 3
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 68.1,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p002066",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (3)",
+      "snapshot_vitals": {
+        "HR": 90.0,
+        "SBP": 104.0,
+        "DBP": 54.0,
+        "Temp": 37.7,
+        "Resp": 30.0,
+        "O2Sat": 100.0,
+        "MAP": 69.0,
+        "Glucose": 164.0,
+        "pH": 7.38,
+        "BaseExcess": 0.5,
+        "PaCO2": 44.5,
+        "Potassium": 4.3,
+        "FiO2": 0.5,
+        "Age": 28.33,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 1,
+        "sofa": 1,
+        "rationale": "Acute respiratory decompensation (RR 12\u219230) with borderline MAP (69 mmHg, trending down from 73) indicates early shock compensation. Tachypnea with increased work of breathing suggests metabolic stres"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 9,
+        "total_hours_in_icu": 18,
+        "hours_after_snapshot": 9,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "RR 30"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "WBC 20.0"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "MAP 64"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 1
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 3
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 28.33,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001188",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (5)",
+      "snapshot_vitals": {
+        "HR": 73.0,
+        "SBP": 111.0,
+        "Temp": 36.67,
+        "Resp": 15.5,
+        "O2Sat": 100.0,
+        "MAP": 69.67,
+        "FiO2": 0.6,
+        "Age": 54.91,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 72,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 1,
+        "rationale": "Significant BP drop (163\u2192111 mmHg) with MAP falling from 79.67\u219269.67 mmHg represents concerning hemodynamic deterioration. MAP approaching septic shock threshold (<65). Despite normal HR (73) and O2Sa"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 24,
+        "total_hours_in_icu": 49,
+        "hours_after_snapshot": 25,
+        "timeline": [
+          {
+            "hours_after_snapshot": 4,
+            "flags": [
+              "Cr 2.1"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 18,
+            "flags": [
+              "MAP 60"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 4,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 5
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 54.91,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001434",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (1)",
+      "snapshot_vitals": {
+        "HR": 70.0,
+        "SBP": 89.0,
+        "DBP": 47.0,
+        "Temp": 36.9,
+        "Resp": 15.0,
+        "O2Sat": 98.0,
+        "MAP": 60.0,
+        "Platelets": 108.0,
+        "Glucose": 101.0,
+        "pH": 7.32,
+        "BaseExcess": -5.0,
+        "PaCO2": 38.0,
+        "Potassium": 4.6,
+        "FiO2": 0.5,
+        "Age": 75.95,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 0,
+        "sofa": 3,
+        "rationale": "Patient demonstrates acute hemodynamic decompensation with MAP dropping from 103\u219260 mmHg (below critical threshold of 65). Despite normal HR (70 bpm), the profound hypotension with metabolic acidosis "
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 9,
+        "total_hours_in_icu": 19,
+        "hours_after_snapshot": 10,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "SBP 89",
+              "MAP 60"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 1,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 1
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 75.95,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000509",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (6)",
+      "snapshot_vitals": {
+        "HR": 95.0,
+        "SBP": 91.0,
+        "Temp": 38.33,
+        "Resp": 18.0,
+        "O2Sat": 96.0,
+        "MAP": 60.33,
+        "Age": 40.5,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 2,
+        "sofa": 2,
+        "rationale": "Patient demonstrates early septic shock physiology: MAP 60 (below target 65) with fever 38.3\u00b0C and tachypnea (RR 25). Dropping MAP trend (61.33\u219260.33) with compensatory tachycardia (HR 95) indicates i"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 18,
+        "total_hours_in_icu": 36,
+        "hours_after_snapshot": 18,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "SBP 89",
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "MAP 61"
+            ]
+          },
+          {
+            "hours_after_snapshot": 12,
+            "flags": [
+              "SBP 89",
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 16,
+            "flags": [
+              "MAP 57"
+            ]
+          },
+          {
+            "hours_after_snapshot": 17,
+            "flags": [
+              "Plt 86"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 5,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 6
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 40.5,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001788",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (7)",
+      "snapshot_vitals": {
+        "HR": 84.5,
+        "SBP": 80.0,
+        "DBP": 40.0,
+        "Temp": 37.05,
+        "Resp": 15.5,
+        "O2Sat": 98.0,
+        "MAP": 52.0,
+        "pH": 7.33,
+        "Hgb": 11.6,
+        "Age": 78.96,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 0,
+        "sofa": 2,
+        "rationale": "Patient demonstrates acute hemodynamic collapse with SBP dropping from 111\u219280 mmHg and MAP falling from 70.5\u219252 mmHg (critically below target of 65). Combined with metabolic acidosis (pH 7.33) and age"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 23,
+        "total_hours_in_icu": 46,
+        "hours_after_snapshot": 23,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "SBP 80",
+              "MAP 52"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 10,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 13,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 14,
+            "flags": [
+              "MAP 60"
+            ]
+          },
+          {
+            "hours_after_snapshot": 15,
+            "flags": [
+              "Plt 78"
+            ]
+          },
+          {
+            "hours_after_snapshot": 22,
+            "flags": [
+              "Hypothermia 35.6"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 1,
+          "hypoperfusion_hrs": 5,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 7
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 78.96,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p001590",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (2)",
+      "snapshot_vitals": {
+        "HR": 100.0,
+        "SBP": 89.0,
+        "DBP": 49.0,
+        "Temp": 36.8,
+        "Resp": 14.0,
+        "O2Sat": 97.0,
+        "MAP": 66.0,
+        "WBC": 7.6,
+        "Creatinine": 1.3,
+        "Platelets": 110.0,
+        "BUN": 16.0,
+        "Glucose": 110.0,
+        "pH": 7.37,
+        "BaseExcess": -1.0,
+        "HCO3": 21.0,
+        "PaCO2": 41.0,
+        "Potassium": 4.1,
+        "Hgb": 11.0,
+        "FiO2": 0.4,
+        "Age": 74.3,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 1,
+        "sofa": 3,
+        "rationale": "74yo with documented hypotension (SBP 89, MAP 66\u219269 trending down) and tachycardia (HR 100). Concerning organ stress indicators: thrombocytopenia (110K), elevated creatinine (1.3), and borderline acid"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 15,
+        "total_hours_in_icu": 31,
+        "hours_after_snapshot": 16,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "SBP 89"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "SBP 87",
+              "MAP 63"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 2,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 2
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 74.3,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000655",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (3)",
+      "snapshot_vitals": {
+        "HR": 84.0,
+        "SBP": 118.0,
+        "DBP": 57.0,
+        "Temp": 37.11,
+        "Resp": 19.0,
+        "O2Sat": 92.0,
+        "MAP": 62.0,
+        "Age": 53.42,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 0,
+        "sofa": 3,
+        "rationale": "MAP 62 below target 65 with clinician noting potential vasopressor need indicates early distributive shock. Falling HR (98\u219284) paradoxically with hypotension suggests inadequate compensation or beta-b"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 14,
+        "total_hours_in_icu": 28,
+        "hours_after_snapshot": 14,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 62"
+            ]
+          },
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "WBC 18.6"
+            ]
+          },
+          {
+            "hours_after_snapshot": 7,
+            "flags": [
+              "Hypothermia 35.9"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 3
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 53.42,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001725",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (2)",
+      "snapshot_vitals": {
+        "HR": 116.0,
+        "SBP": 129.0,
+        "DBP": 80.0,
+        "Temp": 38.1,
+        "Resp": 28.0,
+        "O2Sat": 96.0,
+        "MAP": 107.0,
+        "Glucose": 188.0,
+        "pH": 7.47,
+        "BaseExcess": 2.0,
+        "PaCO2": 34.0,
+        "Hgb": 6.5,
+        "Age": 75.26,
+        "Gender": "Female"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 1,
+        "sirs_met": 3,
+        "sofa": 0,
+        "rationale": "75yo with persistent tachycardia (HR 116) and tachypnea (RR 28) despite stable BP suggests early compensatory response. Severe anemia (Hgb 6.5) with hyperglycemia (188) and respiratory alkalosis (pH 7"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 17,
+        "total_hours_in_icu": 34,
+        "hours_after_snapshot": 17,
+        "timeline": [
+          {
+            "hours_after_snapshot": 8,
+            "flags": [
+              "SBP 58",
+              "MAP 40"
+            ]
+          },
+          {
+            "hours_after_snapshot": 9,
+            "flags": [
+              "MAP 22"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 1,
+          "hypoperfusion_hrs": 2,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 2
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 75.26,
+        "gender": "Female"
+      }
+    },
+    {
+      "patient_id": "p000782",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (1)",
+      "snapshot_vitals": {
+        "HR": 91.0,
+        "SBP": 76.0,
+        "DBP": 49.0,
+        "Resp": 27.0,
+        "O2Sat": 95.0,
+        "MAP": 59.0,
+        "Lactate": 1.4,
+        "Glucose": 132.0,
+        "pH": 7.38,
+        "BaseExcess": -2.0,
+        "PaCO2": 36.0,
+        "FiO2": 0.7,
+        "Age": 59.19,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 95,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": true,
+        "override_reasons": [],
+        "qsofa": 2,
+        "sirs_met": 2,
+        "sofa": 3,
+        "rationale": "Patient demonstrates compensated distributive shock with MAP 59 (below target 65), dropping SBP (92\u219276), and widening pulse pressure (27 mmHg). Concurrent respiratory deterioration (RR 18\u219227) with hig"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 24,
+        "total_hours_in_icu": 48,
+        "hours_after_snapshot": 24,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "SBP 76",
+              "MAP 59"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 1,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 1
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 59.19,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p000421",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (2)",
+      "snapshot_vitals": {
+        "HR": 97.0,
+        "SBP": 102.0,
+        "DBP": 40.0,
+        "Temp": 37.39,
+        "Resp": 15.0,
+        "O2Sat": 92.0,
+        "MAP": 59.0,
+        "Lactate": 1.0,
+        "Glucose": 197.0,
+        "pH": 7.21,
+        "BaseExcess": -13.0,
+        "PaCO2": 34.0,
+        "FiO2": 0.6,
+        "Age": 69.7,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 85,
+        "priority": "Critical",
+        "alert_level": "CRITICAL",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 1,
+        "sofa": 3,
+        "rationale": "Patient shows early septic shock: MAP declining 69\u219259 (below target 65), widening pulse pressure (102/40 suggests distributive shock), severe metabolic acidosis (pH 7.21, BE -13), and hypoxemia (SpO2 "
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 25,
+        "total_hours_in_icu": 51,
+        "hours_after_snapshot": 26,
+        "timeline": [
+          {
+            "hours_after_snapshot": 0,
+            "flags": [
+              "MAP 59"
+            ]
+          },
+          {
+            "hours_after_snapshot": 2,
+            "flags": [
+              "WBC 16.1"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 2
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 69.7,
+        "gender": "Male"
+      }
+    },
+    {
+      "patient_id": "p001462",
+      "evidence_grade": "WEAK",
+      "evidence_reasons": "Isolated abnormal hours (4)",
+      "snapshot_vitals": {
+        "HR": 61.0,
+        "SBP": 120.0,
+        "DBP": 52.0,
+        "Temp": 36.78,
+        "Resp": 16.0,
+        "O2Sat": 99.0,
+        "MAP": 74.0,
+        "Lactate": 1.4,
+        "pH": 7.36,
+        "BaseExcess": -9.0,
+        "PaCO2": 24.0,
+        "FiO2": 0.5,
+        "Age": 87.74,
+        "Gender": "Male"
+      },
+      "system_prediction": {
+        "risk_score": 45,
+        "priority": "High",
+        "alert_level": "HIGH",
+        "guardrail_override": false,
+        "override_reasons": [],
+        "qsofa": 0,
+        "sirs_met": 1,
+        "sofa": 0,
+        "rationale": "87yo with compensated metabolic acidosis (pH 7.36, BE -9, PaCO2 24 indicating respiratory compensation) requiring FiO2 0.5. MAP improved 64\u219274 suggesting recent intervention. Despite 'routine' note, m"
+      },
+      "physionet_trajectory": {
+        "snapshot_hour": 27,
+        "total_hours_in_icu": 54,
+        "hours_after_snapshot": 27,
+        "timeline": [
+          {
+            "hours_after_snapshot": 1,
+            "flags": [
+              "MAP 64"
+            ]
+          },
+          {
+            "hours_after_snapshot": 3,
+            "flags": [
+              "Plt 68"
+            ]
+          },
+          {
+            "hours_after_snapshot": 11,
+            "flags": [
+              "Plt 75"
+            ]
+          },
+          {
+            "hours_after_snapshot": 20,
+            "flags": [
+              "Plt 83"
+            ]
+          }
+        ],
+        "sustained_signals_in_next_48h": {
+          "hypotension_hrs": 0,
+          "hypoperfusion_hrs": 1,
+          "high_lactate_hrs": 0,
+          "fever_hrs": 0,
+          "tachycardia_hrs": 0,
+          "tachypnea_hrs": 0
+        },
+        "first_multisystem_hour_after_snapshot": null,
+        "total_abnormal_hours": 4
+      },
+      "physionet_label": "non_sepsis_throughout_stay",
+      "demographics": {
+        "age": 87.74,
+        "gender": "Male"
+      }
+    }
+  ]
+}

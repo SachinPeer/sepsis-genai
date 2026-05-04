@@ -1,0 +1,18 @@
+{
+  "api_input": {
+    "patient_id": "p001849",
+    "vitals": {
+      "Age": 87.49,
+      "Gender": "Female"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Routine monitoring. Vitals within expected range for ICU baseline. No acute changes noted."
+  },
+  "ground_truth": {
+    "patient_id": "p001849",
+    "actual_sepsis": true,
+    "onset_hour": 189,
+    "total_hours": 198,
+    "age": 87.49,
+    "gender": "Female"
+  }
+}

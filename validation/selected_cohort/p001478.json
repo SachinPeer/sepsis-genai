@@ -1,0 +1,30 @@
+{
+  "api_input": {
+    "patient_id": "p001478",
+    "vitals": {
+      "heart_rate": 84.0,
+      "o2_saturation": 92.0,
+      "temperature": 38.33,
+      "sbp": 136.0,
+      "map": 93.0,
+      "dbp": 70.0,
+      "respiratory_rate": 22.0,
+      "base_excess": 1.0,
+      "fio2": 0.5,
+      "ph": 7.41,
+      "paco2": 42.0,
+      "glucose": 103.0,
+      "age": 60.01,
+      "gender": "Female"
+    },
+    "notes": "HR trend stable (88 -> 84). SBP trend stable (133 -> 136). Febrile at 38.3C. O2 sat concerning at 92%"
+  },
+  "ground_truth": {
+    "patient_id": "p001478",
+    "actual_sepsis": false,
+    "snapshot_hour": 19,
+    "total_hours": 39,
+    "age": 60.01,
+    "gender": "Female"
+  }
+}

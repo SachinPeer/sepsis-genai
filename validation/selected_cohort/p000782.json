@@ -1,0 +1,30 @@
+{
+  "api_input": {
+    "patient_id": "p000782",
+    "vitals": {
+      "heart_rate": 91.0,
+      "o2_saturation": 95.0,
+      "sbp": 76.0,
+      "map": 59.0,
+      "dbp": 49.0,
+      "respiratory_rate": 27.0,
+      "base_excess": -2.0,
+      "fio2": 0.7,
+      "ph": 7.38,
+      "paco2": 36.0,
+      "glucose": 132.0,
+      "lactate": 1.4,
+      "age": 59.19,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (83 -> 91). SBP trend dropping (92 -> 76). Respiratory rate increasing (18 -> 27)"
+  },
+  "ground_truth": {
+    "patient_id": "p000782",
+    "actual_sepsis": false,
+    "snapshot_hour": 24,
+    "total_hours": 48,
+    "age": 59.19,
+    "gender": "Male"
+  }
+}

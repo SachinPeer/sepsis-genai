@@ -1,0 +1,131 @@
+{
+  "api_input": {
+    "patient_id": "p001895",
+    "vitals": {
+      "HR": [
+        {
+          "val": 63.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 87.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 53.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 75.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 78.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 37.0,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 22.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 27.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 22.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 24.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 33.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 24.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 98.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 92.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 83.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 78.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 68.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 92.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 95.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 87.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "FiO2": [
+        0.5
+      ],
+      "Age": 73.26,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate rising significantly over past 6 hours (63 -> 78 bpm). Tachypneic, RR 24 (was 22)."
+  },
+  "ground_truth": {
+    "patient_id": "p001895",
+    "actual_sepsis": true,
+    "onset_hour": 256,
+    "total_hours": 265,
+    "age": 73.26,
+    "gender": "Male"
+  }
+}

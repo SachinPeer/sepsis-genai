@@ -1,0 +1,42 @@
+{
+  "api_input": {
+    "patient_id": "p001502",
+    "vitals": {
+      "WBC": [
+        28.5
+      ],
+      "Creatinine": [
+        1.9
+      ],
+      "Platelets": [
+        262.0
+      ],
+      "BUN": [
+        32.0
+      ],
+      "Glucose": [
+        171.0
+      ],
+      "HCO3": [
+        24.0
+      ],
+      "Potassium": [
+        5.0
+      ],
+      "Hgb": [
+        12.0
+      ],
+      "Age": 56.01,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Leukocytosis, WBC 28.5. Creatinine elevated at 1.9, monitoring renal function."
+  },
+  "ground_truth": {
+    "patient_id": "p001502",
+    "actual_sepsis": true,
+    "onset_hour": 19,
+    "total_hours": 28,
+    "age": 56.01,
+    "gender": "Male"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "api_input": {
+    "patient_id": "p001725",
+    "vitals": {
+      "HR": [
+        {
+          "val": 116.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 129.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 80.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 38.1,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 28.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 96.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 107.0,
+          "ts": "2026-04-29T03:00"
+        }
+      ],
+      "Glucose": [
+        188.0
+      ],
+      "pH": [
+        7.47
+      ],
+      "BaseExcess": [
+        2.0
+      ],
+      "PaCO2": [
+        34.0
+      ],
+      "Hgb": [
+        6.5
+      ],
+      "Age": 75.26,
+      "Gender": "Female"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Tachycardic at HR 116. Elevated respiratory rate at 28."
+  },
+  "ground_truth": {
+    "patient_id": "p001725",
+    "actual_sepsis": false,
+    "snapshot_hour": 17,
+    "total_hours": 34,
+    "age": 75.26,
+    "gender": "Female"
+  }
+}

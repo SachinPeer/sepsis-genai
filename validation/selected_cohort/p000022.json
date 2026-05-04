@@ -1,0 +1,29 @@
+{
+  "api_input": {
+    "patient_id": "p000022",
+    "vitals": {
+      "heart_rate": 73.0,
+      "o2_saturation": 97.0,
+      "sbp": 117.0,
+      "map": 65.0,
+      "dbp": 44.0,
+      "respiratory_rate": 14.0,
+      "base_excess": -2.0,
+      "fio2": 0.5,
+      "ph": 7.32,
+      "paco2": 46.0,
+      "glucose": 177.0,
+      "age": 77.26,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (80 -> 73). SBP trend dropping (143 -> 117)"
+  },
+  "ground_truth": {
+    "patient_id": "p000022",
+    "actual_sepsis": true,
+    "onset_hour": 9,
+    "total_hours": 19,
+    "age": 77.26,
+    "gender": "Female"
+  }
+}

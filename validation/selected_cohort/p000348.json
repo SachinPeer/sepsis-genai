@@ -1,0 +1,28 @@
+{
+  "api_input": {
+    "patient_id": "p000348",
+    "vitals": {
+      "heart_rate": 73.0,
+      "o2_saturation": 96.0,
+      "temperature": 37.67,
+      "sbp": 116.0,
+      "map": 71.0,
+      "dbp": 53.0,
+      "respiratory_rate": 18.0,
+      "base_excess": 0.0,
+      "ph": 7.47,
+      "paco2": 29.0,
+      "age": 88.1,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (73 -> 73). SBP trend rising (102 -> 116). Temp 37.7C within normal range"
+  },
+  "ground_truth": {
+    "patient_id": "p000348",
+    "actual_sepsis": false,
+    "snapshot_hour": 25,
+    "total_hours": 51,
+    "age": 88.1,
+    "gender": "Male"
+  }
+}

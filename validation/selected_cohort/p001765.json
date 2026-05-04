@@ -1,0 +1,26 @@
+{
+  "api_input": {
+    "patient_id": "p001765",
+    "vitals": {
+      "bicarbonate": 28.0,
+      "bun": 16.0,
+      "creatinine": 0.6,
+      "glucose": 186.0,
+      "potassium": 3.8,
+      "hemoglobin": 14.9,
+      "wbc": 14.7,
+      "platelets": 190.0,
+      "age": 66.0,
+      "gender": "Male"
+    },
+    "notes": "Routine monitoring, vitals within expected range."
+  },
+  "ground_truth": {
+    "patient_id": "p001765",
+    "actual_sepsis": true,
+    "onset_hour": 35,
+    "total_hours": 45,
+    "age": 66.0,
+    "gender": "Male"
+  }
+}

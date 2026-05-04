@@ -1,0 +1,29 @@
+{
+  "api_input": {
+    "patient_id": "p000141",
+    "vitals": {
+      "heart_rate": 83.0,
+      "o2_saturation": 89.0,
+      "temperature": 37.67,
+      "sbp": 120.0,
+      "map": 69.33,
+      "respiratory_rate": 29.0,
+      "bicarbonate": 35.0,
+      "bun": 42.0,
+      "creatinine": 0.6,
+      "glucose": 183.0,
+      "potassium": 3.3,
+      "age": 77.56,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (80 -> 83). SBP trend rising (102 -> 120). Temp 37.7C within normal range. Tachypneic at RR 29. O2 sat concerning at 89%"
+  },
+  "ground_truth": {
+    "patient_id": "p000141",
+    "actual_sepsis": true,
+    "onset_hour": 51,
+    "total_hours": 61,
+    "age": 77.56,
+    "gender": "Male"
+  }
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "patient_id": "p000009",
+    "actual": "SEPSIS",
+    "risk": 70,
+    "sepsis_probability_6h": "Low",
+    "priority": "High",
+    "guardrail_override": "N",
+    "rationale": "Young patient with isolated tachycardia/tachypnea but stable hemodynamics (MAP 106, SBP 140), normal lactate, and improving trends. No infection signals or organ dysfunction. Pattern suggests non-septic physiological stress."
+  },
+  {
+    "patient_id": "p000011",
+    "actual": "SEPSIS",
+    "risk": 25,
+    "sepsis_probability_6h": "Low",
+    "priority": "Standard",
+    "guardrail_override": "N",
+    "rationale": "Stable ICU patient with consistent vital signs over time. HR mildly elevated (98) but stable trend. BP adequate (MAP 86, SBP 147). Normal lactate (1.1), normal oxygenation, normal acid-base status. No infection signals or organ stress indicators."
+  },
+  {
+    "patient_id": "p000018",
+    "actual": "SEPSIS",
+    "risk": 48,
+    "sepsis_probability_6h": "Low",
+    "priority": "Standard",
+    "guardrail_override": "N",
+    "rationale": "Isolated persistent tachycardia in context of resolving fever (39\u00b0C\u219237.8\u00b0C). MAP shows concerning volatility (102\u219264.5\u219275) but current hemodynamics stable (SBP 127, MAP 75). No infection signals, organ dysfunction markers, or discordance patterns identified. Pattern more consistent with post-febrile tachycardia or pain/anxiety than evolving sepsis."
+  },
+  {
+    "patient_id": "p000022",
+    "actual": "SEPSIS",
+    "risk": 72,
+    "sepsis_probability_6h": "Moderate",
+    "priority": "High",
+    "guardrail_override": "N",
+    "rationale": "77yo female with volatile hemodynamics showing distributive shock pattern: wide pulse pressure (73 mmHg), MAP nadir of 56 within recent timeframe, and compensated metabolic acidosis. Pattern consistent with early septic shock physiology despite current borderline MAP."
+  },
+  {
+    "patient_id": "p000028",
+    "actual": "SEPSIS",
+    "risk": 42,
+    "sepsis_probability_6h": "Low",
+    "priority": "Standard",
+    "guardrail_override": "N",
+    "rationale": "Patient shows improving respiratory status (RR declining from 32 to 25) with stable hemodynamics (MAP 111, rising BP trend). Thrombocytopenia (71) warrants monitoring but occurs in isolation without other organ dysfunction. Normal lactate (1.1) argues against tissue hypoperfusion. No infection signals or discordance in available notes."
+  },
+  {
+    "patient_id": "p000042",
+    "actual": "SEPSIS",
+    "risk": 35,
+    "sepsis_probability_6h": "Low",
+    "priority": "Standard",
+    "guardrail_override": "N",
+    "rationale": "Isolated persistent tachycardia (101\u2192109 bpm) with stable hemodynamics (MAP 96, SBP 114) and normal oxygenation. No infection signals, no organ dysfunction markers, no qSOFA criteria met (0/3). Trend analysis shows rising HR but improving/stable BP and adequate MAP throughout. Absence of lactate limits assessment but current picture does not meet sepsis criteria."
+  },
+  {
+    "patient_id": "p000053",
+    "actual": "SEPSIS",
+    "risk": 95,
+    "sepsis_probability_6h": "High",
+    "priority": "Critical",
+    "guardrail_override": "Y",
+    "rationale": "MAP persistently below target (62, nadir 57) with compensatory tachypnea (RR 18\u219224\u219223.5) and leukocytosis (15.8). Clinician recognition of need for vasopressor support indicates early distributive shock pattern. However, HR relatively controlled (87) and SpO2 stable (98%), suggesting partial compensation. [GUARDRAIL OVERRIDE: Critical MAP (62.0 < 65 mmHg)]"
+  },
+  {
+    "patient_id": "p000064",
+    "actual": "SEPSIS",
+    "risk": 25,
+    "sepsis_probability_6h": "Low",
+    "priority": "Standard",
+    "guardrail_override": "N",
+    "rationale": "68-year-old female with stable-to-improving hemodynamics. MAP recovered from nadir of 65 to current 86. SBP rising trend (113\u2192147) suggests adequate perfusion. Wide pulse pressure (89 mmHg) may indicate increased stroke volume or decreased vascular resistance, but without infection context or organ dysfunction markers, this is non-specific in ICU setting. No tachycardia (HR 96), normal oxygenation (SpO2 100% on FiO2 0.4), normal temperature. Requires lactate and infection workup to complete assessment."
+  },
+  {
+    "patient_id": "p001087",
+    "actual": "NON",
+    "risk": 92,
+    "sepsis_probability_6h": "High",
+    "priority": "Critical",
+    "guardrail_override": "N",
+    "rationale": "Patient demonstrates clear septic shock physiology with persistent severe hypotension (MAP 49, consistently <65 despite apparent resuscitation attempts given trend from 39\u219255\u219249) and acute kidney injury (Cr 4.0). Compensatory tachycardia emerging (HR rising 39\u219260) indicates failing physiologic reserve. Hypothermia (36.11\u00b0C) in context of shock suggests poor perfusion."
+  },
+  {
+    "patient_id": "p001419",
+    "actual": "NON",
+    "risk": 42,
+    "sepsis_probability_6h": "Low",
+    "priority": "Standard",
+    "guardrail_override": "N",
+    "rationale": "BP variability with borderline MAP (73.7) but paradoxically falling HR (66 bpm) is inconsistent with typical sepsis physiology. No infection context, labs, or organ dysfunction markers available. Pattern more suggestive of non-septic hemodynamic issue."
+  },
+  {
+    "patient_id": "p001972",
+    "actual": "NON",
+    "risk": 70,
+    "sepsis_probability_6h": "Low",
+    "priority": "High",
+    "guardrail_override": "N",
+    "rationale": "Isolated tachypnea with fever in hemodynamically stable patient. RR fluctuated 19-33 but currently stable at 25. BP actually improved (MAP 73\u219286). No infection signals, organ stress indicators, or compensatory patterns evident."
+  },
+  {
+    "patient_id": "p000168",
+    "actual": "NON",
+    "risk": 70,
+    "sepsis_probability_6h": "Low",
+    "priority": "High",
+    "guardrail_override": "N",
+    "rationale": "Rising HR trend (+13 bpm over 6h) with borderline SpO2 (94%) warrants monitoring, but lacks specific sepsis criteria. MAP stable (88-89), no hypotension, no tachycardia threshold breach. WBC mildly elevated but isolated. No infection signals or organ dysfunction pattern."
+  },
+  {
+    "patient_id": "p001764",
+    "actual": "NON",
+    "risk": 95,
+    "sepsis_probability_6h": "High",
+    "priority": "Critical",
+    "guardrail_override": "Y",
+    "rationale": "Patient demonstrates compensated shock physiology with persistent borderline MAP (58-66 range) and reactive tachycardia (HR peaked at 100). Clinical note confirms hemodynamic concern with vasopressor consideration. However, lack of infection signals, fever, or organ dysfunction markers prevents definitive sepsis diagnosis\u2014could represent other shock etiologies. [GUARDRAIL OVERRIDE: Critical MAP (64.0 < 65 mmHg)]"
+  },
+  {
+    "patient_id": "p001136",
+    "actual": "NON",
+    "risk": 95,
+    "sepsis_probability_6h": "High",
+    "priority": "Critical",
+    "guardrail_override": "Y",
+    "rationale": "Hemodynamic instability with falling BP (132\u219298) but bradycardic response (HR 72) and low respiratory rate (11) argue against sepsis. Severe renal failure (Cr 15.7, BUN 169) with metabolic acidosis (HCO3 9) and anemia (Hgb 6.2) suggest chronic kidney disease with acute volume or cardiac issue. No fever, no tachycardia, no tachypnea\u2014pattern inconsistent with sepsis. [GUARDRAIL OVERRIDE: Critical AKI (Creatinine 15.7 >= 3.5 mg/dL), Critical BUN (169.0 >= 80 mg/dL), Critical Anemia (Hgb 6.2 < 7 g/dL)...]"
+  },
+  {
+    "patient_id": "p001740",
+    "actual": "NON",
+    "risk": 82,
+    "sepsis_probability_6h": "High",
+    "priority": "Critical",
+    "guardrail_override": "N",
+    "rationale": "Progressive shock state with MAP at critical threshold (64 mmHg), worsening hypotension (SBP 123->93), and paradoxical bradycardia (HR 86->65) suggesting advanced shock physiology or vagal response. Rising respiratory rate (16->22) indicates compensatory effort or metabolic acidosis."
+  },
+  {
+    "patient_id": "p001642",
+    "actual": "NON",
+    "risk": 15,
+    "sepsis_probability_6h": "Low",
+    "priority": "Standard",
+    "guardrail_override": "N",
+    "rationale": "78-year-old female with stable vital signs and rising blood pressure trend (SBP 136\u2192169, MAP 103\u2192101). HR stable 69-79 range, RR normal 14-17, temp normal 36.5\u00b0C, SpO2 adequate 95-97%. Pattern more consistent with hypertension management issue than sepsis physiology. No compensatory tachycardia, no hypotension, no fever/hypothermia."
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "patient_id": "eicu_p00064",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 977269,
+    "snapshot_offset_min_from_admit": 806,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 81.0,
+    "Gender": "Female",
+    "UnitType": "CSICU",
+    "HospitalId": "183",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.77777777777778,
+        "ts": "2024-06-01T12:52:00"
+      },
+      {
+        "val": 36.111111111111114,
+        "ts": "2024-06-01T10:05:00"
+      }
+    ],
+    "Resp": [],
+    "O2Sat": [],
+    "Creatinine": [
+      {
+        "val": 1.07,
+        "ts": "2024-06-01T11:00:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 356.0,
+        "ts": "2024-06-01T11:00:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T11:00:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T11:00:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-3.4h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.4h): GCS total = 15 | Nurse charting (T-3.4h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-7.2h): GCS total = 15 | Nurse charting (T-7.2h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-7.2h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-7.3h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-7.3h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-7.3h): Pain Score/Goal = 0 | Nurse charting (T-9.3h): Pain Score/Goal = 0",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

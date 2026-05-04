@@ -1,0 +1,176 @@
+{
+  "patient_id": "eicu_p00098",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1131143,
+    "snapshot_offset_min_from_admit": 8331,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 78.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "206",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 106.0,
+        "ts": "2024-06-06T18:47:00"
+      },
+      {
+        "val": 115.0,
+        "ts": "2024-06-06T17:47:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-06T16:47:00"
+      },
+      {
+        "val": 107.0,
+        "ts": "2024-06-06T15:47:00"
+      },
+      {
+        "val": 118.0,
+        "ts": "2024-06-06T14:47:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-06T13:47:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.388888888888886,
+        "ts": "2024-06-06T16:54:00"
+      },
+      {
+        "val": 37.4,
+        "ts": "2024-06-06T14:54:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 26.0,
+        "ts": "2024-06-06T18:47:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-06T17:47:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-06T16:47:00"
+      },
+      {
+        "val": 27.0,
+        "ts": "2024-06-06T15:47:00"
+      },
+      {
+        "val": 27.0,
+        "ts": "2024-06-06T14:47:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-06T13:47:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-06T18:47:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-06T17:47:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-06T16:47:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-06T15:47:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-06T14:37:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-06T13:47:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 22.53,
+        "ts": "2024-06-06T10:43:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 1.2,
+        "ts": "2024-06-06T10:43:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.5,
+        "ts": "2024-06-06T10:43:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 252.0,
+        "ts": "2024-06-06T10:43:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 132.0,
+        "ts": "2024-06-06T12:53:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-06T10:43:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.363,
+        "ts": "2024-06-06T04:39:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-06T10:43:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 40.1,
+        "ts": "2024-06-06T04:39:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 8.9,
+        "ts": "2024-06-06T10:43:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-4.0h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-4.0h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-4.0h): GCS total = 11 | Nurse charting (T-8.0h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-8.0h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-8.0h): GCS total = 10 | Nurse charting (T-11.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-11.9h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-11.9h): GCS total = 10 | MD order (T-11.6h): pulmonary|ventilation and oxygenation|mechanical ventilation | MD order (T-11.6h): pulmonary|medications|vasodilator for pulmonary hypertension | MD order (T-11.6h): cardiovascular|arrhythmias|antiarrhythmics|class III antiarrhythmic|amiodarone | MD order (T-11.6h): neurologic|pain / agitation / altered mentation|analgesics|narcotic analgesic",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

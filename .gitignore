@@ -51,9 +51,16 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Office lock / temp files (Word, PowerPoint, Excel)
+~$*
+*.tmp
+
 # Logs
 *.log
 
 # Environment variables
 .env
 .env.local
+validation/raw_data/
+validation/eicu_demo/
+validation/mimic_iv/

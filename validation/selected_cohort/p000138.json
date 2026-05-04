@@ -1,0 +1,23 @@
+{
+  "api_input": {
+    "patient_id": "p000138",
+    "vitals": {
+      "heart_rate": 111.5,
+      "o2_saturation": 95.0,
+      "temperature": 38.5,
+      "map": 85.0,
+      "respiratory_rate": 18.5,
+      "age": 62.96,
+      "gender": "Male"
+    },
+    "notes": "HR trend falling (121 -> 112). Febrile at 38.5C"
+  },
+  "ground_truth": {
+    "patient_id": "p000138",
+    "actual_sepsis": false,
+    "snapshot_hour": 19,
+    "total_hours": 38,
+    "age": 62.96,
+    "gender": "Male"
+  }
+}

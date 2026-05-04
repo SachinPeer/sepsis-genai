@@ -1,0 +1,26 @@
+{
+  "api_input": {
+    "patient_id": "p000897",
+    "vitals": {
+      "heart_rate": 75.0,
+      "o2_saturation": 100.0,
+      "temperature": 37.33,
+      "sbp": 149.0,
+      "map": 98.0,
+      "dbp": 69.0,
+      "respiratory_rate": 19.5,
+      "fio2": 0.4,
+      "age": 73.27,
+      "gender": "Male"
+    },
+    "notes": "HR trend falling (81 -> 75). SBP trend dropping (158 -> 149). Temp 37.3C within normal range"
+  },
+  "ground_truth": {
+    "patient_id": "p000897",
+    "actual_sepsis": true,
+    "onset_hour": 212,
+    "total_hours": 221,
+    "age": 73.27,
+    "gender": "Male"
+  }
+}

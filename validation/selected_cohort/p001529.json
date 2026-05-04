@@ -1,0 +1,24 @@
+{
+  "api_input": {
+    "patient_id": "p001529",
+    "vitals": {
+      "heart_rate": 83.0,
+      "o2_saturation": 100.0,
+      "temperature": 35.94,
+      "sbp": 133.0,
+      "map": 79.0,
+      "respiratory_rate": 25.0,
+      "age": 80.16,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (68 -> 83). SBP trend rising (104 -> 133). Hypothermic at 35.9C. Respiratory rate increasing (12 -> 25)"
+  },
+  "ground_truth": {
+    "patient_id": "p001529",
+    "actual_sepsis": false,
+    "snapshot_hour": 18,
+    "total_hours": 37,
+    "age": 80.16,
+    "gender": "Female"
+  }
+}

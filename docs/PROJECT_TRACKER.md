@@ -1,7 +1,7 @@
 # Sepsis GenAI — Project Tracker
 
 > **Living document** — Update status and dates as work progresses.
-> Last updated: **Apr 8, 2026** by Sachin
+> Last updated: **May 1, 2026** by Sachin
 
 ---
 
@@ -28,6 +28,7 @@
 | **IBR** | Ibrahim (Associate) |
 | **FE** | Frontend Team (TBD) |
 | **RR** | Red Rover Team |
+| **SAN** | Sanjay Sivakumar (Mongo / Data Platform) |
 
 ---
 
@@ -48,6 +49,29 @@
 | C11 | Feedback loop guide | US | Feb 2026 | docs/FEEDBACK_LOOP_GUIDE.md |
 | C12 | Leadership presentation | US | Feb 11, 2026 | Medbeacon-branded + Deep Dive PPTXs |
 | C13 | Execution plan | US | Feb 11, 2026 | docs/EXECUTION_PLAN.md |
+| C14 | PhysioNet interim validation (R1–R7 + 8 experiments) | US | May 1, 2026 | 340 patients, 7 rounds, 8 out-of-band experiments; final: 62.86% sens / 52.50% spec (synthetic-notes floor); **system configuration LOCKED-IN**; see `validation/VALIDATION_EXECUTION.md` §19-§20 |
+| C15 | Trend-ordering bug fix (newest-first) | US | Apr 30, 2026 | Cohort builder + preprocessor — pre-fix every round was interpreted through garbled data |
+| C16 | Prompt v3.2 (decoupled priority + guardrail-aware) | US | Apr 30, 2026 | docs/prompt.md — biggest single specificity gain (+17.8 pts) |
+| C17 | Full-trend preprocessor (knowledge/genai_proprocess.py rewrite) | US | Apr 30, 2026 | All 6 hourly readings now reach the LLM; CRITICAL FLAGS summary line added |
+| C18 | Guardrail softening simulation (confirmed lock-in) | US | May 1, 2026 | Proved every early-detection relaxation trades sensitivity 1:1 — guardrails stay at 2-of-4 |
+| C19 | Hidden TPs clinical evidence dossier | US | Apr 30, 2026 | validation/HIDDEN_TPS.md — 18 STRONG cases where AI caught what ground-truth label missed |
+| C20 | eICU-CRD Demo Phase 1A baseline (real nurse notes) | US | May 1, 2026 | n=29 reproducible cohort; **Sens 81.82% / Spec 72.22%** (vs PhysioNet 62.86%/52.50% — +19 pts on both axes); GCS-extraction + DuckDB determinism bugs found and fixed; see `validation/EICU_VALIDATION_EXECUTION.md` |
+| C21 | eICU-CRD Demo Phase 1B (n=90) | US | May 1, 2026 | Scaled to 30 sepsis + 60 controls; **Sens 73.33% (95% CI 55.6-85.8) / Spec 63.33% (95% CI 50.7-74.4)**; all 29 R3 verdicts reproduce byte-identically; **100% of FNs lack BP+Lactate** (data-quality bottleneck identified); 5 hidden-TP candidates among FPs |
+
+---
+
+## Locked System Configuration (baseline as of May 1, 2026)
+
+| Component | Setting | File |
+|---|---|---|
+| Data window | 6h trend, snapshot 6h before clinical sepsis | `validation/select_cohort_v4.py` |
+| Preprocessor | Full-trend serialization, CRITICAL FLAGS summary | `knowledge/genai_proprocess.py` |
+| Prompt | v3.2 — decoupled priority, guardrail-aware | `docs/prompt.md` |
+| Guardrails | Unchanged — 2-of-4 early-detection rule retained | `services/guardrail_service.py` + `knowledge/clinical_knowledge_structured.json` |
+| Classifier | `risk_score ≥ 50 OR priority ∈ {High, Critical}` | `validation/run_validation.py` |
+| LLM | Claude Sonnet 4.5 via Bedrock | `.env`, `services/genai_inference_service.py` |
+| Floor performance (no notes) | Sens 62.86% / Spec 52.50% | `validation/VALIDATION_EXECUTION.md` §19 |
+| Projected performance (with notes) | Sens 85–90% / Spec 55–60% | Pending Red Rover validation |
 
 ---
 
@@ -60,6 +84,7 @@
 | A3 | Red Rover SJSA sandbox | RR/SHA | ⏳ | TBD | Red Rover response | Meeting held Feb 11. Email sent to Shawn |
 | A4 | Red Rover: confirm API endpoint | RR | ⏳ | TBD | Red Rover response | `/patients/orders` or `/encounters/{id}/events`? |
 | A5 | Red Rover: full sepsis code list | RR | ⏳ | TBD | Red Rover response | 5 codes identified, need complete list |
+| A6 | Hunt recent (post-2016, Sepsis-3 era) real patient data with nurse notes | US | 1-2 wks | — | Stopgap while Red Rover access is pending. Pre-2019 data risks Sepsis definition drift and weak clinician labels. Primary targets: MIMIC-IV + MIMIC-IV-Note (credentialed), MIMIC-IV Demo (open), Synthea synthetic cohorts. |
 
 ---
 
@@ -77,6 +102,11 @@
 | U8 | Retrospective validation study | US/PAU | ❌ | 1-3 months | Historical data from SHA/RR | Use Opus 4.6, measure lead time |
 | U9 | SJSA vs AI lead time comparison | US | ❌ | After U1 | U1 + live data | Prove AI flags patients before SJSA |
 | U10 | Multi-hospital config pilot | US/DAV | ❌ | 2-3 months | Hospital partnerships | Add hospital_id, per-hospital configs |
+| U16 | Age-specific guardrail thresholds (Pediatric) | US/PAU | ❌ | TBD | Paula clinical review | Add pediatric age-band thresholds (neonate, infant, child, adolescent), pSOFA scoring, auto-select by patient age. Critical for mixed/rural units admitting children. |
+| U17a | Hospital-specific guardrail config — Mongo collection + indexes | SAN | 🔄 | This sprint | Mongo `medbacon` DB access | Collection `hospital_guardrail_configs` per `docs/GUARDRAIL_CONFIG_MONGO_DESIGN.md`. Non-code; just Mongo provisioning. Code change deferred to U17c. |
+| U17b | Seed baseline document from current guardrail JSON | US | ❌ | After U17a | U17a complete | Write `scripts/seed_baseline_config.py` and insert first `medbeacon_baseline` doc |
+| U17c | Code change — read config from Mongo with container-JSON fallback | US/NAR | ❌ | After auth layer | U17a + auth | Phase C of design — Mongo-primary, container-fallback |
+| U17d | Multi-pod broadcast reload on config change | US/NAR | ❌ | After U17c | U17c + SNS / Redis decision | Phase D — so PUT /guardrail/config reaches all pods |
 | U11 | Real-time alert push | US | ❌ | After U2 | U2 working | SNS/WebSocket for critical alerts |
 | U12 | Write-back to Cerner via Red Rover | US/RR | ❌ | 3-6 months | RR write API + clinical governance | AI writing into EHR — needs approval |
 | U13 | Mobile/iOS alerts | FE | ❌ | 3-6 months | 📌 DAV decision | Push critical alerts to on-call docs |
@@ -94,6 +124,7 @@
 | D3 | Clinical validation study timeline | DAV/PAU | When to start? Need historical patient data | ❌ Not yet discussed |
 | D4 | Which hospitals for pilot? | DAV | Multi-hospital config needs partner hospitals | ❌ Not yet discussed |
 | D5 | Can AI write into EHR? | Clinical governance | Write-back to Cerner is powerful but regulated | ❌ Long-term |
+| D6 | Pediatric threshold validation | PAU | Need Paula to review age-band thresholds (pSOFA, pediatric vitals norms) before implementation | ❌ Not yet discussed |
 
 ---
 
@@ -115,7 +146,11 @@
 | Date | Change | By |
 |------|--------|----|
 | Feb 11, 2026 | Created tracker with all tasks from execution plan | Sachin |
-| | | |
+| Feb 11, 2026 | Added U16 (pediatric age-specific thresholds) and D6 (pediatric threshold validation) | Sachin |
+| May 1, 2026 | Added C14–C19 (PhysioNet interim validation + locked system configuration section) | Sachin |
+| May 1, 2026 | Added A6 (hunt recent Sepsis-3-era data with nurse notes) — next plan per leadership direction | Sachin |
+| May 1, 2026 | Added C20 — eICU-CRD Demo Phase 1A baseline (Sens 81.82% / Spec 72.22%, n=29 reproducible); Phase 1B n=100 in flight | Sachin |
+| May 1, 2026 | Added C21 — eICU-CRD Demo Phase 1B (n=90) Sens 73.33% / Spec 63.33%; FN root-cause: 100% missing BP+Lactate | Sachin |
 | | | |
 
 ---

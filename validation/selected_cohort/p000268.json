@@ -1,0 +1,25 @@
+{
+  "api_input": {
+    "patient_id": "p000268",
+    "vitals": {
+      "base_excess": -2.0,
+      "ph": 7.36,
+      "paco2": 40.0,
+      "glucose": 153.0,
+      "lactate": 1.5,
+      "potassium": 3.9,
+      "hemoglobin": 13.2,
+      "age": 69.06,
+      "gender": "Male"
+    },
+    "notes": "Routine monitoring, vitals within expected range."
+  },
+  "ground_truth": {
+    "patient_id": "p000268",
+    "actual_sepsis": false,
+    "snapshot_hour": 21,
+    "total_hours": 43,
+    "age": 69.06,
+    "gender": "Male"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "api_input": {
+    "patient_id": "p000031",
+    "vitals": {
+      "heart_rate": 87.0,
+      "o2_saturation": 99.0,
+      "temperature": 37.67,
+      "map": 81.0,
+      "respiratory_rate": 16.0,
+      "age": 66.28,
+      "gender": "Male"
+    },
+    "notes": "HR trend falling (96 -> 87). Temp 37.7C within normal range"
+  },
+  "ground_truth": {
+    "patient_id": "p000031",
+    "actual_sepsis": false,
+    "snapshot_hour": 27,
+    "total_hours": 55,
+    "age": 66.28,
+    "gender": "Male"
+  }
+}

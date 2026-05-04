@@ -1,0 +1,26 @@
+{
+  "api_input": {
+    "patient_id": "p000018",
+    "vitals": {
+      "heart_rate": 105.0,
+      "o2_saturation": 96.0,
+      "temperature": 37.83,
+      "sbp": 127.0,
+      "map": 75.0,
+      "dbp": 88.0,
+      "respiratory_rate": 20.0,
+      "fio2": 0.4,
+      "age": 39.28,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (107 -> 105). Temp 37.8C within normal range"
+  },
+  "ground_truth": {
+    "patient_id": "p000018",
+    "actual_sepsis": true,
+    "onset_hour": 125,
+    "total_hours": 134,
+    "age": 39.28,
+    "gender": "Male"
+  }
+}

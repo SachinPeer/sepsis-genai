@@ -1,0 +1,66 @@
+{
+  "patient_id": "eicu_p00088",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 634295,
+    "snapshot_offset_min_from_admit": 1219,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 36.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "158",
+    "Ethnicity": "Other/Unknown"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 138.0,
+        "ts": "2024-06-01T20:16:00"
+      },
+      {
+        "val": 132.0,
+        "ts": "2024-06-01T19:16:00"
+      },
+      {
+        "val": 121.0,
+        "ts": "2024-06-01T18:16:00"
+      },
+      {
+        "val": 144.0,
+        "ts": "2024-06-01T17:16:00"
+      },
+      {
+        "val": 154.0,
+        "ts": "2024-06-01T16:16:00"
+      },
+      {
+        "val": 137.0,
+        "ts": "2024-06-01T15:16:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.5,
+        "ts": "2024-06-01T19:19:00"
+      },
+      {
+        "val": 36.5,
+        "ts": "2024-06-01T16:38:00"
+      }
+    ],
+    "Resp": [],
+    "O2Sat": []
+  },
+  "patient_notes": "Nurse charting (T-0.2h): GCS total = 15 | Nurse charting (T-3.7h): GCS total = 14 | Nurse charting (T-6.0h): GCS total = 14",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

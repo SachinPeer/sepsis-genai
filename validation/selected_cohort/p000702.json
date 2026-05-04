@@ -1,0 +1,35 @@
+{
+  "api_input": {
+    "patient_id": "p000702",
+    "vitals": {
+      "heart_rate": 92.0,
+      "o2_saturation": 97.0,
+      "temperature": 35.89,
+      "map": 74.0,
+      "respiratory_rate": 21.0,
+      "base_excess": 1.0,
+      "bicarbonate": 23.0,
+      "ph": 7.38,
+      "paco2": 45.0,
+      "bun": 25.0,
+      "creatinine": 1.0,
+      "glucose": 108.0,
+      "lactate": 1.2,
+      "potassium": 4.2,
+      "hemoglobin": 14.4,
+      "wbc": 8.0,
+      "platelets": 385.0,
+      "age": 35.11,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (86 -> 92). Hypothermic at 35.9C"
+  },
+  "ground_truth": {
+    "patient_id": "p000702",
+    "actual_sepsis": true,
+    "onset_hour": 61,
+    "total_hours": 71,
+    "age": 35.11,
+    "gender": "Male"
+  }
+}

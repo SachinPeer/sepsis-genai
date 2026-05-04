@@ -1,0 +1,29 @@
+{
+  "api_input": {
+    "patient_id": "p001639",
+    "vitals": {
+      "heart_rate": 89.0,
+      "o2_saturation": 96.0,
+      "sbp": 132.0,
+      "map": 79.0,
+      "dbp": 54.0,
+      "respiratory_rate": 19.0,
+      "base_excess": 0.0,
+      "fio2": 0.5,
+      "ph": 7.35,
+      "paco2": 47.0,
+      "glucose": 106.0,
+      "age": 64.83,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (80 -> 89). SBP trend rising (112 -> 132)"
+  },
+  "ground_truth": {
+    "patient_id": "p001639",
+    "actual_sepsis": false,
+    "snapshot_hour": 22,
+    "total_hours": 45,
+    "age": 64.83,
+    "gender": "Female"
+  }
+}

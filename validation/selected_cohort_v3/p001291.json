@@ -1,0 +1,190 @@
+{
+  "api_input": {
+    "patient_id": "p001291",
+    "vitals": {
+      "HR": [
+        {
+          "val": 81.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 78.5,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 81.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 81.5,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 84.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 83.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 187.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 192.5,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 190.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 182.75,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 175.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 167.5,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 87.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 93.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 96.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 93.5,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 84.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 85.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 39.06,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 39.44,
+          "ts": "2026-04-29T07:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 17.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 20.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 21.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 21.5,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 21.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 22.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 95.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 118.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 128.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 134.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 116.33,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 104.33,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 109.33,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Potassium": [
+        4.0
+      ],
+      "FiO2": [
+        0.5
+      ],
+      "Age": 71.37,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Blood pressure dropping (187 -> 168 mmHg systolic), concerning for hemodynamic instability. Febrile at 39.4C, consider infectious workup."
+  },
+  "ground_truth": {
+    "patient_id": "p001291",
+    "actual_sepsis": true,
+    "onset_hour": 147,
+    "total_hours": 156,
+    "age": 71.37,
+    "gender": "Male"
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "patient_id": "eicu_p00014",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3099676,
+    "snapshot_offset_min_from_admit": 1675,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 65.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "425",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 86.0,
+        "ts": "2024-06-02T03:55:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-02T02:55:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-02T01:55:00"
+      },
+      {
+        "val": 80.0,
+        "ts": "2024-06-02T00:55:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-01T23:55:00"
+      },
+      {
+        "val": 66.0,
+        "ts": "2024-06-01T22:55:00"
+      },
+      {
+        "val": 67.0,
+        "ts": "2024-06-01T21:55:00"
+      }
+    ],
+    "SBP": [
+      {
+        "val": 92.0,
+        "ts": "2024-06-02T03:55:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-02T02:55:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-02T01:55:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-02T00:55:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T23:55:00"
+      },
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T22:55:00"
+      }
+    ],
+    "DBP": [
+      {
+        "val": 56.0,
+        "ts": "2024-06-02T03:55:00"
+      },
+      {
+        "val": 59.0,
+        "ts": "2024-06-02T02:55:00"
+      },
+      {
+        "val": 63.0,
+        "ts": "2024-06-02T01:55:00"
+      },
+      {
+        "val": 57.0,
+        "ts": "2024-06-02T00:55:00"
+      },
+      {
+        "val": 60.0,
+        "ts": "2024-06-01T23:55:00"
+      },
+      {
+        "val": 60.0,
+        "ts": "2024-06-01T22:55:00"
+      }
+    ],
+    "MAP": [
+      {
+        "val": 70.0,
+        "ts": "2024-06-02T03:55:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-02T02:55:00"
+      },
+      {
+        "val": 76.0,
+        "ts": "2024-06-02T01:55:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-02T00:55:00"
+      },
+      {
+        "val": 74.0,
+        "ts": "2024-06-01T23:55:00"
+      },
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T22:55:00"
+      }
+    ],
+    "Temp": [
+      {
+        "val": 38.4,
+        "ts": "2024-06-02T03:00:00"
+      },
+      {
+        "val": 38.2,
+        "ts": "2024-06-02T02:00:00"
+      },
+      {
+        "val": 37.7,
+        "ts": "2024-06-02T00:00:00"
+      },
+      {
+        "val": 37.7,
+        "ts": "2024-06-01T22:00:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-02T03:55:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-02T02:55:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-02T01:55:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-02T00:55:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T23:55:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T22:55:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T21:55:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-02T03:55:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-02T02:55:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-02T01:55:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-02T00:55:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T23:55:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T22:55:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T21:55:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 1.6,
+        "ts": "2024-06-01T08:50:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.34,
+        "ts": "2024-06-01T16:50:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T16:50:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T16:50:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.36,
+        "ts": "2024-06-01T20:09:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 17.2,
+        "ts": "2024-06-01T20:09:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 30.0,
+        "ts": "2024-06-01T20:09:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.9h): GCS total = Unable to score due to medication | Nurse charting (T-0.9h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-0.9h): Sedation Scale/Score/Goal = -3 | Nurse charting (T-0.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-0.9h): Pain Score/Goal = 0 | Nurse charting (T-1.9h): Sedation Scale/Score/Goal = -3 | Nurse charting (T-1.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-1.9h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-1.9h): Pain Score/Goal = 0 | Nurse charting (T-1.9h): GCS total = Unable to score due to medication",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 2035,
+    "icd9_codes": [
+      "785.52, R65.21",
+      "995.90"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|septic shock",
+      "cardiovascular|shock / hypotension|signs and symptoms of sepsis (SIRS)"
+    ]
+  }
+}

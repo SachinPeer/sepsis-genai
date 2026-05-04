@@ -1,0 +1,113 @@
+{
+  "patient_id": "eicu_p00083",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 381129,
+    "snapshot_offset_min_from_admit": 3077,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 73.0,
+    "Gender": "Female",
+    "UnitType": "Cardiac ICU",
+    "HospitalId": "122",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 102.0,
+        "ts": "2024-06-03T03:15:00"
+      },
+      {
+        "val": 106.0,
+        "ts": "2024-06-03T02:15:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-03T01:15:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-03T00:15:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-02T23:15:00"
+      },
+      {
+        "val": 91.0,
+        "ts": "2024-06-02T22:15:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-03T03:15:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-03T02:15:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-03T01:15:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-03T00:15:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-02T23:15:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-02T22:15:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-03T03:15:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-03T02:15:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-03T01:15:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-03T00:15:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-02T23:15:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-02T22:15:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 334.0,
+        "ts": "2024-06-03T00:26:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-7.0h): GCS total = 15 | MD order (T-10.6h): cardiovascular|non-operative procedures|cardiac angiography | MD order (T-10.6h): infectious diseases|medications|therapeutic antibacterials|first generation cephalosporin|cefazolin | MD order (T-10.6h): cardiovascular|non-operative procedures|diagnostic ultrasound of heart|transthoracic echocardiography | MD order (T-10.6h): pulmonary|radiologic procedures / bronchoscopy|chest x-ray | MD order (T-10.6h): gastrointestinal|medications|antiemetic|anticholinergic|diphenhydramine | MD order (T-10.6h): cardiovascular|consultations|Cardiology consultation | MD order (T-10.6h): endocrine|thyroid disorder|thyroid hormone|levothyroxine (T4) | MD order (T-10.6h): cardiovascular|non-operative procedures|implantation of heart pacemaker|permanent",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

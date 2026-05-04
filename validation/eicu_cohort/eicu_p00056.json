@@ -1,0 +1,32 @@
+{
+  "patient_id": "eicu_p00056",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 382892,
+    "snapshot_offset_min_from_admit": 1672,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 34.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "123",
+    "Ethnicity": "Unknown"
+  },
+  "patient_vitals": {
+    "HR": [],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [],
+    "O2Sat": []
+  },
+  "patient_notes": "No free-text notes or structured observations in the 6-hour window prior to snapshot.",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

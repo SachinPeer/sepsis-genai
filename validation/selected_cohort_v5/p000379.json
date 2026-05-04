@@ -1,0 +1,47 @@
+{
+  "api_input": {
+    "patient_id": "p000379",
+    "vitals": {
+      "WBC": [
+        15.9
+      ],
+      "Creatinine": [
+        1.5
+      ],
+      "Platelets": [
+        179.0
+      ],
+      "BUN": [
+        42.0
+      ],
+      "Glucose": [
+        79.0
+      ],
+      "HCO3": [
+        28.0
+      ],
+      "Potassium": [
+        3.4
+      ],
+      "Hgb": [
+        9.0
+      ],
+      "PTT": [
+        34.1
+      ],
+      "Age": 69.15,
+      "Gender": "Female"
+    },
+    "notes": "Leukocytosis, WBC 15.9."
+  },
+  "ground_truth": {
+    "patient_id": "p000379",
+    "actual_sepsis": true,
+    "onset_hour": 49,
+    "snapshot_hour": 51,
+    "snapshot_offset_from_onset": 2,
+    "total_hours": 58,
+    "age": 69.15,
+    "gender": "Female"
+  }
+}

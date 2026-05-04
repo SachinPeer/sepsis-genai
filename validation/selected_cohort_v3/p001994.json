@@ -1,0 +1,207 @@
+{
+  "api_input": {
+    "patient_id": "p001994",
+    "vitals": {
+      "HR": [
+        {
+          "val": 104.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 98.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 94.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 87.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 92.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 103.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 150.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 135.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 118.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 125.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 114.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 94.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 58.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 53.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 47.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 59.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 54.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 52.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 38.11,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 13.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 12.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 15.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 16.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 18.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 19.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 98.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 98.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 85.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 77.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 68.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 79.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 96.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 68.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "WBC": [
+        7.9
+      ],
+      "Creatinine": [
+        1.0
+      ],
+      "Platelets": [
+        307.0
+      ],
+      "BUN": [
+        15.0
+      ],
+      "Glucose": [
+        309.0
+      ],
+      "HCO3": [
+        22.0
+      ],
+      "Potassium": [
+        4.1
+      ],
+      "Hgb": [
+        9.3
+      ],
+      "PTT": [
+        29.9
+      ],
+      "Age": 77.29,
+      "Gender": "Female"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Persistent tachycardia, HR 103 bpm. Blood pressure dropping (150 -> 94 mmHg systolic), concerning for hemodynamic instability. Respiratory rate increasing, work of breathing noted. Tachycardia with hypotension \u2014 possible compensated shock pattern."
+  },
+  "ground_truth": {
+    "patient_id": "p001994",
+    "actual_sepsis": false,
+    "snapshot_hour": 10,
+    "total_hours": 21,
+    "age": 77.29,
+    "gender": "Female"
+  }
+}

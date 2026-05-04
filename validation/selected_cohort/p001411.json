@@ -1,0 +1,27 @@
+{
+  "api_input": {
+    "patient_id": "p001411",
+    "vitals": {
+      "heart_rate": 76.0,
+      "o2_saturation": 95.0,
+      "temperature": 37.0,
+      "sbp": 125.0,
+      "map": 77.67,
+      "dbp": 64.0,
+      "respiratory_rate": 23.0,
+      "glucose": 146.0,
+      "potassium": 3.8,
+      "age": 76.65,
+      "gender": "Male"
+    },
+    "notes": "HR trend falling (92 -> 76). SBP trend stable (125 -> 125). Temp 37.0C within normal range. Tachypneic at RR 23"
+  },
+  "ground_truth": {
+    "patient_id": "p001411",
+    "actual_sepsis": false,
+    "snapshot_hour": 27,
+    "total_hours": 54,
+    "age": 76.65,
+    "gender": "Male"
+  }
+}

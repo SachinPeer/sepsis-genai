@@ -1,0 +1,92 @@
+{
+  "api_input": {
+    "patient_id": "p000074",
+    "vitals": {
+      "HR": [
+        {
+          "val": 94.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 105.5,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 109.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 120.5,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 15.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 17.5,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 97.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 97.5,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 77.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 85.17,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "Creatinine": [
+        1.0
+      ],
+      "Bilirubin_total": [
+        0.3
+      ],
+      "BUN": [
+        12.0
+      ],
+      "Glucose": [
+        143.0
+      ],
+      "HCO3": [
+        22.0
+      ],
+      "AST": [
+        101.0
+      ],
+      "Potassium": [
+        4.1
+      ],
+      "PTT": [
+        29.6
+      ],
+      "Age": 43.62,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate rising significantly over past 6 hours (94 -> 106 bpm)."
+  },
+  "ground_truth": {
+    "patient_id": "p000074",
+    "actual_sepsis": false,
+    "snapshot_hour": 6,
+    "total_hours": 13,
+    "age": 43.62,
+    "gender": "Male"
+  }
+}

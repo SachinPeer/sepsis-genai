@@ -1,0 +1,332 @@
+[
+  {
+    "patient_id": "p001936",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypotension (SBP 89.0 <= 90 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 35,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 17,
+      "hours_after_snapshot": 18,
+      "deterioration_in_next_24h": []
+    },
+    "assessment": {
+      "rule_categories": [
+        "hemodynamic"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (hemodynamic): may overfire",
+      "patient_outcome": "STABLE: No deterioration in next 24h",
+      "justifiability": "QUESTIONABLE \u2014 single borderline trigger, no deterioration"
+    }
+  },
+  {
+    "patient_id": "p000221",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (61.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 54,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 27,
+      "hours_after_snapshot": 27,
+      "deterioration_in_next_24h": [
+        "SBP fell to 88 (from <=90 threshold)",
+        "MAP fell to 58 (<65)"
+      ]
+    },
+    "assessment": {
+      "rule_categories": [
+        "hemodynamic"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (hemodynamic): may overfire",
+      "patient_outcome": "DETERIORATED: 2 concerning signals in next 24h",
+      "justifiability": "DEFENSIBLE \u2014 single trigger but patient did deteriorate"
+    }
+  },
+  {
+    "patient_id": "p000149",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (63.0 < 65 mmHg)",
+      "Critical AKI (Creatinine 6.6 >= 3.5 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 25,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 12,
+      "hours_after_snapshot": 13,
+      "deterioration_in_next_24h": []
+    },
+    "assessment": {
+      "rule_categories": [
+        "renal",
+        "hemodynamic"
+      ],
+      "rule_strength": "MULTI-SYSTEM: 2 organ systems flagged",
+      "patient_outcome": "STABLE: No deterioration in next 24h",
+      "justifiability": "DEFENSIBLE \u2014 multi-system flag, even if patient stable"
+    }
+  },
+  {
+    "patient_id": "p000523",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (64.33 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 19,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 9,
+      "hours_after_snapshot": 10,
+      "deterioration_in_next_24h": []
+    },
+    "assessment": {
+      "rule_categories": [
+        "hemodynamic"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (hemodynamic): may overfire",
+      "patient_outcome": "STABLE: No deterioration in next 24h",
+      "justifiability": "QUESTIONABLE \u2014 single borderline trigger, no deterioration"
+    }
+  },
+  {
+    "patient_id": "p000617",
+    "original_llm_risk": 42,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Liver Dysfunction (Bilirubin 7.7 >= 4.0 mg/dL)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 20,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 10,
+      "hours_after_snapshot": 10,
+      "deterioration_in_next_24h": [
+        "SBP fell to 89 (from <=90 threshold)"
+      ]
+    },
+    "assessment": {
+      "rule_categories": [],
+      "rule_strength": "SINGLE-TRIGGER (unknown): may overfire",
+      "patient_outcome": "DETERIORATED: 1 concerning signals in next 24h",
+      "justifiability": "DEFENSIBLE \u2014 single trigger but patient did deteriorate"
+    }
+  },
+  {
+    "patient_id": "p000724",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Hypotension (SBP 86.0 <= 90 mmHg)",
+      "Critical MAP (63.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 21,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 10,
+      "hours_after_snapshot": 11,
+      "deterioration_in_next_24h": [
+        "MAP fell to 60 (<65)",
+        "WBC rose to 17.3"
+      ]
+    },
+    "assessment": {
+      "rule_categories": [
+        "hemodynamic"
+      ],
+      "rule_strength": "MIXED",
+      "patient_outcome": "DETERIORATED: 2 concerning signals in next 24h",
+      "justifiability": "MIXED"
+    }
+  },
+  {
+    "patient_id": "p000807",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (55.0 < 65 mmHg)",
+      "Critical DBP (33.0 < 40 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 23,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 11,
+      "hours_after_snapshot": 12,
+      "deterioration_in_next_24h": [
+        "MAP fell to 63 (<65)"
+      ]
+    },
+    "assessment": {
+      "rule_categories": [
+        "hemodynamic"
+      ],
+      "rule_strength": "MIXED",
+      "patient_outcome": "DETERIORATED: 1 concerning signals in next 24h",
+      "justifiability": "MIXED"
+    }
+  },
+  {
+    "patient_id": "p001312",
+    "original_llm_risk": 42,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 35.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 48,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 24,
+      "hours_after_snapshot": 24,
+      "deterioration_in_next_24h": [
+        "MAP fell to 53 (<65)"
+      ]
+    },
+    "assessment": {
+      "rule_categories": [
+        "respiratory"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (respiratory): may overfire",
+      "patient_outcome": "DETERIORATED: 1 concerning signals in next 24h",
+      "justifiability": "DEFENSIBLE \u2014 single trigger but patient did deteriorate"
+    }
+  },
+  {
+    "patient_id": "p001431",
+    "original_llm_risk": 35,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 34.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 43,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 21,
+      "hours_after_snapshot": 22,
+      "deterioration_in_next_24h": [
+        "Creatinine rose to 8.0"
+      ]
+    },
+    "assessment": {
+      "rule_categories": [
+        "respiratory"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (respiratory): may overfire",
+      "patient_outcome": "DETERIORATED: 1 concerning signals in next 24h",
+      "justifiability": "DEFENSIBLE \u2014 single trigger but patient did deteriorate"
+    }
+  },
+  {
+    "patient_id": "p001132",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical MAP (62.0 < 65 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 28,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 14,
+      "hours_after_snapshot": 14,
+      "deterioration_in_next_24h": []
+    },
+    "assessment": {
+      "rule_categories": [
+        "hemodynamic"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (hemodynamic): may overfire",
+      "patient_outcome": "STABLE: No deterioration in next 24h",
+      "justifiability": "QUESTIONABLE \u2014 single borderline trigger, no deterioration"
+    }
+  },
+  {
+    "patient_id": "p001647",
+    "original_llm_risk": 35,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Critical Tachypnea (RR 38.0 >= 30/min)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 56,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 28,
+      "hours_after_snapshot": 28,
+      "deterioration_in_next_24h": []
+    },
+    "assessment": {
+      "rule_categories": [
+        "respiratory"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (respiratory): may overfire",
+      "patient_outcome": "STABLE: No deterioration in next 24h",
+      "justifiability": "QUESTIONABLE \u2014 single borderline trigger, no deterioration"
+    }
+  },
+  {
+    "patient_id": "p000035",
+    "original_llm_risk": 45,
+    "final_risk_after_guardrail": 95,
+    "guardrail_override": true,
+    "override_reasons": [
+      "Severe Hypercapnia (PaCO2 60.0 >= 60 mmHg)"
+    ],
+    "would_still_be_fp_without_guardrail": false,
+    "trajectory": {
+      "total_hours_in_icu": 41,
+      "physionet_sepsis_label": false,
+      "physionet_sepsis_onset_hour": null,
+      "snapshot_hour": 20,
+      "hours_after_snapshot": 21,
+      "deterioration_in_next_24h": [
+        "MAP fell to 56 (<65)"
+      ]
+    },
+    "assessment": {
+      "rule_categories": [
+        "respiratory"
+      ],
+      "rule_strength": "SINGLE-TRIGGER (respiratory): may overfire",
+      "patient_outcome": "DETERIORATED: 1 concerning signals in next 24h",
+      "justifiability": "DEFENSIBLE \u2014 single trigger but patient did deteriorate"
+    }
+  }
+]

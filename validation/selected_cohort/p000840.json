@@ -1,0 +1,26 @@
+{
+  "api_input": {
+    "patient_id": "p000840",
+    "vitals": {
+      "heart_rate": 71.0,
+      "o2_saturation": 98.0,
+      "temperature": 35.72,
+      "sbp": 124.0,
+      "map": 89.0,
+      "dbp": 66.0,
+      "respiratory_rate": 13.0,
+      "fio2": 0.5,
+      "age": 52.9,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (85 -> 71). SBP trend stable (121 -> 124). Hypothermic at 35.7C"
+  },
+  "ground_truth": {
+    "patient_id": "p000840",
+    "actual_sepsis": false,
+    "snapshot_hour": 4,
+    "total_hours": 9,
+    "age": 52.9,
+    "gender": "Female"
+  }
+}

@@ -18,6 +18,8 @@ import logging
 from datetime import datetime
 from typing import Dict, Any, List, Optional
 from functools import wraps
+from dotenv import load_dotenv
+load_dotenv()
 
 from fastapi import FastAPI, HTTPException, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -309,6 +311,7 @@ async def classify_patient(
             # Guardrail (original format)
             "guardrail_override": logic_gate.get("guardrail_override", False),
             "override_reasons": logic_gate.get("override_reasons", []),
+            "original_risk_score": logic_gate.get("original_risk_score"),
             "early_warnings": logic_gate.get("early_warnings", []),
             "history_context": logic_gate.get("history_context", []),
             

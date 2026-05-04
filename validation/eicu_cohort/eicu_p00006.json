@@ -1,0 +1,168 @@
+{
+  "patient_id": "eicu_p00006",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1090567,
+    "snapshot_offset_min_from_admit": 3969,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 76.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "200",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 64.0,
+        "ts": "2024-06-03T18:07:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-03T17:07:00"
+      },
+      {
+        "val": 122.0,
+        "ts": "2024-06-03T16:07:00"
+      },
+      {
+        "val": 115.0,
+        "ts": "2024-06-03T15:07:00"
+      },
+      {
+        "val": 113.0,
+        "ts": "2024-06-03T14:07:00"
+      },
+      {
+        "val": 110.0,
+        "ts": "2024-06-03T13:07:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.0,
+        "ts": "2024-06-03T15:06:00"
+      },
+      {
+        "val": 37.388888888888886,
+        "ts": "2024-06-03T13:06:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 30.0,
+        "ts": "2024-06-03T18:07:00"
+      },
+      {
+        "val": 35.0,
+        "ts": "2024-06-03T17:07:00"
+      },
+      {
+        "val": 31.0,
+        "ts": "2024-06-03T16:07:00"
+      },
+      {
+        "val": 27.0,
+        "ts": "2024-06-03T15:07:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-03T14:07:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-03T13:07:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-03T18:07:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-03T17:07:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-03T16:07:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-03T15:07:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-03T14:07:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-03T13:07:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 12.9,
+        "ts": "2024-06-03T13:04:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.0,
+        "ts": "2024-06-03T13:04:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 245.0,
+        "ts": "2024-06-03T13:04:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 160.0,
+        "ts": "2024-06-03T13:04:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 40.0,
+        "ts": "2024-06-03T13:04:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.446,
+        "ts": "2024-06-03T16:19:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-03T16:19:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 29.7,
+        "ts": "2024-06-03T16:19:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-3.0h): GCS total = 10 | MD order (T-2.5h): cardiovascular|intravenous fluid|hypotonic fluid administration|half-normal saline solution | MD order (T-2.5h): pulmonary|ventilation and oxygenation|mechanical ventilation | MD order (T-2.5h): neurologic|therapy for controlling cerebral perfusion pressure|vasopressors|norepinephrine > 0.1 micrograms/kg/min | MD order (T-2.5h): cardiovascular|hypertension|sedative agent|propofol | MD order (T-7.5h): cardiovascular|intravenous fluid|hypotonic fluid administration|half-normal saline solution | MD order (T-7.5h): neurologic|therapy for controlling cerebral perfusion pressure|vasopressors|norepinephrine > 0.1 micrograms/kg/min | MD order (T-7.5h): pulmonary|ventilation and oxygenation|mechanical ventilation",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 4329,
+    "icd9_codes": [
+      "038.9, A41.9"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|sepsis"
+    ]
+  }
+}

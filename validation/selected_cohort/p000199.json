@@ -1,0 +1,25 @@
+{
+  "api_input": {
+    "patient_id": "p000199",
+    "vitals": {
+      "heart_rate": 77.0,
+      "o2_saturation": 98.0,
+      "temperature": 36.72,
+      "sbp": 133.0,
+      "map": 93.67,
+      "respiratory_rate": 24.0,
+      "fio2": 0.5,
+      "age": 41.97,
+      "gender": "Male"
+    },
+    "notes": "HR trend falling (85 -> 77). SBP trend rising (127 -> 133)"
+  },
+  "ground_truth": {
+    "patient_id": "p000199",
+    "actual_sepsis": false,
+    "snapshot_hour": 18,
+    "total_hours": 37,
+    "age": 41.97,
+    "gender": "Male"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "api_input": {
+    "patient_id": "p001441",
+    "vitals": {
+      "heart_rate": 74.0,
+      "o2_saturation": 96.0,
+      "temperature": 36.5,
+      "sbp": 94.0,
+      "map": 66.0,
+      "dbp": 53.0,
+      "respiratory_rate": 20.5,
+      "base_excess": -9.0,
+      "bicarbonate": 16.0,
+      "fio2": 0.6,
+      "ph": 7.28,
+      "paco2": 33.0,
+      "bun": 40.0,
+      "creatinine": 2.3,
+      "glucose": 93.0,
+      "lactate": 3.4,
+      "potassium": 5.0,
+      "platelets": 101.0,
+      "age": 78.75,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (70 -> 74). SBP trend rising (85 -> 94). Temp 36.5C within normal range"
+  },
+  "ground_truth": {
+    "patient_id": "p001441",
+    "actual_sepsis": true,
+    "onset_hour": 27,
+    "total_hours": 37,
+    "age": 78.75,
+    "gender": "Male"
+  }
+}

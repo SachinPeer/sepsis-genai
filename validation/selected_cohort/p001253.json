@@ -1,0 +1,35 @@
+{
+  "api_input": {
+    "patient_id": "p001253",
+    "vitals": {
+      "heart_rate": 58.0,
+      "o2_saturation": 100.0,
+      "sbp": 155.0,
+      "map": 86.0,
+      "dbp": 51.0,
+      "respiratory_rate": 18.0,
+      "base_excess": -5.0,
+      "bicarbonate": 19.0,
+      "fio2": 0.4,
+      "ph": 7.35,
+      "paco2": 34.0,
+      "bun": 52.0,
+      "creatinine": 1.6,
+      "glucose": 179.0,
+      "lactate": 1.2,
+      "potassium": 5.5,
+      "ptt": 34.9,
+      "age": 85.95,
+      "gender": "Female"
+    },
+    "notes": "HR trend stable (54 -> 58). SBP trend dropping (173 -> 155)"
+  },
+  "ground_truth": {
+    "patient_id": "p001253",
+    "actual_sepsis": false,
+    "snapshot_hour": 26,
+    "total_hours": 52,
+    "age": 85.95,
+    "gender": "Female"
+  }
+}

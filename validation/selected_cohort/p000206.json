@@ -1,0 +1,28 @@
+{
+  "api_input": {
+    "patient_id": "p000206",
+    "vitals": {
+      "heart_rate": 109.0,
+      "o2_saturation": 92.0,
+      "temperature": 36.22,
+      "map": 84.0,
+      "respiratory_rate": 21.0,
+      "bicarbonate": 19.0,
+      "bun": 108.0,
+      "creatinine": 5.1,
+      "glucose": 120.0,
+      "potassium": 5.2,
+      "age": 69.68,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (103 -> 109). Temp 36.2C within normal range. O2 sat concerning at 92%"
+  },
+  "ground_truth": {
+    "patient_id": "p000206",
+    "actual_sepsis": true,
+    "onset_hour": 13,
+    "total_hours": 23,
+    "age": 69.68,
+    "gender": "Male"
+  }
+}

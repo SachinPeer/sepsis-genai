@@ -1,0 +1,18 @@
+{
+  "api_input": {
+    "patient_id": "p001849",
+    "vitals": {
+      "Age": 87.49,
+      "Gender": "Female"
+    },
+    "notes": "Patient in ICU, routine monitoring. Vitals within expected range for ICU baseline. No acute changes noted."
+  },
+  "ground_truth": {
+    "patient_id": "p001849",
+    "actual_sepsis": true,
+    "onset_hour": 189,
+    "total_hours": 198,
+    "age": 87.49,
+    "gender": "Female"
+  }
+}

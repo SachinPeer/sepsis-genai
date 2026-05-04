@@ -1,0 +1,72 @@
+{
+  "patient_id": "eicu_p00024",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1118948,
+    "snapshot_offset_min_from_admit": 845,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 77.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "202",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 62.0,
+        "ts": "2024-06-01T14:01:00"
+      },
+      {
+        "val": 64.0,
+        "ts": "2024-06-01T13:01:00"
+      },
+      {
+        "val": 64.0,
+        "ts": "2024-06-01T12:01:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T11:01:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T14:01:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T13:01:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T12:01:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:01:00"
+      }
+    ]
+  },
+  "patient_notes": "No free-text notes or structured observations in the 6-hour window prior to snapshot.",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 1205,
+    "icd9_codes": [
+      "038.9, A41.9",
+      "785.52, R65.21"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|sepsis",
+      "cardiovascular|shock / hypotension|septic shock"
+    ]
+  }
+}

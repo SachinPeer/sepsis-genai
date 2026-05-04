@@ -1,0 +1,25 @@
+{
+  "api_input": {
+    "patient_id": "p001045",
+    "vitals": {
+      "heart_rate": 104.0,
+      "o2_saturation": 84.0,
+      "sbp": 59.0,
+      "map": 46.0,
+      "dbp": 51.0,
+      "respiratory_rate": 10.0,
+      "fio2": 1.0,
+      "age": 62.17,
+      "gender": "Male"
+    },
+    "notes": "O2 sat concerning at 84%"
+  },
+  "ground_truth": {
+    "patient_id": "p001045",
+    "actual_sepsis": false,
+    "snapshot_hour": 28,
+    "total_hours": 56,
+    "age": 62.17,
+    "gender": "Male"
+  }
+}

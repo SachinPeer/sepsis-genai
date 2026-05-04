@@ -1,0 +1,39 @@
+{
+  "api_input": {
+    "patient_id": "p000996",
+    "vitals": {
+      "heart_rate": 100.5,
+      "o2_saturation": 100.0,
+      "temperature": 38.28,
+      "sbp": 89.5,
+      "map": 59.0,
+      "dbp": 41.0,
+      "respiratory_rate": 14.5,
+      "base_excess": -4.0,
+      "bicarbonate": 21.0,
+      "fio2": 0.5,
+      "ph": 7.41,
+      "paco2": 29.0,
+      "bun": 7.0,
+      "creatinine": 0.5,
+      "glucose": 87.0,
+      "lactate": 1.4,
+      "potassium": 3.9,
+      "hemoglobin": 11.0,
+      "ptt": 32.0,
+      "wbc": 6.2,
+      "platelets": 283.0,
+      "age": 74.4,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (83 -> 100). SBP trend dropping (129 -> 90). Temp 38.3C within normal range"
+  },
+  "ground_truth": {
+    "patient_id": "p000996",
+    "actual_sepsis": true,
+    "onset_hour": 5,
+    "total_hours": 14,
+    "age": 74.4,
+    "gender": "Female"
+  }
+}

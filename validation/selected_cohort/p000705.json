@@ -1,0 +1,35 @@
+{
+  "api_input": {
+    "patient_id": "p000705",
+    "vitals": {
+      "heart_rate": 82.0,
+      "o2_saturation": 100.0,
+      "temperature": 37.9,
+      "sbp": 101.5,
+      "map": 73.0,
+      "dbp": 56.5,
+      "respiratory_rate": 24.0,
+      "base_excess": -2.0,
+      "fio2": 0.6,
+      "ph": 7.41,
+      "paco2": 32.0,
+      "lactate": 2.5,
+      "potassium": 3.9,
+      "hemoglobin": 12.1,
+      "ptt": 55.5,
+      "wbc": 11.9,
+      "platelets": 181.0,
+      "age": 77.09,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (74 -> 82). SBP trend stable (106 -> 102). Temp 37.9C within normal range. Tachypneic at RR 24"
+  },
+  "ground_truth": {
+    "patient_id": "p000705",
+    "actual_sepsis": true,
+    "onset_hour": 8,
+    "total_hours": 18,
+    "age": 77.09,
+    "gender": "Male"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "api_input": {
+    "patient_id": "p000324",
+    "vitals": {
+      "heart_rate": 104.0,
+      "o2_saturation": 97.0,
+      "temperature": 35.61,
+      "sbp": 163.0,
+      "map": 117.0,
+      "dbp": 91.0,
+      "respiratory_rate": 25.0,
+      "base_excess": 11.0,
+      "fio2": 0.7,
+      "ph": 7.53,
+      "paco2": 43.0,
+      "hemoglobin": 8.8,
+      "wbc": 5.0,
+      "platelets": 60.0,
+      "age": 58.64,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (85 -> 104). SBP trend rising (149 -> 163). Hypothermic at 35.6C. Tachypneic at RR 25"
+  },
+  "ground_truth": {
+    "patient_id": "p000324",
+    "actual_sepsis": true,
+    "onset_hour": 54,
+    "total_hours": 64,
+    "age": 58.64,
+    "gender": "Male"
+  }
+}

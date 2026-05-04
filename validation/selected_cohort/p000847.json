@@ -1,0 +1,29 @@
+{
+  "api_input": {
+    "patient_id": "p000847",
+    "vitals": {
+      "heart_rate": 106.0,
+      "o2_saturation": 96.5,
+      "temperature": 38.83,
+      "sbp": 117.0,
+      "map": 81.0,
+      "dbp": 64.0,
+      "respiratory_rate": 16.0,
+      "base_excess": 1.0,
+      "fio2": 0.4,
+      "ph": 7.34,
+      "paco2": 55.0,
+      "age": 52.15,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (98 -> 106). SBP trend dropping (123 -> 117). Febrile at 38.8C. Respiratory rate increasing (11 -> 16)"
+  },
+  "ground_truth": {
+    "patient_id": "p000847",
+    "actual_sepsis": true,
+    "onset_hour": 71,
+    "total_hours": 81,
+    "age": 52.15,
+    "gender": "Male"
+  }
+}

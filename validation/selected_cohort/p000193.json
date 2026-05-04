@@ -1,0 +1,24 @@
+{
+  "api_input": {
+    "patient_id": "p000193",
+    "vitals": {
+      "heart_rate": 88.0,
+      "o2_saturation": 94.0,
+      "temperature": 35.44,
+      "sbp": 125.0,
+      "map": 80.33,
+      "respiratory_rate": 31.0,
+      "age": 79.1,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (93 -> 88). SBP trend rising (118 -> 125). Hypothermic at 35.4C. Tachypneic at RR 31"
+  },
+  "ground_truth": {
+    "patient_id": "p000193",
+    "actual_sepsis": false,
+    "snapshot_hour": 20,
+    "total_hours": 40,
+    "age": 79.1,
+    "gender": "Male"
+  }
+}

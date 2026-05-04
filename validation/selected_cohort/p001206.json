@@ -1,0 +1,26 @@
+{
+  "api_input": {
+    "patient_id": "p001206",
+    "vitals": {
+      "heart_rate": 122.0,
+      "o2_saturation": 92.0,
+      "temperature": 38.44,
+      "sbp": 119.0,
+      "map": 95.0,
+      "dbp": 84.0,
+      "respiratory_rate": 22.0,
+      "fio2": 0.8,
+      "age": 37.01,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (134 -> 122). SBP trend dropping (145 -> 119). Febrile at 38.4C. O2 sat concerning at 92%"
+  },
+  "ground_truth": {
+    "patient_id": "p001206",
+    "actual_sepsis": true,
+    "onset_hour": 211,
+    "total_hours": 220,
+    "age": 37.01,
+    "gender": "Female"
+  }
+}

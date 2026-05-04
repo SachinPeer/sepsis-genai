@@ -28,16 +28,16 @@ Hospital EHR → Red Rover → [AWS BOUNDARY] → EKS → Bedrock → EKS → Re
 
 | PHI Element | Present in Our System? | How We Handle It |
 |---|---|---|
-| Patient name | No — we use `patient_id` only | Never sent to the LLM |
-| Date of birth | No | Not part of our data model |
+| Patient name | **Yes** — for front-end display | Stored temporarily in MongoDB Atlas; auto-purged on discharge |
+| Date of birth | **Yes** — for front-end display | Stored temporarily in MongoDB Atlas; auto-purged on discharge |
+| Age, Gender | **Yes** — demographic context | Stored temporarily in MongoDB Atlas; auto-purged on discharge |
 | Medical record number | No — only our internal `patient_id` | De-identified key |
-| Vital signs (HR, BP, etc.) | **Yes** — core input | Processed in-memory, not stored permanently |
-| Lab results (Lactate, WBC) | **Yes** — core input | Processed in-memory, not stored permanently |
-| Nurse notes (free text) | **Yes** — may contain PHI | Processed in-memory, sent to Bedrock within AWS |
+| Vital signs (HR, BP, etc.) | **Yes** — core input | Stored temporarily in MongoDB Atlas; auto-purged on discharge |
+| Lab results (Lactate, WBC) | **Yes** — core input | Stored temporarily in MongoDB Atlas; auto-purged on discharge |
+| Nurse notes (free text) | **Yes** — may contain PHI | Stored temporarily in MongoDB Atlas; auto-purged on discharge |
 | Diagnosis codes | Not currently | Future: SJSA codes from Red Rover |
-| Age, Gender | **Yes** — demographic context | Processed in-memory |
 
-**Key point:** We receive clinical data, process it through the AI pipeline, return a risk assessment, and **do not permanently store the original patient data**. The data flows through, it doesn't stay.
+**Key point:** We receive clinical data, process it through the AI pipeline, return a risk assessment, and **store the patient data temporarily in MongoDB Atlas (encrypted AES-256) until discharge**. After discharge, all patient-specific data is automatically purged. Doctor feedback and audit logs are retained long-term but contain no direct PHI identifiers.
 
 ---
 
@@ -92,7 +92,7 @@ AWS offers a **HIPAA-eligible BAA** that covers Bedrock and other services. This
 | AWS BAA signed | **Pending** — must be executed by Shawn/Legal |
 | Bedrock covered under BAA | Yes — AWS includes Bedrock in BAA-eligible services |
 | EKS covered under BAA | Yes — included in BAA-eligible services |
-| S3, CloudWatch covered | Yes — included in BAA-eligible services |
+| CloudWatch covered | Yes — included in BAA-eligible services |
 
 **Action needed:** Shawn or the legal/compliance team must sign the AWS BAA. This is a standard process through the AWS console under AWS Artifact.
 
@@ -105,7 +105,7 @@ AWS offers a **HIPAA-eligible BAA** that covers Bedrock and other services. This
 | Safeguard | Status | Detail |
 |---|---|---|
 | Encryption in transit | ✅ Done | All API calls use HTTPS/TLS 1.2+ |
-| Encryption at rest | ✅ AWS default | EKS, S3, CloudWatch encrypted by default (AES-256) |
+| Encryption at rest | ✅ AWS default | EKS, CloudWatch encrypted by default (AES-256) |
 | No PHI in logs | ✅ Done | Audit logs contain request_id, scores, model version — no patient data |
 | No PHI in error messages | ✅ Done | Error responses return generic messages, not patient data |
 | Access control | ✅ Done | API key authentication on all endpoints |
@@ -148,15 +148,54 @@ AWS offers a **HIPAA-eligible BAA** that covers Bedrock and other services. This
 
 ---
 
-## 7. Future Considerations
+## 7. MongoDB Atlas Data Storage
 
-### 7.1 Doctor Feedback Storage (MongoDB)
+### 7.1 MongoDB Atlas Configuration
 
-When we implement the doctor feedback loop, MongoDB will store:
-- Doctor's agree/disagree with AI score
-- The AI's risk score and rationale (which may reference clinical data indirectly)
+MongoDB Atlas is now confirmed as the data store, hosted on **AWS us-east-1** (same region as EKS).
 
-**Action needed:** Decide whether feedback data constitutes PHI and select a HIPAA-compliant MongoDB deployment (Atlas with BAA, or self-hosted in AWS VPC).
+| Detail | Value |
+|---|---|
+| **Service** | MongoDB Atlas (managed) |
+| **Cloud Provider** | AWS (us-east-1) |
+| **Cluster** | medbeacondevcluster |
+| **Encryption at Rest** | AES-256 (Atlas default) |
+| **Encryption in Transit** | TLS (enforced via `mongodb+srv://`) |
+
+### 7.2 Data Retention Policy
+
+| Data Type | Retention | Rationale |
+|---|---|---|
+| **Patient clinical data** (vitals, labs, notes) | **30 days** (auto-purge) | Temporary storage for trending and re-analysis; minimizes breach surface |
+| **Doctor feedback** (agree/disagree with AI) | **6 years** | Aligns with HIPAA administrative documentation requirement |
+| **Audit logs** (request ID, scores, timestamps) | **6 years** | Regulatory compliance trail; contains no PHI |
+| **Hospital guardrail configs** | **Indefinite** (versioned) | No PHI; configuration data for audit trail |
+
+### 7.3 MongoDB BAA Requirement
+
+MongoDB Atlas offers a **HIPAA BAA** on dedicated tiers (M10+). This is separate from the AWS BAA and must be explicitly requested.
+
+| Requirement | Status |
+|---|---|
+| Atlas BAA signed | **Pending** — must be requested by Shawn/Legal via MongoDB Atlas support |
+| Atlas on AWS (same region) | **Confirmed** — us-east-1 |
+| Encryption at rest | **Enabled** — AES-256 by default |
+| Encryption in transit | **Enabled** — TLS enforced |
+| Role-based access control | **Pending** — need to configure per-service credentials |
+| Field-level encryption for PHI | **Recommended** — for patient vitals/notes fields |
+
+### 7.4 What Changes With MongoDB Storage
+
+Previously our system was fully stateless ("data flows through, doesn't stay"). With MongoDB:
+
+| Previous State | New State |
+|---|---|
+| No PHI at rest | PHI at rest in MongoDB (encrypted, 30-day retention) |
+| Breach risk minimal | Breach risk increases (mitigated by encryption + auto-purge) |
+| Simple compliance story | Requires Atlas BAA + data retention policy |
+| No data for trending | Can now compare current vs. historical vitals |
+
+### 7.5 Future Considerations
 
 ### 7.2 SJSA Alert Integration
 
@@ -176,7 +215,7 @@ For Shawn or the compliance team:
 2. Go to **AWS Artifact** (search in console)
 3. Under **Agreements**, find **AWS Business Associate Addendum**
 4. Review and accept the agreement
-5. This covers all BAA-eligible services in the account (including Bedrock, EKS, S3, CloudWatch)
+5. This covers all BAA-eligible services in the account (including Bedrock, EKS, ECR, CloudWatch)
 
 No additional cost. The BAA is a legal agreement, not a paid feature.
 

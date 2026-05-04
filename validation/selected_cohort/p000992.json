@@ -1,0 +1,30 @@
+{
+  "api_input": {
+    "patient_id": "p000992",
+    "vitals": {
+      "heart_rate": 84.0,
+      "o2_saturation": 100.0,
+      "temperature": 35.2,
+      "sbp": 113.0,
+      "map": 94.0,
+      "dbp": 70.0,
+      "respiratory_rate": 17.5,
+      "base_excess": 1.0,
+      "ph": 7.46,
+      "paco2": 34.0,
+      "glucose": 202.0,
+      "hemoglobin": 7.6,
+      "age": 68.1,
+      "gender": "Male"
+    },
+    "notes": "Hypothermic at 35.2C"
+  },
+  "ground_truth": {
+    "patient_id": "p000992",
+    "actual_sepsis": false,
+    "snapshot_hour": 18,
+    "total_hours": 37,
+    "age": 68.1,
+    "gender": "Male"
+  }
+}

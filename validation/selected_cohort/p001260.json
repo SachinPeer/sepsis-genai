@@ -1,0 +1,23 @@
+{
+  "api_input": {
+    "patient_id": "p001260",
+    "vitals": {
+      "heart_rate": 109.0,
+      "o2_saturation": 92.0,
+      "temperature": 35.94,
+      "map": 64.0,
+      "respiratory_rate": 20.0,
+      "age": 78.81,
+      "gender": "Male"
+    },
+    "notes": "HR trend falling (124 -> 109). Hypothermic at 35.9C. O2 sat concerning at 92%"
+  },
+  "ground_truth": {
+    "patient_id": "p001260",
+    "actual_sepsis": true,
+    "onset_hour": 8,
+    "total_hours": 17,
+    "age": 78.81,
+    "gender": "Male"
+  }
+}

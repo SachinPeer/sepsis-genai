@@ -1,0 +1,37 @@
+{
+  "patient_id": "eicu_p00051",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 313736,
+    "snapshot_offset_min_from_admit": 1895,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 40.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "123",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.166666666666664,
+        "ts": "2024-06-02T04:33:00"
+      }
+    ],
+    "Resp": [],
+    "O2Sat": []
+  },
+  "patient_notes": "No free-text notes or structured observations in the 6-hour window prior to snapshot.",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

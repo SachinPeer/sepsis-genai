@@ -1,0 +1,112 @@
+{
+  "patient_id": "eicu_p00059",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 403605,
+    "snapshot_offset_min_from_admit": 3487,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 33.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "122",
+    "Ethnicity": "African American"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 70.0,
+        "ts": "2024-06-03T10:05:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-03T09:05:00"
+      },
+      {
+        "val": 73.0,
+        "ts": "2024-06-03T08:05:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-03T07:05:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-03T06:05:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-03T05:05:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.833333333333336,
+        "ts": "2024-06-03T09:37:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-03T10:05:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-03T09:05:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-03T08:05:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-03T07:05:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-03T06:05:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-03T05:05:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 93.0,
+        "ts": "2024-06-03T10:05:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-03T09:05:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-03T08:05:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-03T07:05:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-03T06:05:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-03T05:05:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-6.5h): GCS total = 15",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

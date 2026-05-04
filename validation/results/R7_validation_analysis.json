@@ -1,0 +1,41 @@
+{
+  "report_date": "2026-05-01T00:39:39.591787",
+  "dataset": "PhysioNet Challenge 2019 - Training Set A",
+  "total_patients": 340,
+  "successful_runs": 340,
+  "failed_runs": 0,
+  "metrics": {
+    "confusion_matrix": {
+      "TP": 88,
+      "FP": 95,
+      "TN": 105,
+      "FN": 52
+    },
+    "total_valid": 340,
+    "errors": 0,
+    "sensitivity": 62.86,
+    "sensitivity_ci": [
+      54.85,
+      70.86
+    ],
+    "specificity": 52.5,
+    "specificity_ci": [
+      45.58,
+      59.42
+    ],
+    "ppv": 48.09,
+    "npv": 66.88,
+    "accuracy": 56.76,
+    "f1_score": 54.49,
+    "false_alarm_rate": 47.5,
+    "guardrail_overrides": 53,
+    "avg_processing_ms": 10087.2,
+    "median_processing_ms": 10161.2
+  },
+  "targets": {
+    "sensitivity_target": 90.0,
+    "sensitivity_met": false,
+    "specificity_target": 85.0,
+    "specificity_met": false
+  }
+}

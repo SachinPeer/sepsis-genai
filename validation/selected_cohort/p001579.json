@@ -1,0 +1,30 @@
+{
+  "api_input": {
+    "patient_id": "p001579",
+    "vitals": {
+      "heart_rate": 72.0,
+      "o2_saturation": 99.0,
+      "temperature": 37.17,
+      "sbp": 133.0,
+      "map": 77.67,
+      "respiratory_rate": 24.0,
+      "bicarbonate": 33.0,
+      "fio2": 0.5,
+      "bun": 45.0,
+      "creatinine": 1.1,
+      "glucose": 157.0,
+      "potassium": 3.7,
+      "age": 67.67,
+      "gender": "Female"
+    },
+    "notes": "HR trend stable (67 -> 72). SBP trend dropping (144 -> 133). Temp 37.2C within normal range. Tachypneic at RR 24"
+  },
+  "ground_truth": {
+    "patient_id": "p001579",
+    "actual_sepsis": false,
+    "snapshot_hour": 27,
+    "total_hours": 55,
+    "age": 67.67,
+    "gender": "Female"
+  }
+}

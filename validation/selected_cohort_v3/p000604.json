@@ -1,0 +1,90 @@
+{
+  "api_input": {
+    "patient_id": "p000604",
+    "vitals": {
+      "HR": [
+        {
+          "val": 74.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 76.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 86.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 36.28,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 35.72,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 16.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 13.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 14.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 99.0,
+          "ts": "2026-04-29T06:00"
+        }
+      ],
+      "WBC": [
+        4.9
+      ],
+      "Creatinine": [
+        0.6
+      ],
+      "Platelets": [
+        427.0
+      ],
+      "BUN": [
+        15.0
+      ],
+      "Glucose": [
+        178.0
+      ],
+      "HCO3": [
+        22.0
+      ],
+      "Potassium": [
+        4.7
+      ],
+      "Hgb": [
+        11.2
+      ],
+      "Age": 63.41,
+      "Gender": "Female"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate rising significantly over past 6 hours (74 -> 86 bpm). Hypothermic at 35.7C, concerning in setting of possible infection."
+  },
+  "ground_truth": {
+    "patient_id": "p000604",
+    "actual_sepsis": false,
+    "snapshot_hour": 21,
+    "total_hours": 43,
+    "age": 63.41,
+    "gender": "Female"
+  }
+}

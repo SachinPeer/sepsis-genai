@@ -1,0 +1,24 @@
+{
+  "api_input": {
+    "patient_id": "p001666",
+    "vitals": {
+      "heart_rate": 71.0,
+      "o2_saturation": 97.0,
+      "temperature": 37.28,
+      "map": 75.0,
+      "respiratory_rate": 26.0,
+      "ptt": 43.7,
+      "age": 80.0,
+      "gender": "Female"
+    },
+    "notes": "HR trend stable (71 -> 71). Temp 37.3C within normal range. Tachypneic at RR 26"
+  },
+  "ground_truth": {
+    "patient_id": "p001666",
+    "actual_sepsis": true,
+    "onset_hour": 117,
+    "total_hours": 127,
+    "age": 80.0,
+    "gender": "Female"
+  }
+}

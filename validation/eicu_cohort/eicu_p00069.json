@@ -1,0 +1,149 @@
+{
+  "patient_id": "eicu_p00069",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 968367,
+    "snapshot_offset_min_from_admit": 11703,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 86.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "180",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 87.0,
+        "ts": "2024-06-09T03:00:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-09T02:00:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-09T01:00:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-09T00:00:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-08T23:00:00"
+      },
+      {
+        "val": 108.0,
+        "ts": "2024-06-08T22:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-09T03:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-09T02:00:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-09T01:00:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-09T00:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-08T23:00:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-08T22:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-09T03:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-09T02:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-09T01:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-09T00:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-08T23:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-08T22:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 19.9,
+        "ts": "2024-06-08T14:53:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.49,
+        "ts": "2024-06-08T14:53:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 221.0,
+        "ts": "2024-06-08T14:53:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 232.0,
+        "ts": "2024-06-08T21:00:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 63.0,
+        "ts": "2024-06-08T14:53:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 33.0,
+        "ts": "2024-06-08T14:53:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.3,
+        "ts": "2024-06-08T14:53:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.5h): Pain Score/Goal = 8 | Nurse charting (T-0.5h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-0.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-1.5h): Pain Score/Goal = 10 | Nurse charting (T-1.5h): Pain Score/Goal = 5 | Nurse charting (T-1.5h): GCS total = 15 | Nurse charting (T-1.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-1.5h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-2.5h): Pain Score/Goal = 0 | Nurse charting (T-3.5h): Pain Score/Goal = 0 | MD order (T-10.4h): gastrointestinal|medications|stress ulcer prophylaxis | MD order (T-10.4h): gastrointestinal|exploratory surgery|exploratory laparotomy | MD order (T-10.4h): pulmonary|medications|antibacterials | MD order (T-10.4h): surgery|tubes and catheters|nasogastric tube | MD order (T-10.4h): surgery|analgesics /sedatives/ nmbs|analgesics | MD order (T-10.4h): gastrointestinal|intravenous fluid administration|normal saline administration",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

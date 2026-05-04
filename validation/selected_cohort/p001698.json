@@ -1,0 +1,23 @@
+{
+  "api_input": {
+    "patient_id": "p001698",
+    "vitals": {
+      "heart_rate": 93.0,
+      "o2_saturation": 97.0,
+      "temperature": 35.83,
+      "map": 66.0,
+      "respiratory_rate": 14.0,
+      "age": 83.1,
+      "gender": "Male"
+    },
+    "notes": "HR trend rising (86 -> 93). Hypothermic at 35.8C"
+  },
+  "ground_truth": {
+    "patient_id": "p001698",
+    "actual_sepsis": true,
+    "onset_hour": 7,
+    "total_hours": 16,
+    "age": 83.1,
+    "gender": "Male"
+  }
+}

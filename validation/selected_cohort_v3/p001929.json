@@ -1,0 +1,184 @@
+{
+  "api_input": {
+    "patient_id": "p001929",
+    "vitals": {
+      "HR": [
+        {
+          "val": 71.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 84.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 73.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 77.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 77.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 82.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 119.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 129.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 140.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 145.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 124.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 144.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "DBP": [
+        {
+          "val": 50.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 57.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 57.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 56.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 54.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 63.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 36.56,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 36.33,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 8.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 15.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 14.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 12.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 10.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 16.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "O2Sat": [
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 100.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 73.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 83.0,
+          "ts": "2026-04-29T04:00"
+        },
+        {
+          "val": 84.5,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 81.0,
+          "ts": "2026-04-29T06:00"
+        },
+        {
+          "val": 80.0,
+          "ts": "2026-04-29T07:00"
+        },
+        {
+          "val": 93.0,
+          "ts": "2026-04-29T08:00"
+        }
+      ],
+      "Age": 69.45,
+      "Gender": "Female"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate rising significantly over past 6 hours (71 -> 82 bpm). BP rising (119 -> 144 systolic). Respiratory rate increasing, work of breathing noted."
+  },
+  "ground_truth": {
+    "patient_id": "p001929",
+    "actual_sepsis": false,
+    "snapshot_hour": 11,
+    "total_hours": 22,
+    "age": 69.45,
+    "gender": "Female"
+  }
+}

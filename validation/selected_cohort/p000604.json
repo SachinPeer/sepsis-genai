@@ -1,0 +1,30 @@
+{
+  "api_input": {
+    "patient_id": "p000604",
+    "vitals": {
+      "heart_rate": 86.0,
+      "o2_saturation": 99.0,
+      "temperature": 35.72,
+      "respiratory_rate": 14.0,
+      "bicarbonate": 22.0,
+      "bun": 15.0,
+      "creatinine": 0.6,
+      "glucose": 178.0,
+      "potassium": 4.7,
+      "hemoglobin": 11.2,
+      "wbc": 4.9,
+      "platelets": 427.0,
+      "age": 63.41,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (74 -> 86). Hypothermic at 35.7C"
+  },
+  "ground_truth": {
+    "patient_id": "p000604",
+    "actual_sepsis": false,
+    "snapshot_hour": 21,
+    "total_hours": 43,
+    "age": 63.41,
+    "gender": "Female"
+  }
+}

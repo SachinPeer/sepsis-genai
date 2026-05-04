@@ -1,0 +1,158 @@
+{
+  "patient_id": "eicu_p00047",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 969631,
+    "snapshot_offset_min_from_admit": 2964,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 76.0,
+    "Gender": "Male",
+    "UnitType": "Cardiac ICU",
+    "HospitalId": "181",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 68.0,
+        "ts": "2024-06-03T01:22:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-03T00:22:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-02T23:22:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-02T22:22:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-02T21:22:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-02T20:22:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.44444444444444,
+        "ts": "2024-06-02T22:37:00"
+      },
+      {
+        "val": 36.166666666666664,
+        "ts": "2024-06-02T19:37:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-03T01:22:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-03T00:22:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-02T23:22:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-02T22:22:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-02T21:22:00"
+      },
+      {
+        "val": 10.0,
+        "ts": "2024-06-02T20:22:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 98.0,
+        "ts": "2024-06-03T01:22:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-03T00:22:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-02T23:22:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-02T22:22:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-02T21:22:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-02T20:22:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 18.5,
+        "ts": "2024-06-02T08:37:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.31,
+        "ts": "2024-06-02T08:37:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 192.0,
+        "ts": "2024-06-02T08:37:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 276.0,
+        "ts": "2024-06-02T23:36:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 27.0,
+        "ts": "2024-06-02T08:37:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-02T08:37:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 12.6,
+        "ts": "2024-06-02T08:37:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.3h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-0.3h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-0.8h): Pain Score/Goal = 0 | Nurse charting (T-0.8h): GCS total = 15 | Nurse charting (T-0.8h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-0.8h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-1.8h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-1.8h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-1.8h): GCS total = 15 | Nurse charting (T-1.8h): Pain Score/Goal = 0",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

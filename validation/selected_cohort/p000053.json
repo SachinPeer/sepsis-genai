@@ -1,0 +1,32 @@
+{
+  "api_input": {
+    "patient_id": "p000053",
+    "vitals": {
+      "heart_rate": 87.0,
+      "o2_saturation": 98.0,
+      "temperature": 37.89,
+      "map": 62.0,
+      "respiratory_rate": 23.5,
+      "bicarbonate": 29.0,
+      "fio2": 0.35,
+      "bun": 11.0,
+      "creatinine": 0.3,
+      "glucose": 173.0,
+      "potassium": 3.9,
+      "hemoglobin": 8.0,
+      "wbc": 15.8,
+      "platelets": 489.0,
+      "age": 68.59,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (93 -> 87). Temp 37.9C within normal range. Tachypneic at RR 24"
+  },
+  "ground_truth": {
+    "patient_id": "p000053",
+    "actual_sepsis": true,
+    "onset_hour": 15,
+    "total_hours": 25,
+    "age": 68.59,
+    "gender": "Female"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "api_input": {
+    "patient_id": "p001220",
+    "vitals": {
+      "heart_rate": 76.0,
+      "o2_saturation": 97.0,
+      "sbp": 150.0,
+      "map": 67.0,
+      "dbp": 41.0,
+      "respiratory_rate": 13.0,
+      "age": 66.74,
+      "gender": "Female"
+    },
+    "notes": "HR trend stable (76 -> 76). SBP trend rising (130 -> 150)"
+  },
+  "ground_truth": {
+    "patient_id": "p001220",
+    "actual_sepsis": false,
+    "snapshot_hour": 18,
+    "total_hours": 36,
+    "age": 66.74,
+    "gender": "Female"
+  }
+}

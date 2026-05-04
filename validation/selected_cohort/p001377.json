@@ -1,0 +1,33 @@
+{
+  "api_input": {
+    "patient_id": "p001377",
+    "vitals": {
+      "heart_rate": 45.0,
+      "o2_saturation": 100.0,
+      "temperature": 35.94,
+      "sbp": 109.0,
+      "map": 72.0,
+      "dbp": 56.0,
+      "respiratory_rate": 13.0,
+      "bicarbonate": 23.0,
+      "bun": 15.0,
+      "creatinine": 0.9,
+      "glucose": 90.0,
+      "potassium": 4.4,
+      "hemoglobin": 11.9,
+      "wbc": 7.2,
+      "platelets": 171.0,
+      "age": 42.53,
+      "gender": "Male"
+    },
+    "notes": "HR trend stable (40 -> 45). SBP trend stable (109 -> 109). Hypothermic at 35.9C"
+  },
+  "ground_truth": {
+    "patient_id": "p001377",
+    "actual_sepsis": false,
+    "snapshot_hour": 11,
+    "total_hours": 23,
+    "age": 42.53,
+    "gender": "Male"
+  }
+}

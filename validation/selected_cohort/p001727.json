@@ -1,0 +1,40 @@
+{
+  "api_input": {
+    "patient_id": "p001727",
+    "vitals": {
+      "heart_rate": 149.0,
+      "o2_saturation": 100.0,
+      "temperature": 36.78,
+      "sbp": 122.0,
+      "map": 97.0,
+      "dbp": 86.0,
+      "respiratory_rate": 25.0,
+      "base_excess": -9.0,
+      "bicarbonate": 17.0,
+      "fio2": 0.4,
+      "ph": 7.28,
+      "paco2": 34.0,
+      "bun": 11.0,
+      "creatinine": 0.6,
+      "glucose": 160.0,
+      "lactate": 2.7,
+      "potassium": 4.6,
+      "hemoglobin": 10.6,
+      "ptt": 28.1,
+      "wbc": 9.6,
+      "fibrinogen": 202.0,
+      "platelets": 111.0,
+      "age": 28.57,
+      "gender": "Female"
+    },
+    "notes": "HR trend rising (117 -> 149). SBP trend stable (125 -> 122). Temp 36.8C within normal range. Tachypneic at RR 25"
+  },
+  "ground_truth": {
+    "patient_id": "p001727",
+    "actual_sepsis": true,
+    "onset_hour": 6,
+    "total_hours": 16,
+    "age": 28.57,
+    "gender": "Female"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "api_input": {
+    "patient_id": "p001162",
+    "vitals": {
+      "HR": [
+        {
+          "val": 87.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 74.0,
+          "ts": "2026-04-29T05:00"
+        },
+        {
+          "val": 66.0,
+          "ts": "2026-04-29T07:00"
+        }
+      ],
+      "SBP": [
+        {
+          "val": 127.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 127.0,
+          "ts": "2026-04-29T05:00"
+        }
+      ],
+      "Temp": [
+        {
+          "val": 36.72,
+          "ts": "2026-04-29T05:00"
+        }
+      ],
+      "Resp": [
+        {
+          "val": 16.0,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 18.0,
+          "ts": "2026-04-29T07:00"
+        }
+      ],
+      "MAP": [
+        {
+          "val": 84.33,
+          "ts": "2026-04-29T03:00"
+        },
+        {
+          "val": 79.67,
+          "ts": "2026-04-29T05:00"
+        }
+      ],
+      "Age": 54.02,
+      "Gender": "Male"
+    },
+    "notes": "Patient is in ICU for close monitoring. Admission may be for surgical recovery, trauma, cardiac event, respiratory failure, or other non-infectious cause \u2014 not necessarily sepsis. Abnormal vitals may reflect underlying ICU condition rather than new infection. Heart rate falling over past hours (87 -> 66 bpm)."
+  },
+  "ground_truth": {
+    "patient_id": "p001162",
+    "actual_sepsis": false,
+    "snapshot_hour": 28,
+    "total_hours": 56,
+    "age": 54.02,
+    "gender": "Male"
+  }
+}

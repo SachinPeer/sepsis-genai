@@ -1,0 +1,35 @@
+{
+  "api_input": {
+    "patient_id": "p001506",
+    "vitals": {
+      "heart_rate": 68.0,
+      "o2_saturation": 100.0,
+      "temperature": 36.0,
+      "sbp": 131.0,
+      "map": 79.0,
+      "respiratory_rate": 11.0,
+      "bicarbonate": 28.0,
+      "ast": 23.0,
+      "bun": 15.0,
+      "creatinine": 0.8,
+      "glucose": 125.0,
+      "potassium": 3.8,
+      "bilirubin": 0.3,
+      "hemoglobin": 11.2,
+      "ptt": 31.2,
+      "wbc": 7.3,
+      "platelets": 321.0,
+      "age": 71.34,
+      "gender": "Female"
+    },
+    "notes": "HR trend falling (77 -> 68). SBP trend stable (129 -> 131). Temp 36.0C within normal range"
+  },
+  "ground_truth": {
+    "patient_id": "p001506",
+    "actual_sepsis": false,
+    "snapshot_hour": 14,
+    "total_hours": 28,
+    "age": 71.34,
+    "gender": "Female"
+  }
+}

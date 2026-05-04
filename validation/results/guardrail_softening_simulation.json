@@ -1,0 +1,35 @@
+[
+  {
+    "scenario": "BASELINE_R7",
+    "TP": 88,
+    "FN": 52,
+    "FP": 95,
+    "TN": 105,
+    "sensitivity": 62.86,
+    "specificity": 52.5,
+    "early_escalations_flipped": 0,
+    "llm_raw_missing": 0
+  },
+  {
+    "scenario": "NO_EARLY_DETECT",
+    "TP": 69,
+    "FN": 71,
+    "FP": 74,
+    "TN": 126,
+    "sensitivity": 49.29,
+    "specificity": 63.0,
+    "early_escalations_flipped": 45,
+    "llm_raw_missing": 0
+  },
+  {
+    "scenario": "STRICTER_3_OF_4",
+    "TP": 75,
+    "FN": 65,
+    "FP": 77,
+    "TN": 123,
+    "sensitivity": 53.57,
+    "specificity": 61.5,
+    "early_escalations_flipped": 34,
+    "llm_raw_missing": 0
+  }
+]
