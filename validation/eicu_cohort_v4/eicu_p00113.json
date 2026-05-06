@@ -1,0 +1,142 @@
+{
+  "patient_id": "eicu_p00113",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1143992,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 80.0,
+    "Gender": "Female",
+    "UnitType": "CCU-CTICU",
+    "HospitalId": "208",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.72222222222222,
+        "ts": "2024-06-01T09:03:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.88,
+        "ts": "2024-06-01T05:03:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 107.0,
+        "ts": "2024-06-01T05:03:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T05:03:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T05:03:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T08:03:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-11.9h): cardiovascular|vascular disorders|thrombolytic agent|alteplase | MD order (T-11.9h): cardiovascular|vascular disorders|angiography|venogram",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

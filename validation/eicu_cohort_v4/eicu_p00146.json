@@ -1,0 +1,160 @@
+{
+  "patient_id": "eicu_p00146",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2597803,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 74.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "355",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 89.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.5,
+        "ts": "2024-06-01T07:44:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 29.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 37.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 10.6,
+        "ts": "2024-05-31T23:06:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.1,
+        "ts": "2024-05-31T23:06:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 421.0,
+        "ts": "2024-05-31T23:06:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 248.0,
+        "ts": "2024-05-31T23:06:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 13.0,
+        "ts": "2024-05-31T23:06:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 23.0,
+        "ts": "2024-05-31T21:26:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 25.0,
+        "ts": "2024-05-31T21:26:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.3,
+        "ts": "2024-05-31T23:06:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.3h): 20 - 40 pack years - remote hx of smoking | Note (Admission, T-11.3h): Include Allergies and Pre-Admission Meds | Note (Admission, T-11.3h): Include Social History and Family History | MD order (T-10.8h): pulmonary|ventilation and oxygenation|non-invasive ventilation | MD order (T-10.8h): cardiovascular|intravenous fluid|normal saline administration | MD order (T-10.8h): pulmonary|medications|antibacterials|third generation cephalosporin|ceftriaxone | MD order (T-10.8h): pulmonary|ventilation and oxygenation|oxygen therapy (< 40%)|nasal cannula | MD order (T-10.8h): cardiovascular|non-operative procedures|diagnostic ultrasound of heart|transthoracic echocardiography | MD order (T-10.8h): cardiovascular|ventricular dysfunction|intravenous diuretic|IV diuretic - bolus infusion | MD order (T-10.8h): pulmonary|medications|glucocorticoid administration|parenteral | MD order (T-10.8h): pulmonary|surgery / incision and drainage of thorax|thoracentesis",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

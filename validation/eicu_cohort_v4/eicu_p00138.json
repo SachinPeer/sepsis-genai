@@ -1,0 +1,155 @@
+{
+  "patient_id": "eicu_p00138",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1247906,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 71.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "215",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 122.0,
+        "ts": "2024-06-01T11:19:00"
+      },
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 107.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 104.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 45.0,
+        "ts": "2024-06-01T11:19:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 29.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 27.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 29.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T11:09:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T09:09:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T07:29:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 10.58,
+        "ts": "2024-06-01T00:49:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 1.0,
+        "ts": "2024-05-31T20:52:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.6,
+        "ts": "2024-06-01T00:49:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 311.0,
+        "ts": "2024-06-01T00:49:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 166.0,
+        "ts": "2024-06-01T00:49:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T00:49:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 34.0,
+        "ts": "2024-06-01T00:49:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 8.9,
+        "ts": "2024-06-01T05:17:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-10.8h): cardiovascular|arrhythmias|antiarrhythmics|class IV antiarrhythmic|diltiazem",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "patient_id": "eicu_p00094",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2768566,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 31.0,
+    "Gender": "Male",
+    "UnitType": "Cardiac ICU",
+    "HospitalId": "396",
+    "Ethnicity": "Hispanic"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 80.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 79.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 12.5,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.77,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 327.0,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 27.0,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 14.2,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.8h): Include Allergies and Pre-Admission Meds | Note (Admission, T-11.8h): Include Social History and Family History | MD order (T-11.3h): cardiovascular|non-operative procedures|diagnostic ultrasound of heart | MD order (T-11.3h): pulmonary|ventilation and oxygenation|oxygen therapy (< 40%) | MD order (T-11.3h): cardiovascular|arrhythmias|overdrive pacing | MD order (T-11.3h): pulmonary|radiologic procedures / bronchoscopy|CT scan | MD order (T-11.3h): gastrointestinal|radiology, diagnostic and procedures|CT scan",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

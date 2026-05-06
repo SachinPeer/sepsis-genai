@@ -1,0 +1,166 @@
+{
+  "patient_id": "eicu_p00048",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1327852,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 26.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "226",
+    "Ethnicity": "Hispanic"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 79.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.9,
+        "ts": "2024-06-01T09:02:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 56.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 8.2,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 2.0,
+        "ts": "2024-05-31T20:05:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.94,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 218.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T09:45:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 39.1,
+        "ts": "2024-06-01T00:32:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-11.5h): endocrine|glucose metabolism|insulin|continuous infusion | MD order (T-11.5h): renal|electrolyte correction|electrolyte administration|potassium | MD order (T-11.5h): neurologic|pain / agitation / altered mentation|analgesics|non-narcotic analgesic | MD order (T-11.5h): renal|electrolyte correction|electrolyte administration|magnesium | MD order (T-11.5h): endocrine|glucose metabolism|insulin|subcutaneous dose of longer-acting insulin prepara | MD order (T-11.5h): neurologic|pain / agitation / altered mentation|sedative agent|lorazepam | MD order (T-11.5h): hematology|coagulation and platelets|anticoagulant administration|conventional heparin therapy | MD order (T-11.5h): infectious diseases|medications|antiviral therapy|acyclovir",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

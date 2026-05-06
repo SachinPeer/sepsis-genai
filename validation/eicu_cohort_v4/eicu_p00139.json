@@ -1,0 +1,143 @@
+{
+  "patient_id": "eicu_p00139",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1746313,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 90.0,
+    "Gender": "Female",
+    "UnitType": "MICU",
+    "HospitalId": "273",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 66.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.4,
+        "ts": "2024-05-31T12:38:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 164.0,
+        "ts": "2024-06-01T05:02:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 34.0,
+        "ts": "2024-05-31T12:38:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.43,
+        "ts": "2024-06-01T00:38:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T00:38:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 39.8,
+        "ts": "2024-06-01T00:38:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.9h): Include Allergies and Pre-Admission Meds | Nurse charting (T-9.4h): GCS total = 15 | Nurse charting (T-11.5h): GCS total = 15 | Nurse charting (T-11.7h): GCS total = 15 | MD order (T-11.5h): pulmonary|ventilation and oxygenation|non-invasive ventilation | MD order (T-11.5h): pulmonary|radiologic procedures / bronchoscopy|chest x-ray | MD order (T-11.7h): pulmonary|ventilation and oxygenation|non-invasive ventilation",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

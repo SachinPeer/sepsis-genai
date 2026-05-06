@@ -1,0 +1,149 @@
+{
+  "patient_id": "eicu_p00073",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2833930,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 48.0,
+    "Gender": "Male",
+    "UnitType": "CCU-CTICU",
+    "HospitalId": "398",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 76.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 7.1,
+        "ts": "2024-06-01T01:27:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.73,
+        "ts": "2024-06-01T01:27:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 131.0,
+        "ts": "2024-06-01T01:27:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 136.0,
+        "ts": "2024-06-01T08:35:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 10.0,
+        "ts": "2024-06-01T01:27:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 32.0,
+        "ts": "2024-06-01T01:27:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.4,
+        "ts": "2024-06-01T01:27:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-9.3h): 20 - 40 pack years - still smoking | MD order (T-9.2h): gastrointestinal|medications|stress ulcer prophylaxis|omeprazole | MD order (T-9.2h): neurologic|neuromyopathy therapy|systemic glucocorticoid|prednisone | MD order (T-9.2h): cardiovascular|vascular disorders|VTE prophylaxis|low molecular weight heparin|enoxaparin | MD order (T-9.2h): pulmonary|medications|bronchodilator|beta-agonist|albuterol (Proventil, Ventolin) | MD order (T-9.2h): neurologic|seizure therapy|anticonvulsant|levetiracetam | MD order (T-9.2h): neurologic|pain / agitation / altered mentation|analgesics|narcotic analgesic | MD order (T-9.2h): cardiovascular|myocardial ischemia / infarction|antiplatelet agent|aspirin | MD order (T-9.3h): neurologic|neuromyopathy therapy|systemic glucocorticoid|prednisone",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

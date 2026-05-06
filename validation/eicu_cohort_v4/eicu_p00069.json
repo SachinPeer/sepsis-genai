@@ -1,0 +1,161 @@
+{
+  "patient_id": "eicu_p00069",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2637669,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 55.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "356",
+    "Ethnicity": "Other/Unknown"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 6.13,
+        "ts": "2024-05-31T20:43:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 0.9,
+        "ts": "2024-05-31T20:42:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.9,
+        "ts": "2024-05-31T20:43:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 273.0,
+        "ts": "2024-05-31T20:43:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 112.0,
+        "ts": "2024-06-01T07:10:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 12.0,
+        "ts": "2024-05-31T20:43:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.5,
+        "ts": "2024-05-31T20:43:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.6h): Include Allergies and Pre-Admission Meds | Note (Admission, T-11.6h): Include Social History and Family History | MD order (T-11.2h): infectious diseases|cultures / immuno-assays|cultures|blood | MD order (T-11.2h): renal|medications|systemic antibiotics|carbapenem | MD order (T-11.2h): cardiovascular|intravenous fluid|normal saline administration|moderate volume resuscitation (150-250 mls/hr) | MD order (T-11.2h): cardiovascular|vascular disorders|VTE prophylaxis|conventional heparin therapy|subcutaneous | MD order (T-11.2h): infectious diseases|cultures / immuno-assays|cultures|urine",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

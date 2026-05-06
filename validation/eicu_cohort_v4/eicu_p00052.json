@@ -1,0 +1,235 @@
+{
+  "patient_id": "eicu_p00052",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2603291,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 79.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "360",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [
+      {
+        "val": 106.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 114.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 110.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 112.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 110.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "DBP": [
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 48.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "MAP": [
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 80.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 80.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 66.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "Temp": [
+      {
+        "val": 37.22222222222222,
+        "ts": "2024-06-01T08:28:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 9.7,
+        "ts": "2024-06-01T11:18:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.99,
+        "ts": "2024-06-01T11:18:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 170.0,
+        "ts": "2024-06-01T11:18:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 109.0,
+        "ts": "2024-06-01T09:17:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T11:18:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 6.5,
+        "ts": "2024-06-01T00:13:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 26.5,
+        "ts": "2024-06-01T11:18:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.4,
+        "ts": "2024-06-01T11:18:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.3h): uses smokeless tobacco | MD order (T-6.2h): endocrine|intravenous fluid administration|normal saline administration | MD order (T-6.2h): cardiovascular|myocardial ischemia / infarction|anticoagulant administration|conventional heparin therapy|intravenous | MD order (T-6.2h): cardiovascular|non-operative procedures|cardiac angiography | MD order (T-6.2h): endocrine|thyroid disorder|thyroid hormone | MD order (T-6.2h): endocrine|glucose metabolism|insulin | MD order (T-6.2h): cardiovascular|consultations|Cardiac surgery consultation | MD order (T-6.2h): pulmonary|medications|antibacterials|quinolone|levofloxacin | MD order (T-6.2h): pulmonary|medications|antibacterials|macrolide|azithromycin",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "patient_id": "eicu_p00080",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2793359,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 75.0,
+    "Gender": "Male",
+    "UnitType": "CSICU",
+    "HospitalId": "382",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 85.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "DBP": [
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 74.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 73.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 76.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 73.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "MAP": [
+      {
+        "val": 73.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 77.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 79.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "Temp": [
+      {
+        "val": 37.4,
+        "ts": "2024-06-01T10:20:00"
+      },
+      {
+        "val": 37.6,
+        "ts": "2024-06-01T07:20:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 7.9,
+        "ts": "2024-06-01T07:50:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 1.5,
+        "ts": "2024-06-01T07:54:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.64,
+        "ts": "2024-06-01T07:50:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 217.0,
+        "ts": "2024-06-01T07:50:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 129.0,
+        "ts": "2024-06-01T11:45:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 34.0,
+        "ts": "2024-06-01T07:50:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.326,
+        "ts": "2024-06-01T07:54:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 27.4,
+        "ts": "2024-06-01T07:54:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 54.4,
+        "ts": "2024-06-01T07:54:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 2.6,
+        "ts": "2024-06-01T07:54:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-1.3h): cardiovascular|shock|inotropic agent|epinephrine <= 0.1 micrograms/kg/min | MD order (T-1.3h): gastrointestinal|medications|stress ulcer prophylaxis|pantoprazole | MD order (T-1.3h): cardiovascular|shock|inotropic agent|norepinephrine <= 0.1 micrograms/kg/min | MD order (T-1.3h): surgery|infection|antifungal therapy|prophylactic | MD order (T-1.3h): cardiovascular|cardiac surgery|implantation of LVAD | MD order (T-1.3h): surgery|pulmonary therapies|oxygen therapy (< 40%)|nasal cannula | MD order (T-1.3h): surgery|infection|prophylactic antibacterials|for surgery | MD order (T-1.3h): surgery|analgesics /sedatives/ nmbs|sedative agent",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

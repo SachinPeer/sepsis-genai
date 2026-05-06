@@ -1,0 +1,158 @@
+{
+  "patient_id": "eicu_p00084",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3243205,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 79.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "445",
+    "Ethnicity": "African American"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 56.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 60.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 56.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 62.0,
+        "ts": "2024-06-01T07:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.388888888888886,
+        "ts": "2024-06-01T10:53:00"
+      },
+      {
+        "val": 37.111111111111114,
+        "ts": "2024-06-01T06:51:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 32.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T07:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 10.1,
+        "ts": "2024-05-31T20:41:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.6,
+        "ts": "2024-05-31T20:41:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 221.0,
+        "ts": "2024-05-31T20:41:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 129.0,
+        "ts": "2024-05-31T20:41:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 31.0,
+        "ts": "2024-05-31T20:41:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 29.0,
+        "ts": "2024-05-31T20:41:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 15.4,
+        "ts": "2024-05-31T20:41:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-12.0h): Include Allergies and Pre-Admission Meds | Nurse charting (T-1.1h): Pain Present = Nonverbal | Nurse charting (T-5.2h): Pain Present = Nonverbal | Nurse charting (T-7.4h): Pain Present = No | Nurse charting (T-8.6h): Pain Present = No | MD order (T-5.3h): cardiovascular|vascular disorders|VTE prophylaxis|low molecular weight heparin|enoxaparin | MD order (T-5.3h): renal|electrolyte correction|treatment of hypernatremia|free water administration | MD order (T-5.3h): gastrointestinal|medications|antiemetic|serotonin antagonist|ondansetron | MD order (T-5.3h): cardiovascular|intravenous fluid|normal saline administration | MD order (T-5.3h): neurologic|procedures / diagnostics|MRI - head | MD order (T-5.3h): cardiovascular|vascular disorders|VTE prophylaxis|compression stockings | MD order (T-5.3h): general|support services|physical therapy consult | MD order (T-5.3h): general|support services|occupational therapy consult",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

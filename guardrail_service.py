@@ -216,18 +216,572 @@ class SepsisSafetyGuardrail:
                 return val
         return None
 
-    def validate_prediction(self, llm_output_json, raw_vitals: Dict[str, Any], 
+    # ---------- C1: Reasoning-aware guardrail suppression ----------
+    # Phrases below indicate the LLM has *explicitly identified a non-sepsis
+    # cause* for the patient's abnormal vitals (e.g. post-op stress, GI bleed,
+    # DKA, neurologic indication, physiologic recovery). When such language is
+    # present AND the LLM's own risk score is below the suppression threshold,
+    # the guardrail respects the LLM verdict instead of bumping it. This stops
+    # the guardrail from contradicting reasoning the LLM already articulated.
+    #
+    # Discovered empirically on the eICU v4 cohort (2026-02-11): 72% of false
+    # positives had non-sepsis explanations in the LLM rationale that the
+    # guardrail was ignoring. See validation/docs/EICU_VALIDATION_EXECUTION.md
+    # §8 for the full analysis.
+    _C1_DENIAL_PATTERNS = [
+        r"more\s+consistent\s+with\s+(?!sepsis|infection|septic|infectious)",
+        r"pattern\s+(more\s+)?consistent\s+with\s+(?!sepsis|infection|septic|infectious)",
+        r"does\s+not\s+indicate\s+sepsis",
+        r"\bnot\s+sepsis\b",
+        r"argues?\s+against\s+(evolving\s+)?(sepsis|infection)",
+        r"unlikely\s+(to\s+be\s+)?(sepsis|septic|infection)",
+        r"no\s+(clear\s+)?(infection|sepsis)\s+(signal|criteria|source|features?)",
+        r"physiologic\s+(recovery|response)",
+        r"alternative\s+diagnos",
+        r"emergence\s+from\s+(sedation|anesthesia)",
+        r"surgical\s+stress\s+response",
+        r"residual\s+(anesthet|sedat)",
+        r"reassuring\s+(context|features?|presentation)",
+        r"(typical|expected)\s+post[- ]?(operat|cardiac\s+surgery|surg|procedur)",
+        r"absent\s+(infection|sepsis|septic)",
+        r"non[- ]?infectious\s+(cause|aetiolog|etiolog)",
+        r"likely\s+(prophylact|surgical|mechanical|cardiac|gi|trauma|withdraw)",
+        r"is\s+typical\s+(post[- ]?(operat|surg|procedur))",
+        r"isolated\s+finding",
+    ]
+    _C1_SUPPRESSION_RISK_MAX = 50  # only suppress if LLM's own risk < this
+    _C1_DENIAL_REGEX = None  # lazy compile
+
+    @classmethod
+    def _c1_regex(cls):
+        if cls._C1_DENIAL_REGEX is None:
+            import re as _re
+            cls._C1_DENIAL_REGEX = _re.compile(
+                "|".join(cls._C1_DENIAL_PATTERNS), _re.IGNORECASE
+            )
+        return cls._C1_DENIAL_REGEX
+
+    def _llm_denies_sepsis(self, prediction: Dict[str, Any]) -> tuple:
+        """
+        C1 check: does the LLM's clinical_rationale explicitly identify a
+        non-sepsis cause? Returns (denies_bool, list_of_matched_phrases).
+        """
+        pred_data = (prediction or {}).get("prediction", {})
+        text = pred_data.get("clinical_rationale", "") or ""
+        regex = self._c1_regex()
+        hits = sorted({m.group(0).lower() for m in regex.finditer(text)})
+        return (len(hits) > 0, hits[:3])
+
+    def _c1_should_suppress(self, prediction: Dict[str, Any], llm_risk_score: float) -> tuple:
+        """
+        Returns (suppress_bool, list_of_matched_phrases).
+        Suppresses only if ALL of:
+          1. C1 enabled (env var ENABLE_C1_SUPPRESSION, default true)
+          2. LLM's own risk score < self._C1_SUPPRESSION_RISK_MAX
+          3. LLM rationale contains a denial phrase
+        """
+        if os.getenv("ENABLE_C1_SUPPRESSION", "true").lower() != "true":
+            return (False, [])
+        if llm_risk_score is None or llm_risk_score >= self._C1_SUPPRESSION_RISK_MAX:
+            return (False, [])
+        denies, hits = self._llm_denies_sepsis(prediction)
+        return (denies, hits)
+
+    def _c1_align_priority_with_risk(self, prediction: Dict[str, Any]) -> None:
+        """
+        After C1 suppression we want the alert's *priority* to be consistent
+        with the (now low) risk score. Otherwise an LLM that returned
+        "risk=35, priority=High" still drives downstream alerting even though
+        the model has explicitly explained the abnormality away. This forces
+        priority back to Standard whenever we suppress, so the audit trail
+        and the dashboard agree with each other.
+        """
+        pred_data = prediction.get("prediction", {}) or {}
+        try:
+            r = float(pred_data.get("risk_score_0_100", 0))
+        except Exception:
+            r = 0.0
+        if r < 50 and pred_data.get("priority") in ("High", "Critical"):
+            pred_data["original_llm_priority"] = pred_data.get("priority")
+            pred_data["priority"] = "Standard"
+        # And keep the 6-h prob field consistent if present
+        if r < 50 and pred_data.get("sepsis_probability_6h") in ("High", "Moderate"):
+            pred_data["original_llm_probability_6h"] = pred_data.get("sepsis_probability_6h")
+            pred_data["sepsis_probability_6h"] = "Low"
+
+    # ---------- C2: FP-pattern reasoning-aware suppression ----------
+    # C2 extends C1 by recognising five specific FP archetypes that the v6
+    # validation surfaced (eICU v4 cohort, 2026-02-11) - see
+    # validation/docs/SPECIFICITY_PATH_TO_60PCT.md for the full analysis.
+    #
+    # Where C1 catches "the LLM literally said 'not sepsis'", C2 catches:
+    #   br0  - override fired only on alkalosis (pH>=7.55) (never sepsis)
+    #   br1  - qSOFA=0 + SIRS<=1 + LLM<50 + no biomarker rescue
+    #   br2  - early-detection bump on patient with no biomarker rescue at all
+    #   br4  - single weak override + non-infectious context + LLM<40
+    #   br5  - LLM voted positive + non-infectious context + LLM<50
+    #   br6  - early-detection bump + non-infectious context
+    #   br7  - early-detection bump + stable/improving language + no rescue
+    #
+    # Each branch is gated by a "rescue signals" check that protects every
+    # one of the 28 v6 true positives - simulation showed 0 sensitivity loss
+    # while 27 of 70 false positives were correctly suppressed.
+
+    # ----- C2 pattern lists -----
+    # Phrases the LLM uses when it has identified a NON-INFECTIOUS aetiology
+    # for the patient's vital sign abnormalities. These are concrete clinical
+    # alternatives to sepsis (cardiogenic, GI bleed, post-op, drug, etc.).
+    _C2_NON_INFECTIOUS_CONTEXT_PATTERNS = [
+        r"acute\s+coronary\s+syndrome",
+        r"cardiogenic\s+shock",
+        r"acute\s+MI\b",
+        r"acute\s+myocardial",
+        r"cardiac\s+catheterization",
+        r"cardiac\s+pathology",
+        r"cardiac\s+(?:rather\s+than|not)\s+(?:septic|sepsis|infection)",
+        r"GI\s+bleed",
+        r"active\s+(?:GI|gastrointestinal)",
+        r"gastrointestinal\s+bleed",
+        r"variceal",
+        r"gi\s+source",
+        r"post[\s-]?operative",
+        r"post[\s-]?op\b",
+        r"surgical\s+stress",
+        r"cardiac\s+surgery",
+        r"emergence\s+from\s+(?:sedation|anesthesia)",
+        r"drug\s+overdose",
+        r"medication\s+overdose",
+        r"toxic\s+ingestion",
+        r"\bDKA\b",
+        r"diabetic\s+ketoacidos",
+        r"\bHHS\b",
+        r"COPD\s+exacerbation",
+        r"asthma\s+exacerbation",
+        r"status\s+asthmaticus",
+        r"hepatic\s+encephalopathy",
+        r"cirrhotic",
+        r"chronic\s+liver",
+        r"residual\s+(?:anesthet|sedat)",
+        r"transfusion\s+reaction",
+        r"alcoholic\s+ketoacidosis",
+        r"non[- ]?infectious",
+        r"(?:rather\s+than|not)\s+(?:septic|sepsis|infection)",
+        r"trauma\s+patient",
+        r"post[- ]?traumatic",
+        r"bone\s+marrow\s+(?:suppression|consumption)",
+        r"flash\s+pulmonary\s+edema",
+        r"anesthetic\s+effect",
+        r"sedation\s+effect",
+    ]
+
+    # Phrases the LLM uses when it sees a recovering or stable patient
+    # (the patient is improving, not decompensating into sepsis).
+    _C2_STABLE_IMPROVING_PATTERNS = [
+        r"stable[- ]to[- ]improving",
+        r"improving\s+(?:vital|trajectory|hemodynamic|trend|mental|respiratory)",
+        r"dramatic\s+(?:neurological\s+)?recovery",
+        r"physiologic\s+recovery",
+        r"hemodynamic\s+stabili[zs]ation",
+    ]
+
+    # Phrases that NEGATE the meaning of subsequent septic-shock language.
+    # E.g. "argues against septic shock" should NOT be treated as the
+    # LLM asserting septic shock.
+    _C2_NEGATION_PATTERNS = [
+        r"argues?\s+against",
+        r"rule\s+out",
+        r"rather\s+than",
+        r"not\s+(?:fulminant|septic|sepsis|imminent)",
+        r"absent\s+(?:fever|signs|hallmarks)",
+        r"lacks?\s+(?:sepsis|infectious)",
+        r"vs\.?\s+septic",
+        r"differential\s+(?:between|includes)",
+        r"non[- ]?(?:infectious|septic)",
+        r"argues?\s+for\s+(?:cardiogenic|hemorrhagic|other)",
+    ]
+
+    # Positive assertions of septic shock by the LLM (a sepsis-protective
+    # rescue signal). Negation-aware: the actual check examines preceding
+    # text via _c2_has_septic_shock_assertion.
+    _C2_SEPTIC_SHOCK_PATTERNS = [
+        r"(?:already\s+|patient\s+is\s+|currently\s+|established\s+|in\s+)"
+        r"(?:in\s+|with\s+)?(?:septic\s+shock|established\s+septic|established\s+sepsis)",
+        r"distributive\s+shock",
+        r"silent\s+sepsis(?:\s+pattern)?",
+        r"classic\s+'?silent\s+sepsis",
+        r"sepsis\s+with\s+(?:respiratory|organ|multi)",
+        r"septic\s+process(?:\s+despite|\s+with)",
+        r"established\s+septic\s+process",
+        r"existing\s+(?:septic|shock)\s+state",
+    ]
+
+    # Lactate / GCS extraction (text-based fallback if structured value missing)
+    _C2_LACTATE_RE = None  # lazy compile
+    _C2_GCS_RE = None      # lazy compile
+    _C2_NON_INFECT_RE = None
+    _C2_STABLE_RE = None
+    _C2_NEGATION_RE = None
+    _C2_SEPTIC_SHOCK_RE = None
+    _C2_OVERRIDE_TRIGGER_RE = None
+
+    # Override-trigger labels considered "weak" (single non-specific finding).
+    # Single-trigger overrides matching this set are candidates for Br4
+    # suppression when accompanied by a non-infectious context.
+    _C2_WEAK_OVERRIDE_TOKENS = (
+        "Elevated Lactate", "Critical Anemia", "Severe Acidosis",
+        "Severe Alkalosis", "Critical Tachypnea", "Critical Tachycardia",
+        "Severe Leukocytosis", "Critical Thrombocytopenia",
+    )
+
+    # Risk thresholds (hospital-tunable in future iteration)
+    _C2_BR4_LLM_RISK_MAX = 40   # br4 LLM risk ceiling (override + non-infect)
+    _C2_BR5_LLM_RISK_MAX = 50   # br5 LLM risk ceiling (LLM-only + non-infect)
+    _C2_BR0_LLM_RISK_MAX = 70   # br0 LLM risk ceiling (alkalosis-only override)
+
+    @classmethod
+    def _c2_compile_patterns(cls):
+        if cls._C2_LACTATE_RE is None:
+            import re as _re
+            cls._C2_LACTATE_RE = _re.compile(
+                r"lactate\s*(?:of\s*|=|:|\()?\s*(\d+\.?\d*)", _re.IGNORECASE)
+            cls._C2_GCS_RE = _re.compile(
+                r"GCS\s*(?:of\s*|=|:|\()?\s*(\d+)(?:\s*[-\u2014\u2013]\s*(\d+))?",
+                _re.IGNORECASE)
+            cls._C2_NON_INFECT_RE = _re.compile(
+                "|".join(cls._C2_NON_INFECTIOUS_CONTEXT_PATTERNS), _re.IGNORECASE)
+            cls._C2_STABLE_RE = _re.compile(
+                "|".join(cls._C2_STABLE_IMPROVING_PATTERNS), _re.IGNORECASE)
+            cls._C2_NEGATION_RE = _re.compile(
+                "|".join(cls._C2_NEGATION_PATTERNS), _re.IGNORECASE)
+            cls._C2_SEPTIC_SHOCK_RE = _re.compile(
+                "|".join(cls._C2_SEPTIC_SHOCK_PATTERNS), _re.IGNORECASE)
+            cls._C2_OVERRIDE_TRIGGER_RE = _re.compile(
+                r"\[GUARDRAIL OVERRIDE:\s*([^\]]+)\]")
+
+    # ----- C2 helpers -----
+    def _c2_extract_lactate_from_text(self, rationale: str) -> Optional[float]:
+        """Highest lactate value mentioned in the LLM rationale, or None.
+        Ignores values < 2.5 (we treat 2-2.4 as non-specific)."""
+        if not rationale:
+            return None
+        self._c2_compile_patterns()
+        highest = None
+        for m in self._C2_LACTATE_RE.finditer(rationale):
+            try:
+                v = float(m.group(1))
+                if v >= 2.5 and (highest is None or v > highest):
+                    highest = v
+            except Exception:
+                continue
+        return highest
+
+    def _c2_extract_gcs_from_text(self, rationale: str) -> Optional[int]:
+        """Lowest GCS value mentioned in the LLM rationale.
+        Returns the value if < 10 (severe altered mentation), else None."""
+        if not rationale:
+            return None
+        self._c2_compile_patterns()
+        for m in self._C2_GCS_RE.finditer(rationale):
+            try:
+                lo = int(m.group(1))
+                if lo < 10:
+                    return lo
+            except Exception:
+                continue
+        return None
+
+    def _c2_has_non_infectious_context(self, rationale: str) -> bool:
+        if not rationale:
+            return False
+        self._c2_compile_patterns()
+        return bool(self._C2_NON_INFECT_RE.search(rationale))
+
+    def _c2_has_stable_improving(self, rationale: str) -> bool:
+        if not rationale:
+            return False
+        self._c2_compile_patterns()
+        return bool(self._C2_STABLE_RE.search(rationale))
+
+    def _c2_has_septic_shock_assertion(self, rationale: str) -> bool:
+        """True only if a septic-shock phrase appears WITHOUT a negation
+        in the 60 characters preceding it."""
+        if not rationale:
+            return False
+        self._c2_compile_patterns()
+        for m in self._C2_SEPTIC_SHOCK_RE.finditer(rationale):
+            start = max(0, m.start() - 60)
+            preceding = rationale[start:m.start()]
+            if self._C2_NEGATION_RE.search(preceding):
+                continue  # negated, not a real assertion
+            return True
+        return False
+
+    def _c2_get_override_triggers(self, rationale: str) -> List[str]:
+        """Parse the '[GUARDRAIL OVERRIDE: ...]' tail of a rationale into
+        a list of trigger labels."""
+        if not rationale:
+            return []
+        self._c2_compile_patterns()
+        m = self._C2_OVERRIDE_TRIGGER_RE.search(rationale)
+        if not m:
+            return []
+        return [t.strip() for t in m.group(1).split(",") if t.strip()]
+
+    def _c2_is_single_weak_override(self, triggers: List[str]) -> bool:
+        if len(triggers) != 1:
+            return False
+        return any(tok in triggers[0] for tok in self._C2_WEAK_OVERRIDE_TOKENS)
+
+    @staticmethod
+    def _c2_lab_extreme(vitals: Dict[str, Any], key: str, agg: str = "max") -> Optional[float]:
+        """Return max/min of a vital that may be a list of {val, ts} dicts,
+        a list of scalars, or a single scalar. None if absent/empty."""
+        v = vitals.get(key)
+        if v is None:
+            return None
+        nums: List[float] = []
+        if isinstance(v, list):
+            for x in v:
+                if isinstance(x, dict) and x.get("val") is not None:
+                    try:
+                        nums.append(float(x["val"]))
+                    except Exception:
+                        continue
+                elif x not in (None, "", []):
+                    try:
+                        nums.append(float(x))
+                    except Exception:
+                        continue
+        else:
+            try:
+                nums.append(float(v))
+            except Exception:
+                return None
+        if not nums:
+            return None
+        return max(nums) if agg == "max" else min(nums)
+
+    def _c2_has_strong_rescue(self, prediction: Dict[str, Any],
+                               raw_vitals: Dict[str, Any],
+                               clinical_scores: Optional[Dict[str, Any]]) -> tuple:
+        """Sepsis-specific rescue signals - if any fires, C2 will not suppress.
+        Returns (has_strong_rescue, label_str)."""
+        rationale = (prediction.get("prediction", {}) or {}).get("clinical_rationale", "") or ""
+
+        lact_text = self._c2_extract_lactate_from_text(rationale)
+        if lact_text is not None:
+            return True, f"lactate-text>=2.5 ({lact_text})"
+
+        gcs_text = self._c2_extract_gcs_from_text(rationale)
+        if gcs_text is not None:
+            return True, f"GCS<10 ({gcs_text})"
+
+        if self._c2_has_septic_shock_assertion(rationale):
+            return True, "septic-shock-asserted"
+
+        lact_struct = self._c2_lab_extreme(raw_vitals, "Lactate", "max")
+        if lact_struct is None:
+            lact_struct = self._c2_lab_extreme(raw_vitals, "lactate", "max")
+        if lact_struct is not None and lact_struct >= 2.5:
+            return True, f"Lact>=2.5 ({lact_struct})"
+
+        if clinical_scores:
+            qsofa = (clinical_scores.get("qsofa") or {}).get("score")
+            sofa = (clinical_scores.get("sofa") or {}).get("score")
+            try:
+                if qsofa is not None and int(qsofa) >= 2:
+                    return True, f"qSOFA>=2 ({qsofa})"
+            except Exception:
+                pass
+            try:
+                if sofa is not None and int(sofa) >= 4:
+                    return True, f"SOFA>=4 ({sofa})"
+            except Exception:
+                pass
+
+        return False, ""
+
+    def _c2_find_rescue_signals(self, prediction: Dict[str, Any],
+                                 raw_vitals: Dict[str, Any],
+                                 clinical_scores: Optional[Dict[str, Any]]) -> List[str]:
+        """All rescue signals (strong + soft). Used by branches that require
+        any rescue absence (br1, br2, br7)."""
+        sigs: List[str] = []
+        strong, msg = self._c2_has_strong_rescue(prediction, raw_vitals, clinical_scores)
+        if strong:
+            sigs.append(msg)
+        wbc_max = self._c2_lab_extreme(raw_vitals, "WBC", "max") or self._c2_lab_extreme(raw_vitals, "wbc", "max")
+        wbc_min = self._c2_lab_extreme(raw_vitals, "WBC", "min") or self._c2_lab_extreme(raw_vitals, "wbc", "min")
+        if wbc_max is not None and wbc_max > 15:
+            sigs.append(f"WBC>15 ({wbc_max})")
+        if wbc_min is not None and wbc_min < 4:
+            sigs.append(f"WBC<4 ({wbc_min})")
+        cr_max = self._c2_lab_extreme(raw_vitals, "Creatinine", "max") or self._c2_lab_extreme(raw_vitals, "creatinine", "max")
+        if cr_max is not None and cr_max >= 3.0:
+            sigs.append(f"Cr>=3 ({cr_max})")
+        map_min = self._c2_lab_extreme(raw_vitals, "MAP", "min") or self._c2_lab_extreme(raw_vitals, "map", "min")
+        sbp_min = self._c2_lab_extreme(raw_vitals, "SBP", "min") or self._c2_lab_extreme(raw_vitals, "sbp", "min")
+        if map_min is not None and map_min < 65:
+            sigs.append(f"MAP<65 ({map_min})")
+        if sbp_min is not None and sbp_min < 90:
+            sigs.append(f"SBP<90 ({sbp_min})")
+        hco3_min = self._c2_lab_extreme(raw_vitals, "HCO3", "min") or self._c2_lab_extreme(raw_vitals, "bicarbonate", "min")
+        if hco3_min is not None and hco3_min < 20:
+            sigs.append(f"HCO3<20 ({hco3_min})")
+        return sigs
+
+    def _c2_should_suppress(self, prediction: Dict[str, Any],
+                              raw_vitals: Dict[str, Any],
+                              llm_original_risk: float,
+                              early_detection_fired: bool,
+                              override_fired: bool,
+                              override_triggers: List[str],
+                              clinical_scores: Optional[Dict[str, Any]]) -> tuple:
+        """C2 main decision. Returns (should_suppress, audit_dict).
+        audit_dict has keys: branch, reason, rescues_checked, llm_risk."""
+        if os.getenv("ENABLE_C2_SUPPRESSION", "false").lower() != "true":
+            return (False, {})
+
+        pred_data = prediction.get("prediction", {}) or {}
+        rationale = pred_data.get("clinical_rationale", "") or ""
+
+        try:
+            llm_risk = float(llm_original_risk) if llm_original_risk is not None else None
+        except Exception:
+            llm_risk = None
+        if llm_risk is None:
+            return (False, {})
+
+        # Pull qSOFA / SIRS from clinical_scores (deterministic guardrail computation)
+        qs = 0
+        ss = 0
+        if clinical_scores:
+            try:
+                qs = int((clinical_scores.get("qsofa") or {}).get("score") or 0)
+            except Exception:
+                qs = 0
+            try:
+                ss = int((clinical_scores.get("sirs") or {}).get("criteria_met") or 0)
+            except Exception:
+                ss = 0
+
+        rescues = self._c2_find_rescue_signals(prediction, raw_vitals, clinical_scores)
+        strong, _ = self._c2_has_strong_rescue(prediction, raw_vitals, clinical_scores)
+        has_non_infect = self._c2_has_non_infectious_context(rationale)
+        has_stable = self._c2_has_stable_improving(rationale)
+        is_llm_only = (not override_fired) and (not early_detection_fired)
+
+        audit_base = {
+            "llm_risk": llm_risk,
+            "qsofa": qs, "sirs_met": ss,
+            "rescues_found": rescues,
+            "non_infect_context": has_non_infect,
+            "stable_improving": has_stable,
+            "override_triggers": override_triggers,
+        }
+
+        # Br0 - alkalosis-only override is never a sepsis criterion
+        if (override_fired and override_triggers
+                and all("Alkalosis" in t for t in override_triggers)
+                and llm_risk < self._C2_BR0_LLM_RISK_MAX):
+            return (True, {**audit_base, "branch": "br0",
+                           "reason": "alkalosis-only override + LLM<70"})
+
+        # Br4 - single weak override + non-infectious context + LLM<40
+        if (override_fired and self._c2_is_single_weak_override(override_triggers)
+                and has_non_infect and llm_risk < self._C2_BR4_LLM_RISK_MAX
+                and not strong):
+            return (True, {**audit_base, "branch": "br4",
+                           "reason": "single-weak-override + non-infect + LLM<40"})
+
+        # Br5 - LLM voted positive on its own + non-infectious context + LLM<50
+        if (is_llm_only and has_non_infect
+                and llm_risk < self._C2_BR5_LLM_RISK_MAX
+                and not strong and qs <= 1 and ss <= 2):
+            return (True, {**audit_base, "branch": "br5",
+                           "reason": "LLM-only + non-infect + LLM<50"})
+
+        # Br6 - early-detection bump + non-infectious context
+        if (early_detection_fired and has_non_infect
+                and not strong and qs <= 1):
+            return (True, {**audit_base, "branch": "br6",
+                           "reason": "early-detection + non-infect"})
+
+        # Br7 - early-detection bump + stable/improving + no rescue at all
+        if (early_detection_fired and has_stable
+                and not rescues and qs <= 1):
+            return (True, {**audit_base, "branch": "br7",
+                           "reason": "early-detection + stable/improving + no rescue"})
+
+        # Br1 - formal criteria negative + LLM<50 + no rescue
+        if (qs == 0 and ss <= 1 and llm_risk < 50 and not rescues):
+            return (True, {**audit_base, "branch": "br1",
+                           "reason": "qSOFA=0, SIRS<=1, LLM<50, no rescue"})
+
+        # Br2 - early-detection bump + mild formal criteria + no rescue
+        if (early_detection_fired and qs <= 1 and ss <= 2 and not rescues):
+            return (True, {**audit_base, "branch": "br2",
+                           "reason": "early-detection bump, no rescue"})
+
+        return (False, {})
+
+    def _c2_apply_suppression(self, prediction: Dict[str, Any],
+                                llm_original_risk: float,
+                                audit: Dict[str, Any]) -> None:
+        """Restore the LLM's original verdict and force priority/probability
+        to Standard/Low. Records branch + reason in logic_gate."""
+        pred_data = prediction.setdefault("prediction", {})
+        try:
+            r = float(llm_original_risk) if llm_original_risk is not None else None
+        except Exception:
+            r = None
+
+        # Restore LLM's original risk score (undo any guardrail bump)
+        if r is not None:
+            current = pred_data.get("risk_score_0_100")
+            if current is None or float(current) > r:
+                pred_data["risk_score_0_100"] = r
+
+        # Force priority + probability consistent with low risk
+        if pred_data.get("priority") in ("High", "Critical"):
+            pred_data["original_llm_priority"] = pred_data.get("priority")
+        pred_data["priority"] = "Standard"
+        if pred_data.get("sepsis_probability_6h") in ("High", "Moderate"):
+            pred_data["original_llm_probability_6h"] = pred_data.get("sepsis_probability_6h")
+        pred_data["sepsis_probability_6h"] = "Low"
+
+        # Undo override flag (since C2 is overruling it)
+        lg = prediction.setdefault("logic_gate", {})
+        lg["guardrail_override"] = False
+        lg["c2_suppression_applied"] = True
+        lg["c2_branch"] = audit.get("branch")
+        lg["c2_reason"] = audit.get("reason")
+        lg["c2_llm_risk"] = audit.get("llm_risk")
+        lg["c2_qsofa"] = audit.get("qsofa")
+        lg["c2_sirs_met"] = audit.get("sirs_met")
+        lg["c2_rescues_checked"] = audit.get("rescues_found", [])
+        lg["c2_non_infect_context"] = audit.get("non_infect_context", False)
+        lg["c2_stable_improving"] = audit.get("stable_improving", False)
+
+    def validate_prediction(self, llm_output_json, raw_vitals: Dict[str, Any],
                            nursing_notes: str = "",
-                           patient_history: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+                           patient_history: Optional[Dict[str, Any]] = None,
+                           raw_vitals_timeseries: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
         Cross-references LLM risk scores with deterministic medical rules.
-        
+
         Args:
             llm_output_json: LLM prediction output (dict or JSON string)
-            raw_vitals: Dictionary of vital signs
+            raw_vitals: Dictionary of vital signs (typically already flattened
+                        to most-recent values per metric)
             nursing_notes: Optional nursing notes for discordance detection
             patient_history: Optional dict with 'conditions' (list of str) and 'medications' (list of str)
-            
+            raw_vitals_timeseries: Optional dictionary of vital signs in the
+                        original time-series format (list of {val, ts}). Used
+                        by C2 to look at min/max over the snapshot window
+                        (e.g. MAP nadir, WBC peak). When omitted, C2 falls
+                        back to raw_vitals.
+
         Returns:
             Validated prediction with override flags if triggered
         """
@@ -243,7 +797,19 @@ class SepsisSafetyGuardrail:
         pred_data = prediction.get("prediction", {})
         risk_score = pred_data.get("risk_score_0_100", 0)
         overrides = []
-        
+
+        # Snapshot the LLM's true initial risk + priority before any guardrail
+        # action mutates them. The simulator and the audit log both rely on
+        # this to recover what the LLM said vs. what the guardrails did.
+        prediction.setdefault("logic_gate", {})
+        if "llm_initial_risk_score" not in prediction["logic_gate"]:
+            try:
+                prediction["logic_gate"]["llm_initial_risk_score"] = float(risk_score)
+            except Exception:
+                prediction["logic_gate"]["llm_initial_risk_score"] = risk_score
+        if "llm_initial_priority" not in prediction["logic_gate"]:
+            prediction["logic_gate"]["llm_initial_priority"] = pred_data.get("priority")
+
         # =====================================================
         # HEMODYNAMIC CHECKS
         # =====================================================
@@ -491,32 +1057,66 @@ class SepsisSafetyGuardrail:
                     self.logger.warning(f"Discordance escalation: {detected_concerns}")
 
         # =====================================================
-        # EARLY DETECTION ESCALATION
+        # EARLY DETECTION ESCALATION  (with C1 reasoning-aware suppression)
         # =====================================================
         if early_warnings and not overrides and risk_score < self.escalation_risk_score:
-            pred_data["risk_score_0_100"] = max(risk_score, self.escalation_risk_score)
-            pred_data["priority"] = self.escalation_priority
-            self.logger.warning(f"Early detection escalation: {early_warnings}")
+            c1_suppress, c1_hits = self._c1_should_suppress(prediction, risk_score)
+            if c1_suppress:
+                # LLM explicitly identified a non-sepsis cause AND its own risk
+                # score is below the suppression threshold; respect that verdict.
+                prediction.setdefault("logic_gate", {})
+                prediction["logic_gate"]["c1_suppression_applied"] = True
+                prediction["logic_gate"]["c1_suppression_path"] = "early_detection"
+                prediction["logic_gate"]["c1_suppression_phrases"] = c1_hits
+                prediction["logic_gate"]["c1_original_risk_score"] = risk_score
+                prediction["logic_gate"]["c1_would_have_been_bumped_to"] = self.escalation_risk_score
+                self._c1_align_priority_with_risk(prediction)
+                self.logger.info(
+                    f"C1 suppression (early-detection path): risk={risk_score} "
+                    f"hits={c1_hits} warnings={early_warnings}"
+                )
+            else:
+                pred_data["risk_score_0_100"] = max(risk_score, self.escalation_risk_score)
+                pred_data["priority"] = self.escalation_priority
+                self.logger.warning(f"Early detection escalation: {early_warnings}")
 
         # =====================================================
-        # APPLY OVERRIDE LOGIC
+        # APPLY OVERRIDE LOGIC  (with C1 reasoning-aware suppression)
         # =====================================================
         if overrides and risk_score < self.min_risk_for_critical:
-            prediction["prediction"]["risk_score_0_100"] = self.forced_risk_score
-            prediction["prediction"]["priority"] = self.forced_priority
-            prediction["prediction"]["sepsis_probability_6h"] = self.forced_probability
-            
-            prediction.setdefault("logic_gate", {})
-            prediction["logic_gate"]["guardrail_override"] = True
-            prediction["logic_gate"]["override_reasons"] = overrides
-            prediction["logic_gate"]["original_risk_score"] = risk_score
-            prediction["logic_gate"]["override_count"] = len(overrides)
-            
-            rationale = prediction["prediction"].get("clinical_rationale", "")
-            prediction["prediction"]["clinical_rationale"] = \
-                f"{rationale} [GUARDRAIL OVERRIDE: {', '.join(overrides[:3])}{'...' if len(overrides) > 3 else ''}]"
-            
-            self.logger.warning(f"Guardrail OVERRIDE triggered: {len(overrides)} critical findings")
+            c1_suppress, c1_hits = self._c1_should_suppress(prediction, risk_score)
+            if c1_suppress:
+                # LLM has explicitly explained the abnormal vitals as non-sepsis;
+                # respect that and skip the forced override.
+                prediction.setdefault("logic_gate", {})
+                prediction["logic_gate"]["guardrail_override"] = False
+                prediction["logic_gate"]["c1_suppression_applied"] = True
+                prediction["logic_gate"]["c1_suppression_path"] = "override_logic"
+                prediction["logic_gate"]["c1_suppression_phrases"] = c1_hits
+                prediction["logic_gate"]["c1_original_risk_score"] = risk_score
+                prediction["logic_gate"]["c1_suppressed_overrides"] = overrides
+                prediction["logic_gate"]["override_reasons"] = []
+                self._c1_align_priority_with_risk(prediction)
+                self.logger.info(
+                    f"C1 suppression (override path): risk={risk_score} "
+                    f"hits={c1_hits} suppressed_overrides={overrides[:3]}"
+                )
+            else:
+                prediction["prediction"]["risk_score_0_100"] = self.forced_risk_score
+                prediction["prediction"]["priority"] = self.forced_priority
+                prediction["prediction"]["sepsis_probability_6h"] = self.forced_probability
+
+                prediction.setdefault("logic_gate", {})
+                prediction["logic_gate"]["guardrail_override"] = True
+                prediction["logic_gate"]["override_reasons"] = overrides
+                prediction["logic_gate"]["original_risk_score"] = risk_score
+                prediction["logic_gate"]["override_count"] = len(overrides)
+
+                rationale = prediction["prediction"].get("clinical_rationale", "")
+                prediction["prediction"]["clinical_rationale"] = \
+                    f"{rationale} [GUARDRAIL OVERRIDE: {', '.join(overrides[:3])}{'...' if len(overrides) > 3 else ''}]"
+
+                self.logger.warning(f"Guardrail OVERRIDE triggered: {len(overrides)} critical findings")
         else:
             prediction.setdefault("logic_gate", {})
             prediction["logic_gate"]["guardrail_override"] = False
@@ -530,6 +1130,61 @@ class SepsisSafetyGuardrail:
         # Add early warnings and history context to output
         prediction["logic_gate"]["early_warnings"] = early_warnings
         prediction["logic_gate"]["history_context"] = context_flags
+
+        # =====================================================
+        # C2 - Reasoning-aware FP-pattern suppression
+        # Runs AFTER override/early-detection logic. May undo a guardrail
+        # bump or LLM-driven priority="High" if the LLM rationale clearly
+        # describes a non-sepsis aetiology / stable trajectory and no
+        # sepsis-specific rescue signals are present.
+        # =====================================================
+        if os.getenv("ENABLE_C2_SUPPRESSION", "false").lower() == "true":
+            try:
+                # Compute deterministic clinical scores once for C2 to consume.
+                clinical_scores_for_c2 = None
+                try:
+                    clinical_scores_for_c2 = self.calculate_clinical_scores(raw_vitals)
+                except Exception as cs_err:
+                    self.logger.warning(f"C2: clinical_scores unavailable ({cs_err})")
+
+                # Recover the override-trigger labels: prefer the audit list,
+                # fall back to parsing the [GUARDRAIL OVERRIDE: ...] tail.
+                override_triggers = list(prediction.get("logic_gate", {}).get("override_reasons", []) or [])
+                if not override_triggers:
+                    override_triggers = self._c2_get_override_triggers(
+                        (prediction.get("prediction", {}) or {}).get("clinical_rationale", "") or ""
+                    )
+
+                early_detection_fired = bool(early_warnings)
+                override_fired = bool(prediction.get("logic_gate", {}).get("guardrail_override"))
+
+                # C2 prefers the time-series vitals so it can compute MAP-nadir,
+                # WBC-peak, etc. Falls back to flattened raw_vitals if absent.
+                vitals_for_c2 = raw_vitals_timeseries if raw_vitals_timeseries else raw_vitals
+
+                c2_suppress, c2_audit = self._c2_should_suppress(
+                    prediction=prediction,
+                    raw_vitals=vitals_for_c2,
+                    llm_original_risk=risk_score,
+                    early_detection_fired=early_detection_fired,
+                    override_fired=override_fired,
+                    override_triggers=override_triggers,
+                    clinical_scores=clinical_scores_for_c2,
+                )
+                if c2_suppress:
+                    self._c2_apply_suppression(
+                        prediction=prediction,
+                        llm_original_risk=risk_score,
+                        audit=c2_audit,
+                    )
+                    self.logger.info(
+                        f"C2 suppression {c2_audit.get('branch')}: "
+                        f"{c2_audit.get('reason')} | "
+                        f"llm_risk={c2_audit.get('llm_risk')} | "
+                        f"qSOFA={c2_audit.get('qsofa')} SIRS={c2_audit.get('sirs_met')}"
+                    )
+            except Exception as e:
+                self.logger.error(f"C2 suppression layer failed (non-fatal): {e}")
 
         return prediction
     

@@ -1,0 +1,184 @@
+{
+  "patient_id": "eicu_p00077",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1823356,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 36.0,
+    "Gender": "Male",
+    "UnitType": "MICU",
+    "HospitalId": "283",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.5,
+        "ts": "2024-06-01T09:42:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 10.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 10.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 23.3,
+        "ts": "2024-06-01T05:12:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 2.6,
+        "ts": "2024-05-31T20:21:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.97,
+        "ts": "2024-06-01T11:33:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 214.0,
+        "ts": "2024-06-01T05:12:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 156.0,
+        "ts": "2024-06-01T11:41:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T11:33:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.3,
+        "ts": "2024-06-01T11:33:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T11:33:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 41.0,
+        "ts": "2024-06-01T11:33:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.8,
+        "ts": "2024-06-01T05:12:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.9h): Include Review of Systems | Note (Admission, T-11.9h): Include Allergies and Pre-Admission Meds | Note (Admission, T-11.9h): change in bowel pattern | Nurse charting (T-6.7h): GCS total = 15 | Nurse charting (T-11.3h): GCS total = 15 | MD order (T-11.3h): endocrine|intravenous fluid administration|normal saline administration|aggressive volume resuscitation (>250 mls/hr) | MD order (T-11.3h): endocrine|glucose metabolism|insulin",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

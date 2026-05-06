@@ -1,0 +1,162 @@
+{
+  "patient_id": "eicu_p00025",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1553789,
+    "snapshot_offset_min_from_admit": 2584,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 51.0,
+    "Gender": "Male",
+    "UnitType": "Neuro ICU",
+    "HospitalId": "248",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 70.0,
+        "ts": "2024-06-02T19:00:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-02T18:00:00"
+      },
+      {
+        "val": 63.0,
+        "ts": "2024-06-02T17:00:00"
+      },
+      {
+        "val": 71.0,
+        "ts": "2024-06-02T16:00:00"
+      },
+      {
+        "val": 80.0,
+        "ts": "2024-06-02T15:00:00"
+      },
+      {
+        "val": 76.0,
+        "ts": "2024-06-02T14:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.0,
+        "ts": "2024-06-02T18:37:00"
+      },
+      {
+        "val": 36.888888888888886,
+        "ts": "2024-06-02T14:37:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-02T19:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-02T18:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-02T17:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-02T16:00:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-02T15:00:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-02T14:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-02T19:00:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-02T18:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-02T17:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-02T16:00:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-02T15:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-02T14:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 19.94,
+        "ts": "2024-06-02T11:36:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.67,
+        "ts": "2024-06-02T11:36:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 264.0,
+        "ts": "2024-06-02T11:36:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 134.0,
+        "ts": "2024-06-02T11:36:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-02T11:36:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 25.0,
+        "ts": "2024-06-02T11:36:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.8,
+        "ts": "2024-06-02T11:36:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.5h): GCS total = 15 | Nurse charting (T-4.5h): GCS total = 15 | Nurse charting (T-8.4h): GCS total = 14",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 2944,
+    "icd9_codes": [
+      "038.9, A41.9"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|sepsis"
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "patient_id": "eicu_p00109",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 521456,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 82.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "143",
+    "Ethnicity": "Hispanic"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 71.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.611111111111114,
+        "ts": "2024-06-01T09:03:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 13.0,
+        "ts": "2024-05-31T19:13:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.6,
+        "ts": "2024-05-31T19:13:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 221.0,
+        "ts": "2024-05-31T19:13:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 184.0,
+        "ts": "2024-06-01T08:58:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 20.0,
+        "ts": "2024-05-31T19:13:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.334,
+        "ts": "2024-06-01T02:15:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 27.3,
+        "ts": "2024-06-01T02:15:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 52.4,
+        "ts": "2024-06-01T02:15:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 10.6,
+        "ts": "2024-06-01T08:07:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Brief Progress, T-10.2h): Respiratory failure - evaluation and management | Note (Admission, T-11.2h): Include Social History and Family History | Note (Admission, T-11.2h): Include Allergies and Pre-Admission Meds | Note (Admission, T-11.2h): > 40 pack years - still smoking | Note (Brief Progress, T-11.4h): Hyperglycemia - active titration of insulin therapy | Nurse charting (T-3.0h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-3.0h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.0h): GCS total = 10 | Nurse charting (T-7.0h): GCS total = 10 | Nurse charting (T-7.0h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-7.0h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-8.9h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-8.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-9.9h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-9.9h): Sedation Scale/Score/Goal = RASS | MD order (T-10.4h): pulmonary|medications|sedative|propofol | MD order (T-10.4h): pulmonary|ventilation and oxygenation|mechanical ventilation|tidal volume 6-10 ml/kg | MD order (T-10.4h): pulmonary|medications|bronchodilator|ipratropium | MD order (T-10.4h): burns/trauma|trauma|splinting|orthopedic device | MD order (T-10.4h): cardiovascular|consultations|Cardiology consultation | MD order (T-10.4h): pulmonary|ventilation and oxygenation|oxygen therapy (> 60%) | MD order (T-10.4h): burns/trauma|consultations|Orthopedics consultation | MD order (T-10.4h): pulmonary|ventilation and oxygenation|mechanical ventilation|volume controlled",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

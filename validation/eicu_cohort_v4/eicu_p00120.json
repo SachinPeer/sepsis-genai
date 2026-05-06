@@ -1,0 +1,161 @@
+{
+  "patient_id": "eicu_p00120",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2627574,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 90.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "353",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 74.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 76.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 76.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 77.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 9.94,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.3,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 353.0,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 33.0,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 46.0,
+        "ts": "2024-05-31T22:10:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 9.5,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "FiO2": [
+      {
+        "val": 0.4,
+        "ts": "2024-05-31T22:10:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-10.5h): Include Social History and Family History | Note (Admission, T-10.5h): Include Allergies and Pre-Admission Meds | Nurse charting (T-3.4h): GCS total = 15 | Nurse charting (T-3.4h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.4h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-7.4h): GCS total = 15 | Nurse charting (T-7.4h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-7.4h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-11.4h): GCS total = 15 | Nurse charting (T-11.4h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-11.4h): Sedation Scale/Score/Goal = RASS | MD order (T-10.1h): pulmonary|consultations|Pulmonary/CCM consultation | MD order (T-10.1h): pulmonary|radiologic procedures / bronchoscopy|chest x-ray | MD order (T-10.1h): cardiovascular|ventricular dysfunction|intravenous diuretic|IV furosemide | MD order (T-10.1h): pulmonary|ventilation and oxygenation|non-invasive ventilation | MD order (T-10.1h): gastrointestinal|medications|stress ulcer prophylaxis|pantoprazole | MD order (T-10.1h): cardiovascular|myocardial ischemia / infarction|antiplatelet agent|aspirin | MD order (T-10.1h): cardiovascular|ventricular dysfunction|intravenous diuretic|IV diuretic - bolus infusion | MD order (T-10.1h): pulmonary|ventilation and oxygenation|oxygen therapy (< 40%)|nasal cannula",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

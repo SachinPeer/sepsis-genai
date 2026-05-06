@@ -1,0 +1,91 @@
+patient_id,patientunitstayid,age,gender,unit_type,hospital_id,is_sepsis,HR,SBP,DBP,MAP,Temp,Resp,O2Sat,labs_present,vital_types_ok,notes_chars,remove,flags
+eicu_p00002,1363755,79.0,Female,Med-Surg ICU,226,True,6,6,6,6,1,6,6,8,6,85,True,NOTES_EMPTY
+eicu_p00003,3136458,72.0,Female,Med-Surg ICU,436,True,6,0,0,0,1,6,6,9,3,2102,False,
+eicu_p00004,587426,83.0,Female,Med-Surg ICU,164,True,6,0,0,0,1,6,6,8,3,227,False,
+eicu_p00005,866114,82.0,Female,Med-Surg ICU,164,True,6,0,0,0,2,6,6,7,3,124,False,
+eicu_p00006,1090567,76.0,Male,Med-Surg ICU,200,True,6,0,0,0,2,6,6,8,3,774,False,
+eicu_p00008,3239262,88.0,Male,Med-Surg ICU,445,True,7,7,7,7,2,6,6,8,6,235,False,
+eicu_p00010,1076979,75.0,Female,Med-Surg ICU,201,True,6,0,0,0,1,6,6,7,3,40,False,
+eicu_p00013,3001552,0.0,Male,MICU,416,True,7,0,0,0,1,0,7,7,2,138,True,AGE_NEONATE|VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00014,3099676,65.0,Male,Med-Surg ICU,425,True,7,6,6,6,4,7,7,7,7,589,False,
+eicu_p00015,2705166,76.0,Male,Cardiac ICU,396,True,7,0,0,0,6,7,6,9,4,80,False,
+eicu_p00016,3344942,63.0,Female,Med-Surg ICU,459,True,7,7,7,7,1,7,7,10,6,276,False,
+eicu_p00019,3132859,49.0,Female,Med-Surg ICU,437,True,6,6,6,6,0,6,6,10,6,194,False,
+eicu_p00020,346380,73.0,Female,Med-Surg ICU,123,True,0,0,0,0,0,0,0,0,0,85,True,VITAL_HR_THIN|VITAL_RESP_THIN|VITAL_TYPES_THIN|LABS_MISSING|NOTES_EMPTY
+eicu_p00021,2682904,77.0,Male,Med-Surg ICU,407,True,6,6,6,6,6,0,6,8,6,85,True,VITAL_RESP_THIN|NOTES_EMPTY
+eicu_p00022,564485,42.0,Male,Med-Surg ICU,171,True,0,0,0,0,2,0,0,7,0,207,True,VITAL_HR_THIN|VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00023,3069831,66.0,Male,Med-Surg ICU,421,True,6,0,0,0,2,6,6,9,3,163,False,
+eicu_p00024,1118948,77.0,Female,Med-Surg ICU,202,True,4,0,0,0,0,0,4,0,2,85,True,VITAL_RESP_THIN|VITAL_TYPES_THIN|LABS_MISSING|NOTES_EMPTY
+eicu_p00025,2825734,64.0,Male,Med-Surg ICU,388,True,7,0,0,0,2,7,7,7,3,789,False,
+eicu_p00026,1553789,51.0,Male,Neuro ICU,248,True,6,0,0,0,2,6,6,7,3,123,False,
+eicu_p00027,187150,46.0,Female,Med-Surg ICU,67,True,6,0,0,0,2,6,6,7,3,506,False,
+eicu_p00028,1568171,84.0,Male,MICU,252,True,6,6,6,6,1,6,6,10,6,374,False,
+eicu_p00029,3149587,26.0,Male,Med-Surg ICU,436,True,7,0,0,0,2,7,7,6,3,1212,False,
+eicu_p00030,1075126,78.0,Female,Med-Surg ICU,206,True,6,0,0,0,1,6,6,9,3,586,False,
+eicu_p00031,2728472,54.0,Male,Cardiac ICU,392,True,6,0,0,0,1,6,6,8,3,654,False,
+eicu_p00032,2778495,64.0,Male,Med-Surg ICU,407,True,7,0,0,0,0,7,7,10,3,1161,False,
+eicu_p00033,2150580,47.0,Male,Med-Surg ICU,310,True,7,0,0,0,2,7,7,8,3,224,False,
+eicu_p00034,635827,57.0,Male,Med-Surg ICU,157,True,6,0,0,0,3,4,6,9,3,662,False,
+eicu_p00035,2826676,68.0,Male,Med-Surg ICU,388,True,6,0,0,0,1,6,6,6,3,85,True,NOTES_EMPTY
+eicu_p00038,701925,78.0,Female,Med-Surg ICU,154,True,6,6,6,6,0,6,6,10,6,165,False,
+eicu_p00040,3159526,58.0,Male,Med-Surg ICU,433,True,6,0,0,0,2,6,6,10,3,524,False,
+eicu_p00041,1056063,21.0,Female,Med-Surg ICU,196,False,6,0,0,0,1,6,6,7,3,86,False,
+eicu_p00042,514387,81.0,Female,Med-Surg ICU,140,False,7,0,0,0,1,7,7,7,3,212,False,
+eicu_p00043,859033,67.0,Female,Med-Surg ICU,176,False,7,0,0,0,0,7,7,7,3,191,False,
+eicu_p00044,300142,69.0,Male,Med-Surg ICU,95,False,6,0,0,0,1,0,0,7,1,39,True,VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00045,924223,76.0,Male,Med-Surg ICU,174,False,7,0,0,0,1,7,5,7,3,235,False,
+eicu_p00046,326250,40.0,Male,Med-Surg ICU,123,False,0,0,0,0,0,0,0,0,0,85,True,VITAL_HR_THIN|VITAL_RESP_THIN|VITAL_TYPES_THIN|LABS_MISSING|NOTES_EMPTY
+eicu_p00047,969631,76.0,Male,Cardiac ICU,181,False,6,0,0,0,2,6,6,7,3,526,False,
+eicu_p00048,337621,50.0,Male,Med-Surg ICU,110,False,6,0,0,0,4,0,5,3,3,85,True,VITAL_RESP_THIN|NOTES_EMPTY
+eicu_p00049,1066837,68.0,Female,Cardiac ICU,197,False,6,0,0,0,1,6,6,7,3,246,False,
+eicu_p00050,1182006,0.0,Female,MICU,208,False,6,0,0,0,2,6,6,7,3,85,True,AGE_NEONATE|NOTES_EMPTY
+eicu_p00051,313736,40.0,Male,Med-Surg ICU,123,False,0,0,0,0,1,0,0,0,0,85,True,VITAL_HR_THIN|VITAL_RESP_THIN|VITAL_TYPES_THIN|LABS_MISSING|NOTES_EMPTY
+eicu_p00052,313055,53.0,Male,CCU-CTICU,110,False,6,0,0,0,1,6,2,7,2,39,True,VITAL_TYPES_THIN
+eicu_p00053,163137,47.0,Female,Med-Surg ICU,73,False,6,0,0,0,1,6,5,7,3,537,False,
+eicu_p00054,333689,82.0,Male,Med-Surg ICU,125,False,6,0,0,0,0,0,6,7,2,40,True,VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00055,261520,78.0,Male,Med-Surg ICU,92,False,6,6,6,6,6,0,6,9,6,828,True,VITAL_RESP_THIN
+eicu_p00056,382892,34.0,Female,Med-Surg ICU,123,False,0,0,0,0,0,0,0,0,0,85,True,VITAL_HR_THIN|VITAL_RESP_THIN|VITAL_TYPES_THIN|LABS_MISSING|NOTES_EMPTY
+eicu_p00057,1061893,69.0,Female,MICU,194,False,6,0,0,0,1,6,6,6,3,1219,False,
+eicu_p00058,445750,0.0,Male,Med-Surg ICU,143,False,6,0,0,0,2,6,6,8,3,263,True,AGE_NEONATE
+eicu_p00059,403605,33.0,Male,Med-Surg ICU,122,False,6,0,0,0,1,6,6,0,3,39,True,LABS_MISSING
+eicu_p00060,1247906,71.0,Female,Med-Surg ICU,215,False,6,0,0,0,0,6,0,7,2,85,True,VITAL_TYPES_THIN|NOTES_EMPTY
+eicu_p00061,1059533,67.0,Female,MICU,197,False,6,0,0,0,2,6,6,7,3,513,False,
+eicu_p00062,341781,49.0,Male,CTICU,122,False,6,0,0,0,6,5,6,9,4,39,False,
+eicu_p00063,1063742,53.0,Male,Med-Surg ICU,196,False,7,0,0,0,2,7,7,4,3,138,False,
+eicu_p00064,977269,81.0,Female,CSICU,183,False,0,0,0,0,2,0,0,4,0,526,True,VITAL_HR_THIN|VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00065,1056912,76.0,Female,SICU,195,False,6,0,0,0,2,6,6,9,3,507,False,
+eicu_p00066,1067235,65.0,Female,MICU,197,False,6,0,0,0,3,6,6,5,3,509,False,
+eicu_p00067,1054428,27.0,Male,Med-Surg ICU,188,False,6,0,0,0,2,6,6,7,3,972,False,
+eicu_p00068,1155753,49.0,Female,Med-Surg ICU,207,False,7,0,0,0,1,7,7,7,3,85,True,NOTES_EMPTY
+eicu_p00069,968367,86.0,Female,Med-Surg ICU,180,False,6,0,0,0,0,6,6,7,3,964,False,
+eicu_p00070,1071594,65.0,Female,Med-Surg ICU,196,False,6,0,0,0,1,6,6,8,3,236,False,
+eicu_p00071,356949,23.0,Male,Med-Surg ICU,112,False,6,0,0,0,1,6,6,0,3,85,True,LABS_MISSING|NOTES_EMPTY
+eicu_p00072,1201396,77.0,Female,Med-Surg ICU,207,False,6,0,0,0,1,6,6,7,3,85,True,NOTES_EMPTY
+eicu_p00073,1093806,77.0,Female,Med-Surg ICU,203,False,6,0,0,0,1,6,6,3,3,40,False,
+eicu_p00074,453326,85.0,Male,Med-Surg ICU,143,False,6,0,0,0,1,6,6,7,3,207,False,
+eicu_p00075,1226362,76.0,Female,Med-Surg ICU,224,False,6,0,0,0,0,6,6,7,3,85,True,NOTES_EMPTY
+eicu_p00076,1109136,78.0,Male,Med-Surg ICU,206,False,6,6,6,6,2,6,6,8,6,479,False,
+eicu_p00077,942382,0.0,Female,Med-Surg ICU,174,False,6,0,0,0,2,6,5,7,3,96,True,AGE_NEONATE
+eicu_p00078,380316,39.0,Female,Med-Surg ICU,125,False,6,0,0,0,2,0,6,7,2,729,True,VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00079,246997,62.0,Male,Med-Surg ICU,92,False,6,6,6,6,2,6,6,9,6,610,False,
+eicu_p00080,375855,42.0,Male,Med-Surg ICU,131,False,0,0,0,0,2,0,0,7,0,39,True,VITAL_HR_THIN|VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00081,650415,66.0,Male,Med-Surg ICU,171,False,6,0,0,0,1,6,6,7,3,123,False,
+eicu_p00082,158906,57.0,Female,Med-Surg ICU,63,False,6,0,0,0,1,0,1,0,1,588,True,VITAL_RESP_THIN|VITAL_TYPES_THIN|LABS_MISSING
+eicu_p00083,381129,73.0,Female,Cardiac ICU,122,False,6,0,0,0,0,6,6,1,3,805,True,LABS_THIN
+eicu_p00084,1113267,79.0,Male,Med-Surg ICU,199,False,6,0,0,0,1,6,6,7,3,241,False,
+eicu_p00085,211144,67.0,Female,Med-Surg ICU,71,False,6,0,0,0,1,0,6,7,2,570,True,VITAL_RESP_THIN|VITAL_TYPES_THIN
+eicu_p00086,482789,79.0,Male,Med-Surg ICU,143,False,6,0,0,0,1,6,4,4,3,275,False,
+eicu_p00087,1089400,78.0,Male,Med-Surg ICU,204,False,6,0,0,0,1,6,6,7,3,123,False,
+eicu_p00088,634295,36.0,Male,Med-Surg ICU,158,False,6,0,0,0,2,0,0,0,1,123,True,VITAL_RESP_THIN|VITAL_TYPES_THIN|LABS_MISSING
+eicu_p00089,572556,34.0,Male,Med-Surg ICU,157,False,6,0,0,0,0,6,6,4,3,82,False,
+eicu_p00090,416103,71.0,Male,Med-Surg ICU,115,False,6,0,0,0,2,6,6,8,3,758,False,
+eicu_p00091,383124,22.0,Female,Med-Surg ICU,138,False,6,0,0,0,0,6,6,0,3,85,True,LABS_MISSING|NOTES_EMPTY
+eicu_p00092,1177589,74.0,Male,Med-Surg ICU,210,False,6,0,0,0,3,6,6,1,3,322,True,LABS_THIN
+eicu_p00093,1115614,0.0,Female,Med-Surg ICU,203,False,6,0,0,0,2,6,6,7,3,39,True,AGE_NEONATE
+eicu_p00094,922231,30.0,Female,Neuro ICU,167,False,6,0,0,0,0,6,3,4,2,417,True,VITAL_TYPES_THIN
+eicu_p00095,216951,46.0,Female,Neuro ICU,73,False,7,0,0,0,1,7,6,0,3,584,True,LABS_MISSING
+eicu_p00096,926316,78.0,Female,Med-Surg ICU,154,False,6,6,6,6,1,6,6,9,6,124,False,
+eicu_p00097,547540,67.0,Male,Med-Surg ICU,164,False,6,0,0,0,1,6,6,1,3,39,True,LABS_THIN
+eicu_p00098,1131143,78.0,Female,Med-Surg ICU,206,False,6,0,0,0,2,6,6,10,3,847,False,
+eicu_p00099,569865,64.0,Male,Med-Surg ICU,164,False,6,0,0,0,1,6,5,7,3,82,False,
+eicu_p00100,1162903,89.0,Male,Med-Surg ICU,207,False,7,0,0,0,2,7,7,7,3,85,True,NOTES_EMPTY

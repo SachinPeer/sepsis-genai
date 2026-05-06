@@ -1,0 +1,164 @@
+{
+  "patient_id": "eicu_p00087",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2691019,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 72.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "405",
+    "Ethnicity": "Other/Unknown"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 89.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.0,
+        "ts": "2024-06-01T11:10:00"
+      },
+      {
+        "val": 37.111111111111114,
+        "ts": "2024-06-01T07:10:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 3.0,
+        "ts": "2024-06-01T01:20:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.97,
+        "ts": "2024-05-31T15:55:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 497.0,
+        "ts": "2024-05-31T15:55:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 118.0,
+        "ts": "2024-06-01T08:50:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 18.0,
+        "ts": "2024-05-31T15:55:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 8.0,
+        "ts": "2024-05-31T15:55:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 25.0,
+        "ts": "2024-05-31T15:55:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 8.3,
+        "ts": "2024-05-31T15:55:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.8h): GCS total = 14 | Nurse charting (T-4.8h): GCS total = 14 | Nurse charting (T-8.8h): GCS total = 14 | Nurse charting (T-11.8h): GCS total = 13 | MD order (T-11.2h): gastrointestinal|medications|stress ulcer prophylaxis|pantoprazole | MD order (T-11.2h): surgery|tubes and catheters|foley catheter | MD order (T-11.2h): pulmonary|ventilation and oxygenation|oxygen therapy (40% to 60%) | MD order (T-11.2h): neurologic|pain / agitation / altered mentation|analgesics | MD order (T-11.2h): neurologic|procedures / diagnostics|head CT scan | MD order (T-11.2h): endocrine|glucose metabolism|insulin | MD order (T-11.2h): cardiovascular|ventricular dysfunction|intravenous diuretic|IV furosemide | MD order (T-11.2h): pulmonary|radiologic procedures / bronchoscopy|chest x-ray",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

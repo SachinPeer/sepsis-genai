@@ -1,0 +1,154 @@
+{
+  "patient_id": "eicu_p00145",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 910051,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 67.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "157",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 87.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 102.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.1,
+        "ts": "2024-06-01T09:55:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 9.9,
+        "ts": "2024-05-31T21:08:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.06,
+        "ts": "2024-05-31T21:08:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 218.0,
+        "ts": "2024-05-31T21:08:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 119.0,
+        "ts": "2024-06-01T10:18:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 10.0,
+        "ts": "2024-05-31T21:08:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 23.0,
+        "ts": "2024-05-31T21:08:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 17.3,
+        "ts": "2024-05-31T21:08:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.1h): GCS total = 15 | Nurse charting (T-1.1h): GCS total = 15 | Nurse charting (T-2.1h): GCS total = 15 | Nurse charting (T-3.1h): GCS total = 15 | Nurse charting (T-4.1h): GCS total = 15 | Nurse charting (T-5.1h): GCS total = 15 | Nurse charting (T-6.1h): GCS total = 15 | Nurse charting (T-7.1h): GCS total = 15 | Nurse charting (T-8.1h): GCS total = 15 | Nurse charting (T-9.1h): GCS total = 15 | MD order (T-11.8h): cardiovascular|ventricular dysfunction|vasodilator|nicardipine",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "patient_id": "eicu_p00029",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2728472,
+    "snapshot_offset_min_from_admit": 539,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 54.0,
+    "Gender": "Male",
+    "UnitType": "Cardiac ICU",
+    "HospitalId": "392",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 104.0,
+        "ts": "2024-06-01T06:56:00"
+      },
+      {
+        "val": 106.0,
+        "ts": "2024-06-01T05:56:00"
+      },
+      {
+        "val": 105.0,
+        "ts": "2024-06-01T04:56:00"
+      },
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T03:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.6,
+        "ts": "2024-06-01T05:50:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T06:56:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T05:56:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T04:56:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T03:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T05:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T04:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T03:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 3.2,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 2.5,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.8,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 30.0,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 141.0,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 7.0,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 33.0,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 10.2,
+        "ts": "2024-06-01T05:40:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-3.1h): GCS total = 14 | Nurse charting (T-7.2h): GCS total = 10 | Nurse charting (T-8.9h): GCS total = 13 | MD order (T-8.6h): neurologic|pain / agitation / altered mentation|sedative agent|diazepam | MD order (T-8.6h): neurologic|pain / agitation / altered mentation|sedative agent|lorazepam | MD order (T-8.6h): infectious diseases|cultures / immuno-assays|cultures | MD order (T-8.6h): cardiovascular|intravenous fluid|normal saline administration|fluid bolus (250-1000mls) | MD order (T-8.6h): pulmonary|radiologic procedures / bronchoscopy|chest x-ray | MD order (T-8.6h): infectious diseases|medications|therapeutic antibacterials",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 899,
+    "icd9_codes": [
+      "038.9, A41.9",
+      "995.92, R65.2",
+      "995.92, R65.20"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|sepsis",
+      "cardiovascular|shock / hypotension|sepsis|severe",
+      "infectious diseases|systemic/other infections|sepsis|severe"
+    ]
+  }
+}

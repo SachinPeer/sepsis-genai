@@ -1,0 +1,154 @@
+{
+  "patient_id": "eicu_p00074",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 978518,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 87.0,
+    "Gender": "Male",
+    "UnitType": "Neuro ICU",
+    "HospitalId": "183",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 51.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 46.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 51.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 51.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 47.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 57.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.7,
+        "ts": "2024-06-01T08:26:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 3.5,
+        "ts": "2024-06-01T00:45:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.26,
+        "ts": "2024-06-01T00:45:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 133.0,
+        "ts": "2024-06-01T00:45:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 164.0,
+        "ts": "2024-06-01T08:16:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 29.0,
+        "ts": "2024-06-01T00:45:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 30.0,
+        "ts": "2024-06-01T00:45:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.1,
+        "ts": "2024-06-01T00:45:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-1.6h): Pain Score/Goal = 0 | Nurse charting (T-1.6h): GCS total = 15 | Nurse charting (T-1.6h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-1.6h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.6h): GCS total = 15 | Nurse charting (T-3.6h): Pain Score/Goal = 0 | Nurse charting (T-3.6h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.6h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-5.6h): GCS total = 15 | Nurse charting (T-5.6h): Pain Score/Goal = 0 | MD order (T-11.6h): neurologic|ICH/ cerebral infarct|antihypertensives|hydralazine | MD order (T-11.6h): neurologic|consultations|Neurosurgery consultation",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "patient_id": "eicu_p00115",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2622629,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 89.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "364",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 74.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 71.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 67.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 11.2,
+        "ts": "2024-05-31T20:12:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.3,
+        "ts": "2024-05-31T20:12:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 303.0,
+        "ts": "2024-05-31T20:12:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T08:20:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 62.0,
+        "ts": "2024-05-31T20:12:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 17.0,
+        "ts": "2024-05-31T20:12:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 6.4,
+        "ts": "2024-06-01T04:28:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-8.9h): Include Allergies and Pre-Admission Meds | Note (Admission, T-8.9h): Include Social History and Family History | Nurse charting (T-3.5h): GCS total = 15 | Nurse charting (T-7.9h): GCS total = 15 | Nurse charting (T-11.9h): GCS total = 14 | MD order (T-8.3h): endocrine|glucose metabolism|oral hypoglycemic administration | MD order (T-8.3h): infectious diseases|cultures / immuno-assays|cultures|urine | MD order (T-8.3h): renal|electrolyte correction|treatment of hyperkalemia|alkalinization | MD order (T-8.3h): renal|electrolyte correction|treatment of hyperkalemia|insulin / glucose | MD order (T-8.3h): pulmonary|radiologic procedures / bronchoscopy|chest x-ray | MD order (T-8.3h): infectious diseases|medications|therapeutic antibacterials|quinolone|levofloxacin | MD order (T-8.3h): hematology|coagulation and platelets|blood product administration|packed red blood cells | MD order (T-8.3h): gastrointestinal|medications|antiemetic",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

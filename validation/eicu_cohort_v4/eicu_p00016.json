@@ -1,0 +1,158 @@
+{
+  "patient_id": "eicu_p00016",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1008970,
+    "snapshot_offset_min_from_admit": 1631,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 49.0,
+    "Gender": "Male",
+    "UnitType": "MICU",
+    "HospitalId": "188",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 86.0,
+        "ts": "2024-06-02T03:10:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-02T02:10:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-02T01:10:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-02T00:10:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T23:10:00"
+      },
+      {
+        "val": 89.0,
+        "ts": "2024-06-01T22:10:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.111111111111114,
+        "ts": "2024-06-02T00:45:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 15.0,
+        "ts": "2024-06-02T03:10:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-02T02:10:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-02T01:10:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-02T00:10:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T23:10:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T22:10:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-02T03:10:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-02T02:10:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-02T01:10:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-02T00:10:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T23:10:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T22:10:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 10.7,
+        "ts": "2024-06-01T22:05:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.6,
+        "ts": "2024-06-01T22:05:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 180.0,
+        "ts": "2024-06-01T22:05:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 137.0,
+        "ts": "2024-06-01T22:06:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T22:05:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T22:05:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.8,
+        "ts": "2024-06-01T22:05:00"
+      }
+    ]
+  },
+  "patient_notes": "Nursing assessment (T-0.4h, Reflexes): Cough/Gag Reflex: present | Nursing assessment (T-0.4h, Intervention): Pressure Sore Risk Interventions: maximal remobilization; Interventions: use commercial moisture barrier; Interventions: address cause if possible; Interventions: act quickly to alleviate deficits | Nursing assessment (T-0.4h, Cough): Cough: productive; Cough: strong | Nursing assessment (T-0.4h, Neurologic): LOC: normal; Orientation: unable to assess; Speech: ET/Trach; Stimulus: spontaneous | Nursing assessment (T-0.4h, Braden Scale): Braden Score Total: 15; Sensory Perception: 3. slightly limited; Moisture: 4. rarely moist; Mobility: 2. very limited | Nursing assessment (T-0.4h, Breath Sounds): Right Upper: clear to auscultation; Right Lower: diminished; Left Upper: clear to auscultation; Left Lower: diminished | Nursing assessment (T-0.4h, Edema): Edema: no edema | Nursing assessment (T-0.4h, Skin Color/Temp): Skin Color/Temp: warm | Nurse charting (T-0.5h): GCS total = 15 | Nurse charting (T-0.5h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-0.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-2.4h): GCS total = 15 | Nurse charting (T-2.4h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-2.4h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-4.7h): GCS total = 15 | Nurse charting (T-4.7h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-4.7h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-6.2h): GCS total = 15",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 1991,
+    "icd9_codes": [
+      "038.9, A41.9"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|sepsis"
+    ]
+  }
+}

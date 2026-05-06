@@ -1,0 +1,158 @@
+{
+  "patient_id": "eicu_p00047",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 263850,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 62.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "108",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 107.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 114.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 106.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.6,
+        "ts": "2024-06-01T10:45:00"
+      },
+      {
+        "val": 37.3,
+        "ts": "2024-06-01T07:45:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 27.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 28.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 12.73,
+        "ts": "2024-06-01T01:20:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.83,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 278.0,
+        "ts": "2024-06-01T01:20:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 171.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 31.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 15.4,
+        "ts": "2024-06-01T01:20:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Brief Progress, T-11.7h): Diagnostic test evaluation | Note (Brief Progress, T-11.7h): Hypotension - evaluation and management | Note (Brief Progress, T-11.7h): Arrhythmia - evaluation and management | Note (Admission, T-11.9h): Include Allergies and Pre-Admission Meds | Note (Admission, T-11.9h): Include Review of Systems | Nurse charting (T-4.2h): GCS total = 15 | MD order (T-0.2h): pulmonary|ventilation and oxygenation|oxygen therapy (< 40%)|nasal cannula | MD order (T-0.2h): cardiovascular|consultations|Cardiology consultation | MD order (T-0.2h): cardiovascular|non-operative procedures|diagnostic ultrasound of heart | MD order (T-0.2h): renal|intravenous fluid|normal saline administration | MD order (T-0.2h): endocrine|electrolyte correction|administration of electrolytes|magnesium | MD order (T-0.2h): cardiovascular|arrhythmias|antiarrhythmics|class IV antiarrhythmic|diltiazem | MD order (T-0.2h): endocrine|thyroid disorder|glucocorticoids|hydrocortisone | MD order (T-0.2h): renal|intravenous fluid|hypotonic fluid administration|D5 half-normal saline",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

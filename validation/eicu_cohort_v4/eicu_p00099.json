@@ -1,0 +1,192 @@
+{
+  "patient_id": "eicu_p00099",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2798666,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 90.0,
+    "Gender": "Male",
+    "UnitType": "CCU-CTICU",
+    "HospitalId": "394",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 47.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 52.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 57.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 47.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 38.1,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 38.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 38.1,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 38.3,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 38.3,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 38.2,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 6.5,
+        "ts": "2024-05-31T17:09:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 0.8,
+        "ts": "2024-06-01T01:01:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.67,
+        "ts": "2024-05-31T17:09:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 110.0,
+        "ts": "2024-05-31T17:09:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 123.0,
+        "ts": "2024-06-01T11:54:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 25.0,
+        "ts": "2024-05-31T17:09:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.494,
+        "ts": "2024-06-01T01:01:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 23.2,
+        "ts": "2024-06-01T01:01:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 30.6,
+        "ts": "2024-06-01T01:01:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 9.0,
+        "ts": "2024-06-01T08:24:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-8.6h): Include Social History and Family History | Note (Admission, T-8.6h): Include Allergies and Pre-Admission Meds | Nursing assessment (T-0.6h, Edema): Edema: no edema | Nursing assessment (T-0.6h, Breath Sounds): Left Upper: rhonchi; Right Upper: diminished; Right Upper: rhonchi; Right Lower: diminished | Nursing assessment (T-0.6h, Pattern): Pattern: unlabored; Pattern: regular | Nursing assessment (T-0.6h, Secretions): Secretions: moderate; Secretions: bloody; Secretions: frothy | Nursing assessment (T-0.6h, Motor Strength): Motor Strength: normal | Nursing assessment (T-0.6h, Pupils): Pupils: pupils equal, react to light; Right: 2 mm; Right: react to light; Left: 2 mm | Nursing assessment (T-0.6h, Pulses): Right Posterior Tibial: faint; Right Dorsalis Pedis: faint; Right Radial: strong; Left Posterior Tibial: faint | Nursing assessment (T-0.6h, Neurologic): LOC: sedated; Orientation: to person; Orientation: to place; Orientation: to time | Nurse charting (T-0.1h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-0.1h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-0.1h): Pain Score/Goal = 0 | Nurse charting (T-0.1h): GCS total = 13 | Nurse charting (T-0.6h): GCS total = 13 | Nurse charting (T-0.6h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-0.6h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-0.6h): Pain Score/Goal = 0 | Nurse charting (T-1.6h): Pain Score/Goal = 0 | Nurse charting (T-1.6h): GCS total = 13 | MD order (T-6.8h): pulmonary|medications|sedative | MD order (T-6.8h): pulmonary|consultations|Pulmonary/CCM consultation | MD order (T-6.8h): endocrine|electrolyte correction|administration of electrolytes | MD order (T-6.8h): pulmonary|ventilation and oxygenation|CPAP/PEEP therapy | MD order (T-6.8h): hematology|coagulation and platelets|blood product administration|packed red blood cells | MD order (T-6.8h): pulmonary|medications|bronchodilator | MD order (T-6.8h): pulmonary|ventilation and oxygenation|ventilator weaning | MD order (T-6.8h): renal|electrolyte correction|electrolyte administration|calcium",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

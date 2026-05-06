@@ -1,0 +1,150 @@
+{
+  "patient_id": "eicu_p00042",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1067235,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 65.0,
+    "Gender": "Female",
+    "UnitType": "MICU",
+    "HospitalId": "197",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 89.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 87.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 89.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.4,
+        "ts": "2024-06-01T11:49:00"
+      },
+      {
+        "val": 37.22222222222222,
+        "ts": "2024-06-01T09:33:00"
+      },
+      {
+        "val": 37.6,
+        "ts": "2024-06-01T08:28:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.37,
+        "ts": "2024-06-01T07:03:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 202.0,
+        "ts": "2024-06-01T08:29:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 77.0,
+        "ts": "2024-06-01T07:03:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T07:03:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 6.6,
+        "ts": "2024-06-01T07:03:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-3.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.5h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-6.5h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-6.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-7.5h): GCS total = 15 | Nurse charting (T-7.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-7.5h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-11.5h): GCS total = 15 | MD order (T-11.0h): renal|electrolyte correction|electrolyte administration|potassium | MD order (T-11.0h): renal|electrolyte correction|electrolyte administration|intravenous | MD order (T-11.0h): gastrointestinal|intravenous fluid administration|blood product administration|packed red blood cells|transfusion of 1-2 units prbc's | MD order (T-11.0h): gastrointestinal|medications|stress ulcer treatment|pantoprazole|IV",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

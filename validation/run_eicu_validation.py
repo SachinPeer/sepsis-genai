@@ -22,7 +22,7 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-COHORT_DIR = Path(__file__).parent / "eicu_cohort"
+DEFAULT_COHORT_DIR = Path(__file__).parent / "eicu_cohort"
 RESULTS_DIR = Path(__file__).parent / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
@@ -31,7 +31,7 @@ load_dotenv(env_path, override=True)
 API_KEY = os.getenv("API_KEY", "sepsis_api_key_2024")
 API_URL = "http://localhost:8000/classify"
 
-DELAY_BETWEEN_CALLS = 2
+DELAY_BETWEEN_CALLS = 1
 
 
 def build_api_input(patient_json: dict) -> dict:
@@ -79,9 +79,17 @@ def classify_prediction(result):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None, help="Smoke-test mode: only first N patients")
+    ap.add_argument("--cohort-dir", type=str, default=str(DEFAULT_COHORT_DIR),
+                    help="Path to cohort directory containing manifest.json + eicu_p*.json")
+    ap.add_argument("--tag", type=str, default="",
+                    help="Tag added to result filenames (e.g. 'v4')")
     args = ap.parse_args()
 
-    manifest_path = COHORT_DIR / "manifest.json"
+    cohort_dir = Path(args.cohort_dir)
+    if not cohort_dir.is_absolute():
+        cohort_dir = Path(__file__).parent / cohort_dir.name
+
+    manifest_path = cohort_dir / "manifest.json"
     manifest = json.loads(manifest_path.read_text())
     patients = manifest["patients"]
     if args.limit:
@@ -91,6 +99,7 @@ def main():
     print("=" * 70)
     print("eICU-CRD Demo Validation Run")
     print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Cohort dir : {cohort_dir}")
     print(f"Cohort size: {total} patients (sepsis: {sum(1 for p in patients if p['actual_sepsis'])}, "
           f"controls: {sum(1 for p in patients if not p['actual_sepsis'])})")
     print(f"API: {API_URL}")
@@ -102,7 +111,7 @@ def main():
 
     for i, pinfo in enumerate(patients):
         pid = pinfo["patient_id"]
-        patient_file = COHORT_DIR / pinfo["file"]
+        patient_file = cohort_dir / pinfo["file"]
         patient_json = json.loads(patient_file.read_text())
         actual_sepsis = pinfo["actual_sepsis"]
 
@@ -124,6 +133,11 @@ def main():
                 "alert_level": api_result.get("alert_level", "N/A"),
                 "guardrail_override": api_result.get("guardrail_override", False),
                 "original_risk_score": api_result.get("original_risk_score"),
+                "llm_initial_risk_score": api_result.get("llm_initial_risk_score"),
+                "llm_initial_priority": api_result.get("llm_initial_priority"),
+                "c2_suppression_applied": api_result.get("c2_suppression_applied", False),
+                "c2_branch": api_result.get("c2_branch"),
+                "c2_reason": api_result.get("c2_reason"),
                 "early_warnings": ", ".join(api_result.get("early_warnings", []) or []),
                 "sepsis_probability_6h": api_result.get("sepsis_probability_6h"),
                 "qsofa": api_result.get("clinical_scores", {}).get("qSOFA", {}).get("score"),
@@ -176,8 +190,9 @@ def main():
 
     total_elapsed = time.time() - start_all
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    csv_path = RESULTS_DIR / f"EICU_results_{ts}.csv"
-    json_path = RESULTS_DIR / f"EICU_results_{ts}.json"
+    tag = (f"_{args.tag}" if args.tag else "")
+    csv_path = RESULTS_DIR / f"EICU_results{tag}_{ts}.csv"
+    json_path = RESULTS_DIR / f"EICU_results{tag}_{ts}.json"
     with open(csv_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(results[0].keys()))
         w.writeheader()
@@ -195,8 +210,10 @@ def main():
 
     # Also copy to stable names for downstream analysis
     import shutil
-    shutil.copy(csv_path, RESULTS_DIR / "EICU_results_latest.csv")
-    shutil.copy(json_path, RESULTS_DIR / "EICU_results_latest.json")
+    latest_csv = f"EICU_results{tag}_latest.csv"
+    latest_json = f"EICU_results{tag}_latest.json"
+    shutil.copy(csv_path, RESULTS_DIR / latest_csv)
+    shutil.copy(json_path, RESULTS_DIR / latest_json)
 
     # Quick summary metrics
     tp = sum(1 for r in results if r["actual_sepsis"] and r["predicted_sepsis"] is True)

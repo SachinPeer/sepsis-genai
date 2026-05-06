@@ -1,0 +1,229 @@
+{
+  "patient_id": "eicu_p00147",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 250073,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 58.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "79",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [
+      {
+        "val": 131.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 111.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 148.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 144.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 140.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 150.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "DBP": [
+      {
+        "val": 59.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 60.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 64.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 64.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 64.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "MAP": [
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "Temp": [
+      {
+        "val": 36.888888888888886,
+        "ts": "2024-06-01T11:44:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 6.7,
+        "ts": "2024-05-31T18:03:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.9,
+        "ts": "2024-05-31T18:03:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 212.0,
+        "ts": "2024-05-31T18:03:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 132.0,
+        "ts": "2024-06-01T06:09:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 16.0,
+        "ts": "2024-05-31T18:03:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 29.0,
+        "ts": "2024-05-31T18:03:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.9,
+        "ts": "2024-05-31T18:03:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Brief Progress, T-11.4h): Communication with other healthcare providers and/or family | Nurse charting (T-4.3h): GCS total = 15 | MD order (T-11.2h): neurologic|therapy for controlling cerebral perfusion pressure|antihypertensive drug|labetalol | MD order (T-11.2h): neurologic|therapy for controlling cerebral perfusion pressure|antihypertensive drug|nicardipine | MD order (T-11.2h): neurologic|pain / agitation / altered mentation|systemic glucocorticoid|dexamethasone | MD order (T-11.2h): cardiovascular|intravenous fluid|normal saline administration | MD order (T-11.2h): surgery|infection|therapeutic antibacterials|quinolone|levofloxacin | MD order (T-11.2h): neurologic|pain / agitation / altered mentation|analgesics|narcotic analgesic | MD order (T-11.2h): neurologic|procedures / diagnostics|head CT scan | MD order (T-11.2h): surgery|intravenous fluids / electrolytes|administration of electrolytes|potassium",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

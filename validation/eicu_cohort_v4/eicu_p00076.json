@@ -1,0 +1,134 @@
+{
+  "patient_id": "eicu_p00076",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2032312,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 62.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "303",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 71.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 77.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 71.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 73.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.77777777777778,
+        "ts": "2024-06-01T10:27:00"
+      },
+      {
+        "val": 37.111111111111114,
+        "ts": "2024-06-01T06:27:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:31:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T09:46:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T08:46:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 18.1,
+        "ts": "2024-06-01T04:27:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 177.0,
+        "ts": "2024-06-01T04:27:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 12.8,
+        "ts": "2024-06-01T04:27:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.4h): Pain Score/Goal = 5 | Nurse charting (T-1.6h): Pain Score/Goal = 0 | Nurse charting (T-5.5h): SEDATION SCORE = 0 | Nurse charting (T-5.5h): Pain Score/Goal = 0 | Nurse charting (T-5.5h): GCS total = 15 | Nurse charting (T-11.8h): SEDATION SCORE = -1 | MD order (T-11.7h): cardiovascular|shock|vasopressors|norepinephrine <= 0.1 micrograms/kg/min | MD order (T-11.7h): cardiovascular|arrhythmias|antiarrhythmics|class I antiarrhythmic|lidocaine | MD order (T-11.7h): cardiovascular|arrhythmias|antiarrhythmics|class III antiarrhythmic|amiodarone",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

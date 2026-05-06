@@ -1,0 +1,154 @@
+{
+  "patient_id": "eicu_p00140",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2733462,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 22.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "393",
+    "Ethnicity": "Other/Unknown"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 54.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 63.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 60.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.22222222222222,
+        "ts": "2024-06-01T08:40:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 8.9,
+        "ts": "2024-05-31T18:38:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.8,
+        "ts": "2024-06-01T09:42:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 240.0,
+        "ts": "2024-05-31T18:38:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 129.0,
+        "ts": "2024-06-01T11:43:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T09:42:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T09:42:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 15.2,
+        "ts": "2024-05-31T18:38:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-1.3h): GCS total = 15 | Nurse charting (T-3.3h): GCS total = 15 | Nurse charting (T-5.3h): GCS total = 15 | Nurse charting (T-7.3h): GCS total = 15 | Nurse charting (T-10.3h): GCS total = 15 | Nurse charting (T-11.6h): GCS total = 15 | MD order (T-10.9h): gastrointestinal|medications|stress ulcer prophylaxis|famotidine | MD order (T-10.9h): cardiovascular|arrhythmias|electrolyte administration|potassium | MD order (T-10.9h): gastrointestinal|radiology, diagnostic and procedures|ultrasonography | MD order (T-10.9h): endocrine|glucose metabolism|insulin|continuous infusion | MD order (T-10.9h): cardiovascular|vascular disorders|VTE prophylaxis|low molecular weight heparin | MD order (T-11.2h): cardiovascular|arrhythmias|electrolyte administration|potassium | MD order (T-11.2h): endocrine|glucose metabolism|insulin|continuous infusion | MD order (T-11.2h): gastrointestinal|medications|stress ulcer prophylaxis|famotidine",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

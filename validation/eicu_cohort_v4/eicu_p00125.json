@@ -1,0 +1,149 @@
+{
+  "patient_id": "eicu_p00125",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1290248,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 79.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "220",
+    "Ethnicity": "Hispanic"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 65.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 67.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 67.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 73.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 4.19,
+        "ts": "2024-06-01T08:03:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.7,
+        "ts": "2024-06-01T11:10:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 127.0,
+        "ts": "2024-06-01T08:03:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T11:10:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 16.1,
+        "ts": "2024-06-01T11:10:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 27.0,
+        "ts": "2024-06-01T11:10:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 7.9,
+        "ts": "2024-06-01T08:03:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-5.1h): gastrointestinal|consultations|Gastroenterology consultation | MD order (T-5.1h): gastrointestinal|intravenous fluid administration|blood product administration | MD order (T-5.1h): gastrointestinal|intravenous fluid administration|normal saline administration | MD order (T-5.1h): gastrointestinal|endoscopy/gastric instrumentation|esophagogastroduodenoscopy | MD order (T-5.1h): renal|dialysis|hemodialysis",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

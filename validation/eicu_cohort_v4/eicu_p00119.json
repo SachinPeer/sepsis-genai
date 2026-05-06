@@ -1,0 +1,151 @@
+{
+  "patient_id": "eicu_p00119",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 387984,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 74.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "133",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 65.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 71.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 70.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 74.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T09:10:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 7.3,
+        "ts": "2024-06-01T00:41:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.2,
+        "ts": "2024-06-01T00:39:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 216.0,
+        "ts": "2024-06-01T00:41:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 109.0,
+        "ts": "2024-06-01T00:39:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T00:39:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.1,
+        "ts": "2024-06-01T00:41:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.7h): Include Allergies and Pre-Admission Meds | Note (Admission, T-11.7h): Include Review of Systems | Note (Admission, T-11.7h): Include Social History and Family History | Note (Admission, T-11.7h): smoking history unknown | MD order (T-3.0h): pulmonary|vascular disorders|VTE prophylaxis|compression boots | MD order (T-3.0h): infectious diseases|cultures / immuno-assays|cultures|urine | MD order (T-3.0h): cardiovascular|non-operative procedures|diagnostic ultrasound of heart|transthoracic echocardiography | MD order (T-3.0h): infectious diseases|cultures / immuno-assays|cultures|blood | MD order (T-3.0h): pulmonary|medications|antibacterials|quinolone|ciprofloxacin | MD order (T-3.0h): infectious diseases|cultures / immuno-assays|cultures|stool | MD order (T-3.0h): neurologic|ICH/ cerebral infarct|anticoagulant administration|low molecular weight heparin|enoxaparin | MD order (T-3.0h): neurologic|procedures / diagnostics|head CT scan",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

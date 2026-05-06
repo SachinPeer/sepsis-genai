@@ -1,0 +1,170 @@
+{
+  "patient_id": "eicu_p00012",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3136458,
+    "snapshot_offset_min_from_admit": 786,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 72.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "436",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T13:05:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T12:05:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:05:00"
+      },
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T10:05:00"
+      },
+      {
+        "val": 85.0,
+        "ts": "2024-06-01T09:05:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T08:05:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.1,
+        "ts": "2024-06-01T07:35:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 28.0,
+        "ts": "2024-06-01T13:05:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T12:05:00"
+      },
+      {
+        "val": 27.0,
+        "ts": "2024-06-01T11:05:00"
+      },
+      {
+        "val": 29.0,
+        "ts": "2024-06-01T10:05:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T09:05:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T08:05:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T13:05:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T12:05:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:05:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:05:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T09:05:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T08:05:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 10.4,
+        "ts": "2024-06-01T08:23:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 1.2,
+        "ts": "2024-05-31T21:43:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.7,
+        "ts": "2024-06-01T08:23:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 142.0,
+        "ts": "2024-06-01T08:23:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 87.0,
+        "ts": "2024-06-01T08:23:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 47.0,
+        "ts": "2024-06-01T08:23:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T08:23:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 22.0,
+        "ts": "2024-05-31T18:35:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 9.7,
+        "ts": "2024-06-01T08:23:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-10.6h): Include Allergies and Pre-Admission Meds | Nursing assessment (T-1.5h, Capillary Refill): Capillary Refill: normal | Nursing assessment (T-1.5h, Braden Scale): Braden Score Total: 15; Sensory Perception: 3. slightly limited; Moisture: 4. rarely moist; Activity: 1. bedfast | Nursing assessment (T-1.5h, Intervention): Interventions: use commercial moisture barrier; Interventions: use absorbent pads or diapers that wick & hold moisture; Interventions: address cause if possible; Interventions: offer bedpan/urinal and glass of water in conjunction with turning schedules | Nursing assessment (T-1.5h, Sensation): Sensation: normal | Nursing assessment (T-1.5h, Edema): Edema: no edema | Nursing assessment (T-1.5h, Cough): Cough: weak; Cough: non-productive | Nursing assessment (T-1.5h, Neurologic): LOC: normal; Orientation: to person; Orientation: to place; Orientation: to time | Nursing assessment (T-1.5h, Pattern): Pattern: regular; Pattern: unlabored | Nurse charting (T-0.5h): GCS total = 15 | Nurse charting (T-1.5h): GCS total = 15 | Nurse charting (T-2.5h): GCS total = 15 | Nurse charting (T-3.5h): GCS total = 15 | Nurse charting (T-4.5h): GCS total = 15 | Nurse charting (T-5.5h): GCS total = 15 | Nurse charting (T-5.5h): Pain Score/Goal = 0 | Nurse charting (T-6.5h): GCS total = 15 | Nurse charting (T-7.5h): GCS total = 15 | Nurse charting (T-8.5h): GCS total = 15 | MD order (T-10.1h): cardiovascular|arrhythmias|antiarrhythmics|class IV antiarrhythmic|verapamil | MD order (T-10.1h): pulmonary|medications|antibacterials|fourth generation cephalosporin|cefepime | MD order (T-10.1h): pulmonary|medications|bronchodilator|inhaled | MD order (T-10.1h): cardiovascular|arrhythmias|antiarrhythmics|class III antiarrhythmic|amiodarone | MD order (T-10.1h): endocrine|thyroid disorder|thyroid hormone|oral | MD order (T-10.1h): endocrine|thyroid disorder|thyroid hormone|levothyroxine (T4) | MD order (T-10.1h): cardiovascular|consultations|Cardiology consultation | MD order (T-10.1h): cardiovascular|shock|vasopressors|norepinephrine > 0.1 micrograms/kg/min",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 1146,
+    "icd9_codes": [
+      "038.9, A41.9"
+    ],
+    "diagnosis_strings": [
+      "infectious diseases|systemic/other infections|sepsis"
+    ]
+  }
+}

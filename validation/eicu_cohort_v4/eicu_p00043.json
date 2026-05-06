@@ -1,0 +1,249 @@
+{
+  "patient_id": "eicu_p00043",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2687268,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 59.0,
+    "Gender": "Male",
+    "UnitType": "CSICU",
+    "HospitalId": "382",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [
+      {
+        "val": 147.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 129.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 140.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 136.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 141.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 142.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "DBP": [
+      {
+        "val": 65.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 62.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 60.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 60.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 63.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 62.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "MAP": [
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 80.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "Temp": [
+      {
+        "val": 36.4,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 36.1,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 36.1,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 36.3,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 36.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 35.8,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 12.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 19.8,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.88,
+        "ts": "2024-05-31T19:15:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 250.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 152.0,
+        "ts": "2024-06-01T11:28:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 15.0,
+        "ts": "2024-05-31T19:15:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 22.8,
+        "ts": "2024-05-31T23:30:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 14.4,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.5h): > 40 pack years - still smoking | MD order (T-7.8h): pulmonary|radiologic procedures / bronchoscopy|endotracheal tube removal | MD order (T-7.8h): cardiovascular|non-operative procedures|pulmonary artery catheter placement | MD order (T-7.8h): cardiovascular|cardiac surgery|CABG | MD order (T-7.8h): gastrointestinal|medications|stress ulcer prophylaxis | MD order (T-7.8h): endocrine|glucose metabolism|insulin | MD order (T-11.0h): gastrointestinal|medications|stress ulcer prophylaxis | MD order (T-11.0h): endocrine|glucose metabolism|insulin | MD order (T-11.0h): pulmonary|ventilation and oxygenation|ventilator weaning",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

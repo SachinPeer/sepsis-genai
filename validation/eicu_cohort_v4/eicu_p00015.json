@@ -1,0 +1,170 @@
+{
+  "patient_id": "eicu_p00015",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 635827,
+    "snapshot_offset_min_from_admit": 1424,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 57.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "157",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T23:44:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T22:44:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T21:44:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T20:44:00"
+      },
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T19:44:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T17:44:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.5,
+        "ts": "2024-06-01T23:44:00"
+      },
+      {
+        "val": 36.2,
+        "ts": "2024-06-01T22:44:00"
+      },
+      {
+        "val": 36.4,
+        "ts": "2024-06-01T21:44:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T23:44:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T22:44:00"
+      },
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T21:44:00"
+      },
+      {
+        "val": 4.0,
+        "ts": "2024-06-01T19:24:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T23:44:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T22:44:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T21:44:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T20:44:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T19:44:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T17:44:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 21.8,
+        "ts": "2024-06-01T16:47:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 1.4,
+        "ts": "2024-06-01T17:21:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.37,
+        "ts": "2024-06-01T16:47:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 295.0,
+        "ts": "2024-06-01T16:47:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 120.0,
+        "ts": "2024-06-01T23:24:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 33.0,
+        "ts": "2024-06-01T16:47:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T16:47:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 35.0,
+        "ts": "2024-06-01T02:25:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 7.9,
+        "ts": "2024-06-01T23:27:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.8h): GCS total = 8 | Nurse charting (T-4.8h): GCS total = 8 | Nurse charting (T-8.8h): GCS total = 8 | MD order (T-7.0h): pulmonary|ventilation and oxygenation|mechanical ventilation | MD order (T-7.0h): cardiovascular|intravenous fluid|blood product administration|packed red blood cells|transfusion of > 2 units prbc's | MD order (T-7.0h): cardiovascular|intravenous fluid|normal saline administration|aggressive volume resuscitation (>250 mls/hr) | MD order (T-7.0h): cardiovascular|shock|vasopressors|norepinephrine > 0.1 micrograms/kg/min | MD order (T-7.0h): gastrointestinal|endoscopy/gastric instrumentation|esophagogastroduodenoscopy",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 1784,
+    "icd9_codes": [
+      "995.90"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|signs and symptoms of sepsis (SIRS)"
+    ]
+  }
+}

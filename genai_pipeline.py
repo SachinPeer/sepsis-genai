@@ -108,16 +108,27 @@ class GenAISepsisPipeline:
             # STAGE 1: Narrative Serialization
             # ============================================
             stage1_start = time.time()
-            
+
             narrative = self.preprocessor.process(patient_vitals, clinician_notes)
-            
+
+            # Append deterministic clinical scores to the narrative so the LLM
+            # has formal sepsis criteria as explicit anchors instead of being
+            # forced to derive them from raw numbers. Discovered to reduce
+            # LLM-driven false positives on the eICU v4 cohort. See
+            # validation/docs/EICU_VALIDATION_EXECUTION.md §8.
+            if os.getenv("INCLUDE_CLINICAL_SCORES_IN_NARRATIVE", "true").lower() == "true":
+                flat_for_scores = self._flatten_vitals(patient_vitals)
+                narrative_scores = self._build_clinical_scores_narrative(flat_for_scores)
+                if narrative_scores:
+                    narrative = f"{narrative}\n\n{narrative_scores}"
+
             result["stages"]["stage1_preprocessing"] = {
                 "status": "success",
                 "narrative_length": len(narrative),
                 "processing_time_ms": (time.time() - stage1_start) * 1000,
                 "narrative_preview": narrative[:500] + "..." if len(narrative) > 500 else narrative
             }
-            
+
             logger.info(f"[{request_id}] Stage 1 complete: {len(narrative)} chars")
             
             # ============================================
@@ -125,7 +136,11 @@ class GenAISepsisPipeline:
             # ============================================
             stage2_start = time.time()
             
-            llm_response = self.llm_service.predict(narrative)
+            try:
+                llm_temperature = float(os.getenv("LLM_TEMPERATURE", "0.1"))
+            except ValueError:
+                llm_temperature = 0.1
+            llm_response = self.llm_service.predict(narrative, temperature=llm_temperature)
             
             result["stages"]["stage2_llm_inference"] = {
                 "status": "success" if "_metadata" not in llm_response or not llm_response.get("_metadata", {}).get("error") else "error",
@@ -144,10 +159,11 @@ class GenAISepsisPipeline:
             flat_vitals = self._flatten_vitals(patient_vitals)
             
             validated_output = self.guardrail.validate_prediction(
-                llm_response, 
+                llm_response,
                 flat_vitals,
                 nursing_notes=clinician_notes or "",
-                patient_history=patient_history
+                patient_history=patient_history,
+                raw_vitals_timeseries=patient_vitals,
             )
             
             result["stages"]["stage3_guardrail"] = {
@@ -242,6 +258,73 @@ class GenAISepsisPipeline:
         
         return results
     
+    def _build_clinical_scores_narrative(self, flat_vitals: Dict[str, Any]) -> str:
+        """Render qSOFA, SIRS and SOFA into a compact text block the LLM can
+        anchor on. Uses the same deterministic rules the guardrail uses, so
+        the LLM and guardrail can never disagree on the formal scores."""
+        try:
+            scores = self.guardrail.calculate_clinical_scores(flat_vitals)
+        except Exception as e:
+            logger.warning(f"Score precompute failed, sending narrative without scores: {e}")
+            return ""
+
+        qsofa = scores.get("qsofa", {}) or {}
+        sirs  = scores.get("sirs", {})  or {}
+        sofa  = scores.get("sofa", {})  or {}
+
+        def _yn(b):
+            return "yes" if b else "no"
+
+        q_parts = []
+        if qsofa.get("components"):
+            c = qsofa["components"]
+            q_parts.append(f"RR≥22: {_yn(c.get('respiratory_rate_ge_22'))}")
+            q_parts.append(f"GCS<15 (altered mentation): {_yn(c.get('altered_mentation'))}")
+            q_parts.append(f"SBP≤100: {_yn(c.get('systolic_bp_le_100'))}")
+
+        s_parts = []
+        if sirs.get("components"):
+            c = sirs["components"]
+            s_parts.append(f"Temp >38°C or <36°C: {_yn(c.get('temp_abnormal'))}")
+            s_parts.append(f"HR >90: {_yn(c.get('hr_gt_90'))}")
+            s_parts.append(f"RR >20 or PaCO2<32: {_yn(c.get('rr_gt_20_or_paco2_lt_32'))}")
+            s_parts.append(f"WBC abnormal (>12, <4, or bands>10%): {_yn(c.get('wbc_abnormal'))}")
+
+        sofa_total = sofa.get("estimated_score") or sofa.get("total_score")
+        sofa_parts = []
+        if sofa.get("components"):
+            for organ in ("respiratory", "coagulation", "liver", "cardiovascular", "cns", "renal"):
+                v = sofa["components"].get(organ)
+                if v is not None:
+                    sofa_parts.append(f"{organ}: {v}")
+
+        lines = ["--- DETERMINISTIC CLINICAL SCORES ---"]
+        lines.append(
+            f"qSOFA: {qsofa.get('score', '?')}/3 — {qsofa.get('interpretation', 'n/a')}"
+        )
+        if q_parts:
+            lines.append(f"  components: {'; '.join(q_parts)}")
+
+        lines.append(
+            f"SIRS: {sirs.get('criteria_met', '?')}/4 criteria met "
+            f"({'positive' if sirs.get('sirs_positive') else 'negative'})"
+        )
+        if s_parts:
+            lines.append(f"  components: {'; '.join(s_parts)}")
+
+        if sofa_total is not None:
+            lines.append(f"SOFA estimate: {sofa_total}/24")
+            if sofa_parts:
+                lines.append(f"  organ scores: {'; '.join(sofa_parts)}")
+
+        lines.append(
+            "(These scores are deterministic and computed from the same vitals "
+            "you have above. Use them as anchors — disagreement between your "
+            "narrative reasoning and these scores should be explicitly justified.)"
+        )
+
+        return "\n".join(lines)
+
     def _flatten_vitals(self, vitals: Dict[str, Any]) -> Dict[str, Any]:
         """
         Flatten nested Red Rover format to simple key-value pairs.

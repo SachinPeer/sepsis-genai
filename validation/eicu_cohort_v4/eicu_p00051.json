@@ -1,0 +1,154 @@
+{
+  "patient_id": "eicu_p00051",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3136586,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 29.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "429",
+    "Ethnicity": "African American"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 67.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 64.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 62.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 55.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 57.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 63.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.77777777777778,
+        "ts": "2024-06-01T10:54:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 10.3,
+        "ts": "2024-06-01T03:33:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.6,
+        "ts": "2024-06-01T03:33:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 193.0,
+        "ts": "2024-06-01T03:33:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:02:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 5.0,
+        "ts": "2024-06-01T03:33:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T03:33:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.8,
+        "ts": "2024-06-01T03:33:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-7.7h): < 20 pack years - still smoking | Nurse charting (T-1.1h): GCS total = 15 | Nurse charting (T-1.1h): Pain Score/Goal = 0 | Nurse charting (T-3.1h): Pain Score/Goal = 0 | Nurse charting (T-5.1h): Pain Score/Goal = 0 | Nurse charting (T-7.1h): GCS total = 15 | Nurse charting (T-7.1h): Pain Score/Goal = 0 | Nurse charting (T-7.3h): Pain Score/Goal = 0 | Nurse charting (T-9.1h): Pain Score/Goal = 0 | Nurse charting (T-9.1h): GCS total = 15 | Nurse charting (T-9.9h): GCS total = 15 | MD order (T-7.2h): toxicology|drug overdose|drug levels | MD order (T-7.2h): toxicology|drug overdose|normal saline solution | MD order (T-7.2h): gastrointestinal|medications|antiemetic | MD order (T-7.2h): neurologic|consultations|Psychiatry consultation | MD order (T-7.2h): toxicology|drug overdose|drug removal measures | MD order (T-7.2h): gastrointestinal|medications|adsorbent charcoal | MD order (T-7.2h): general|support services|social work consult | MD order (T-7.2h): gastrointestinal|consultations|Gastroenterology consultation",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

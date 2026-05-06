@@ -1,0 +1,162 @@
+{
+  "patient_id": "eicu_p00129",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2906478,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 54.0,
+    "Gender": "Male",
+    "UnitType": "Neuro ICU",
+    "HospitalId": "413",
+    "Ethnicity": "Other/Unknown"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 119.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 113.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 112.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 122.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 117.0,
+        "ts": "2024-06-01T06:55:00"
+      },
+      {
+        "val": 112.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 38.0,
+        "ts": "2024-06-01T10:24:00"
+      },
+      {
+        "val": 37.2,
+        "ts": "2024-06-01T06:42:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T06:55:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:15:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T06:55:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 3.5,
+        "ts": "2024-05-31T21:11:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.65,
+        "ts": "2024-05-31T21:11:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 110.0,
+        "ts": "2024-05-31T21:11:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 124.0,
+        "ts": "2024-05-31T21:11:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 9.0,
+        "ts": "2024-05-31T21:11:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-05-31T21:11:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 16.5,
+        "ts": "2024-05-31T21:11:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.3h): GCS total = 10 | Nurse charting (T-0.3h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-0.3h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-1.3h): GCS total = 10 | Nurse charting (T-1.3h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-1.3h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-2.3h): GCS total = 10 | Nurse charting (T-2.3h): Sedation Scale/Score/Goal = -2 | Nurse charting (T-2.3h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.3h): Sedation Scale/Score/Goal = RASS | MD order (T-10.4h): cardiovascular|ventricular dysfunction|vasodilator|nicardipine",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

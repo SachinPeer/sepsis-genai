@@ -1,0 +1,154 @@
+{
+  "patient_id": "eicu_p00060",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 532222,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 88.0,
+    "Gender": "Male",
+    "UnitType": "Cardiac ICU",
+    "HospitalId": "141",
+    "Ethnicity": "Hispanic"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 85.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 80.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.611111111111114,
+        "ts": "2024-06-01T08:20:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 12.7,
+        "ts": "2024-06-01T10:06:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.96,
+        "ts": "2024-06-01T10:06:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 122.0,
+        "ts": "2024-06-01T10:06:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 137.0,
+        "ts": "2024-06-01T10:06:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T10:06:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 29.0,
+        "ts": "2024-06-01T10:06:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 11.3,
+        "ts": "2024-06-01T10:06:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-1.7h): GCS total = 15 | Nurse charting (T-3.7h): GCS total = 15 | Nurse charting (T-5.7h): GCS total = 15 | Nurse charting (T-7.7h): GCS total = 15 | Nurse charting (T-8.7h): GCS total = 15 | Nurse charting (T-9.7h): GCS total = 15 | Nurse charting (T-11.7h): GCS total = 15 | MD order (T-9.8h): gastrointestinal|medications|stress ulcer prophylaxis|pantoprazole | MD order (T-9.8h): general|support services|occupational therapy consult | MD order (T-9.8h): gastrointestinal|medications|antiemetic|serotonin antagonist|ondansetron | MD order (T-9.8h): surgery|tubes and catheters|foley catheter | MD order (T-9.8h): cardiovascular|vascular disorders|VTE prophylaxis|conventional heparin therapy|subcutaneous | MD order (T-9.8h): endocrine|glucose metabolism|insulin|subcutaneous dose of regular insulin | MD order (T-9.8h): cardiovascular|hypertension|beta blocker|metoprolol | MD order (T-9.8h): cardiovascular|hypertension|vasodilating agent - IV|nicardipine",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "cohort": "eICU-CRD Demo v2.0.1 \u2014 cohort_v4 (Option B, ICD-only)",
+  "timestamp": "2026-05-06T08:54:12.145155Z",
+  "n_total_attempted": 150,
+  "n_successful": 150,
+  "n_errors": 0,
+  "overall": {
+    "n": 150,
+    "tp": 28,
+    "fn": 6,
+    "fp": 64,
+    "tn": 52,
+    "n_positive": 34,
+    "n_negative": 116,
+    "sensitivity": {
+      "point": 0.8235294117647058,
+      "ci_low": 0.6648593225994784,
+      "ci_high": 0.9165114439643031
+    },
+    "specificity": {
+      "point": 0.4482758620689655,
+      "ci_low": 0.36087831447932556,
+      "ci_high": 0.5389895110503737
+    },
+    "ppv": {
+      "point": 0.30434782608695654,
+      "ci_low": 0.2197355752358598,
+      "ci_high": 0.4046446521393093
+    },
+    "npv": {
+      "point": 0.896551724137931,
+      "ci_low": 0.7921166146899103,
+      "ci_high": 0.9517192498414084
+    },
+    "accuracy": {
+      "point": 0.5333333333333333,
+      "ci_low": 0.45366104879756924,
+      "ci_high": 0.611340875259383
+    },
+    "f1": 0.4444444444444444,
+    "false_alarm_rate": 0.5517241379310345
+  },
+  "subgroups": {
+    "with_notes": {
+      "n": 144,
+      "tp": 26,
+      "fn": 5,
+      "fp": 61,
+      "tn": 52,
+      "n_positive": 31,
+      "n_negative": 113,
+      "sensitivity": {
+        "point": 0.8387096774193549,
+        "ci_low": 0.6736529727502113,
+        "ci_high": 0.9290748009456006
+      },
+      "specificity": {
+        "point": 0.46017699115044247,
+        "ci_low": 0.37110242693962714,
+        "ci_high": 0.551870212942059
+      },
+      "ppv": {
+        "point": 0.2988505747126437,
+        "ci_low": 0.2128395289487208,
+        "ci_high": 0.4018744346978905
+      },
+      "npv": {
+        "point": 0.9122807017543859,
+        "ci_low": 0.8105488754539574,
+        "ci_high": 0.9619488892333616
+      },
+      "accuracy": {
+        "point": 0.5416666666666666,
+        "ci_low": 0.4602583768392711,
+        "ci_high": 0.620909575888513
+      },
+      "f1": 0.4406779661016949,
+      "false_alarm_rate": 0.5398230088495575
+    },
+    "empty_notes": {
+      "n": 6,
+      "tp": 2,
+      "fn": 1,
+      "fp": 3,
+      "tn": 0,
+      "n_positive": 3,
+      "n_negative": 3,
+      "sensitivity": {
+        "point": 0.6666666666666666,
+        "ci_low": 0.2076549551264879,
+        "ci_high": 0.9385096847238394
+      },
+      "specificity": {
+        "point": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.5615060804490177
+      },
+      "ppv": {
+        "point": 0.4,
+        "ci_low": 0.1176182311592533,
+        "ci_high": 0.769280067791163
+      },
+      "npv": {
+        "point": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.7934567085261071
+      },
+      "accuracy": {
+        "point": 0.3333333333333333,
+        "ci_low": 0.09676933255921683,
+        "ci_high": 0.7000116786584712
+      },
+      "f1": 0.5,
+      "false_alarm_rate": 1.0
+    }
+  },
+  "guardrail": {
+    "overrides_total": 43,
+    "overrides_in_sepsis": 8,
+    "overrides_in_control": 35
+  },
+  "alert_level_distribution": {
+    "CRITICAL": 60,
+    "HIGH": 32,
+    "STANDARD": 58,
+    "LOW": 0,
+    "OTHER": 0
+  },
+  "alert_level_in_sepsis": {
+    "CRITICAL": 19,
+    "HIGH": 9,
+    "STANDARD": 6,
+    "LOW": 0,
+    "OTHER": 0
+  },
+  "latency": {
+    "n": 150,
+    "mean_ms": 14503.0,
+    "median_ms": 10704.1,
+    "p95_ms": 13402.2,
+    "max_ms": 587683.6
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "patient_id": "eicu_p00061",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2499670,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 52.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "328",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 102.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 104.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 110.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.7,
+        "ts": "2024-06-01T10:51:00"
+      },
+      {
+        "val": 37.2,
+        "ts": "2024-06-01T06:15:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 91.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 11.0,
+        "ts": "2024-05-31T18:46:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.73,
+        "ts": "2024-05-31T18:46:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 267.0,
+        "ts": "2024-05-31T18:46:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 231.0,
+        "ts": "2024-06-01T10:16:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 20.0,
+        "ts": "2024-05-31T18:46:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 27.0,
+        "ts": "2024-05-31T18:46:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 14.6,
+        "ts": "2024-05-31T18:46:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.6h): < 20 pack years - remote hx of smoking | Nurse charting (T-2.3h): Pain Score/Goal = 8 | Nurse charting (T-3.8h): Pain Score/Goal = 8 | Nurse charting (T-5.5h): Pain Score/Goal = 8 | Nurse charting (T-7.2h): Pain Score/Goal = 6 | Nurse charting (T-7.2h): Pain Score/Goal = 3 | Nurse charting (T-8.0h): GCS total = 15 | Nurse charting (T-8.8h): Pain Score/Goal = 5 | Nurse charting (T-8.8h): Pain Score/Goal = 3 | Nurse charting (T-9.9h): GCS total = 15 | Nurse charting (T-9.9h): Pain Score/Goal = 5 | MD order (T-11.2h): cardiovascular|vascular disorders|anticoagulant administration|low molecular weight heparin|enoxaparin | MD order (T-11.2h): cardiovascular|vascular disorders|CT scan | MD order (T-11.2h): cardiovascular|vascular disorders|anticoagulant administration|coumadin",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

@@ -1,0 +1,2882 @@
+{
+  "version": "eicu_cohort_v4",
+  "dataset": "eICU-CRD Demo v2.0.1",
+  "ground_truth_method": "ICD-9 sepsis codes (Option B, ICD-only)",
+  "cross_check": "none (ICD-only)",
+  "filters_hard": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F8",
+    "F9"
+  ],
+  "filters_soft": [
+    "F10 (empty-notes flagged but not rejected)"
+  ],
+  "trend_hours": 6,
+  "sepsis_snapshot_offset_min": 360,
+  "seed": 42,
+  "created": "2026-05-06T07:21:02.389028Z",
+  "patients": [
+    {
+      "patient_id": "eicu_p00001",
+      "file": "eicu_p00001.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 1076979,
+      "snapshot_offset_min_from_admit": 2493,
+      "sepsis_onset_offset_min": 2853,
+      "icd9_codes": [
+        "995.91, R65"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00002",
+      "file": "eicu_p00002.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 741996,
+      "snapshot_offset_min_from_admit": 5039,
+      "sepsis_onset_offset_min": 5399,
+      "icd9_codes": [
+        "785.52, R65.21"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 3,
+        "MAP": 3,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00003",
+      "file": "eicu_p00003.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2848941,
+      "snapshot_offset_min_from_admit": 375,
+      "sepsis_onset_offset_min": 735,
+      "icd9_codes": [
+        "995.92, R65.20"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 41
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00004",
+      "file": "eicu_p00004.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 785320,
+      "snapshot_offset_min_from_admit": 2704,
+      "sepsis_onset_offset_min": 3064,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 26
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00005",
+      "file": "eicu_p00005.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 187150,
+      "snapshot_offset_min_from_admit": 5313,
+      "sepsis_onset_offset_min": 5673,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00006",
+      "file": "eicu_p00006.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 1568171,
+      "snapshot_offset_min_from_admit": 2369,
+      "sepsis_onset_offset_min": 2729,
+      "icd9_codes": [
+        "995.92, R65.2"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 42
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00007",
+      "file": "eicu_p00007.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2778495,
+      "snapshot_offset_min_from_admit": 567,
+      "sepsis_onset_offset_min": 927,
+      "icd9_codes": [
+        "995.92, R65.2"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 45
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00008",
+      "file": "eicu_p00008.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3069831,
+      "snapshot_offset_min_from_admit": 546,
+      "sepsis_onset_offset_min": 906,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00009",
+      "file": "eicu_p00009.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 1075126,
+      "snapshot_offset_min_from_admit": 433,
+      "sepsis_onset_offset_min": 793,
+      "icd9_codes": [
+        "785.52, R65.21"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 50
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00010",
+      "file": "eicu_p00010.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2761777,
+      "snapshot_offset_min_from_admit": 2411,
+      "sepsis_onset_offset_min": 2771,
+      "icd9_codes": [
+        "995.90"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 30
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00011",
+      "file": "eicu_p00011.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3149587,
+      "snapshot_offset_min_from_admit": 1320,
+      "sepsis_onset_offset_min": 1680,
+      "icd9_codes": [
+        "038.9, A41.9",
+        "038.9, R78.81"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 24
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00012",
+      "file": "eicu_p00012.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3136458,
+      "snapshot_offset_min_from_admit": 786,
+      "sepsis_onset_offset_min": 1146,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 43
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00013",
+      "file": "eicu_p00013.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3344942,
+      "snapshot_offset_min_from_admit": 981,
+      "sepsis_onset_offset_min": 1341,
+      "icd9_codes": [
+        "785.52, R65.21",
+        "995.92, R65.2"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 46
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00014",
+      "file": "eicu_p00014.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 426975,
+      "snapshot_offset_min_from_admit": 489,
+      "sepsis_onset_offset_min": 849,
+      "icd9_codes": [
+        "038.9, 518.81, R65.20, J96.0",
+        "038.9, 584.9, R65.20, N17",
+        "038.9, 785.52, R65.21",
+        "785.52, R65.21"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 43
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00015",
+      "file": "eicu_p00015.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 635827,
+      "snapshot_offset_min_from_admit": 1424,
+      "sepsis_onset_offset_min": 1784,
+      "icd9_codes": [
+        "995.90"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 3,
+        "Resp": 4,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 44
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00016",
+      "file": "eicu_p00016.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 1008970,
+      "snapshot_offset_min_from_admit": 1631,
+      "sepsis_onset_offset_min": 1991,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00017",
+      "file": "eicu_p00017.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 1090567,
+      "snapshot_offset_min_from_admit": 3969,
+      "sepsis_onset_offset_min": 4329,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 46
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00018",
+      "file": "eicu_p00018.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3239262,
+      "snapshot_offset_min_from_admit": 8857,
+      "sepsis_onset_offset_min": 9217,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 40
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00019",
+      "file": "eicu_p00019.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2826676,
+      "snapshot_offset_min_from_admit": 10573,
+      "sepsis_onset_offset_min": 10933,
+      "icd9_codes": [
+        "038.9, A41.9",
+        "038.9, R78.81"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": true
+    },
+    {
+      "patient_id": "eicu_p00020",
+      "file": "eicu_p00020.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 249328,
+      "snapshot_offset_min_from_admit": 913,
+      "sepsis_onset_offset_min": 1273,
+      "icd9_codes": [
+        "038.9, A41.9",
+        "785.52, R65.21"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 0,
+        "types_ok": 4,
+        "distinct_labs": 40
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00021",
+      "file": "eicu_p00021.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 587426,
+      "snapshot_offset_min_from_admit": 472,
+      "sepsis_onset_offset_min": 832,
+      "icd9_codes": [
+        "995.92, R65.2"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00022",
+      "file": "eicu_p00022.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2825734,
+      "snapshot_offset_min_from_admit": 25237,
+      "sepsis_onset_offset_min": 25597,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 36
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00023",
+      "file": "eicu_p00023.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2599455,
+      "snapshot_offset_min_from_admit": 1756,
+      "sepsis_onset_offset_min": 2116,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 40
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00024",
+      "file": "eicu_p00024.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 1363755,
+      "snapshot_offset_min_from_admit": 13426,
+      "sepsis_onset_offset_min": 13786,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 31
+      },
+      "notes_empty": true
+    },
+    {
+      "patient_id": "eicu_p00025",
+      "file": "eicu_p00025.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 1553789,
+      "snapshot_offset_min_from_admit": 2584,
+      "sepsis_onset_offset_min": 2944,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 25
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00026",
+      "file": "eicu_p00026.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 866114,
+      "snapshot_offset_min_from_admit": 2260,
+      "sepsis_onset_offset_min": 2620,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 22
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00027",
+      "file": "eicu_p00027.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 701925,
+      "snapshot_offset_min_from_admit": 747,
+      "sepsis_onset_offset_min": 1107,
+      "icd9_codes": [
+        "038.9, A41.9",
+        "785.52, R65.21"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 51
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00028",
+      "file": "eicu_p00028.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2150580,
+      "snapshot_offset_min_from_admit": 1216,
+      "sepsis_onset_offset_min": 1576,
+      "icd9_codes": [
+        "038.9, R78.81"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 30
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00029",
+      "file": "eicu_p00029.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2728472,
+      "snapshot_offset_min_from_admit": 539,
+      "sepsis_onset_offset_min": 899,
+      "icd9_codes": [
+        "038.9, A41.9",
+        "995.92, R65.2",
+        "995.92, R65.20"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00030",
+      "file": "eicu_p00030.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3132859,
+      "snapshot_offset_min_from_admit": 437,
+      "sepsis_onset_offset_min": 797,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 48
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00031",
+      "file": "eicu_p00031.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2705166,
+      "snapshot_offset_min_from_admit": 423,
+      "sepsis_onset_offset_min": 783,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 7,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 43
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00032",
+      "file": "eicu_p00032.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 2786505,
+      "snapshot_offset_min_from_admit": 8748,
+      "sepsis_onset_offset_min": 9108,
+      "icd9_codes": [
+        "038.9, A41.9"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 42
+      },
+      "notes_empty": true
+    },
+    {
+      "patient_id": "eicu_p00033",
+      "file": "eicu_p00033.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3159526,
+      "snapshot_offset_min_from_admit": 1192,
+      "sepsis_onset_offset_min": 1552,
+      "icd9_codes": [
+        "038.9, A41.9",
+        "038.9, R78.81",
+        "785.52, R65.21"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00034",
+      "file": "eicu_p00034.json",
+      "actual_sepsis": true,
+      "patientunitstayid": 3099676,
+      "snapshot_offset_min_from_admit": 1675,
+      "sepsis_onset_offset_min": 2035,
+      "icd9_codes": [
+        "785.52, R65.21",
+        "995.90"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 24
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00035",
+      "file": "eicu_p00035.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1731644,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 1,
+        "MAP": 1,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 15
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00036",
+      "file": "eicu_p00036.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3146987,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 7,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 6,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00037",
+      "file": "eicu_p00037.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2770318,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 4,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 37
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00038",
+      "file": "eicu_p00038.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2983640,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 32
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00039",
+      "file": "eicu_p00039.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1107902,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00040",
+      "file": "eicu_p00040.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2016011,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00041",
+      "file": "eicu_p00041.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2692627,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 3,
+        "types_ok": 3,
+        "distinct_labs": 51
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00042",
+      "file": "eicu_p00042.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1067235,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 17
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00043",
+      "file": "eicu_p00043.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2687268,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 6,
+        "distinct_labs": 24
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00044",
+      "file": "eicu_p00044.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3068380,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 39
+      },
+      "notes_empty": true
+    },
+    {
+      "patient_id": "eicu_p00045",
+      "file": "eicu_p00045.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 569865,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00046",
+      "file": "eicu_p00046.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2078216,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 6,
+        "distinct_labs": 35
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00047",
+      "file": "eicu_p00047.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 263850,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 38
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00048",
+      "file": "eicu_p00048.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1327852,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 44
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00049",
+      "file": "eicu_p00049.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1066837,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00050",
+      "file": "eicu_p00050.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2687675,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00051",
+      "file": "eicu_p00051.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3136586,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00052",
+      "file": "eicu_p00052.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2603291,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 40
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00053",
+      "file": "eicu_p00053.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1129073,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 42
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00054",
+      "file": "eicu_p00054.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2305273,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00055",
+      "file": "eicu_p00055.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 166864,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00056",
+      "file": "eicu_p00056.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 975692,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 32
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00057",
+      "file": "eicu_p00057.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 961441,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 17
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00058",
+      "file": "eicu_p00058.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1570210,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 38
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00059",
+      "file": "eicu_p00059.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 839120,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 21
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00060",
+      "file": "eicu_p00060.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 532222,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 25
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00061",
+      "file": "eicu_p00061.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2499670,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 38
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00062",
+      "file": "eicu_p00062.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2597268,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00063",
+      "file": "eicu_p00063.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3145378,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 38
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00064",
+      "file": "eicu_p00064.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1298314,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 23
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00065",
+      "file": "eicu_p00065.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 964782,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00066",
+      "file": "eicu_p00066.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2839364,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00067",
+      "file": "eicu_p00067.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2897465,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 38
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00068",
+      "file": "eicu_p00068.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3149078,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 32
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00069",
+      "file": "eicu_p00069.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2637669,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 40
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00070",
+      "file": "eicu_p00070.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2868265,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 30
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00071",
+      "file": "eicu_p00071.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2757707,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 6,
+        "distinct_labs": 38
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00072",
+      "file": "eicu_p00072.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 525046,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 56
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00073",
+      "file": "eicu_p00073.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2833930,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00074",
+      "file": "eicu_p00074.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 978518,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00075",
+      "file": "eicu_p00075.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2635557,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00076",
+      "file": "eicu_p00076.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2032312,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 19
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00077",
+      "file": "eicu_p00077.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1823356,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 45
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00078",
+      "file": "eicu_p00078.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1293742,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 48
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00079",
+      "file": "eicu_p00079.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1812280,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00080",
+      "file": "eicu_p00080.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2793359,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 53
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00081",
+      "file": "eicu_p00081.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1090033,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 39
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00082",
+      "file": "eicu_p00082.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2589516,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00083",
+      "file": "eicu_p00083.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2848323,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 39
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00084",
+      "file": "eicu_p00084.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3243205,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00085",
+      "file": "eicu_p00085.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2119136,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00086",
+      "file": "eicu_p00086.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3238816,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 35
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00087",
+      "file": "eicu_p00087.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2691019,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 25
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00088",
+      "file": "eicu_p00088.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2258562,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 27
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00089",
+      "file": "eicu_p00089.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 264423,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00090",
+      "file": "eicu_p00090.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3057805,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 24
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00091",
+      "file": "eicu_p00091.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 246997,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 37
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00092",
+      "file": "eicu_p00092.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 168726,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 1,
+        "MAP": 1,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 23
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00093",
+      "file": "eicu_p00093.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1645662,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 48
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00094",
+      "file": "eicu_p00094.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2768566,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 43
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00095",
+      "file": "eicu_p00095.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 898372,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 40
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00096",
+      "file": "eicu_p00096.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 796205,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00097",
+      "file": "eicu_p00097.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2686686,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 19
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00098",
+      "file": "eicu_p00098.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1610742,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00099",
+      "file": "eicu_p00099.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2798666,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 59
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00100",
+      "file": "eicu_p00100.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2761246,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 32
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00101",
+      "file": "eicu_p00101.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 853131,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00102",
+      "file": "eicu_p00102.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2714092,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00103",
+      "file": "eicu_p00103.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1827722,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 49
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00104",
+      "file": "eicu_p00104.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3237333,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00105",
+      "file": "eicu_p00105.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2621632,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 60
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00106",
+      "file": "eicu_p00106.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1056051,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00107",
+      "file": "eicu_p00107.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1592685,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 46
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00108",
+      "file": "eicu_p00108.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2838313,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 19
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00109",
+      "file": "eicu_p00109.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 521456,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 41
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00110",
+      "file": "eicu_p00110.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2569838,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 31
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00111",
+      "file": "eicu_p00111.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2124939,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00112",
+      "file": "eicu_p00112.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 409048,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 15
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00113",
+      "file": "eicu_p00113.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1143992,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 15
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00114",
+      "file": "eicu_p00114.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 741995,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 10
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00115",
+      "file": "eicu_p00115.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2622629,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00116",
+      "file": "eicu_p00116.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2898513,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00117",
+      "file": "eicu_p00117.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3132615,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 10
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00118",
+      "file": "eicu_p00118.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2310584,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00119",
+      "file": "eicu_p00119.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 387984,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 13
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00120",
+      "file": "eicu_p00120.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2627574,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 41
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00121",
+      "file": "eicu_p00121.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2772818,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      },
+      "notes_empty": true
+    },
+    {
+      "patient_id": "eicu_p00122",
+      "file": "eicu_p00122.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1613434,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 42
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00123",
+      "file": "eicu_p00123.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2747029,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00124",
+      "file": "eicu_p00124.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1820234,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 40
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00125",
+      "file": "eicu_p00125.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1290248,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 19
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00126",
+      "file": "eicu_p00126.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1582555,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 4,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 4,
+        "O2Sat": 4,
+        "types_ok": 3,
+        "distinct_labs": 13
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00127",
+      "file": "eicu_p00127.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2594608,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 4,
+        "types_ok": 3,
+        "distinct_labs": 29
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00128",
+      "file": "eicu_p00128.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3085970,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 39
+      },
+      "notes_empty": true
+    },
+    {
+      "patient_id": "eicu_p00129",
+      "file": "eicu_p00129.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2906478,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00130",
+      "file": "eicu_p00130.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1095052,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 43
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00131",
+      "file": "eicu_p00131.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2219934,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 16
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00132",
+      "file": "eicu_p00132.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 380558,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 14
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00133",
+      "file": "eicu_p00133.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 211144,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 39
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00134",
+      "file": "eicu_p00134.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3023263,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00135",
+      "file": "eicu_p00135.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2441710,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 23
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00136",
+      "file": "eicu_p00136.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2645295,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 32
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00137",
+      "file": "eicu_p00137.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2834193,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00138",
+      "file": "eicu_p00138.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1247906,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00139",
+      "file": "eicu_p00139.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 1746313,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 17
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00140",
+      "file": "eicu_p00140.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2733462,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00141",
+      "file": "eicu_p00141.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2095984,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00142",
+      "file": "eicu_p00142.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3078650,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 22
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00143",
+      "file": "eicu_p00143.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2480458,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00144",
+      "file": "eicu_p00144.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 827085,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 2,
+        "types_ok": 4,
+        "distinct_labs": 11
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00145",
+      "file": "eicu_p00145.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 910051,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00146",
+      "file": "eicu_p00146.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2597803,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00147",
+      "file": "eicu_p00147.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 250073,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 29
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00148",
+      "file": "eicu_p00148.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 3344943,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 30
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00149",
+      "file": "eicu_p00149.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2847703,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      },
+      "notes_empty": false
+    },
+    {
+      "patient_id": "eicu_p00150",
+      "file": "eicu_p00150.json",
+      "actual_sepsis": false,
+      "patientunitstayid": 2644671,
+      "snapshot_offset_min_from_admit": 720,
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 30
+      },
+      "notes_empty": false
+    }
+  ],
+  "summary": {
+    "total": 150,
+    "sepsis": 34,
+    "controls": 116,
+    "with_empty_notes": 6
+  },
+  "finalized_at": "2026-05-06T07:26:53.944433Z",
+  "finalize_removed": 4
+}

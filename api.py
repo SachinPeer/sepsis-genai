@@ -312,8 +312,13 @@ async def classify_patient(
             "guardrail_override": logic_gate.get("guardrail_override", False),
             "override_reasons": logic_gate.get("override_reasons", []),
             "original_risk_score": logic_gate.get("original_risk_score"),
+            "llm_initial_risk_score": logic_gate.get("llm_initial_risk_score"),
+            "llm_initial_priority": logic_gate.get("llm_initial_priority"),
             "early_warnings": logic_gate.get("early_warnings", []),
             "history_context": logic_gate.get("history_context", []),
+            "c2_suppression_applied": logic_gate.get("c2_suppression_applied", False),
+            "c2_branch": logic_gate.get("c2_branch"),
+            "c2_reason": logic_gate.get("c2_reason"),
             
             # Clinical scores (deterministic - no LLM latency cost)
             "clinical_scores": {

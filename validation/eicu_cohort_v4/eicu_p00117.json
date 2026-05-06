@@ -1,0 +1,148 @@
+{
+  "patient_id": "eicu_p00117",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3132615,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 68.0,
+    "Gender": "Female",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "437",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 67.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 66.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 79.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 38.22222222222222,
+        "ts": "2024-06-01T10:54:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 30.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 0.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 34.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T07:12:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.62,
+        "ts": "2024-06-01T05:23:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 45.3,
+        "ts": "2024-06-01T05:23:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 43.5,
+        "ts": "2024-06-01T05:23:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-4.7h): pulmonary|ventilation and oxygenation|ventilator weaning | MD order (T-4.7h): pulmonary|ventilation and oxygenation|mechanical ventilation | MD order (T-4.7h): pulmonary|ventilation and oxygenation|oxygen therapy (40% to 60%) | MD order (T-6.2h): pulmonary|ventilation and oxygenation|mechanical ventilation | MD order (T-6.2h): pulmonary|ventilation and oxygenation|ventilator weaning | MD order (T-6.2h): pulmonary|ventilation and oxygenation|oxygen therapy (40% to 60%) | MicroLab (T-11.6h): culture drawn from Sputum, Tracheal Specimen; organism: Other | MicroLab (T-11.6h): culture drawn from Sputum, Tracheal Specimen; organism: Other",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

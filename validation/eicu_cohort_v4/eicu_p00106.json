@@ -1,0 +1,158 @@
+{
+  "patient_id": "eicu_p00106",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1056051,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 74.0,
+    "Gender": "Female",
+    "UnitType": "MICU",
+    "HospitalId": "194",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 66.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 68.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 65.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 66.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 69.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.72222222222222,
+        "ts": "2024-06-01T10:13:00"
+      },
+      {
+        "val": 36.2,
+        "ts": "2024-06-01T06:13:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 15.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T11:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T09:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:58:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:58:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 7.6,
+        "ts": "2024-06-01T02:04:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.9,
+        "ts": "2024-06-01T02:04:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 159.0,
+        "ts": "2024-06-01T02:04:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 64.0,
+        "ts": "2024-06-01T02:04:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T02:04:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T02:04:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 12.2,
+        "ts": "2024-06-01T02:04:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.8h): Include Allergies and Pre-Admission Meds | Nursing assessment (T-1.7h, Sensation): Sensation: normal | Nursing assessment (T-1.7h, Neurologic): Stimulus: spontaneous; LOC: normal; Orientation: to person; Orientation: to place | Nursing assessment (T-1.7h, Secretions): Secretions: none | Nursing assessment (T-1.7h, Auscultation): Murmurs and Rubs: no murmur; Heart Sounds: normal | Nursing assessment (T-1.7h, Breath Sounds): Breath Sounds: normal | Nursing assessment (T-1.7h, Skin Color/Temp): Skin Color/Temp: normal | Nursing assessment (T-1.7h, Pattern): Pattern: unlabored | Nursing assessment (T-1.7h, Motor Strength): Motor Strength: normal | Nurse charting (T-1.8h): GCS total = 15 | Nurse charting (T-3.8h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-3.8h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-5.8h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-5.8h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-7.8h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-7.8h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-9.8h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-9.8h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-10.8h): Sedation Scale/Score/Goal = 0 | MD order (T-1.2h): cardiovascular|arrhythmias|beta blocker|esmolol | MD order (T-1.2h): gastrointestinal|medications|stress ulcer prophylaxis | MD order (T-1.2h): cardiovascular|consultations|Cardiology consultation | MD order (T-1.2h): cardiovascular|arrhythmias|calcium channel blocker|diltiazem | MD order (T-11.7h): cardiovascular|arrhythmias|beta blocker|esmolol | MD order (T-11.7h): cardiovascular|arrhythmias|calcium channel blocker|diltiazem",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

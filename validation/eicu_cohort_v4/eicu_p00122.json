@@ -1,0 +1,155 @@
+{
+  "patient_id": "eicu_p00122",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1613434,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 56.0,
+    "Gender": "Male",
+    "UnitType": "CCU-CTICU",
+    "HospitalId": "264",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 105.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 107.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 110.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 112.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 112.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 34.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 30.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 36.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 39.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 40.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 37.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 4.11,
+        "ts": "2024-05-31T14:13:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 1.4,
+        "ts": "2024-06-01T05:58:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.73,
+        "ts": "2024-06-01T05:58:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 154.0,
+        "ts": "2024-05-31T14:13:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 228.0,
+        "ts": "2024-06-01T09:46:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T05:58:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T05:58:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 8.6,
+        "ts": "2024-06-01T10:42:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-7.0h): cardiovascular|intravenous fluid|blood product administration|packed red blood cells|transfusion of 1-2 units prbc's",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

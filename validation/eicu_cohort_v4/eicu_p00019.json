@@ -1,0 +1,154 @@
+{
+  "patient_id": "eicu_p00019",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2826676,
+    "snapshot_offset_min_from_admit": 10573,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 68.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "388",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 79.0,
+        "ts": "2024-06-08T08:12:00"
+      },
+      {
+        "val": 79.0,
+        "ts": "2024-06-08T07:12:00"
+      },
+      {
+        "val": 82.0,
+        "ts": "2024-06-08T06:12:00"
+      },
+      {
+        "val": 72.0,
+        "ts": "2024-06-08T05:12:00"
+      },
+      {
+        "val": 71.0,
+        "ts": "2024-06-08T04:12:00"
+      },
+      {
+        "val": 74.0,
+        "ts": "2024-06-08T03:12:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.388888888888886,
+        "ts": "2024-06-08T05:21:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 17.0,
+        "ts": "2024-06-08T08:12:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-08T07:12:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-08T06:12:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-08T05:12:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-08T04:12:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-08T03:12:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-08T08:12:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-08T07:12:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-08T06:12:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-08T05:12:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-08T04:12:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-08T03:12:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 6.6,
+        "ts": "2024-06-08T06:01:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.61,
+        "ts": "2024-06-08T06:01:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 126.0,
+        "ts": "2024-06-08T06:01:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 112.0,
+        "ts": "2024-06-08T06:01:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 12.0,
+        "ts": "2024-06-08T06:01:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 22.8,
+        "ts": "2024-06-08T06:06:00"
+      }
+    ]
+  },
+  "patient_notes": "No free-text notes or structured observations in the 6-hour window prior to snapshot.",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 10933,
+    "icd9_codes": [
+      "038.9, A41.9",
+      "038.9, R78.81"
+    ],
+    "diagnosis_strings": [
+      "infectious diseases|systemic/other infections|bacteremia",
+      "infectious diseases|systemic/other infections|sepsis"
+    ]
+  }
+}

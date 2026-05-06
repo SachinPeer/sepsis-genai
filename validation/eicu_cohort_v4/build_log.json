@@ -1,0 +1,4123 @@
+{
+  "candidates_evaluated": 366,
+  "decisions": [
+    {
+      "pid": 346380,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_HR_THIN",
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN",
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 0,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 0,
+        "types_ok": 0,
+        "distinct_labs": 0
+      }
+    },
+    {
+      "pid": 1076979,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 741996,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 3,
+        "MAP": 3,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 2848941,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 41
+      }
+    },
+    {
+      "pid": 785320,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 187150,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      }
+    },
+    {
+      "pid": 1568171,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 42
+      }
+    },
+    {
+      "pid": 2743241,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 375854,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 14
+      }
+    },
+    {
+      "pid": 2778495,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 45
+      }
+    },
+    {
+      "pid": 2753471,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 1118948,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN",
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 4,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 4,
+        "types_ok": 2,
+        "distinct_labs": 0
+      }
+    },
+    {
+      "pid": 3069831,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      }
+    },
+    {
+      "pid": 2774779,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 294032,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 3116577,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 1075126,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 50
+      }
+    },
+    {
+      "pid": 2761777,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 30
+      }
+    },
+    {
+      "pid": 402604,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 3149587,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 24
+      }
+    },
+    {
+      "pid": 3136458,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 43
+      }
+    },
+    {
+      "pid": 3135611,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 420865,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 826668,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 3114713,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 3344942,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 46
+      }
+    },
+    {
+      "pid": 426975,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 43
+      }
+    },
+    {
+      "pid": 635827,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 3,
+        "Resp": 4,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 44
+      }
+    },
+    {
+      "pid": 1008970,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 1090567,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 46
+      }
+    },
+    {
+      "pid": 3239262,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 2682904,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 39
+      }
+    },
+    {
+      "pid": 2826676,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 3134971,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 1,
+        "types_ok": 2,
+        "distinct_labs": 33
+      }
+    },
+    {
+      "pid": 3135511,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 249328,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 0,
+        "types_ok": 4,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 3001552,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 7,
+        "types_ok": 2,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 587426,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 2825734,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 36
+      }
+    },
+    {
+      "pid": 426976,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 2599455,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 1363755,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 31
+      }
+    },
+    {
+      "pid": 3144615,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 1553789,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 25
+      }
+    },
+    {
+      "pid": 1106309,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 866114,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 22
+      }
+    },
+    {
+      "pid": 3086265,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 2754365,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 304256,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 701925,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 51
+      }
+    },
+    {
+      "pid": 2150580,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 30
+      }
+    },
+    {
+      "pid": 2728472,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      }
+    },
+    {
+      "pid": 3132859,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 48
+      }
+    },
+    {
+      "pid": 2705166,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 7,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 43
+      }
+    },
+    {
+      "pid": 2786505,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 42
+      }
+    },
+    {
+      "pid": 564485,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_HR_THIN",
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 0,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 0,
+        "types_ok": 0,
+        "distinct_labs": 25
+      }
+    },
+    {
+      "pid": 411036,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 2724441,
+      "type": "sepsis",
+      "decision": "REJECT",
+      "flags": [
+        "F2_SNAPSHOT_TOO_EARLY"
+      ]
+    },
+    {
+      "pid": 3159526,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 3099676,
+      "type": "sepsis",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 24
+      }
+    },
+    {
+      "pid": 1651765,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 0,
+        "types_ok": 2,
+        "distinct_labs": 21
+      }
+    },
+    {
+      "pid": 1573545,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 3,
+        "O2Sat": 7,
+        "types_ok": 2,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 1731644,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 1,
+        "MAP": 1,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 15
+      }
+    },
+    {
+      "pid": 3146987,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 7,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 6,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 2770318,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 4,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 1821939,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 5,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 5,
+        "O2Sat": 2,
+        "types_ok": 2,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 2983640,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 32
+      }
+    },
+    {
+      "pid": 1733366,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN",
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 7,
+        "types_ok": 2,
+        "distinct_labs": 1
+      }
+    },
+    {
+      "pid": 1107902,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      }
+    },
+    {
+      "pid": 2016011,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      }
+    },
+    {
+      "pid": 2692627,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 3,
+        "types_ok": 3,
+        "distinct_labs": 51
+      }
+    },
+    {
+      "pid": 1067235,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 17
+      }
+    },
+    {
+      "pid": 2687268,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 6,
+        "distinct_labs": 24
+      }
+    },
+    {
+      "pid": 3068380,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 39
+      }
+    },
+    {
+      "pid": 569865,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 2078216,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 6,
+        "distinct_labs": 35
+      }
+    },
+    {
+      "pid": 1180412,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 0,
+        "types_ok": 1,
+        "distinct_labs": 44
+      }
+    },
+    {
+      "pid": 263850,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 1327852,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 44
+      }
+    },
+    {
+      "pid": 207393,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 4,
+        "O2Sat": 4,
+        "types_ok": 3,
+        "distinct_labs": 5
+      }
+    },
+    {
+      "pid": 1066837,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      }
+    },
+    {
+      "pid": 2687675,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      }
+    },
+    {
+      "pid": 3136586,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      }
+    },
+    {
+      "pid": 1605725,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 50
+      }
+    },
+    {
+      "pid": 299914,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 2
+      }
+    },
+    {
+      "pid": 2603291,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 1129073,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 42
+      }
+    },
+    {
+      "pid": 1572351,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 3,
+        "types_ok": 2,
+        "distinct_labs": 33
+      }
+    },
+    {
+      "pid": 2305273,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      }
+    },
+    {
+      "pid": 166864,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 975692,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 32
+      }
+    },
+    {
+      "pid": 961441,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 17
+      }
+    },
+    {
+      "pid": 1570210,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 311043,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 0,
+        "types_ok": 1,
+        "distinct_labs": 33
+      }
+    },
+    {
+      "pid": 839120,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 21
+      }
+    },
+    {
+      "pid": 498848,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 13
+      }
+    },
+    {
+      "pid": 532222,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 25
+      }
+    },
+    {
+      "pid": 2499670,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 2597268,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      }
+    },
+    {
+      "pid": 1272544,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 42
+      }
+    },
+    {
+      "pid": 3145378,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 1671497,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 0,
+        "types_ok": 1,
+        "distinct_labs": 36
+      }
+    },
+    {
+      "pid": 1298314,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 23
+      }
+    },
+    {
+      "pid": 964782,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      }
+    },
+    {
+      "pid": 2839364,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 2091116,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 1
+      }
+    },
+    {
+      "pid": 2897465,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 3149078,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 32
+      }
+    },
+    {
+      "pid": 2637669,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 2868265,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 30
+      }
+    },
+    {
+      "pid": 2757707,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 6,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 525046,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 56
+      }
+    },
+    {
+      "pid": 916395,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 0
+      }
+    },
+    {
+      "pid": 2833930,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      }
+    },
+    {
+      "pid": 3124638,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 25
+      }
+    },
+    {
+      "pid": 978518,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      }
+    },
+    {
+      "pid": 2672664,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 7,
+        "types_ok": 2,
+        "distinct_labs": 21
+      }
+    },
+    {
+      "pid": 922231,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 2,
+        "types_ok": 2,
+        "distinct_labs": 13
+      }
+    },
+    {
+      "pid": 2635557,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      }
+    },
+    {
+      "pid": 2032312,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 19
+      }
+    },
+    {
+      "pid": 1271379,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 10
+      }
+    },
+    {
+      "pid": 1823356,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 45
+      }
+    },
+    {
+      "pid": 1293742,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 48
+      }
+    },
+    {
+      "pid": 1812280,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 2793359,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 53
+      }
+    },
+    {
+      "pid": 1090033,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 39
+      }
+    },
+    {
+      "pid": 2589516,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 2848323,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 39
+      }
+    },
+    {
+      "pid": 3243205,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      }
+    },
+    {
+      "pid": 2119136,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      }
+    },
+    {
+      "pid": 3238816,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 35
+      }
+    },
+    {
+      "pid": 176504,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 1,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 35
+      }
+    },
+    {
+      "pid": 2691019,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 25
+      }
+    },
+    {
+      "pid": 2258562,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 27
+      }
+    },
+    {
+      "pid": 264423,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 3057805,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 24
+      }
+    },
+    {
+      "pid": 246997,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 168726,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 1,
+        "MAP": 1,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 23
+      }
+    },
+    {
+      "pid": 351717,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_HR_THIN",
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 0,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 0,
+        "types_ok": 0,
+        "distinct_labs": 10
+      }
+    },
+    {
+      "pid": 1645662,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 48
+      }
+    },
+    {
+      "pid": 2768566,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 43
+      }
+    },
+    {
+      "pid": 898372,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 157427,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 7,
+        "types_ok": 2,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 796205,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      }
+    },
+    {
+      "pid": 2686686,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 19
+      }
+    },
+    {
+      "pid": 1610742,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      }
+    },
+    {
+      "pid": 2798666,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 59
+      }
+    },
+    {
+      "pid": 2761246,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 32
+      }
+    },
+    {
+      "pid": 853131,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 29
+      }
+    },
+    {
+      "pid": 2714092,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 2757872,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 41
+      }
+    },
+    {
+      "pid": 1827722,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 49
+      }
+    },
+    {
+      "pid": 3237333,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 3066852,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 3,
+        "types_ok": 2,
+        "distinct_labs": 19
+      }
+    },
+    {
+      "pid": 232562,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 0,
+        "types_ok": 1,
+        "distinct_labs": 6
+      }
+    },
+    {
+      "pid": 2621632,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 6,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 4,
+        "distinct_labs": 60
+      }
+    },
+    {
+      "pid": 1056051,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 1592685,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 46
+      }
+    },
+    {
+      "pid": 2838313,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 19
+      }
+    },
+    {
+      "pid": 521456,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 41
+      }
+    },
+    {
+      "pid": 2569838,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 31
+      }
+    },
+    {
+      "pid": 2124939,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 409048,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 15
+      }
+    },
+    {
+      "pid": 1143992,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 15
+      }
+    },
+    {
+      "pid": 741995,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 10
+      }
+    },
+    {
+      "pid": 2622629,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 2898513,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 37
+      }
+    },
+    {
+      "pid": 3132615,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 10
+      }
+    },
+    {
+      "pid": 2310584,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 387984,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 13
+      }
+    },
+    {
+      "pid": 2399157,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 3,
+        "types_ok": 2,
+        "distinct_labs": 38
+      }
+    },
+    {
+      "pid": 2627574,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 41
+      }
+    },
+    {
+      "pid": 2772818,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 2565399,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN",
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 1,
+        "types_ok": 2,
+        "distinct_labs": 0
+      }
+    },
+    {
+      "pid": 1613434,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 42
+      }
+    },
+    {
+      "pid": 2747029,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 337621,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 1820234,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 40
+      }
+    },
+    {
+      "pid": 1290248,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 19
+      }
+    },
+    {
+      "pid": 1582555,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 4,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 4,
+        "O2Sat": 4,
+        "types_ok": 3,
+        "distinct_labs": 13
+      }
+    },
+    {
+      "pid": 1090039,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 7,
+        "types_ok": 4,
+        "distinct_labs": 39
+      }
+    },
+    {
+      "pid": 2594608,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 4,
+        "types_ok": 3,
+        "distinct_labs": 29
+      }
+    },
+    {
+      "pid": 2733542,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 0
+      }
+    },
+    {
+      "pid": 3085970,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 39
+      }
+    },
+    {
+      "pid": 2906478,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      }
+    },
+    {
+      "pid": 1095052,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 43
+      }
+    },
+    {
+      "pid": 2219934,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 16
+      }
+    },
+    {
+      "pid": 380558,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 14
+      }
+    },
+    {
+      "pid": 1600008,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 36
+      }
+    },
+    {
+      "pid": 176050,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_RESP_THIN",
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 0,
+        "O2Sat": 6,
+        "types_ok": 2,
+        "distinct_labs": 24
+      }
+    },
+    {
+      "pid": 211144,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 39
+      }
+    },
+    {
+      "pid": 3023263,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      }
+    },
+    {
+      "pid": 2441710,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 23
+      }
+    },
+    {
+      "pid": 2892404,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "VITAL_TYPES_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 2,
+        "types_ok": 2,
+        "distinct_labs": 26
+      }
+    },
+    {
+      "pid": 2645295,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 32
+      }
+    },
+    {
+      "pid": 1837963,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 3
+      }
+    },
+    {
+      "pid": 2834193,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 33
+      }
+    },
+    {
+      "pid": 2085134,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 1
+      }
+    },
+    {
+      "pid": 1247906,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 36
+      }
+    },
+    {
+      "pid": 1790816,
+      "type": "control",
+      "decision": "REJECT",
+      "flags": [
+        "LABS_THIN"
+      ],
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 1
+      }
+    },
+    {
+      "pid": 1746313,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 17
+      }
+    },
+    {
+      "pid": 2733462,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 2095984,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      }
+    },
+    {
+      "pid": 3078650,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 3,
+        "distinct_labs": 22
+      }
+    },
+    {
+      "pid": 2480458,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 34
+      }
+    },
+    {
+      "pid": 827085,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 2,
+        "types_ok": 4,
+        "distinct_labs": 11
+      }
+    },
+    {
+      "pid": 910051,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 31
+      }
+    },
+    {
+      "pid": 2597803,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 28
+      }
+    },
+    {
+      "pid": 250073,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 6,
+        "MAP": 6,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 5,
+        "distinct_labs": 29
+      }
+    },
+    {
+      "pid": 3344943,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 7,
+        "SBP": 7,
+        "MAP": 7,
+        "Temp": 0,
+        "Resp": 7,
+        "O2Sat": 7,
+        "types_ok": 5,
+        "distinct_labs": 30
+      }
+    },
+    {
+      "pid": 2847703,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 35
+      }
+    },
+    {
+      "pid": 2644671,
+      "type": "control",
+      "decision": "KEEP",
+      "quality": {
+        "HR": 6,
+        "SBP": 0,
+        "MAP": 0,
+        "Temp": 0,
+        "Resp": 6,
+        "O2Sat": 6,
+        "types_ok": 3,
+        "distinct_labs": 30
+      }
+    },
+    {
+      "pid": 1076979,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 741996,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2848941,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 785320,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 187150,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1568171,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2778495,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3069831,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1075126,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2761777,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3149587,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3136458,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3344942,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 426975,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 635827,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1008970,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1090567,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3239262,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2826676,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": true
+    },
+    {
+      "pid": 249328,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 587426,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2825734,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2599455,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1363755,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": true
+    },
+    {
+      "pid": 1553789,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 866114,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 701925,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2150580,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2728472,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3132859,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2705166,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2786505,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": true
+    },
+    {
+      "pid": 3159526,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3099676,
+      "type": "sepsis",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1731644,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3146987,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2770318,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2983640,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1107902,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2016011,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2692627,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1067235,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2687268,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3068380,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": true
+    },
+    {
+      "pid": 569865,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2078216,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 263850,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1327852,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 207393,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1066837,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2687675,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3136586,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 299914,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2603291,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1129073,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2305273,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 166864,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 975692,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 961441,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1570210,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 839120,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 498848,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 532222,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2499670,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2597268,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3145378,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1298314,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 964782,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2839364,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2897465,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3149078,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2637669,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2868265,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2757707,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 525046,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2833930,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 978518,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2635557,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2032312,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1823356,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1293742,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1812280,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2793359,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1090033,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2589516,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2848323,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3243205,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2119136,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3238816,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2691019,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2258562,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 264423,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3057805,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 246997,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 168726,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1645662,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2768566,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 898372,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 796205,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2686686,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1610742,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2798666,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2761246,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 853131,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2714092,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1827722,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3237333,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2621632,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1056051,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1592685,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2838313,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 521456,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2569838,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2124939,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 409048,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1143992,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 741995,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2622629,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2898513,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3132615,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2310584,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 387984,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2627574,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2772818,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": true
+    },
+    {
+      "pid": 1613434,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2747029,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1820234,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1290248,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1582555,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2594608,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3085970,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": true
+    },
+    {
+      "pid": 2906478,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1095052,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2219934,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 380558,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 211144,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3023263,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2441710,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2645295,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1837963,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2834193,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1247906,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 1746313,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2733462,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2095984,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3078650,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2480458,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 827085,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 910051,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2597803,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 250073,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 3344943,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2847703,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    },
+    {
+      "pid": 2644671,
+      "type": "control",
+      "decision": "KEEP_POSTBUILD",
+      "notes_empty": false
+    }
+  ]
+}

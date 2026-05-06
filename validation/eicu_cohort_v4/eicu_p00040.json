@@ -1,0 +1,162 @@
+{
+  "patient_id": "eicu_p00040",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2016011,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 42.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "312",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 113.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 114.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 116.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 119.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 114.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.22222222222222,
+        "ts": "2024-06-01T10:35:00"
+      },
+      {
+        "val": 37.22222222222222,
+        "ts": "2024-06-01T08:49:00"
+      },
+      {
+        "val": 37.2,
+        "ts": "2024-06-01T07:07:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T10:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T09:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T08:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 10.5,
+        "ts": "2024-06-01T11:43:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.99,
+        "ts": "2024-06-01T04:05:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T11:43:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 210.0,
+        "ts": "2024-06-01T09:27:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 31.0,
+        "ts": "2024-06-01T04:05:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T04:05:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 6.4,
+        "ts": "2024-06-01T11:43:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-2.2h): GCS total = 15 | Nurse charting (T-10.0h): Pain Score/Goal = 8 | Nurse charting (T-10.0h): GCS total = 15 | MD order (T-11.4h): gastrointestinal|medications|stress ulcer treatment|pantoprazole | MD order (T-11.4h): gastrointestinal|medications|hormonal therapy (for varices)|octreotide | MD order (T-11.4h): gastrointestinal|intravenous fluid administration|normal saline administration|aggressive volume resuscitation (>250 mls/hr)",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "patient_id": "eicu_p00063",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3145378,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 90.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "429",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 131.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 134.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 130.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 129.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 133.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 132.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 131.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.72222222222222,
+        "ts": "2024-06-01T09:57:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 15.1,
+        "ts": "2024-05-31T13:55:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 2.3,
+        "ts": "2024-05-31T13:55:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.3,
+        "ts": "2024-05-31T13:54:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 205.0,
+        "ts": "2024-05-31T13:55:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 158.0,
+        "ts": "2024-05-31T13:54:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 21.0,
+        "ts": "2024-05-31T13:54:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-05-31T13:54:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 14.4,
+        "ts": "2024-05-31T13:55:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-0.1h): GCS total = 15 | Nurse charting (T-0.1h): Pain Score/Goal = 0 | Nurse charting (T-0.1h): Sedation Scale/Score/Goal = Ramsay | Nurse charting (T-0.1h): Sedation Scale/Score/Goal = 2 | Nurse charting (T-6.0h): GCS total = 15 | Nurse charting (T-10.1h): Pain Score/Goal = 0 | Nurse charting (T-10.1h): GCS total = 15 | Nurse charting (T-10.3h): Pain Score/Goal = 0 | Nurse charting (T-11.9h): Pain Score/Goal = 0 | Nurse charting (T-11.9h): GCS total = 15 | MD order (T-3.5h): pulmonary|medications|antibacterials | MD order (T-3.5h): cardiovascular|myocardial ischemia / infarction|anticoagulant administration|conventional heparin therapy|intravenous | MD order (T-3.5h): cardiovascular|myocardial ischemia / infarction|antiplatelet agent|aspirin | MD order (T-3.5h): pulmonary|ventilation and oxygenation|non-invasive ventilation | MD order (T-3.5h): cardiovascular|ventricular dysfunction|intravenous diuretic | MD order (T-11.9h): cardiovascular|myocardial ischemia / infarction|inotropic agent | MD order (T-11.9h): pulmonary|medications|antibacterials | MicroLab (T-10.6h): culture drawn from Urine, Catheter Specimen; organism: no growth | MicroLab (T-11.9h): culture drawn from Nasopharynx; organism: no growth",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

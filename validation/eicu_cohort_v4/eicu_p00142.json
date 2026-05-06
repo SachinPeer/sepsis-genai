@@ -1,0 +1,170 @@
+{
+  "patient_id": "eicu_p00142",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3078650,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 74.0,
+    "Gender": "Female",
+    "UnitType": "SICU",
+    "HospitalId": "420",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 78.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 81.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 82.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.388888888888886,
+        "ts": "2024-06-01T11:33:00"
+      },
+      {
+        "val": 37.27777777777778,
+        "ts": "2024-06-01T08:33:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 35.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 42.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 30.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 34.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 27.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T09:00:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 14.9,
+        "ts": "2024-06-01T00:38:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.07,
+        "ts": "2024-06-01T00:37:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 237.0,
+        "ts": "2024-06-01T00:38:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 116.0,
+        "ts": "2024-06-01T10:29:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T00:37:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 32.0,
+        "ts": "2024-06-01T00:37:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 10.7,
+        "ts": "2024-06-01T00:38:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Brief Progress, T-10.4h): Operative interventional procedure - evaluation | Note (Brief Progress, T-10.4h): Respiratory failure - evaluation and management | Note (Brief Progress, T-10.4h): Best-practice therapies (e.g. DVT, beta blocker, etc.) | Note (Brief Progress, T-10.4h): Communication with other healthcare providers and/or family | Nursing assessment (T-3.5h, Skin Color/Temp): Skin Color/Temp: cool | Nursing assessment (T-3.5h, Edema): Edema: no edema | Nursing assessment (T-3.5h, Sensation): Sensation: normal | Nursing assessment (T-3.5h, Cough): Cough: absent | Nursing assessment (T-3.5h, Pattern): Pattern: regular; Pattern: shallow | Nursing assessment (T-3.5h, Capillary Refill): Capillary Refill: normal | Nursing assessment (T-3.5h, Motor Strength): LLE: +4-Resists; LUE: +5-Normal; RLE: +4-Resists; RUE: +5-Normal | Nursing assessment (T-3.5h, Secretions): Secretions: none | Nurse charting (T-3.5h): Pain Score/Goal = 4 | Nurse charting (T-3.5h): GCS total = 15 | Nurse charting (T-3.5h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-3.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-6.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-6.5h): Sedation Scale/Score/Goal = -1 | Nurse charting (T-6.5h): Pain Score/Goal = 3 | Nurse charting (T-7.5h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-7.5h): Pain Score/Goal = 5 | Nurse charting (T-7.5h): Sedation Scale/Score/Goal = 0 | MD order (T-10.9h): renal|intravenous fluid|Lactated Ringer's administration | MD order (T-10.9h): cardiovascular|vascular disorders|VTE prophylaxis|compression boots | MD order (T-10.9h): cardiovascular|vascular disorders|VTE prophylaxis|conventional heparin therapy|subcutaneous | MD order (T-10.9h): gastrointestinal|medications|prokinetic agent | MD order (T-10.9h): renal|urinary catheters|foley catheter | MD order (T-10.9h): gastrointestinal|consultations|Surgery consultation | MD order (T-10.9h): gastrointestinal|medications|antiemetic|serotonin antagonist|ondansetron | MD order (T-10.9h): gastrointestinal|medications|stress ulcer prophylaxis",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

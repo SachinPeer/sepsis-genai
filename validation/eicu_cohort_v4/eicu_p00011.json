@@ -1,0 +1,170 @@
+{
+  "patient_id": "eicu_p00011",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3149587,
+    "snapshot_offset_min_from_admit": 1320,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 26.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "436",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T22:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T21:00:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T20:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T19:00:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T18:00:00"
+      },
+      {
+        "val": 110.0,
+        "ts": "2024-06-01T17:00:00"
+      },
+      {
+        "val": 110.0,
+        "ts": "2024-06-01T16:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.94444444444444,
+        "ts": "2024-06-01T20:52:00"
+      },
+      {
+        "val": 37.22222222222222,
+        "ts": "2024-06-01T16:52:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T22:00:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T21:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T20:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T19:00:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T18:00:00"
+      },
+      {
+        "val": 28.0,
+        "ts": "2024-06-01T17:00:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T16:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T22:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T21:00:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T20:00:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T19:00:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T18:00:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T17:00:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T16:00:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.0,
+        "ts": "2024-06-01T05:35:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 102.0,
+        "ts": "2024-06-01T20:54:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T05:35:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.32,
+        "ts": "2024-06-01T03:22:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 29.0,
+        "ts": "2024-06-01T05:35:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 55.0,
+        "ts": "2024-06-01T03:22:00"
+      }
+    ]
+  },
+  "patient_notes": "Nursing assessment (T-1.1h, Secretions): Secretions: copious; Secretions: brown; Secretions: moderate | Nursing assessment (T-1.1h, Morse Fall Risk): Fall Risk: no risk (0 - 24); Morse Fall Risk Total: 20; History of Falling: no; Secondary Diagnosis: no | Nursing assessment (T-1.1h, Cough): Cough: strong; Cough: productive | Nursing assessment (T-1.1h, Pacemaker/AICD): Pacemaker/AICD: N/A | Nursing assessment (T-1.1h, Edema): Edema: no edema | Nursing assessment (T-1.1h, Pupils): Pupils: pupils equal, react to light; Right: 4 mm; Right: react to light; Left: 4 mm | Nursing assessment (T-1.1h, Motor Strength): Motor Strength: normal | Nursing assessment (T-1.1h, Skin Color/Temp): Skin Color/Temp: normal | Nurse charting (T-1.1h): GCS total = 15 | Nurse charting (T-1.1h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-1.1h): Pain Score/Goal = 0 | Nurse charting (T-1.1h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-5.1h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-5.1h): Sedation Scale/Score/Goal = 0 | Nurse charting (T-5.1h): GCS total = 15 | Nurse charting (T-5.1h): Pain Score/Goal = 0 | Nurse charting (T-9.1h): Pain Score/Goal = 0 | Nurse charting (T-9.1h): GCS total = 15",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 1680,
+    "icd9_codes": [
+      "038.9, A41.9",
+      "038.9, R78.81"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|sepsis",
+      "infectious diseases|systemic/other infections|bacteremia"
+    ]
+  }
+}

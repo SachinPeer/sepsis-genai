@@ -1,0 +1,176 @@
+{
+  "patient_id": "eicu_p00014",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 426975,
+    "snapshot_offset_min_from_admit": 489,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 69.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "142",
+    "Ethnicity": "Hispanic"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 89.0,
+        "ts": "2024-06-01T08:06:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T07:06:00"
+      },
+      {
+        "val": 86.0,
+        "ts": "2024-06-01T06:06:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T05:06:00"
+      },
+      {
+        "val": 83.0,
+        "ts": "2024-06-01T04:06:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T03:06:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.388888888888886,
+        "ts": "2024-06-01T03:17:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T08:06:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:06:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T06:06:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T05:06:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T04:06:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T03:06:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:06:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T07:06:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:06:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T05:06:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T04:06:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T03:06:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 41.13,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 2.5,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 183.0,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 167.0,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 75.0,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.2,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 46.6,
+        "ts": "2024-06-01T04:57:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 9.0,
+        "ts": "2024-06-01T07:17:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Dialysis Catheter, T-5.0h): Verified patient identification | Note (Dialysis Catheter, T-5.0h): Verified site/side - marked | Note (Dialysis Catheter, T-5.0h): Verified correct patient position | Note (Dialysis Catheter, T-5.0h): Special equipment/implants available | Note (Dialysis Catheter, T-5.0h): Medications/allergies/relevant history reviewed | Nurse charting (T-0.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-0.9h): Sedation Scale/Score/Goal = -4 | Nurse charting (T-3.9h): Sedation Scale/Score/Goal = -4 | Nurse charting (T-3.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-4.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-4.9h): Sedation Scale/Score/Goal = -4 | Nurse charting (T-5.9h): Sedation Scale/Score/Goal = RASS | Nurse charting (T-5.9h): Sedation Scale/Score/Goal = -4 | Nurse charting (T-6.9h): Sedation Scale/Score/Goal = -4 | Nurse charting (T-6.9h): Sedation Scale/Score/Goal = RASS",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 849,
+    "icd9_codes": [
+      "038.9, 518.81, R65.20, J96.0",
+      "038.9, 584.9, R65.20, N17",
+      "038.9, 785.52, R65.21",
+      "785.52, R65.21"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|sepsis|sepsis with single organ dysfunction- acute renal failure",
+      "cardiovascular|shock / hypotension|sepsis|sepsis with single organ dysfunction- acute respiratory failure",
+      "cardiovascular|shock / hypotension|sepsis|sepsis with single organ dysfunction- circulatory system failure",
+      "cardiovascular|shock / hypotension|septic shock"
+    ]
+  }
+}

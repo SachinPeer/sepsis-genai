@@ -1,0 +1,168 @@
+{
+  "patient_id": "eicu_p00003",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2848941,
+    "snapshot_offset_min_from_admit": 375,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 90.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "408",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T06:14:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T05:14:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T04:14:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T03:14:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T02:14:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T01:14:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.7,
+        "ts": "2024-06-01T04:26:00"
+      },
+      {
+        "val": 36.111111111111114,
+        "ts": "2024-06-01T01:26:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T06:14:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T05:14:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T04:14:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T03:14:00"
+      },
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T02:14:00"
+      },
+      {
+        "val": 13.0,
+        "ts": "2024-06-01T01:14:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T06:14:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T05:14:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T04:14:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T03:14:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T02:14:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T01:14:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 11.3,
+        "ts": "2024-06-01T05:36:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 2.9,
+        "ts": "2024-06-01T05:36:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.0,
+        "ts": "2024-05-31T14:56:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 206.0,
+        "ts": "2024-06-01T05:36:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 129.0,
+        "ts": "2024-05-31T14:56:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 15.0,
+        "ts": "2024-05-31T14:56:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T00:29:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.1,
+        "ts": "2024-06-01T05:36:00"
+      }
+    ]
+  },
+  "patient_notes": "MD order (T-5.7h): gastrointestinal|consultations|Gastroenterology consultation | MD order (T-5.7h): neurologic|pain / agitation / altered mentation|sedative agent | MD order (T-5.7h): pulmonary|radiologic procedures / bronchoscopy|chest x-ray | MD order (T-5.7h): surgery|tubes and catheters|foley catheter | MD order (T-5.7h): pulmonary|ventilation and oxygenation|ventilator weaning | MD order (T-5.7h): cardiovascular|vascular disorders|VTE prophylaxis|low molecular weight heparin | MD order (T-5.7h): pulmonary|ventilation and oxygenation|oxygen therapy (< 40%) | MD order (T-5.7h): gastrointestinal|consultations|Surgery consultation",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 735,
+    "icd9_codes": [
+      "995.92, R65.20"
+    ],
+    "diagnosis_strings": [
+      "infectious diseases|systemic/other infections|sepsis|severe"
+    ]
+  }
+}

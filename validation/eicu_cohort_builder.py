@@ -341,10 +341,16 @@ def fetch_demographics(con, pid: int):
     if not row:
         return {}
     age, gender, unit, hospital, ethnicity = row
-    try:
-        age_num = float(age) if age and str(age).strip() != ">89" else 90.0
-    except Exception:
-        age_num = 0.0
+    age_str = str(age).strip() if age is not None else ""
+    if age_str.replace(" ", "") in ("", ">89"):
+        # eICU uses "> 89" (with a space) as HIPAA Safe-Harbor binning for ages
+        # 90+. Empty / missing also lands here.
+        age_num = 90.0 if age_str else 0.0
+    else:
+        try:
+            age_num = float(age_str)
+        except Exception:
+            age_num = 0.0
     return {
         "age": age_num,
         "gender": gender or "Unknown",

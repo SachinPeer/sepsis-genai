@@ -1,0 +1,149 @@
+{
+  "patient_id": "eicu_p00062",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2597268,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 67.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "353",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 107.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 113.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 101.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:57:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T09:57:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T08:57:00"
+      },
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T07:57:00"
+      },
+      {
+        "val": 95.0,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 6.67,
+        "ts": "2024-05-31T23:31:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.6,
+        "ts": "2024-05-31T23:31:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 239.0,
+        "ts": "2024-05-31T23:31:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T10:54:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 3.0,
+        "ts": "2024-05-31T23:31:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 25.0,
+        "ts": "2024-05-31T23:31:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 13.7,
+        "ts": "2024-05-31T23:31:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-9.8h): > 40 pack years - remote hx of smoking | MD order (T-9.7h): neurologic|pain / agitation / altered mentation|sedative agent|lorazepam | MD order (T-9.7h): cardiovascular|vascular disorders|VTE prophylaxis|conventional heparin therapy|subcutaneous | MD order (T-9.7h): endocrine|intravenous fluid administration|normal saline administration",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

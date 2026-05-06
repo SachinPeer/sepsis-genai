@@ -1,0 +1,187 @@
+{
+  "patient_id": "eicu_p00033",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3159526,
+    "snapshot_offset_min_from_admit": 1192,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 58.0,
+    "Gender": "Male",
+    "UnitType": "Med-Surg ICU",
+    "HospitalId": "433",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 123.0,
+        "ts": "2024-06-01T19:50:00"
+      },
+      {
+        "val": 126.0,
+        "ts": "2024-06-01T18:50:00"
+      },
+      {
+        "val": 122.0,
+        "ts": "2024-06-01T17:50:00"
+      },
+      {
+        "val": 122.0,
+        "ts": "2024-06-01T16:50:00"
+      },
+      {
+        "val": 125.0,
+        "ts": "2024-06-01T15:50:00"
+      },
+      {
+        "val": 124.0,
+        "ts": "2024-06-01T14:50:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 38.22222222222222,
+        "ts": "2024-06-01T18:12:00"
+      },
+      {
+        "val": 38.611111111111114,
+        "ts": "2024-06-01T16:27:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 21.0,
+        "ts": "2024-06-01T19:50:00"
+      },
+      {
+        "val": 26.0,
+        "ts": "2024-06-01T18:50:00"
+      },
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T17:50:00"
+      },
+      {
+        "val": 30.0,
+        "ts": "2024-06-01T16:50:00"
+      },
+      {
+        "val": 35.0,
+        "ts": "2024-06-01T15:50:00"
+      },
+      {
+        "val": 36.0,
+        "ts": "2024-06-01T14:50:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 94.0,
+        "ts": "2024-06-01T19:50:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T18:50:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T17:50:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T16:50:00"
+      },
+      {
+        "val": 93.0,
+        "ts": "2024-06-01T15:50:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T14:50:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 11.8,
+        "ts": "2024-06-01T15:47:00"
+      }
+    ],
+    "Lactate": [
+      {
+        "val": 3.5,
+        "ts": "2024-06-01T16:02:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 1.64,
+        "ts": "2024-06-01T15:47:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 135.0,
+        "ts": "2024-06-01T15:47:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 103.0,
+        "ts": "2024-06-01T17:33:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 31.0,
+        "ts": "2024-06-01T15:47:00"
+      }
+    ],
+    "pH": [
+      {
+        "val": 7.12,
+        "ts": "2024-06-01T13:51:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 24.0,
+        "ts": "2024-06-01T15:47:00"
+      }
+    ],
+    "PaCO2": [
+      {
+        "val": 74.0,
+        "ts": "2024-06-01T13:51:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 12.9,
+        "ts": "2024-06-01T15:47:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Brief Progress, T-4.5h): Routine modifications to care plan (e.g. PRN medications for pain, fever) | Note (Brief Progress, T-4.5h): Communication with other healthcare providers and/or family | Note (Brief Progress, T-5.5h): Hypoxemia - evaluation and management | Note (Brief Progress, T-5.5h): Communication with other healthcare providers and/or family | Note (Brief Progress, T-5.5h): Clinical assessment - ordering diagnostic tests | Nurse charting (T-5.9h): GCS total = 7 | Nurse charting (T-9.9h): GCS total = 7",
+  "ground_truth": {
+    "actual_sepsis": true,
+    "sepsis_onset_offset_min": 1552,
+    "icd9_codes": [
+      "038.9, A41.9",
+      "038.9, R78.81",
+      "785.52, R65.21"
+    ],
+    "diagnosis_strings": [
+      "cardiovascular|shock / hypotension|septic shock",
+      "cardiovascular|shock / hypotension|septic shock|cultures pending",
+      "infectious diseases|systemic/other infections|bacteremia",
+      "infectious diseases|systemic/other infections|bacteremia|gram negative rod",
+      "infectious diseases|systemic/other infections|bacteremia|respiratory source",
+      "infectious diseases|systemic/other infections|sepsis"
+    ]
+  }
+}

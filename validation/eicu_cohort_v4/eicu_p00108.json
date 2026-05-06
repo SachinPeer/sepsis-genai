@@ -1,0 +1,137 @@
+{
+  "patient_id": "eicu_p00108",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 2838313,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 77.0,
+    "Gender": "Male",
+    "UnitType": "Cardiac ICU",
+    "HospitalId": "392",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 42.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 38.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 33.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 35.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 36.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 33.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [],
+    "Resp": [
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 14.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T11:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T10:56:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T09:56:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T08:56:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T07:56:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T06:56:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 43.0,
+        "ts": "2024-05-31T20:55:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.96,
+        "ts": "2024-06-01T03:45:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 167.0,
+        "ts": "2024-06-01T03:45:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 22.0,
+        "ts": "2024-06-01T03:45:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 28.0,
+        "ts": "2024-06-01T03:45:00"
+      }
+    ]
+  },
+  "patient_notes": "Nurse charting (T-8.6h): GCS total = 14 | MD order (T-8.3h): cardiovascular|intravenous fluid|normal saline administration|fluid bolus (250-1000mls) | MD order (T-8.3h): toxicology|drug overdose|agent specific therapy|beta blockers overdose|isoproterenol | MD order (T-8.3h): toxicology|drug overdose|agent specific therapy|calcium channel blockers overdose|glucagon | MD order (T-10.8h): cardiovascular|intravenous fluid|normal saline administration|fluid bolus (250-1000mls) | MD order (T-10.8h): toxicology|drug overdose|agent specific therapy|calcium channel blockers overdose|glucagon",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

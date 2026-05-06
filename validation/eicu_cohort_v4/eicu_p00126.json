@@ -1,0 +1,112 @@
+{
+  "patient_id": "eicu_p00126",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 1582555,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 76.0,
+    "Gender": "Female",
+    "UnitType": "Neuro ICU",
+    "HospitalId": "252",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 108.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 104.0,
+        "ts": "2024-06-01T08:49:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 36.388888888888886,
+        "ts": "2024-06-01T08:19:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T08:49:00"
+      },
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T11:59:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T08:49:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T07:59:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T06:59:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.42,
+        "ts": "2024-06-01T02:19:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 140.0,
+        "ts": "2024-06-01T02:19:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 11.0,
+        "ts": "2024-06-01T02:19:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 23.0,
+        "ts": "2024-06-01T02:19:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Admission, T-11.7h): Include Allergies and Pre-Admission Meds | Nurse charting (T-0.7h): RASS = -1 | Nurse charting (T-1.7h): RASS = -1 | Nurse charting (T-2.7h): RASS = -1 | Nurse charting (T-3.7h): RASS = 0 | Nurse charting (T-4.7h): RASS = 1 | Nurse charting (T-5.7h): RASS = 1 | MD order (T-3.1h): cardiovascular|shock|vasopressors|phenylephrine (Neosynephrine) | MD order (T-11.4h): neurologic|therapy for controlling cerebral perfusion pressure|vasopressors|phenylephrine (Neosynephrine)",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}

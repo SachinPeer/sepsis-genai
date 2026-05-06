@@ -1,0 +1,170 @@
+{
+  "patient_id": "eicu_p00090",
+  "source": {
+    "dataset": "eICU-CRD Demo v2.0.1",
+    "patientunitstayid": 3057805,
+    "snapshot_offset_min_from_admit": 720,
+    "trend_window_hours": 6
+  },
+  "patient_demographics": {
+    "Age": 79.0,
+    "Gender": "Female",
+    "UnitType": "SICU",
+    "HospitalId": "420",
+    "Ethnicity": "Caucasian"
+  },
+  "patient_vitals": {
+    "HR": [
+      {
+        "val": 89.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 92.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 84.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T08:50:00"
+      },
+      {
+        "val": 90.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 87.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 88.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "SBP": [],
+    "DBP": [],
+    "MAP": [],
+    "Temp": [
+      {
+        "val": 37.888888888888886,
+        "ts": "2024-06-01T10:57:00"
+      },
+      {
+        "val": 37.611111111111114,
+        "ts": "2024-06-01T06:57:00"
+      }
+    ],
+    "Resp": [
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 18.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T08:50:00"
+      },
+      {
+        "val": 20.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 19.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 17.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "O2Sat": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T12:00:00"
+      },
+      {
+        "val": 99.0,
+        "ts": "2024-06-01T11:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T10:00:00"
+      },
+      {
+        "val": 100.0,
+        "ts": "2024-06-01T08:50:00"
+      },
+      {
+        "val": 98.0,
+        "ts": "2024-06-01T08:00:00"
+      },
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T07:00:00"
+      },
+      {
+        "val": 96.0,
+        "ts": "2024-06-01T06:00:00"
+      }
+    ],
+    "WBC": [
+      {
+        "val": 8.2,
+        "ts": "2024-06-01T06:04:00"
+      }
+    ],
+    "Creatinine": [
+      {
+        "val": 0.77,
+        "ts": "2024-06-01T06:03:00"
+      }
+    ],
+    "Platelets": [
+      {
+        "val": 177.0,
+        "ts": "2024-06-01T06:04:00"
+      }
+    ],
+    "Glucose": [
+      {
+        "val": 97.0,
+        "ts": "2024-06-01T11:22:00"
+      }
+    ],
+    "BUN": [
+      {
+        "val": 16.0,
+        "ts": "2024-06-01T06:03:00"
+      }
+    ],
+    "HCO3": [
+      {
+        "val": 25.0,
+        "ts": "2024-06-01T06:03:00"
+      }
+    ],
+    "Hgb": [
+      {
+        "val": 12.1,
+        "ts": "2024-06-01T06:04:00"
+      }
+    ]
+  },
+  "patient_notes": "Note (Brief Progress, T-9.1h): Communication with other healthcare providers and/or family | Note (Admission, T-10.5h): Include Allergies and Pre-Admission Meds | Note (Admission, T-10.5h): Include Review of Systems | Note (Admission, T-10.5h): Include Social History and Family History | Note (Admission, T-10.5h): hx withdrawal seizures | Nursing assessment (T-0.1h, Motor Strength): LLE: +4-Resists; LUE: +4-Resists; RLE: +3-Gravity; RUE: +3-Gravity | Nursing assessment (T-0.1h, Sensation): Sensation: normal | Nursing assessment (T-0.1h, Pupils): Left: brisk; Left: react to light; Left: 3 mm; Right: brisk | Nursing assessment (T-0.1h, Neurologic): LOC: normal; Orientation: unable to assess; Speech: inappropriate; Stimulus: spontaneous | Nursing assessment (T-1.1h, Motor Strength): LUE: +3-Gravity; RUE: +3-Gravity | Nursing assessment (T-1.1h, Auscultation): Heart Sounds: normal; Murmurs and Rubs: no murmur | Nursing assessment (T-1.1h, Morse Fall Risk): Mental Status: forgets limitations; Fall Risk: low (25 - 50); Ambulatory Aid: nurse assisted; Secondary Diagnosis: no | Nursing assessment (T-1.1h, Psychosocial Status): Psychosocial Status: Confused | Nurse charting (T-0.1h): Pain Score/Goal = 0 | Nurse charting (T-0.1h): GCS total = 12 | Nurse charting (T-1.1h): Pain Score/Goal = 0 | Nurse charting (T-1.1h): GCS total = 12 | Nurse charting (T-2.0h): GCS total = 13 | Nurse charting (T-2.0h): Pain Score/Goal = 0 | Nurse charting (T-3.0h): Pain Score/Goal = 0 | Nurse charting (T-3.0h): GCS total = 13 | Nurse charting (T-4.0h): Pain Score/Goal = 0 | Nurse charting (T-4.0h): GCS total = 13 | MD order (T-8.5h): cardiovascular|vascular disorders|VTE prophylaxis|compression boots | MD order (T-8.5h): renal|intravenous fluid|normal saline administration | MD order (T-8.5h): neurologic|procedures / diagnostics|head CT scan | MD order (T-8.5h): cardiovascular|hypertension|vasodilating agent - IV|nicardipine | MD order (T-8.5h): neurologic|procedures / diagnostics|MRI - head | MD order (T-8.5h): neurologic|seizure therapy|EEG monitoring | MD order (T-8.5h): renal|urinary catheters|foley catheter | MD order (T-8.5h): endocrine|glucose metabolism|insulin|continuous infusion",
+  "ground_truth": {
+    "actual_sepsis": false,
+    "sepsis_onset_offset_min": null,
+    "icd9_codes": [],
+    "diagnosis_strings": []
+  }
+}
