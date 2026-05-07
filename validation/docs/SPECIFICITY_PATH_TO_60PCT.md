@@ -83,7 +83,148 @@ contains the correct non-sepsis label — the system just isn't listening.
 
 ---
 
-## 2. The C2 rule: what we propose to add
+## 2. Why C1 alone wasn't enough — strict-denial regex vs descriptive hedging
+
+C1 (the *LLM-aware guardrail*, deployed in v5) was designed to honour the
+LLM's verdict whenever it explicitly disagreed with a deterministic
+threshold rule. We projected it would clear ~19 of v6's FPs. In practice it
+cleared **2**. This section documents why — and motivates §3 (C2's
+broader pattern matching with rescue-signal interlocks).
+
+### 2.1 How C1 actually matches: ~19 strict-denial regex patterns
+
+C1 fires only when **all three** conditions hold
+(`guardrail_service.py:281`):
+
+1. `LLM_TEMPERATURE = 0` (deterministic mode)
+2. The LLM's own risk score < 50
+3. The LLM's `reasoning` text matches one of ~19 regex patterns in
+   `_C1_DENIAL_PATTERNS`:
+
+```text
+not sepsis  ·  does not indicate sepsis  ·  argues against (evolving) sepsis
+unlikely (to be) sepsis  ·  no clear infection signal/criteria/source/features
+physiologic recovery/response  ·  alternative diagnosis
+emergence from sedation/anesthesia  ·  surgical stress response
+residual anesthetic/sedation  ·  reassuring context/features/presentation
+typical/expected post-operative/post-procedure
+absent infection/sepsis/septic
+non-infectious cause/aetiology/etiology
+likely prophylactic/surgical/mechanical/cardiac/GI/trauma/withdrawal
+isolated finding
+```
+
+These are **strict denial assertions** — the LLM has to either explicitly
+reject sepsis or assert a specific alternative cause in C1's narrow vocabulary.
+
+### 2.2 What the LLM actually produced for the 17 LLM-hedged FPs
+
+In v6, **17 of the 70 FPs had LLM_original_risk < 50** — exactly the
+population C1 was designed for. We replayed every one of these against
+C1's compiled regex:
+
+| Population | Count |
+|---|---:|
+| FPs where LLM_risk < 50 | 17 |
+| FPs where C1's strict-denial regex matched | **0** |
+| FPs where C2's broader non-infectious-archetype regex matched | 8 |
+
+Three concrete examples (from
+`validation/results/EICU_results_v6_t0_c1_scores_latest.json`) illustrate
+the pattern:
+
+#### Example 1 — eicu\_p00056 (post-procedure, alkalosis override, LLM = 25)
+
+> *"Post-carotid procedure patient with **expected inflammatory response**
+> (WBC 17.7, SIRS+) but **reassuring hemodynamics**, stable mentation, and
+> **no organ dysfunction markers**."*
+
+| What C1 looks for | What the LLM said | Match? |
+|---|---|:-:|
+| `(typical\|expected) post-(operat\|procedur)` | "post-carotid procedure" — no `typical/expected` prefix to *post-* | ✗ |
+| `reassuring (context\|features\|presentation)` | "reassuring **hemodynamics**" — `hemodynamics` not in alternation | ✗ |
+| `not sepsis`, `does not indicate sepsis` | LLM never explicitly denies | ✗ |
+
+**C1: no match.** C2's `alkalo(sis|tic)` and `post[-\s]?op` patterns picked it up.
+
+#### Example 2 — eicu\_p00068 (borderline lactate 2.6, LLM = 35)
+
+> *"Elevated lactate (2.6) with mild leukocytosis... suggests
+> **compensated metabolic stress**. Normal mental status and stable
+> hemodynamics **argue against imminent shock**."*
+
+| What C1 looks for | What the LLM said | Match? |
+|---|---|:-:|
+| `argues against (sepsis\|infection)` | "argue against imminent **shock**" — wrong target word | ✗ |
+| `physiologic recovery/response` | "compensated metabolic stress" — different idiom | ✗ |
+
+**C1: no match.** C2's `compensated\s+(metabolic|stress|state|acidosis)` picked it up.
+
+#### Example 3 — eicu\_p00040 (GI bleed, anemia override, LLM = 45)
+
+> *"Active GI bleeding with compensatory tachycardia and anemia (Hgb 6.4)...
+> **no current sepsis indicators**."*
+
+| What C1 looks for | What the LLM said | Match? |
+|---|---|:-:|
+| `no (clear\|) (sepsis\|infection) (signal\|criteria\|source\|features)` | "no current sepsis **indicators**" — `indicators` not in alternation | ✗ |
+
+**C1: no match.** C2's `GI\s+bleed` picked it up.
+
+### 2.3 The pattern across all 17 cases
+
+The LLM at temperature = 0 produces a stable, *descriptive* style — it
+*explains* what is going on rather than explicitly denying sepsis. Phrases
+that recur across the 17 LLM-hedged FPs:
+
+- "expected inflammatory response"
+- "compensated metabolic stress"
+- "no current sepsis indicators"
+- "argue against imminent shock"
+- "post-carotid procedure"
+- "active GI bleeding"
+- "cardiac medication overdose"
+- "bone marrow suppression"
+- "subtle vital sign deterioration"
+
+Every one of these is clearly a non-sepsis explanation, but **none uses
+C1's strict denial vocabulary**. Adding more denial patterns to C1 risks
+over-firing on borderline true-sepsis where the LLM hedges in a similar
+descriptive register — precisely the failure mode C1 was designed to avoid.
+
+### 2.4 The intentional design split
+
+|  | **C1 (LLM-aware guardrail)** | **C2 (Noisy-alert suppression)** |
+|---|---|---|
+| Stage | At the moment a threshold rule wants to fire | After the alert is fully formed |
+| Strategy | High **precision** — strict denial vocabulary | Higher **recall** — topic-based archetypes |
+| Vocabulary | ~19 explicit denial patterns | ~25 non-sepsis-archetype patterns |
+| Safety net | LLM_risk < 50  AND  deterministic mode | LLM_risk < 40 / 50 (per branch)  AND  no rescue signal  AND  override-path conditions |
+| Cost of fire | High — overrides an objective threshold | Lower — multiple safety interlocks backstop |
+| Designed to catch | LLM **explicitly denies** sepsis | LLM **describes** a non-sepsis archetype |
+
+This split is **by design**, not an accidental gap. C1 is conservative
+because it intervenes at a critical decision point (overriding objective
+lab/vital thresholds). It only fires when the LLM is *unambiguous*. C2
+was added **because** the LLM produces hedged, descriptive language at
+T = 0 that doesn't trigger C1's strict regex but is still clearly
+non-sepsis. C2 can afford to be broader because it has multiple
+independent safety interlocks (rescue signals, branch-specific risk
+thresholds, override-path gates — see §3).
+
+### 2.5 One-line summary
+
+> *"C1 only suppresses when the LLM **explicitly denies** sepsis ('not
+> sepsis', 'unlikely sepsis', 'physiologic recovery'). C2 catches the much
+> more common case where the LLM **describes** a non-sepsis picture
+> (post-op, GI bleed, alkalosis, compensated metabolic stress) without
+> ever saying the magic words. Both are intentional: C1 is high-precision
+> because it acts on critical-threshold overrides; C2 is broader because
+> it has rescue signals as a backstop."*
+
+---
+
+## 3. The C2 rule: what we propose to add
 
 C2 is a **suppression layer** that runs *after* the current guardrail
 output. It applies one of seven branches based on which path produced the
@@ -136,7 +277,7 @@ last 3.6 pp of specificity gain — pushing us from 56.9% to 62.9%.**
 
 ---
 
-## 3. Where every TP survives — proof of zero sensitivity loss
+## 4. Where every TP survives — proof of zero sensitivity loss
 
 For each of the 28 TPs, we identify the rescue signal that prevents C2
 from suppressing it:
@@ -178,7 +319,7 @@ profiles **before** the suppression branches were tuned.
 
 ---
 
-## 4. The 43 FPs that C2 still misses
+## 5. The 43 FPs that C2 still misses
 
 These cluster into 3 hard groups:
 
@@ -217,7 +358,7 @@ change, not a code change.
 
 ---
 
-## 5. What this gives us numerically
+## 6. What this gives us numerically
 
 ### Headline metrics (v6 baseline vs v6+C2)
 
@@ -254,7 +395,7 @@ v6 baseline:                           39.7% spec
 
 ---
 
-## 6. Migration plan: how to deploy C2
+## 7. Migration plan: how to deploy C2
 
 ### Step 1: Productionize as a new guardrail layer (2-3 days)
 
@@ -293,7 +434,7 @@ python validation/analyze_v4_results.py  # auto-picks latest
 
 ---
 
-## 7. Beyond C2: what else moves specificity above 70%?
+## 8. Beyond C2: what else moves specificity above 70%?
 
 | Idea | Path | Estimated additional spec gain | Risk to sensitivity |
 |---|---|---:|---|
@@ -309,7 +450,7 @@ the LLM prompt** (8 of 43 are LLM-committed positives).
 
 ---
 
-## 8. Recommendation
+## 9. Recommendation
 
 1. **Adopt C2 as the next pipeline iteration (v7).** The 23.2 pp specificity gain
    with zero sensitivity loss is the single biggest improvement we've

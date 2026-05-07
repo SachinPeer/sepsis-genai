@@ -19,11 +19,16 @@ services:
       - AZURE_OPENAI_DEPLOYMENT_NAME=${AZURE_OPENAI_DEPLOYMENT_NAME:-gpt-4o}
       - AZURE_OPENAI_MODEL=${AZURE_OPENAI_MODEL:-gpt-4o}
       - AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION:-2024-06-01}
-      # AWS Bedrock Configuration (Claude 3.5 Sonnet)
+      # AWS Bedrock Configuration (Claude Sonnet 4.5 - validated in v7)
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION:-us-east-1}
-      - BEDROCK_MODEL_ID=${BEDROCK_MODEL_ID:-us.anthropic.claude-3-5-sonnet-20241022-v2:0}
+      - BEDROCK_MODEL_ID=${BEDROCK_MODEL_ID:-us.anthropic.claude-sonnet-4-5-20250929-v1:0}
+      # v7 Reasoning-aware guardrail stack (C1 + C2) - enabled by default
+      - ENABLE_C1_SUPPRESSION=${ENABLE_C1_SUPPRESSION:-true}
+      - ENABLE_C2_SUPPRESSION=${ENABLE_C2_SUPPRESSION:-true}
+      # Deterministic mode - matches v7 validation (sens 82.4% / spec 62.9%)
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0}
     volumes:
       # Mount guardrail config for hot-reload capability
       - ./genai_clinical_guardrail.json:/app/genai_clinical_guardrail.json:ro
