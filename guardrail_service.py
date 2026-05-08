@@ -21,11 +21,66 @@ class SepsisSafetyGuardrail:
                          If None, searches in standard locations.
         """
         self.logger = logging.getLogger(__name__)
+        # source_info captures where the config came from, for /guardrail/info
+        # and audit logs. Always populated, even when we fall back to defaults.
+        self.source_info: Dict[str, Any] = {}
         self.config = self._load_config(config_path)
         self._parse_thresholds()
-        
+
     def _load_config(self, config_path: Optional[str] = None) -> Dict[str, Any]:
-        """Load configuration from JSON file."""
+        """Load configuration.
+
+        Source resolution (env-driven):
+          GUARDRAIL_SOURCE=mongo  -> try Mongo first; fall back to disk on
+                                     any failure (Mongo unreachable, no doc,
+                                     schema mismatch, etc.)
+          GUARDRAIL_SOURCE=file   -> disk only (default; explicit-safe)
+          unset                   -> disk only (default)
+
+        The disk path remains the safety floor: a pod always boots with a
+        valid config even if Mongo is broken.
+        """
+        source_pref = os.getenv("GUARDRAIL_SOURCE", "file").strip().lower()
+
+        if source_pref == "mongo":
+            try:
+                # Lazy import keeps mongo_loader optional for environments
+                # that don't have pymongo installed (e.g. unit tests).
+                from mongo_loader import load_active_baseline, MongoConfigLoadError
+                bundle = load_active_baseline()
+                self.source_info = bundle["metadata"]
+                self.logger.info(
+                    "Loaded guardrail config from Mongo: "
+                    "hospital_id=%s, config_version=%s, "
+                    "based_on=%s, change_reason=%r, loaded_in_ms=%s",
+                    self.source_info.get("hospital_id"),
+                    self.source_info.get("config_version"),
+                    self.source_info.get("based_on_version"),
+                    self.source_info.get("change_reason"),
+                    self.source_info.get("loaded_in_ms"),
+                )
+                return bundle["config"]
+            except MongoConfigLoadError as e:
+                self.logger.warning(
+                    "Mongo guardrail load failed (%s); "
+                    "falling back to on-disk JSON.", e
+                )
+                self.source_info = {
+                    "source": "file_fallback",
+                    "fallback_reason": str(e),
+                }
+            except Exception as e:  # noqa: BLE001  -- belt-and-braces fallback
+                self.logger.warning(
+                    "Unexpected error loading Mongo guardrail config "
+                    "(%s: %s); falling back to on-disk JSON.",
+                    type(e).__name__, e,
+                )
+                self.source_info = {
+                    "source": "file_fallback",
+                    "fallback_reason": f"{type(e).__name__}: {e}",
+                }
+
+        # On-disk fallback / default path.
         search_paths = [
             config_path,
             "genai_clinical_guardrail.json",
@@ -39,11 +94,22 @@ class SepsisSafetyGuardrail:
                     with open(path, 'r') as f:
                         config = json.load(f)
                         self.logger.info(f"Loaded guardrail config from: {path}")
+                        # Preserve fallback_reason if Mongo was tried first.
+                        self.source_info = {
+                            **self.source_info,
+                            "source": self.source_info.get("source") or "file",
+                            "path": path,
+                            "config_version": config.get("guardrail_config", {}).get("version"),
+                        }
                         return config
                 except Exception as e:
                     self.logger.warning(f"Failed to load config from {path}: {e}")
-        
+
         self.logger.warning("No guardrail config found, using built-in defaults")
+        self.source_info = {
+            **self.source_info,
+            "source": self.source_info.get("source") or "builtin_defaults",
+        }
         return self._get_default_config()
     
     def _get_default_config(self) -> Dict[str, Any]:

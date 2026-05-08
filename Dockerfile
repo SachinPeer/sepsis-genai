@@ -27,6 +27,7 @@ COPY api.py .
 COPY genai_pipeline.py .
 COPY genai_inference_service.py .
 COPY guardrail_service.py .
+COPY mongo_loader.py .
 COPY genai_clinical_guardrail.json .
 
 # Copy preprocessing module

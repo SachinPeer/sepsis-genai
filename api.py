@@ -9,7 +9,8 @@ Endpoints:
 - GET /guardrail/thresholds - Simplified threshold values
 - GET /guardrail/config - Full guardrail configuration (for SMEs)
 - PUT /guardrail/config - Update guardrail configuration (for SMEs)
-- POST /guardrail/reload - Hot-reload guardrail config from file
+- POST /guardrail/reload - Hot-reload guardrail config (Mongo or file)
+- GET /guardrail/info - Show config source + version + load metadata
 """
 
 import os
@@ -455,21 +456,72 @@ async def get_guardrail_thresholds(x_api_key: str = Header(None)):
 async def reload_guardrail_config(x_api_key: str = Header(None)):
     """
     Hot-reload guardrail configuration.
-    
-    Reloads the genai_clinical_guardrail.json file without restarting the service.
+
+    Re-runs the same source-resolution as pod startup:
+      - GUARDRAIL_SOURCE=mongo  -> re-fetch active baseline from Mongo
+                                   (falls back to disk on failure)
+      - otherwise               -> re-read genai_clinical_guardrail.json from disk
     """
     verify_api_key(x_api_key)
-    
+
     try:
         pipeline = get_pipeline()
         pipeline.guardrail.reload_config()
         return {
             "status": "success",
             "message": "Guardrail configuration reloaded successfully",
-            "timestamp": datetime.now().isoformat()
+            "timestamp": datetime.now().isoformat(),
+            "source_info": pipeline.guardrail.source_info,
         }
     except Exception as e:
         logger.error(f"Error reloading config: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/guardrail/info")
+async def get_guardrail_info(x_api_key: str = Header(None)):
+    """
+    Show where the live guardrail config came from + which version is active.
+
+    Useful immediately after a deploy / rollout to confirm the pod actually
+    pulled from Mongo (vs silently falling back to the on-disk JSON).
+
+    Example response when running with GUARDRAIL_SOURCE=mongo:
+        {
+            "source": "mongo",
+            "hospital_id": "medbeacon_baseline",
+            "config_version": 2,
+            "based_on_version": 1,
+            "change_reason": "Initial v7 baseline seed (T=0, C1+C2)...",
+            "loaded_at": "2026-05-08T07:30:12.345+00:00",
+            "loaded_in_ms": 142.3,
+            "db": "medbeacon_dev_db_rr",
+            "collection": "hospital_guardrail_configs"
+        }
+
+    Example response when Mongo was unreachable and we fell back to disk:
+        {
+            "source": "file_fallback",
+            "fallback_reason": "Mongo error fetching ...: ServerSelectionTimeoutError",
+            "path": "/app/genai_clinical_guardrail.json"
+        }
+
+    Example response when GUARDRAIL_SOURCE=file (default, no Mongo attempt):
+        {
+            "source": "file",
+            "path": "/app/genai_clinical_guardrail.json",
+            "config_version": "3.0"
+        }
+    """
+    verify_api_key(x_api_key)
+    try:
+        pipeline = get_pipeline()
+        info = dict(pipeline.guardrail.source_info or {})
+        if not info:
+            info = {"source": "unknown"}
+        return info
+    except Exception as e:
+        logger.error(f"Error getting guardrail info: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 

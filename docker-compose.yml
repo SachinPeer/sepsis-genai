@@ -29,6 +29,13 @@ services:
       - ENABLE_C2_SUPPRESSION=${ENABLE_C2_SUPPRESSION:-true}
       # Deterministic mode - matches v7 validation (sens 82.4% / spec 62.9%)
       - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0}
+      # v7.1 Phase-C: load guardrail config from MongoDB Atlas with disk fallback
+      # 'file' = on-disk JSON only (safe default); 'mongo' = Atlas with fallback
+      - GUARDRAIL_SOURCE=${GUARDRAIL_SOURCE:-file}
+      - HOSPITAL_ID=${HOSPITAL_ID:-medbeacon_baseline}
+      - MONGO_URI=${MONGO_URI:-}
+      - MONGO_DB_NAME=${MONGO_DB_NAME:-medbeacon_dev_db_rr}
+      - MONGO_GUARDRAIL_COLLECTION=${MONGO_GUARDRAIL_COLLECTION:-hospital_guardrail_configs}
     volumes:
       # Mount guardrail config for hot-reload capability
       - ./genai_clinical_guardrail.json:/app/genai_clinical_guardrail.json:ro
