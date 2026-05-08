@@ -373,21 +373,41 @@ class GenAIInferenceService:
         return f"bedrock:{self.provider.region}" if hasattr(self.provider, 'region') else "unknown"
         
     def _load_system_prompt(self) -> str:
-        """Load the clinical system prompt from file."""
-        prompt_path = os.path.join(
-            os.path.dirname(__file__), 
-            "docs", "prompt.md"
-        )
-        try:
-            with open(prompt_path, 'r') as f:
-                content = f.read()
-                # Extract just the prompt content (skip metadata)
-                if "## SYSTEM ROLE" in content:
+        """Load the clinical system prompt from disk.
+
+        Searches multiple candidate locations so the canonical prompt at
+        ``docs/architecture/prompt.md`` is found in both the dev tree and the
+        container layout. Falls back to the inline default (which is
+        bit-identical to the on-disk canonical) only if every candidate is
+        missing — this is a safety floor, not the expected path.
+
+        See docs/architecture/PROMPT_README.md for the full editing /
+        re-validation policy.
+        """
+        here = os.path.dirname(__file__)
+        candidates = [
+            os.path.join(here, "docs", "architecture", "prompt.md"),
+            os.path.join(here, "docs", "prompt.md"),
+            "/app/docs/architecture/prompt.md",
+            "/app/docs/prompt.md",
+        ]
+        for prompt_path in candidates:
+            try:
+                with open(prompt_path, 'r') as f:
+                    content = f.read()
+                    logger.info(
+                        f"Loaded LLM system prompt from: {prompt_path} "
+                        f"({len(content)} chars)"
+                    )
                     return content
-                return content
-        except FileNotFoundError:
-            logger.warning(f"Prompt file not found at {prompt_path}, using default")
-            return self._get_default_prompt()
+            except FileNotFoundError:
+                continue
+        logger.warning(
+            "No prompt.md found at any candidate path; falling back to "
+            "inline default (bit-identical safety floor). Searched: %s",
+            candidates,
+        )
+        return self._get_default_prompt()
     
     def _get_default_prompt(self) -> str:
         """Fallback system prompt if file not found."""
