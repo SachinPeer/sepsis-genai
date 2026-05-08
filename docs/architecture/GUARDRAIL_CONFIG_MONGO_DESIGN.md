@@ -230,6 +230,51 @@ No special sharding, no TTL, no archival strategy needed in year 1.
 - Hospital ID inference — will come from auth layer (JWT claim or API-key-to-hospital mapping).
 - Phase C code change: load the active doc from Mongo on pod startup + `POST /guardrail/reload`, fall back to container-native JSON if Mongo is unreachable.
 
+### 8.1 Future consideration — per-hospital inference overrides (deferred, intentionally)
+
+**Question reviewed (May 2026):** Should the three v7 inference switches —
+`ENABLE_C1_SUPPRESSION`, `ENABLE_C2_SUPPRESSION`, `LLM_TEMPERATURE` — live
+inside `parameters.inference_settings` so each hospital can override them?
+
+**Decision: keep them as deployment-level env vars. Do NOT add them to
+`parameters` at this time.**
+
+**Rationale.** C1 + C2 + T=0 are not optional features; together they are the
+v7 stack we validated against the 150-patient eICU cohort
+(sens 82.4% / spec 62.9%). They are what defines "the product Medbeacon is
+licensing." A hospital choosing to disable them would be choosing a *different,
+less-validated* system, which is an engineering / SRE decision (re-validation,
+re-audit, model risk review) not an SME bedside decision. Keeping these at
+container env-var level is the right safety floor — equivalent to a vendor
+not exposing "disable safety interlocks" in the customer-facing config UI.
+
+`parameters` in Mongo is therefore reserved for clinical thresholds,
+discordance phrase lists, override criteria, qSOFA/SIRS/SOFA settings,
+audit settings, and other items where a hospital SME has legitimate
+authority to tune. The inference-stack switches do not belong there.
+
+**When to revisit.** Re-open this discussion only if one of the following
+concrete events happens:
+
+1. A pilot hospital makes an explicit, signed-off request to A/B run with
+   C1 or C2 off for a defined evaluation window.
+2. A regulator requires per-hospital configurability of model determinism
+   (T) for jurisdiction-specific reasons.
+3. We need true per-hospital A/B testing of new guardrail layers (e.g.
+   a future C3) and operating two parallel deployments becomes too
+   expensive vs a single deployment with hospital-config-driven routing.
+
+**If we revisit, the design is straightforward:** add an optional
+`parameters.inference_settings` sub-document (sparse — only fields the
+hospital explicitly wants to override), gated behind a master operator
+env switch (e.g. `ALLOW_HOSPITAL_INFERENCE_OVERRIDES=false` by default)
+so the safety floor remains. The current schema already accommodates
+this addition without a migration — `parameters` is a free-form nested
+dict, so adding `inference_settings` later is a non-breaking change.
+
+Tracked separately as a no-action item until one of the trigger events
+above. Not a Phase-C dependency.
+
 ## 9. Next actions
 
 | # | Action | Owner | Status |
